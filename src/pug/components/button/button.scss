@@ -1,0 +1,12 @@
+@import '@/styles/consts.scss';
+
+.button {
+  padding: 15px;
+  border-radius: 15px;
+  border: none;
+  color: $white;
+  background: $blue;
+  &:hover {
+    cursor: pointer;
+  }
+}

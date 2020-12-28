@@ -1,0 +1,10 @@
+mixin logo(options)
+  -
+    var className = "logo"
+    className += options.isUI ? " logo-ui" : ""
+  .logo-container
+    div(class = className)
+      .logo__curve
+        include ./img/logo1.svg
+      .logo__curve
+        include ./img/logo2.svg

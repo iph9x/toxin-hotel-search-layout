@@ -1,0 +1,44 @@
+@import '@/styles/consts.scss';
+@import 'montserrat.scss';
+@import '@/pug/components/button/button.scss';
+@import '@/pug/components/logo/logo.scss';
+@import '@/pug/components/color-item/color-item.scss';
+@import '@/pug/components/color-box/color-box.scss';
+@import '@/pug/components/types-box/types-box.scss';
+@import '@/pug/components/type-item/type-item.scss';
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: 'Montserrat', sans-serif;
+  color: $darkshade;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.uikit {
+  .container {
+    max-width: 1440px;
+    padding-left: 150px;
+    padding-right: 158px;
+    @media (max-width: 1440px) {
+      padding: 0 10vw;
+    }
+    @media (max-width: 950px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    @media (max-width: 350px) {
+      padding: 0 3vw;
+    }
+  }
+}
