@@ -1,0 +1,7 @@
+mixin masked-text-field(props)
+  if props.title
+    .field-wrapper.mb-40
+      .field-wrapper__title= props.title
+      input(type="text", placeholder=props.placeholderText class="masked-text-field field-wrapper__input")
+  else 
+    input(type="text", placeholder=props.placeholderText class="masked-text-field field-wrapper__input")

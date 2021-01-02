@@ -34,7 +34,8 @@ module.exports = {
   resolve: {
     extensions: ['.js'],
     alias: {
-      '@': PATHS.src
+      '@': PATHS.src,
+      'jqueryPath': path.resolve(__dirname, 'src/assets/js/jquery-3.5.1.min.js')
     }
   },  
   devServer: {
@@ -73,7 +74,7 @@ module.exports = {
         use: ['file-loader'],
       },
       {
-        test: /\.(ttf|woff|svg)$/,
+        test: /\.(ttf|woff|svg|eot|woff2|otf)$/,
         use: ['file-loader'],
       }
     ]

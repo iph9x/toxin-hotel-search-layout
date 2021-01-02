@@ -1,0 +1,7 @@
+.subscription-text-field {
+  .field-wrapper__arrow .material-icons {
+    @include gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

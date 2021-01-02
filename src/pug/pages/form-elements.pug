@@ -1,0 +1,35 @@
+extends ../layouts/uikit
+include ../components/text-field/text-field
+include ../components/dropdown/dropdown
+include ../components/masked-text-field/masked-text-field
+include ../components/date-dropdown/date-dropdown
+include ../components/filter-date-dropdown/filter-date-dropdown
+include ../components/subscription-text-field/subscription-text-field
+include ../components/checkbox-buttons/checkbox-buttons
+include ../components/radio-buttons/radio-buttons
+include ../components/toggle/toggle
+include ../components/like-button/like-button
+
+block variables
+  - var title = 'Form Elements'
+  - var checkboxArr = [{name: 'Можно курить', id: 'smoke'}, {name: 'Можно с питомцами', id: 'pet'}, {name: 'Можно пригласить гостей (до 10 человек)', id: 'count'}]
+block content
+  .form-elements
+    .container
+      .column
+        +text-field({ title: 'Text field', placeholderText: 'Email' })
+        +dropdown({ title: 'Dropdown', placeholderText: 'Сколько гостей', id: 'guests' })
+        +masked-text-field({ title: 'Masked Text field', placeholderText: 'ДД.ММ.ГГГГ' })
+        .date-container
+          +date-dropdown({ title: 'Date Dropdown'} )
+          +date-dropdown({ title: 'Date Dropdown'} )
+        +filter-date-dropdown({ title: 'Filter Date Dropdown', dateIn: '19 авг', dateOut: '23 авг' })
+        +subscription-text-field({ title: 'Subscription Text Field', placeholderText: 'Email' })
+      .column
+        +checkbox-buttons( {title: 'Checkbox buttons', radios: checkboxArr } )
+        +radio-buttons( {title: 'Radio buttons'} )
+        +toggle({ id: 'suggestions', title: 'Toggle', text: 'Получать спецпредложения' })
+        +like-button({title: 'Like button'})
+      .column
+
+      

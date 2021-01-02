@@ -1,0 +1,11 @@
+mixin radio-buttons(props)
+  - var radios = [{id: 'men', text: 'Мужчина'}, {id: 'women', text: 'Женщина'}]
+  .field-wrapper.radio-buttons
+    .field-wrapper__title= props.title
+    .radio-buttons__items
+      each radio in radios
+       .radio-buttons__item
+          input(type="radio" class="radio-buttons__button" id=radio.id value=radio.text name="sex")
+          label(for=radio.id)= radio.text
+
+  

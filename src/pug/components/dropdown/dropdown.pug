@@ -1,0 +1,19 @@
+mixin dropdown(props)
+  if props.title
+    .field-wrapper
+      .field-wrapper__title= props.title
+      .field-wrapper__arrow
+        i.material-icons expand_more
+      input(type="text" placeholder=props.placeholderText class="dropdown field-wrapper__input" readonly)
+      //- div.dropdown__menu(id = props.id)
+      //-   h3 Hi
+  else 
+    .field-wrapper__arrow
+      i.material-icons expand_more
+    input(type="text" placeholder=props.placeholderText class="dropdown field-wrapper__input" readonly)
+    //- div.dropdown__menu(id = props.id)
+    //-   h3 Hi
+      
+  script(src="/pug/components/dropdown/dropdown.js" type="module")
+
+  

@@ -1,0 +1,9 @@
+mixin subscription-text-field(props)
+  .field-wrapper.subscription-text-field.mb-40
+    if props.title
+      .field-wrapper__title= props.title
+    .field-wrapper__arrow
+      i.material-icons arrow_forward
+    input(type="text" placeholder=props.placeholderText class="subscription-text-field__input field-wrapper__input")
+
+  

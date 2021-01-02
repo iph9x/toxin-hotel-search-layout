@@ -6,14 +6,22 @@
 @import '@/pug/components/color-box/color-box.scss';
 @import '@/pug/components/types-box/types-box.scss';
 @import '@/pug/components/type-item/type-item.scss';
+@import '@/pug/components/text-field/text-field.scss';
+@import '@/pug/components/dropdown/dropdown.scss';
+@import '@/pug/components/date-dropdown/date-dropdown.scss';
+@import '@/pug/components/subscription-text-field/subscription-text-field.scss';
+@import '@/pug/components/checkbox-buttons/checkbox-buttons.scss';
+@import '@/pug/components/radio-buttons/radio-buttons.scss';
+@import '@/pug/components/toggle/toggle.scss';
+@import '@/pug/components/like-button/like-button.scss';
 
-* {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
 body,
 html {
-  font-family: 'Montserrat', sans-serif;
+  @include montserrat;
   color: $darkshade;
   margin: 0;
   padding: 0;
@@ -40,5 +48,52 @@ html {
     @media (max-width: 350px) {
       padding: 0 3vw;
     }
+  }
+}
+
+.field-wrapper {
+  position: relative;
+  width: 320px;
+  margin-bottom: 20px;
+  &__input {
+    @include field;
+  }
+  &__title {
+    @include field-title;
+  }
+  &__arrow {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    &:hover {
+      cursor: pointer;
+    }
+    &:hover + .field-wrapper__input {
+      border: 1px solid $darkshade50;
+    }
+  }
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.date-container {
+  width: 320px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-elements {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1440px;
+    width: 100%;
+    column-gap: 3vw;
   }
 }

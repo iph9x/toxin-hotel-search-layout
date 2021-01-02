@@ -1,0 +1,13 @@
+mixin checkbox-buttons(props)
+  -
+    var radios = props.radios;
+
+  .field-wrapper.checkbox-buttons
+    .field-wrapper__title= props.title
+    .checkbox-buttons__items
+      each radio in radios
+       .checkbox-buttons__item
+          input(type="checkbox" placeholder=props.placeholderText class="checkbox-buttons__button" id=radio.id value=radio.name name=radio.id)
+          label(for=radio.id)= radio.name
+
+  
