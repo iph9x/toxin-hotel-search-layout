@@ -12,19 +12,23 @@ $h3-font-size: 12px;
 
 $body-font-size: 14px;
 
+$light-blue: #66D2EA;
 $blue: rgb(75, 131, 235);
 $white: #fff;
 $title-color: rgb(204, 49, 49);
+$gradient: linear-gradient($purple, #8BA4F9);
 
 @mixin field {
   width: 100%;
   height: 44px;
+  padding-left: 14px;
+  padding-bottom: 3px;
+  line-height: 24px;
   border: 1px solid $darkshade25;
   border-radius: 4px;
   color: $darkshade75;
   font-size: $body-font-size;
-  padding-left: 15px;
-  line-height: 24px;
+  @include montserrat();
   &:hover,
   &:focus {
     border: 1px solid $darkshade50;
@@ -37,14 +41,18 @@ $title-color: rgb(204, 49, 49);
 }
 
 @mixin field-title {
+  margin-bottom: 5px;
   text-transform: uppercase;
   font-size: $h3-font-size;
-  margin-bottom: 5px;
   font-weight: 700;
 }
 
 @mixin gradient {
-  background: linear-gradient($purple, #8BA4F9);
+  background: $gradient;
+}
+
+@mixin range-slider-gradient {
+  background: linear-gradient($green, $light-blue);
 }
 
 @mixin montserrat {

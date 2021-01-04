@@ -10,10 +10,15 @@
 @import '@/pug/components/dropdown/dropdown.scss';
 @import '@/pug/components/date-dropdown/date-dropdown.scss';
 @import '@/pug/components/subscription-text-field/subscription-text-field.scss';
+@import '@/pug/components/filter-date-dropdown/filter-date-dropdown.scss';
 @import '@/pug/components/checkbox-buttons/checkbox-buttons.scss';
 @import '@/pug/components/radio-buttons/radio-buttons.scss';
 @import '@/pug/components/toggle/toggle.scss';
 @import '@/pug/components/like-button/like-button.scss';
+@import '@/pug/components/rate-button/rate-button.scss';
+@import '@/pug/components/range-slider/range-slider.scss';
+@import '@/pug/components/buttons/buttons.scss';
+@import '@/pug/components/button/button.scss';
 
 *, *::before, *::after {
   box-sizing: border-box;

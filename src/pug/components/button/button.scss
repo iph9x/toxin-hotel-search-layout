@@ -1,12 +1,66 @@
 @import '@/styles/consts.scss';
 
+@mixin button-border() {
+}
+
 .button {
-  padding: 15px;
-  border-radius: 15px;
+  padding: 0 20px;
+  height: 44px;
+  border-radius: 22px;
   border: none;
+  text-transform: uppercase;
+  @include gradient;
+  @include montserrat;
+  font-size: $h3-font-size;
   color: $white;
-  background: $blue;
+  font-weight: 700;
+  line-height: 14.63px;
+  &:focus, &:active {
+    outline: none;
+  }
+  &:disabled:hover {
+    cursor: auto;
+  }
   &:hover {
     cursor: pointer;
+  } 
+  &-border {
+    position: relative;
+    padding: 0 18px;
+    border: 2px solid transparent;
+    color: $purple;
+    background: #fff;
+    background-clip: padding-box;
+    &::after {
+      content: '';
+      position: absolute;
+      left: -2px;
+      top: -2px;
+      right: -2px;
+      bottom: -2px;
+      z-index: -1;
+      @include gradient;
+      border-radius: 22px;
+    }
+    &:disabled::after {
+      opacity: 0.5;
+    }
+  }
+  &-main {
+    width: 100%;
+  }
+  &-fill {
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+  &-string {
+    color: $purple;
+    background: none;
+    height: 15px;
+    padding: 0;
+    &:disabled {
+      color: $darkshade50;
+    }
   }
 }

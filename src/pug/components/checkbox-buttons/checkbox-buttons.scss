@@ -1,8 +1,11 @@
 .checkbox-buttons {
   max-width: 222px;
   font-size: $body-font-size;
+  &.field-wrapper {
+    margin-bottom: 29px;
+  }
   .field-wrapper__title {
-    margin-bottom: 17px;
+    margin-bottom: 18px;
   }
   &__items {
     display: flex;
@@ -10,7 +13,7 @@
     padding-left: 30px;
   }
   &__item {
-    margin-bottom: 13px;
+    margin-bottom: 12px;
     color: $darkshade50;
     label {
       position: relative;

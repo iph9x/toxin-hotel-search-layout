@@ -1,12 +1,19 @@
-.radio-buttons {
+.radio-buttons { 
+  &.field-wrapper {
+    margin-bottom: 33px;
+  }
   .field-wrapper__title {
-    margin-bottom: 17px;
+    margin-bottom: 15px;
   }
   &__items {
+    display: flex;
     padding-left: 30px;
   }
   &__item {
     margin-bottom: 10px;
+    &:first-child {
+      margin-right: 50px;
+    }
   }
   label {
     position: relative;

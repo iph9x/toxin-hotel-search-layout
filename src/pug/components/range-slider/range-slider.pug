@@ -1,0 +1,21 @@
+mixin range-slider(props)
+  - var minValue = 0
+  - var maxValue = 100000
+  - var step = maxValue / 100
+  
+  .field-wrapper.range-slider
+    .range-slider__titles
+      .field-wrapper__title= props.title
+      .range-slider__range-box
+        span.range-slider__label.range-slider__label_left
+        i -
+        span.range-slider__label.range-slider__label_right
+    .range-slider__box
+      input.range-slider__input.range-slider__input_left(type='range' step=step min=minValue max=maxValue value='3000')
+      input.range-slider__input.range-slider__input_right(type='range' step=step min=minValue max=maxValue value='25000')
+      .range-slider__wrapper
+        span.range-slider__circle.range-slider__circle_left
+        span.range-slider__circle.range-slider__circle_right
+        .range-slider__track
+
+  script(src="/pug/components/range-slider/range-slider.js")

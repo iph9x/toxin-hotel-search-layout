@@ -1,4 +1,4 @@
 mixin button(props)
-  - 
-    var buttonClassName = "button"
-  button(class = buttonClassName)= props.title
+  - var disabled = props.disabled ? props.disabled : false
+  
+  button(type='button' class=`button ${props.class}` disabled=disabled)= props.text

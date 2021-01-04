@@ -1,0 +1,10 @@
+.buttons {
+  .field-wrapper__title {
+    margin-bottom: 15px;
+  }
+  &__pair {
+    display: flex;
+    margin-bottom: 30px;
+    column-gap: 20px;
+  }
+}

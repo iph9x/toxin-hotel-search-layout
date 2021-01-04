@@ -1,3 +1,6 @@
 .filter-date-dropdown {
-  margin-bottom: 40px;
+  &.field-wrapper {
+    margin-bottom: 41px;
+    width: 266px;
+  }
 }

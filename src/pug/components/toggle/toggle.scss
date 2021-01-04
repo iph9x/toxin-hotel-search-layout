@@ -1,7 +1,7 @@
 .toggle {
   margin-bottom: 40px;
   .field-wrapper__title {
-    margin-bottom: 17px;
+    margin-bottom: 15px;
   }
   &__item {
     padding-left: 50px;
@@ -36,9 +36,9 @@
     } 
   }
   input {
-    opacity: 0;
     display: none;
-    z-index: -1;      
+    z-index: -1;    
+    opacity: 0;
     &:checked + label::before {
       border: 1px solid $purple;
     }

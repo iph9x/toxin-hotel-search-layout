@@ -9,6 +9,9 @@ include ../components/checkbox-buttons/checkbox-buttons
 include ../components/radio-buttons/radio-buttons
 include ../components/toggle/toggle
 include ../components/like-button/like-button
+include ../components/rate-button/rate-button
+include ../components/range-slider/range-slider
+include ../components/buttons/buttons
 
 block variables
   - var title = 'Form Elements'
@@ -30,6 +33,9 @@ block content
         +radio-buttons( {title: 'Radio buttons'} )
         +toggle({ id: 'suggestions', title: 'Toggle', text: 'Получать спецпредложения' })
         +like-button({title: 'Like button'})
+        +rate-button({title: 'Rate button'})
       .column
+        +range-slider({title: 'Range slider'})
+        +buttons({title: 'buttons'})
 
       

@@ -1,0 +1,10 @@
+mixin rate-button(props)
+  - var starsCount = 0;
+
+  .field-wrapper.rate-button
+    .field-wrapper__title= props.title
+    .rate-button__item     
+      while (starsCount++ < 5)
+        i.material-icons.rate-button__star star_border
+  
+  script(src="/pug/components/rate-button/rate-button.js" type="module")
