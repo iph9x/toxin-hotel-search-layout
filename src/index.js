@@ -1,6 +1,9 @@
 import * as $ from 'jquery';
 import './assets/js/jquery.inputmask.min.js';
 import './styles/main.scss';
+import './pug/components/dropdown/dropdown.js';
+import './pug/components/rate-button/rate-button.js';
+import './pug/components/range-slider/range-slider.js';
 
 let maskDate = document.getElementsByClassName('date-dropdown__input');
 for (let i = 0; i < maskDate.length; i++) {

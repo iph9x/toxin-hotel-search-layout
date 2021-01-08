@@ -2,10 +2,11 @@ mixin filter-date-dropdown(props)
   .filter-date-dropdown.field-wrapper.mb-40
     if props.title
       .field-wrapper__title= props.title
-    .field-wrapper__arrow
-      i.material-icons expand_more
+    .field-wrapper__arrow.dropdown-arrow expand_more
     input(type="text" placeholder=props.placeholderText class="dropdown field-wrapper__input" readonly value=`${props.dateIn} - ${props.dateOut}`)
+    .dropdown__menu(id = props.id)
+
       
-  script(src="/pug/components/dropdown/dropdown.js" type="module")
+  //- script(src="/pug/components/dropdown/dropdown.js" type="module")
 
   

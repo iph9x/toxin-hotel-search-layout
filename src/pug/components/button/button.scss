@@ -48,6 +48,10 @@
   }
   &-main {
     width: 100%;
+    position: relative;
+    &::after {
+      content: 'arrow_forward';
+      @include material-icons;    }
   }
   &-fill {
     &:disabled {

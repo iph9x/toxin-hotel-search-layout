@@ -2,9 +2,10 @@ mixin date-dropdown(props)
   .field-wrapper.date-dropdown.mb-40
     if props.title
       .field-wrapper__title= props.title
-    .field-wrapper__arrow
-      i.material-icons expand_more
+    .field-wrapper__arrow.dropdown-arrow expand_more
     input(type="text", placeholder="ДД.ММ.ГГГГ" class=`field-wrapper__input date-dropdown__input`)
+    .dropdown__menu(id = props.id)
+      .datepick datepick
 
     
       

@@ -1,0 +1,37 @@
+.pagination {
+  .field-wrapper__title {
+    margin-top: 40px;
+    margin-bottom: 16px;
+  }
+  &__slider {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 10px;
+  }
+  &__page {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    font-size: $h3-font-size;
+    font-weight: 400;
+    color: $darkshade50;
+    border-radius: 50%;
+    text-decoration: none;
+    &_active {
+      font-weight: 700;
+      color: #fff;
+      @include gradient;
+    }
+  }
+  &__arrow {
+    @include blue-green-gradient;
+    @include material-icons-text-only;
+    color: #fff;
+  }
+  &__label {
+    color: $darkshade75;
+    font-size: $body-font-size;
+    margin-left: 6px;
+  }
+}

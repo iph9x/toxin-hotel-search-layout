@@ -2,7 +2,7 @@
   &.field-wrapper {
     width: 266px;
   }
-  .field-wrapper__arrow .material-icons {
+  .field-wrapper__arrow {
     @include gradient;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

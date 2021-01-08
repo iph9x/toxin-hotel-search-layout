@@ -1,0 +1,18 @@
+mixin pagination(props)
+  .pagination
+    if (props.title)
+      .field-wrapper__title= props.title
+    ul.pagination__slider
+      li
+        a(href="/blank.html").pagination__page.pagination__page_active 1
+      li
+        a(href="/blank.html").pagination__page 2
+      li
+        a(href="/blank.html").pagination__page 3
+      li
+        a(href="/blank.html").pagination__page ...
+      li
+        a(href="/blank.html").pagination__page 15
+      li
+        a(href="/blank.html").pagination__page.pagination__arrow.pagination__arrow_right arrow_forward
+    .pagination__label 1 - 15 из 100+ вариантов аренды

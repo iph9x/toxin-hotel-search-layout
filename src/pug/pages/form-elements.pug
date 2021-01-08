@@ -12,6 +12,7 @@ include ../components/like-button/like-button
 include ../components/rate-button/rate-button
 include ../components/range-slider/range-slider
 include ../components/buttons/buttons
+include ../components/pagination/pagination
 
 block variables
   - var title = 'Form Elements'
@@ -24,9 +25,9 @@ block content
         +dropdown({ title: 'Dropdown', placeholderText: 'Сколько гостей', id: 'guests' })
         +masked-text-field({ title: 'Masked Text field', placeholderText: 'ДД.ММ.ГГГГ' })
         .date-container
-          +date-dropdown({ title: 'Date Dropdown'} )
-          +date-dropdown({ title: 'Date Dropdown'} )
-        +filter-date-dropdown({ title: 'Filter Date Dropdown', dateIn: '19 авг', dateOut: '23 авг' })
+          +date-dropdown({ title: 'Date Dropdown', id: 'date-in' })
+          +date-dropdown({ title: 'Date Dropdown', id: 'date-out' })
+        +filter-date-dropdown({ id: 'datepick', title: 'Filter Date Dropdown', dateIn: '19 авг', dateOut: '23 авг' })
         +subscription-text-field({ title: 'Subscription Text Field', placeholderText: 'Email' })
       .column
         +checkbox-buttons( {title: 'Checkbox buttons', radios: checkboxArr } )
@@ -36,6 +37,7 @@ block content
         +rate-button({title: 'Rate button'})
       .column
         +range-slider({title: 'Range slider'})
-        +buttons({title: 'buttons'})
+        +buttons({title: 'Buttons'})
+        +pagination({title: 'Pagination'})
 
       

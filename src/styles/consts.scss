@@ -28,7 +28,7 @@ $gradient: linear-gradient($purple, #8BA4F9);
   border-radius: 4px;
   color: $darkshade75;
   font-size: $body-font-size;
-  @include montserrat();
+  @include montserrat;
   &:hover,
   &:focus {
     border: 1px solid $darkshade50;
@@ -51,10 +51,35 @@ $gradient: linear-gradient($purple, #8BA4F9);
   background: $gradient;
 }
 
-@mixin range-slider-gradient {
+@mixin blue-green-gradient {
   background: linear-gradient($green, $light-blue);
 }
 
 @mixin montserrat {
   font-family: 'Montserrat', sans-serif;
+}
+
+@mixin material-icons {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  font-family: 'Material Icons';
+  text-transform: none;
+  font-size: 24px;
+  font-weight: 400;
+  display: grid;
+  place-items: center;
+  line-height: 1;
+}
+
+@mixin material-icons-text-only {
+  font-family: 'Material Icons';
+  text-transform: none;
+  font-size: 24px;
+  font-weight: 400;
+  display: grid;
+  place-items: center;
+  line-height: 1;
 }

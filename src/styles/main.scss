@@ -19,17 +19,22 @@
 @import '@/pug/components/range-slider/range-slider.scss';
 @import '@/pug/components/buttons/buttons.scss';
 @import '@/pug/components/button/button.scss';
+@import '@/pug/components/pagination/pagination.scss';
 
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-body,
-html {
+body{
   @include montserrat;
   color: $darkshade;
   margin: 0;
+}
+
+ul, li {
+  list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .container {
@@ -60,20 +65,26 @@ html {
   position: relative;
   width: 320px;
   margin-bottom: 20px;
+  &_active {
+    filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.05));
+  }
   &__input {
     @include field;
+    &_active {
+      border-color: $darkshade50;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
   }
   &__title {
     @include field-title;
   }
   &__arrow {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 44px;
-    height: 44px;
-    display: grid;
-    place-items: center;
+    @include material-icons;
+    bottom: none;
+    top: 20px;
+    color: $darkshade75;
+    -webkit-user-select: none;
     &:hover {
       cursor: pointer;
     }

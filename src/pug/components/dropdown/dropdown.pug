@@ -1,19 +1,21 @@
 mixin dropdown(props)
-  if props.title
-    .field-wrapper
+  .field-wrapper
+    if props.title
       .field-wrapper__title= props.title
-      .field-wrapper__arrow
-        i.material-icons expand_more
-      input(type="text" placeholder=props.placeholderText class="dropdown field-wrapper__input" readonly)
-      //- div.dropdown__menu(id = props.id)
-      //-   h3 Hi
-  else 
-    .field-wrapper__arrow
-      i.material-icons expand_more
+    .field-wrapper__arrow.dropdown-arrow expand_more
     input(type="text" placeholder=props.placeholderText class="dropdown field-wrapper__input" readonly)
-    //- div.dropdown__menu(id = props.id)
-    //-   h3 Hi
-      
-  script(src="/pug/components/dropdown/dropdown.js" type="module")
+    .dropdown__menu(id = props.id)
+      +dropdown-item({name: 'Спальни', count: 2})
+      +dropdown-item({name: 'Кровати', count: 2})
+      +dropdown-item({name: 'Ванные комнаты', count: 2})
 
+  //- script(src="/pug/components/dropdown/dropdown.js" type="module")
+
+mixin dropdown-item(item)
+  .dropdown__item
+    .dropdown__name= item.name
+    .dropdown__counter
+      button(type="button").dropdown__circle-btn.dropdown__circle-btn_reduce -
+      .dropdown__digit= item.count
+      button(type="button").dropdown__circle-btn.dropdown__circle-btn_increase +
   

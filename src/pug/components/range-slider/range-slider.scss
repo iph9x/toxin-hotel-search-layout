@@ -76,7 +76,7 @@
     height: 6px;
     z-index: 1;
     border-radius: 6px;
-    @include range-slider-gradient;
+    @include blue-green-gradient;
   }
   &__circle {
     position: absolute;
@@ -84,7 +84,7 @@
     width: 12px;
     height: 12px;
     box-shadow: 0 0 0 2px #fff;
-    @include range-slider-gradient;
+    @include blue-green-gradient;
     border-radius: 50%;
     &_left {
       left: 25%;
