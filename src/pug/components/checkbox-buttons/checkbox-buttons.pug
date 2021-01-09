@@ -1,3 +1,5 @@
+include ../checkbox/checkbox
+
 mixin checkbox-buttons(props)
   -
     var radios = props.radios;
@@ -6,8 +8,6 @@ mixin checkbox-buttons(props)
     .field-wrapper__title= props.title
     .checkbox-buttons__items
       each radio in radios
-       .checkbox-buttons__item
-          input(type="checkbox" placeholder=props.placeholderText class="checkbox-buttons__button" id=radio.id value=radio.name name=radio.id)
-          label(for=radio.id)= radio.name
+        +checkbox({ name: radio.name, id: radio.id, placeholder: props.placeholder })
 
   

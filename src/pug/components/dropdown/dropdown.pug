@@ -1,21 +1,29 @@
 mixin dropdown(props)
-  .field-wrapper
+  - var wrapperClassName = props.id === 'guests' ? 'field-wrapper field-wrapper-guests' : 'field-wrapper field-wrapper-rooms'
+  div(class=wrapperClassName)
     if props.title
       .field-wrapper__title= props.title
     .field-wrapper__arrow.dropdown-arrow expand_more
     input(type="text" placeholder=props.placeholderText class="dropdown field-wrapper__input" readonly)
-    .dropdown__menu(id = props.id)
-      +dropdown-item({name: 'Спальни', count: 2})
-      +dropdown-item({name: 'Кровати', count: 2})
-      +dropdown-item({name: 'Ванные комнаты', count: 2})
-
-  //- script(src="/pug/components/dropdown/dropdown.js" type="module")
+    if (props.id === 'rooms')
+      .dropdown__menu(id = props.id)
+        +dropdown-item({name: 'Спальни', count: 2, id: 'bedrooms'})
+        +dropdown-item({name: 'Кровати', count: 2, id: 'bed'})
+        +dropdown-item({name: 'Ванные комнаты', count: 2, id: 'bathrooms'})
+    if (props.id === 'guests')
+      .dropdown__menu(id = props.id)
+        +dropdown-item({name: 'Взрослые', count: 0, id: 'adults'})
+        +dropdown-item({name: 'Дети', count: 0, id: 'children'})
+        +dropdown-item({name: 'Младенцы', count: 0, id: 'babies'})
+        .dropdown__buttons
+          button(type='button').dropdown__clear.dropdown__clear_disabled Очистить
+          button(type='button').dropdown__apply Применить
 
 mixin dropdown-item(item)
   .dropdown__item
     .dropdown__name= item.name
     .dropdown__counter
       button(type="button").dropdown__circle-btn.dropdown__circle-btn_reduce -
-      .dropdown__digit= item.count
+      .dropdown__digit(id=item.id)= item.count
       button(type="button").dropdown__circle-btn.dropdown__circle-btn_increase +
   

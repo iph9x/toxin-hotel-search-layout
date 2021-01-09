@@ -1,0 +1,4 @@
+mixin checkbox(props)
+  .checkbox-buttons__item
+    input(type="checkbox" placeholder=props.placeholderText class="checkbox-buttons__button checkbox" id=props.id value=props.name name=props.id)
+    label(for=props.id)= props.name

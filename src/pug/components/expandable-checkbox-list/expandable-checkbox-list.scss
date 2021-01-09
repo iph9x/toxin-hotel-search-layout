@@ -1,0 +1,30 @@
+.expandable-checkbox-list {
+  font-size: $body-font-size;
+  &.field-wrapper {
+    width: 266px;
+    margin-bottom: 29px;
+  }
+  &__wrapper-title {
+    display: flex;
+    align-items: center;
+    height: 44px;
+    margin-bottom: 5px;
+  }
+  .field-wrapper__title {
+    margin-bottom: 0;
+  }
+  .field-wrapper__arrow {
+    top: 0;
+    bottom: auto;
+  }
+  &__arrow_rotate {
+    transform: rotate(180deg);
+    transform-origin: 50% 50%;
+  }
+}
+
+@keyframes rotateArrow {
+  to {
+    transform: rotate(180deg);
+  }
+}

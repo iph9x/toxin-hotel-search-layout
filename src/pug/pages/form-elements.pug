@@ -13,10 +13,13 @@ include ../components/rate-button/rate-button
 include ../components/range-slider/range-slider
 include ../components/buttons/buttons
 include ../components/pagination/pagination
+include ../components/expandable-checkbox-list/expandable-checkbox-list
+include ../components/rich-checkbox/rich-checkbox
 
 block variables
   - var title = 'Form Elements'
-  - var checkboxArr = [{name: 'Можно курить', id: 'smoke'}, {name: 'Можно с питомцами', id: 'pet'}, {name: 'Можно пригласить гостей (до 10 человек)', id: 'count'}]
+  - var checkboxArr = [{name: 'Можно курить', id: 'breakfast'}, {name: 'Можно с питомцами', id: 'pet'}, {name: 'Можно пригласить гостей (до 10 человек)', id: 'count'}]
+  - var expandableCheckbox = [{name: 'Завтрак', id: 'smoke'}, {name: 'Письменный стол', id: 'table'}, {name: 'Стул для кормления', id: 'chair'}, {name: 'Кроватка', id: 'cot'}, {name: 'Телевизор', id: 'tv'}, {name: 'Шампунь', id: 'shampoo'}]
 block content
   .form-elements
     .container
@@ -39,5 +42,15 @@ block content
         +range-slider({title: 'Range slider'})
         +buttons({title: 'Buttons'})
         +pagination({title: 'Pagination'})
+      .column.column-row
+        +dropdown({ title: 'Dropdown', placeholderText: 'Сколько гостей', id: 'rooms' })
+        +dropdown({ title: 'Dropdown', placeholderText: 'Сколько гостей', id: 'guests' })
+      .column
+        +expandable-checkbox-list({ title: 'Expandable checkbox list', radios: expandableCheckbox })
+      .column
+        .field-wrapper.rich-checkbox-buttons
+          .field-wrapper__title.rich-checkbox__title Rich checkbox buttons
+          +rich-checkbox({name: 'Широкий коридор', id: 'corridor', subUpper: 'Ширина коридоров в номере', subLower: 'не менее 91 см.'})
+          +rich-checkbox({name: 'Помощник для инвалидов', id: 'helper', subUpper: 'На 1 этаже вас встретит специалист', subLower: 'и проводит до номера.'})
 
       
