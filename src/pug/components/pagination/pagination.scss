@@ -6,7 +6,7 @@
   &__slider {
     display: flex;
     flex-wrap: nowrap;
-    margin-bottom: 10px;
+    margin-bottom: 11px;
   }
   &__page {
     display: grid;
@@ -14,6 +14,7 @@
     width: 40px;
     height: 40px;
     font-size: $h3-font-size;
+    line-height: 16px;
     font-weight: 400;
     color: $darkshade50;
     border-radius: 50%;

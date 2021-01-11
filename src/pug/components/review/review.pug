@@ -1,0 +1,12 @@
+include ../like-button/like-button
+
+mixin review(props)
+  .review
+    img.review__icon(src=props.src)
+    .review__user
+      .review__name= props.name
+      .review__date= props.date
+    .review__like 
+      +like-button({title: ''})
+    .review__text= props.text
+      

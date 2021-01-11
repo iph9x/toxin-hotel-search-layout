@@ -1,19 +1,27 @@
 .rich-checkbox {
   width: 266px;
   transform: translateX(30px);
+  margin-bottom: 9px;
   &-buttons {
     .field-wrapper__title {
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
   }
   &__sub {
     font-size: $h3-font-size;
     color: $darkshade50;
-    margin-top: 5px;
+    margin-top: 6px;
+    line-height: 14px;
   }
   label {
     color: $darkshade75;
     font-weight: 700;
     font-size: 14px;
+    &::before {
+      top: -1px;
+    }
+    &::after {
+      top: 5px;
+    }
   }
 }

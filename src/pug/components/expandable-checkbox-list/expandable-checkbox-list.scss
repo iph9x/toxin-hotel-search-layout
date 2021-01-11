@@ -21,6 +21,17 @@
     transform: rotate(180deg);
     transform-origin: 50% 50%;
   }
+  .checkbox-buttons__item {
+    margin-bottom: 13px;
+  }
+  .checkbox-buttons__items {
+    display: none;
+    label {
+      &::before {
+        top: -2px;
+      }
+    }
+  }
 }
 
 @keyframes rotateArrow {

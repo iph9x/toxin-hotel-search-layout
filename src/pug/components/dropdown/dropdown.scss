@@ -8,7 +8,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
     position: absolute;
     top: 100%;
     width: 100%;
-    padding: 6px 6px 6px 14px;
+    padding: 5px 6px 6px 14px;
     border: 1px solid $darkshade50;
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
@@ -30,7 +30,8 @@ $material-icons-font-path: '~material-icons/iconfont/';
     color: $darkshade;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: $h3-font-size;    
+    font-size: $h3-font-size;
+    line-height: 16px;    
   }
   &__counter {
     display: flex;
@@ -67,6 +68,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
     font-weight: 700;
     font-size: $h3-font-size;
     text-align: center;
+    line-height: 16px;
   }
   &__buttons {
     display: grid;
