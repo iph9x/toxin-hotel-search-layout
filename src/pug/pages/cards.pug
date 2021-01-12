@@ -1,0 +1,12 @@
+extends ../layouts/uikit
+
+block variables
+  - var title = 'Cards'
+  - var parentClass = 'cards'
+
+block content
+  .cards
+    .container
+      .column
+        include ../components/room-selection/room-selection
+        include ../components/registration/registration

@@ -1,4 +1,5 @@
 mixin button(props)
   - var disabled = props.disabled ? props.disabled : false
   
-  button(type='button' class=`button ${props.class}` disabled=disabled)= props.text
+  button(type='button' class=`button ${props.class}` disabled=disabled)
+    span= props.text

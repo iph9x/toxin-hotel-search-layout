@@ -9,7 +9,6 @@
   border-radius: 22px;
   border: none;
   text-transform: uppercase;
-  @include gradient;
   @include montserrat;
   font-size: $h3-font-size;
   color: $white;
@@ -26,21 +25,18 @@
   } 
   &-border {
     position: relative;
-    padding: 0 18px;
-    border: 2px solid transparent;
+    padding: 2px;
+    @include gradient;
     color: $purple;
-    background: #fff;
-    background-clip: padding-box;
-    &::after {
-      content: '';
-      position: absolute;
-      left: -2px;
-      top: -2px;
-      right: -2px;
-      bottom: -2px;
-      z-index: -1;
-      @include gradient;
+    span {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      padding: 0 16px;
       border-radius: 22px;
+      border: 2px solid transparent;
+      background-clip: padding-box;
+      background: #fff;
     }
     &:disabled::after {
       opacity: 0.5;
@@ -49,11 +45,13 @@
   &-main {
     width: 100%;
     position: relative;
+    @include gradient;
     &::after {
       content: 'arrow_forward';
       @include material-icons;    }
   }
   &-fill {
+    @include gradient;
     &:disabled {
       opacity: 0.5;
     }

@@ -9,7 +9,7 @@ html(lang='ru')
     meta(name="viewport" content="width=device-width, initial-scale=1")
     title #{title}
   body
-    .uikit
+    div(class= `${parentClass} uikit`)
       +logo({isUI: true})
       block content
         

@@ -1,7 +1,5 @@
 mixin text-field(props)
-  if props.title
     .field-wrapper
-      .field-wrapper__title= props.title
+      if props.title
+        .field-wrapper__title= props.title
       input(type="text", placeholder=props.placeholderText class="text-field field-wrapper__input")
-  else
-    input(type="text", placeholder=props.placeholderText class="text-field field-wrapper__input")
