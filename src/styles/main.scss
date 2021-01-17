@@ -14,6 +14,7 @@
 @import '@/pug/components/checkbox-buttons/checkbox-buttons.scss';
 @import '@/pug/components/radio-buttons/radio-buttons.scss';
 @import '@/pug/components/toggle/toggle.scss';
+@import '@/pug/components/masked-text-field/masked-text-field.scss';
 @import '@/pug/components/like-button/like-button.scss';
 @import '@/pug/components/rate-button/rate-button.scss';
 @import '@/pug/components/range-slider/range-slider.scss';
@@ -27,6 +28,10 @@
 @import '@/pug/components/review/review.scss';
 @import '@/pug/components/room-selection/room-selection.scss';
 @import '@/pug/components/registration/registration.scss';
+@import '@/pug/components/room-reservation/room-reservation.scss';
+@import '@/pug/components/login/login.scss';
+@import '@/pug/components/room-card/room-card.scss';
+@import 'datepicker.css';
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -226,16 +231,20 @@ button {
     border: 1px solid rgba(0, 0, 0, 0.12);
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
     max-width: 380px;
-    padding: 30px;
-    padding-top: 40px;
+    padding: 29px;
+    padding-top: 39px;
     margin-bottom: 40px;
   }
 
 }
 
 .cards {
-  background: #E5E5E5;
+  background: rgb(244, 244, 246);
   .container {
-    margin: 0 140px;
+    display: flex;
+    column-gap: 40px;
+    margin: 0 auto;
+    padding: 0 140px;
+    max-width: 1440px;
   }
 }

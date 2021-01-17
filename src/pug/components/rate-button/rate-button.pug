@@ -1,10 +1,21 @@
 mixin rate-button(props)
-  - var starsCount = 0;
+  - var starsCount = props.count ? props.count : 0;
+  - let startStars = 0;
+  - let startBorders = 0;
+  - var bordersCount = 5 - starsCount;
 
   .field-wrapper.rate-button
-    .field-wrapper__title= props.title
-    .rate-button__item     
-      while (starsCount++ < 5)
-        i.material-icons.rate-button__star star_border
+    if props.title
+      .field-wrapper__title= props.title
+    if props.static
+      .rate-button__item     
+        while (startBorders++ < bordersCount)
+          i.material-icons.rate-button__star star_border
+        while (startStars++ < starsCount)
+          i.material-icons.rate-button__star star_
+    else
+      .rate-button__item     
+        while (startStars++ < 5)
+          i.material-icons.rate-button__star.rate-button__active-star star_border
   
   //- script(src="/pug/components/rate-button/rate-button.js" type="module")

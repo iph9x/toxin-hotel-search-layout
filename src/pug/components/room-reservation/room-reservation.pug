@@ -1,0 +1,38 @@
+include ../dropdown/dropdown
+//- include ../date-dropdown/date-dropdown
+include ../button/button
+
+mixin note(props)
+  .room-reservation__note
+    .room-reservation__service-box
+      if props.subTitle
+        .room-reservation__service #{props.title}&#8381; #{props.subTitle}
+      else
+        .room-reservation__service= props.title
+      if props.info
+        span.room-reservation__info i
+    span.room-reservation__price= props.price
+
+.room-reservation.card-wrapper
+  .room__header
+    h2.card-title
+      span.room__number 888
+      span.room__lux люкс
+    div
+      span.room__day-price 9 990
+      span.room__time в сутки
+  .date-container
+    +date-dropdown({ title: 'Прибытие', id: 'date-in', main: true})
+    +date-dropdown({ title: 'Выезд', id: 'date-out'})
+  +dropdown({ title: 'Гости', placeholderText: 'Сколько гостей', id: 'guests' })
+  .room-reservation__notes
+    +note({ title: '9 990', subTitle: 'x 4 суток', price: '39 960' })
+    +note({ title: 'Сбор за услуги: скидка 2 179', price: '0', info: 'Сбор за услуги' })
+    +note({ title: 'Сбор за дополнительные услуги', price: '300', info: 'Сбор за дополнительные услуги' })
+  .room-reservation__total-wrapper
+    .room-reservation__label Итого
+    span
+    .room-reservation__total-price 38 081
+  +button({ text: 'Забронировать', class: 'button-fill button-main' })
+
+

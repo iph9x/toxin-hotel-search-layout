@@ -2,7 +2,16 @@ $material-icons-font-path: '~material-icons/iconfont/';
 @import '~material-icons/iconfont/material-icons.scss';
 @import '@/styles/consts.scss';
 
-.dropdown {
+.field-wrapper {
+  .dropdown {
+    padding-bottom: 2px;
+    &::placeholder {
+      color: $darkshade75;
+    }
+  }
+}
+
+.dropdown {  
   &__menu {
     display: none;
     position: absolute;

@@ -1,5 +1,16 @@
 .room-selection {
-  .dropdown {
-    margin-bottom: 10px;
+  .card-title {
+    margin-bottom: 23px;
+  }
+  .field-wrapper-guests {
+    margin-bottom: 31px;
+  }  
+  .date-dropdown {
+    margin-bottom: 21px;
+  }
+  .main-button {
+    span {
+      margin-left: -3px;
+    }
   }
 }

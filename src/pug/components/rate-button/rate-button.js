@@ -1,4 +1,4 @@
-let starsArr = Array.from(document.getElementsByClassName('rate-button__star'));
+let starsArr = Array.from(document.getElementsByClassName('rate-button__active-star'));
 let currentIndex = null;
 let currentRate = null;
 

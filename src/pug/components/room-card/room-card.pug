@@ -1,0 +1,31 @@
+include ../rate-button/rate-button
+
+mixin room-card(props)
+  .room-card
+    .room-card__slider.card-slider
+      .card-slider__image-box
+        img.card-slider__image(src=props.src)
+      .card-slider__prev
+        span.material-icons expand_more
+      .card-slider__next
+        span.material-icons expand_more
+      .card-slider__nav
+        .card-slider__circle.card-slider__circle_active
+        .card-slider__circle
+        .card-slider__circle
+        .card-slider__circle
+    .room-card__info-box
+      .room__header
+        h2.card-title
+          span.room__number= props.number
+          if props.lux
+            span.room__lux люкс
+        div
+          span.room__day-price 9 990
+          span.room__time за сутки
+      .room-card__rating
+        +rate-button({ count: props.rating, static: true })
+        .room-card__reviews-box
+          span.room-card__reviews-count= props.reviews
+          span.room-card__text Отзывов
+    

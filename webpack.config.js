@@ -88,7 +88,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: filename('css')
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    })
   ],
   optimization: {
     splitChunks: {

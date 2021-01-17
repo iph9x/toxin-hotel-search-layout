@@ -1,0 +1,151 @@
+.room-card {
+  width: 270px;
+  background: #fff;
+  border-radius: 4px;
+  margin-bottom: 40px;
+  &__info-box {
+    padding: 20px;
+  }
+  .field-wrapper {
+    margin-bottom: 0;
+  }
+  .card-title {
+    margin-bottom: 0;
+  }
+  .room__header {
+    margin-bottom: 0;
+    border-bottom: 1px solid $darkshade10;
+    padding-bottom: 10px;
+  }
+  .rate-button__item {
+    margin-top: 0;
+  }
+  &__rating {
+    margin-top: 8px;
+    @include flex-justify-sb-align-c;
+  }
+  &__reviews-box {
+    font-size: $body-font-size;
+    color: $darkshade50;
+  }
+  &__reviews-count {
+    font-weight: 700;
+    margin-right: 3px;
+  }
+}
+
+.room {
+  &__header {
+    @include flex-justify-sb-align-end;
+    margin-bottom: 20px;
+    > div {
+      padding-bottom: 1px;
+    }
+  }
+  &__lux {
+    color: $purple;
+    font-size: $h3-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-bottom: 2px;
+  }
+  &__number {
+    margin-right: 1px;
+    &::before {
+      content: '№';
+      margin-right: 4px;
+      font-size: $body-font-size;
+      font-weight: 700;
+    }
+  }
+  &__day-price {
+    margin-right: 4px;
+    font-size: $body-font-size;
+    font-weight: 700;
+    color: $darkshade50;
+    &::after {
+      content: '\20BD';
+    }
+  }
+  &__time {
+    color: $darkshade50;
+    font-size: $h3-font-size;
+  }
+}
+
+.card-slider {
+  height: 150px;
+  position: relative;
+  border-bottom: 1px solid #000;
+  &__prev,
+  &__next {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 42px;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-weight: $h1-font-size;
+    transition: opacity .2s;
+    user-select: none;
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+    span {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+    }
+  }
+  &__prev {
+    left: 0;
+    border-top-left-radius: 4px;
+    background: linear-gradient(90deg,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0));
+    span {
+      transform: rotate(90deg)
+    }
+  }
+  &__next {
+    right: 0;
+    border-top-right-radius: 4px;
+    background: linear-gradient(90deg,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.5));
+    span {
+      transform: rotate(-90deg)
+    }
+  }
+  &__image {
+    object-fit: cover;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    &-box {
+      height: 150px;
+      overflow: hidden;
+      
+    }
+  }
+  &__nav {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    column-gap: 4px;
+  }
+  &__circle {
+    width: 8px;
+    height: 8px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    box-sizing: padding-box;
+    &_active {
+      background: #fff;
+    }
+  }
+}

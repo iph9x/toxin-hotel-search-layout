@@ -28,11 +28,10 @@
     padding: 2px;
     @include gradient;
     color: $purple;
+    width: 99px;
     span {
-      display: flex;
-      align-items: center;
+      @include grid-center;
       height: 100%;
-      padding: 0 16px;
       border-radius: 22px;
       border: 2px solid transparent;
       background-clip: padding-box;
@@ -45,10 +44,12 @@
   &-main {
     width: 100%;
     position: relative;
+    padding-bottom: 1px;
     @include gradient;
     &::after {
       content: 'arrow_forward';
-      @include material-icons;    }
+      @include material-icons;    
+    }
   }
   &-fill {
     @include gradient;

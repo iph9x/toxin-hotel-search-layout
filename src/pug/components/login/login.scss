@@ -1,0 +1,11 @@
+.login {
+  .button-main {
+    margin-bottom: 30px;
+  }
+  &__registration-wrapper {
+    @include flex-justify-sb-align-c;
+    span {
+      font-size: $body-font-size;
+    }
+  }
+}

@@ -3,9 +3,9 @@ include ../date-dropdown/date-dropdown
 include ../button/button
 
 .room-selection.card-wrapper
-  h2.card-title Найдем номера под ваши пожелания
+  h2.card-title Найдём номера под ваши пожелания
   .date-container
-    +date-dropdown({ title: 'Прибытие', id: 'date-in' })
-    +date-dropdown({ title: 'Выезд', id: 'date-out' })
-  +dropdown({ title: 'Гостей', placeholderText: 'Сколько гостей', id: 'guests' })
+    +date-dropdown({ title: 'Прибытие', id: 'datein' })
+    +date-dropdown({ title: 'Выезд', id: 'dateout' })
+  +dropdown({ title: 'Гости', placeholderText: 'Сколько гостей', id: 'guests' })
   +button({ text: 'Подобрать номер', class: 'button-fill button-main' })
