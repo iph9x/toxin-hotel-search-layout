@@ -4,18 +4,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+  padding: 2px;
+  box-sizing: padding-box;
+  margin-right: 12px;
+  @include gradient;
   &-container {
     padding: 30px 0 65px 30px;
     max-width: 1440px;
     margin: 0 auto;
   }
+  &__box {
+    @include flex-justify-sb-align-c
+  }
+  &__circle-wrapper {
+    @include flex-justify-c-align-c;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 50%;
+  }
   &__curve {
     display: flex;
     align-items: flex-start;
-    margin-top: 3px;
+    margin-top: 4px;
     min-height: 15px;
     &:first-child {
       margin-right: -1px;
@@ -23,5 +37,11 @@
   }
   &-ui {
     border: 3px solid $darkshade25;
+    width: 48px;
+    height: 48px;
+    background: none;
+    .logo__curve {
+      margin-top: 3px;
+    }
   }
 }

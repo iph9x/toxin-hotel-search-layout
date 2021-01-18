@@ -2,9 +2,19 @@ mixin logo(options)
   -
     var className = "logo"
     className += options.isUI ? " logo-ui" : ""
-  .logo-container
+  if options.isUI
     div(class = className)
       .logo__curve
         include ./img/logo1.svg
       .logo__curve
         include ./img/logo2.svg
+  else
+    .logo__box
+      div(class = className)
+        .logo__circle-wrapper
+          .logo__curve
+            include ./img/curve-logo1.svg
+          .logo__curve
+            include ./img/curve-logo2.svg
+      .logo__text
+        include ./img/logo-text.svg

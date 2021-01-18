@@ -12,7 +12,7 @@
   }
   &__notes {
     padding-left: 1px;
-    margin-bottom: 31px;
+    margin-bottom: 30px;
   }
   &__note {
     display: grid;
@@ -20,7 +20,7 @@
     color: $darkshade75;
     font-size: $body-font-size;
     &:first-child {
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
     &:nth-child(2) {
       margin-bottom: 14px;
@@ -49,7 +49,7 @@
     border-radius: 50%;
     color: $darkshade25;
     font-size: $h3-font-size;
-    font-weight: 700;
+    font-weight: 700 ;
   }
   &__total {
     &-wrapper {
@@ -70,6 +70,9 @@
     }  
     &-price {
       margin-right: -9px;
+      @media (max-width: 340px) {
+        margin-right: 0;
+      }
       &::after {
         content: '\20BD'
       }
@@ -83,6 +86,7 @@
 .datepicker {
   width: 320px;
   padding: 20px;
+  padding-top: 15px;
   box-sizing: border-box;
   background: #fff;
   border-radius: 4px;
@@ -120,7 +124,7 @@
   }
   &--days-names {
     margin: 0;
-    margin-top: 30px;
+    margin-top: 26px;
   }
   &--day-name {
     color: $purple;

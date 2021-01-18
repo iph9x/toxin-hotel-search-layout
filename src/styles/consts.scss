@@ -91,6 +91,12 @@ $gradient: linear-gradient($purple, #8BA4F9);
   align-items: flex-end;
 }
 
+@mixin flex-justify-c-align-c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @mixin grid-center {
   display: grid;
   place-items: center;

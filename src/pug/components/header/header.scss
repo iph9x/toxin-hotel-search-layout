@@ -1,0 +1,8 @@
+.header {
+  background: #fff;
+  .container {
+    width: 1140px;
+    height: 70px;
+    @include flex-justify-sb-align-c;
+  }
+}

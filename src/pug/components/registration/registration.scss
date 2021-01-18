@@ -4,12 +4,15 @@
   }
   .field-wrapper {
     margin-bottom: 10px;
+    &:nth-of-type(6) {
+      margin-bottom: 11px;
+    }
   }
   .radio-buttons {
     margin-bottom: 16px;
   }
   .masked-text-field {
-    margin-bottom: 11px;
+    margin-bottom: 10px;
   }
   .button-main {
     margin-top: 16px;

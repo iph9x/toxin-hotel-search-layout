@@ -31,6 +31,8 @@
 @import '@/pug/components/room-reservation/room-reservation.scss';
 @import '@/pug/components/login/login.scss';
 @import '@/pug/components/room-card/room-card.scss';
+@import '@/pug/components/header/header.scss';
+@import '@/pug/components/nav/nav.scss';
 @import 'datepicker.css';
 
 *, *::before, *::after {
@@ -234,17 +236,47 @@ button {
     padding: 29px;
     padding-top: 39px;
     margin-bottom: 40px;
+    @media (max-width: 365px) {
+      padding: 10px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    @media (max-width: 340px) {
+      padding: 5px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
   }
 
 }
 
 .cards {
   background: rgb(244, 244, 246);
+  .logo-container {
+    padding: 23px 0 72px 30px;
+  }
   .container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     column-gap: 40px;
     margin: 0 auto;
     padding: 0 140px;
     max-width: 1440px;
+    @media (max-width: 1440px) {
+      padding: 0 5vw;
+    }
+    @media (max-width: 340px) {
+      padding: 0;
+    }
+  }
+}
+
+// HEADERS & FOOTERS
+
+.headers-footers {
+  background: rgb(244, 244, 246);
+  .container {
+    padding: 0;
   }
 }

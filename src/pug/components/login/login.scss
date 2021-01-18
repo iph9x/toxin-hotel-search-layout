@@ -2,10 +2,19 @@
   .button-main {
     margin-bottom: 30px;
   }
+  .field-wrapper {
+    &:nth-of-type(1) {
+      margin-bottom: 10px;
+    }
+  }
   &__registration-wrapper {
     @include flex-justify-sb-align-c;
-    span {
+    > span {
       font-size: $body-font-size;
     }
   }
+}
+
+.card-wrapper.login {
+  padding-bottom: 30px;
 }

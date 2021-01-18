@@ -10,7 +10,8 @@ html(lang='ru')
     title #{title}
   body
     div(class= `${parentClass} uikit`)
-      +logo({isUI: true})
+      .logo-container
+        +logo({isUI: true})
       block content
         
         

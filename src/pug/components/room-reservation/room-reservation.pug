@@ -5,7 +5,7 @@ include ../button/button
 mixin note(props)
   .room-reservation__note
     .room-reservation__service-box
-      if props.subTitle
+      if (props.subTitle || props.subTitle === '')
         .room-reservation__service #{props.title}&#8381; #{props.subTitle}
       else
         .room-reservation__service= props.title
@@ -27,7 +27,7 @@ mixin note(props)
   +dropdown({ title: 'Гости', placeholderText: 'Сколько гостей', id: 'guests' })
   .room-reservation__notes
     +note({ title: '9 990', subTitle: 'x 4 суток', price: '39 960' })
-    +note({ title: 'Сбор за услуги: скидка 2 179', price: '0', info: 'Сбор за услуги' })
+    +note({ title: 'Сбор за услуги: скидка 2 179', subTitle: '', price: '0', info: 'Сбор за услуги' })
     +note({ title: 'Сбор за дополнительные услуги', price: '300', info: 'Сбор за дополнительные услуги' })
   .room-reservation__total-wrapper
     .room-reservation__label Итого
