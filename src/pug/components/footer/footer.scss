@@ -1,0 +1,68 @@
+.footer {
+  font-size: $body-font-size;
+  &__main-row {
+    background: #fff;
+    margin-bottom: 1px;
+    box-shadow: 0px 1px 0px $darkshade10;
+  }
+  &__sec-row {
+    background: #fff;
+    @include boxshadow;
+  }
+  .container {
+    width: 1160px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 0;
+  }
+  &__column {
+    display: flex;
+    flex-direction: column;
+    max-width: 260px;
+  }
+  &__section {
+    margin-top: 5px;
+    margin-bottom: 11px;
+    font-size: $h3-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $darkshade;
+    text-decoration: none;
+    &:active,
+    &:focus {
+      color: $darkshade;
+    }
+  }
+  .logo__box {
+    margin-bottom: 10px;
+  }
+  &__text {
+    line-height: 24px;
+    color: $darkshade75;
+    margin-top: 8px;
+    margin-bottom: 20px;
+  }
+  &__item {
+    color: $darkshade50;
+    margin: 10px 0;
+    text-decoration: none;
+  }
+  .subscription-text-field.field-wrapper {
+    width: 100%;
+  }
+  &__copyright-wrapper {
+    @include flex-justify-sb-align-c;
+    height: $nav-height;
+  }
+  &__socials {
+    @include flex-justify-sb-align-c;
+    column-gap: 20px;
+  }
+  &__social {
+    width: 24px;
+  }
+}

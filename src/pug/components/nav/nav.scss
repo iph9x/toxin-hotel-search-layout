@@ -1,23 +1,47 @@
 .nav {
+  flex: 1;
   &__ul {
-    @include flex-justify-sb-align-c;
-    column-gap: 20px;
+    @include flex-justify-end-align-c;
+    height: $nav-height;
+  }
+  &__item {
+    height: 100%;
+    &:nth-child(1),
+    &:nth-child(2) {
+      .nav__link {
+        padding-right: 11px;
+      }
+    }
+  }
+  &__link {
+    height: 100%;
+    display: flex;
+    place-items: center;
+    transition: .2s;
+    padding: 0 10px;
+    &:hover {
+      background: darken(#fff, 2%);
+    }
   }
   &__item-submenu {
     position: relative;
     @include flex-justify-sb-align-c;
-    &::after {
-      content: 'expand_more';
-      font-family: 'Material Icons';
-      text-transform: none;
-      font-size: $h1-font-size;
-      font-weight: 400;
-      line-height: 1;
-      color: $darkshade50;
-    }
     &:hover .nav__submenu {
       display: flex;
     }
+    > .nav__link {
+      &::after {
+        content: 'expand_more';
+        transform: translate(1px, 1px);
+        font-family: 'Material Icons';
+        text-transform: none;
+        font-size: $h1-font-size;
+        font-weight: 400;
+        line-height: 1;
+        color: $darkshade50;
+      }
+    }
+    
   }
   &__link {
     font-size: $body-font-size;
@@ -32,20 +56,20 @@
     position: absolute;
     display: none;
     top: 100%;
-    left: 0;
-    flex-direction: column;
-    padding: 0 20px;
-    padding-top: 10px;
+    min-width: 100%;
+    flex-direction: column;   
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px; 
     background: #fff;
-
+    @include boxshadow;
   }
   &__sub-item {
-    @include grid-center;
-    height: 40px;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
+    @include grid-center;    
     .nav__link {
+      width: 100%;
+      @include flex-center;
       white-space: nowrap;
+      height: 50px;
     }
   }
 }

@@ -91,7 +91,7 @@
   background: #fff;
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.25);
-  box-shadow: 0px 10px 20px $darkshade5;
+  @include boxshadow;
   @include montserrat;
   &--nav {
     border-bottom: 0;

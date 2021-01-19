@@ -4,6 +4,8 @@
   }
   .field-wrapper__arrow {
     @include gradient;
+    top: auto;
+    bottom: 0;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }

@@ -1,8 +1,41 @@
 .header {
   background: #fff;
+  margin-bottom: 40px;
+  @include boxshadow;
   .container {
-    width: 1140px;
+    width: 1160px;
     height: 70px;
     @include flex-justify-sb-align-c;
+  }
+  &__menu {
+    @include flex-justify-sb-align-c;
+  }
+  &__profile {
+    &-wrapper {
+      border-left: 1px solid $darkshade10;
+      padding-left: 20px;
+      margin-left: 11px;
+      height: 30px;
+      @include flex-center;
+    }
+    &-link {
+      text-decoration: none;
+      color: $darkshade50;
+      font-size: $body-font-size;
+      &:focus,
+      &:active {
+        color: $darkshade50;
+      }
+    }
+  }
+  &__auth-box {
+    .button {
+      height: 34px;
+      &:first-child {
+        width: 87px;
+        margin-right: 20px;
+        margin-left: 11px;
+      }
+    }
   }
 }

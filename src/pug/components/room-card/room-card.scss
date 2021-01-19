@@ -3,7 +3,7 @@
   background: #fff;
   border-radius: 4px;
   margin-bottom: 40px;
-  box-shadow: 0px 10px 20px $darkshade5;
+  @include boxshadow;
   &__info-box {
     padding: 20px;
     padding-top: 16px;

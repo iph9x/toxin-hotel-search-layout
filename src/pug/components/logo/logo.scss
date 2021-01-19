@@ -17,7 +17,8 @@
     margin: 0 auto;
   }
   &__box {
-    @include flex-justify-sb-align-c
+    display: flex;
+    align-items: center;
   }
   &__circle-wrapper {
     @include flex-justify-c-align-c;
@@ -43,5 +44,8 @@
     .logo__curve {
       margin-top: 3px;
     }
+  }
+  &__text {
+    transform: translateY(1px);
   }
 }

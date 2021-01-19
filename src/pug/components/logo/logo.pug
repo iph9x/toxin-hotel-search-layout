@@ -1,15 +1,15 @@
-mixin logo(options)
+mixin logo(props)
   -
     var className = "logo"
-    className += options.isUI ? " logo-ui" : ""
-  if options.isUI
+    className += props.isUI ? " logo-ui" : ""
+  if props.isUI
     div(class = className)
       .logo__curve
         include ./img/logo1.svg
       .logo__curve
         include ./img/logo2.svg
   else
-    .logo__box
+    a.logo__box(href='/')
       div(class = className)
         .logo__circle-wrapper
           .logo__curve
