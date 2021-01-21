@@ -29,14 +29,15 @@ footer.footer
           a.footer__item(href='/blank.html') Связь с нами
         .footer__column
           .footer__section Подписка
-          .footer__text Получайте специальные поредложения и новости сервиса
+          .footer__text Получайте специальные предложения и новости сервиса
           +subscription-text-field({ placeholderText: 'Email' })
   .footer__sec-row
     .container
       .footer__copyright-wrapper
-        .footer__text Copyright © 2018 Toxin отель. Все права зачищены.
+        +logo({})
+        .footer__copyright Copyright © 2018 Toxin отель. Все права зачищены.
         .footer__socials
-          a.footer__social(href='blank.html')
+          a.footer__social.footer__social_twitter(href='blank.html')
             include ./img/twitter.svg
           a.footer__social(href='blank.html')
             include ./img/facebook.svg

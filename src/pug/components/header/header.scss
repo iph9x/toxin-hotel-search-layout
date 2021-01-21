@@ -1,14 +1,85 @@
 .header {
+  position: relative;
   background: #fff;
-  margin-bottom: 40px;
   @include boxshadow;
   .container {
-    width: 1160px;
+    max-width: 1160px;
     height: 70px;
     @include flex-justify-sb-align-c;
+    @media (max-width: 1160px) {
+      padding: 0 20px;
+    }
   }
-  &__menu {
-    @include flex-justify-sb-align-c;
+  &__menu {    
+    @include flex-justify-sb-align-c;  
+    z-index: 5;
+    &-btn {
+      position: relative;
+      display: none;      
+      width: 20px;
+      height: 16px;
+      &:hover {
+        cursor: pointer;
+      }
+      &::after,
+      &::before {
+        position: absolute;
+        content: '';
+        width: 20px;
+        height: 2px;
+        background: $darkshade;
+        border-radius: 1px;
+        transform-origin: 0 1px;
+        transition: .2s;
+      }
+      &::before {
+        top: 0;
+      }
+      &::after {
+        bottom: 0;
+      }
+      @media (max-width: 950px) {
+        display: block;        
+      }
+      &-straight {
+        position: absolute;
+        top: 50%;
+        width: 20px;
+        height: 2px;
+        background: $darkshade;
+        border-radius: 1px;
+        transform: translateY(-50%);
+        transition: .2s;
+      }
+      &_active {
+        > div {
+          opacity: 0;
+        }
+        &::before {
+          transform: rotate(45deg);
+        }
+        &::after {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+    @media (max-width: 950px) {
+      position: absolute;
+      top:100%;
+      right: 0;
+      flex-direction: column;
+      transform: translateX(100%);
+      display: none;
+      padding: 0 40px;
+      background: #fff;
+      justify-content: flex-start;
+      height: calc(100vh - #{$nav-height});
+      @include boxshadow;
+    }
+    &_visible {
+      display: flex;
+      transform: translateX(0);
+    }  
   }
   &__profile {
     &-wrapper {
@@ -29,13 +100,22 @@
     }
   }
   &__auth-box {
+    display: flex;
     .button {
       height: 34px;
       &:first-child {
         width: 87px;
         margin-right: 20px;
         margin-left: 11px;
+        @media (max-width: 950px) { 
+          margin: 0;
+        }
       }
+    }
+    @media (max-width: 950px) {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 20px;
     }
   }
 }

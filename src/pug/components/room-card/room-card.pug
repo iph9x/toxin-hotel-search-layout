@@ -21,7 +21,7 @@ mixin room-card(props)
           if props.lux
             span.room__lux люкс
         div
-          span.room__day-price 9 990
+          span.room__day-price= props.price
           span.room__time в сутки
       .room-card__rating
         +rate-button({ count: props.rating, static: true })

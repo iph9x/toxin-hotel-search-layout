@@ -5,7 +5,9 @@ mixin header(props)
   header.header
     .container
       +logo({})
-      .header__menu  
+      .header__menu-btn#header-btn
+        .header__menu-btn-straight
+      .header__menu#menu  
         include ../nav/nav
         if props.isAuth
           .header__profile-wrapper 

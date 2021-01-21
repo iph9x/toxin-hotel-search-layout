@@ -1,8 +1,17 @@
 .nav {
   flex: 1;
+  @media (max-width: 950px) {
+    flex: 0;
+  }
   &__ul {
     @include flex-justify-end-align-c;
     height: $nav-height;
+    @media (max-width: 950px) {
+      flex-direction: column;
+      height: auto;
+      row-gap: 25px;
+      margin-bottom: 30px;
+    }
   }
   &__item {
     height: 100%;
@@ -28,6 +37,9 @@
     @include flex-justify-sb-align-c;
     &:hover .nav__submenu {
       display: flex;
+    }
+    @media (max-width: 950px) {
+      flex-direction: column;
     }
     > .nav__link {
       &::after {
@@ -62,6 +74,10 @@
     border-bottom-right-radius: 4px; 
     background: #fff;
     @include boxshadow;
+    @media (max-width: 950px) {
+      position: relative;
+      box-shadow: none;
+    }
   }
   &__sub-item {
     @include grid-center;    

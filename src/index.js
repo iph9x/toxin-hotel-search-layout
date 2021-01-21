@@ -7,6 +7,7 @@ import './pug/components/rate-button/rate-button.js';
 // import './pug/components/range-slider/range-slider.js';
 import './pug/components/expandable-checkbox-list/expandable-checkbox-list.js';
 import './pug/components/room-reservation/room-reservation.js';
+import './pug/components/header/header.js';
 
 let maskDate = document.getElementsByClassName('date-dropdown__input');
 for (let i = 0; i < maskDate.length; i++) {
