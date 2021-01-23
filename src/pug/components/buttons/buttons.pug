@@ -4,14 +4,8 @@ mixin buttons(props)
   .field-wrapper.buttons
     .field-wrapper__title= props.title
     .buttons__box
-      .buttons__pair
-        +button({ text: 'Click me', class: 'button-fill' })
-        +button({ text: 'Click me', class: 'button-fill', disabled: true })
-      .buttons__pair
-        +button({ text: 'Click me', class: 'button-border' })
-        +button({ text: 'Click me', class: 'button-border', disabled: true })
-      .buttons__pair
-        +button({ text: 'Click me', class: 'button-string' })
-        +button({ text: 'Click me', class: 'button-string', disabled: true })
+      +button({ text: 'Click me', class: 'button-fill' })
+      +button({ text: 'Click me', class: 'button-border' })
+      +button({ text: 'Click me', class: 'button-string' })
       +button({ text: 'Перейти к оплате', class: 'button-fill button-main' })
       

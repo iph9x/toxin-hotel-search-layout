@@ -1,0 +1,38 @@
+.search-room {
+  background: #fff;
+  padding-top: 30px;
+  padding-bottom: 70px;
+  margin-bottom: 1px;
+  &__container {
+    display: grid;
+    grid-template-columns: 266px 1fr;
+    column-gap: 60px;
+  }
+}
+
+.filter {
+  .filter-date-dropdown.field-wrapper {
+    margin-bottom: 20px;
+  }
+  .range-slider,
+  .rich-checkbox-buttons,
+  .checkbox-buttons {
+    margin-bottom: 30px;
+  }
+}
+
+.rooms {
+  &__title {
+    margin-bottom: 20px;
+  }
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .pagination {
+    margin: 0 auto;
+  }
+ 
+}

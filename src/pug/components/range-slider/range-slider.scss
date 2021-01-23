@@ -95,4 +95,9 @@
       transform: translate(6px, -3px)
     }
   }
+  &__note {
+    font-size: $h3-font-size;
+    color: $darkshade50;
+    margin-top: 13px;
+  }
 }

@@ -14,18 +14,19 @@ include ../components/range-slider/range-slider
 include ../components/buttons/buttons
 include ../components/pagination/pagination
 include ../components/expandable-checkbox-list/expandable-checkbox-list
-include ../components/rich-checkbox/rich-checkbox
+include ../components/rich-checkbox-buttons/rich-checkbox-buttons
 include ../components/bullet-list/bullet-list
 include ../components/room-info/room-info
 include ../components/review/review
 
 block variables
   - var title = 'Form Elements'
+  - var parentClass = 'form-elements'
   - var checkboxArr = [{name: 'Можно курить', id: 'breakfast'}, {name: 'Можно с питомцами', id: 'pet'}, {name: 'Можно пригласить гостей (до 10 человек)', id: 'count'}]
   - var expandableCheckbox = [{name: 'Завтрак', id: 'smoke'}, {name: 'Письменный стол', id: 'table'}, {name: 'Стул для кормления', id: 'chair'}, {name: 'Кроватка', id: 'cot'}, {name: 'Телевизор', id: 'tv'}, {name: 'Шампунь', id: 'shampoo'}]
   - var roomItems = [{content: 'insert_emoticon', title: 'Комфорт', sub: 'Шумопоглощающие стены'}, {content: 'location_city', title: 'Удобство', sub: 'Окно в каждой из спален'}]
 block content
-  .form-elements
+  .form-elements__wrapper
     .container
       .column.column-mr-126
         +text-field({ title: 'Text field', placeholderText: 'Email' })
@@ -53,10 +54,7 @@ block content
       .column.column-expandable.column-mr-126
         +expandable-checkbox-list({ title: 'Expandable checkbox list', radios: expandableCheckbox })
       .column.column-mr-72
-        .field-wrapper.rich-checkbox-buttons
-          .field-wrapper__title.rich-checkbox__title Rich checkbox buttons
-          +rich-checkbox({name: 'Широкий коридор', id: 'corridor', subUpper: 'Ширина коридоров в номере', subLower: 'не менее 91 см.'})
-          +rich-checkbox({name: 'Помощник для инвалидов', id: 'helper', subUpper: 'На 1 этаже вас встретит специалист', subLower: 'и проводит до номера.'})
+        +rich-checkbox-buttons({ title: 'Rich checkbox buttons' })
       .column
         +bullet-list({title: 'Bullet list'})
       .column.column-mr-126

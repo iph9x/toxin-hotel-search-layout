@@ -23,6 +23,7 @@
 @import '@/pug/components/pagination/pagination.scss';
 @import '@/pug/components/expandable-checkbox-list/expandable-checkbox-list.scss';
 @import '@/pug/components/rich-checkbox/rich-checkbox.scss';
+@import '@/pug/components/rich-checkbox-buttons/rich-checkbox-buttons.scss';
 @import '@/pug/components/bullet-list/bullet-list.scss';
 @import '@/pug/components/room-info/room-info.scss';
 @import '@/pug/components/review/review.scss';
@@ -32,6 +33,8 @@
 @import '@/pug/components/login/login.scss';
 @import '@/pug/components/room-card/room-card.scss';
 @import '@/pug/components/nav/nav.scss';
+@import 'search-room.scss';
+@import 'room-details.scss';
 @import 'datepicker.css';
 
 *, *::before, *::after {
@@ -42,6 +45,7 @@ body{
   @include montserrat;
   color: $darkshade;
   margin: 0;
+  background: rgb(244, 244, 246);
 }
 
 ul, li {
@@ -60,6 +64,11 @@ h1 {
   font-weight: 700;
 }
 
+h2 {
+  font-size: $h2-font-size;
+  font-weight: 700;
+}
+
 button {
   @include montserrat;
   &:hover {
@@ -73,10 +82,32 @@ button {
   justify-content: space-between;
 }
 
+.main-container {
+  width: 1200px;
+  padding: 0 20px;
+}
+
 .colors-and-type {
+  background: #fff;
   .container {
     padding-left: 150px;
     padding-right: 158px;
+  }
+}
+
+.main-links {
+  @include flex-justify-c-align-c;
+  flex-direction: column;
+  row-gap: 20px;
+  padding: 30px 0;
+  a {
+    text-decoration: none;
+    color: $darkshade75;
+    &:active,
+    &:focus,
+    &:visited {
+      color: $darkshade75;
+    }
   }
 }
 
@@ -99,8 +130,9 @@ button {
 
 .field-wrapper {
   position: relative;
-  width: 320px;
+  width: 100%;
   margin-bottom: 20px;
+  max-width: 320px;
   @media (max-width: 340px) {
     max-width: 95vw;
   }
@@ -156,6 +188,7 @@ button {
 }
 
 .form-elements {
+  background: #fff;
   .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -288,7 +321,8 @@ button {
 .landing {
   background: url('../assets/img/landing.jpg') no-repeat center / cover;
   &-container {
-    max-width: 1160px;
+    max-width: 1200px;
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
     padding-top: 110px;

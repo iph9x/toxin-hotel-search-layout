@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 const path = require('path');
 const fs = require('fs');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
@@ -92,6 +93,20 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+        
+          from: `${path.resolve(__dirname, 'src/assets/img')}`,
+          to: `${path.resolve(__dirname, 'dist/assets/img')}`,
+          globOptions: {
+            dot: true,
+            gitignore: true,
+            ignore: ['.gitkeep']
+          }
+        }
+      ]
     })
   ],
   optimization: {

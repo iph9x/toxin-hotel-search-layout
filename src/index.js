@@ -4,7 +4,7 @@ import './assets/js/datepicker.js';
 import './styles/main.scss';
 import './pug/components/dropdown/dropdown.js';
 import './pug/components/rate-button/rate-button.js';
-// import './pug/components/range-slider/range-slider.js';
+import './pug/components/range-slider/range-slider.js';
 import './pug/components/expandable-checkbox-list/expandable-checkbox-list.js';
 import './pug/components/room-reservation/room-reservation.js';
 import './pug/components/header/header.js';

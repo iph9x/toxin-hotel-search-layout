@@ -14,6 +14,7 @@
   color: $white;
   font-weight: 700;
   line-height: 14.63px;
+  transition: .2s;
   &:focus, &:active {
     outline: none;
   }
@@ -22,6 +23,7 @@
   }
   &:hover {
     cursor: pointer;
+    opacity: 0.5;
   } 
   &-border {
     position: relative;
@@ -37,7 +39,7 @@
       background-clip: padding-box;
       background: #fff;
     }
-    &:disabled::after {
+    &:hover::after {
       opacity: 0.5;
     }
   }
@@ -53,7 +55,7 @@
   }
   &-fill {
     @include gradient;
-    &:disabled {
+    &:hover {
       opacity: 0.5;
     }
   }
@@ -62,8 +64,9 @@
     background: none;
     height: 15px;
     padding: 0;
-    &:disabled {
+    &:hover {
       color: $darkshade50;
+      opacity: 1;
     }
   }
 }

@@ -1,9 +1,9 @@
 mixin range-slider(props)
   - var minValue = 0
-  - var maxValue = 100000
-  - var step = maxValue / 100
+  - var maxValue = 15000
+  - var step = maxValue / 15
   
-  .field-wrapper.range-slider
+  .field-wrapper.range-slider#range-slider
     .range-slider__titles
       .field-wrapper__title= props.title
       .range-slider__range-box
@@ -17,5 +17,5 @@ mixin range-slider(props)
         span.range-slider__circle.range-slider__circle_left
         span.range-slider__circle.range-slider__circle_right
         .range-slider__track
-
-  script(src="/pug/components/range-slider/range-slider.js")
+    if props.note
+      .range-slider__note Стоимость за сутки пребывания в номере

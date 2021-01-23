@@ -1,0 +1,7 @@
+include ../rich-checkbox/rich-checkbox
+
+mixin rich-checkbox-buttons(props)
+  .field-wrapper.rich-checkbox-buttons
+    .field-wrapper__title.rich-checkbox__title= props.title
+    +rich-checkbox({name: 'Широкий коридор', id: 'corridor', subUpper: 'Ширина коридоров в номере', subLower: 'не менее 91 см.'})
+    +rich-checkbox({name: 'Помощник для инвалидов', id: 'helper', subUpper: 'На 1 этаже вас встретит специалист', subLower: 'и проводит до номера.'})

@@ -2,8 +2,10 @@ mixin room-info(props)
   - var items = props.items
 
   .room-info
-  each item in items
-   +room-info-item({content: item.content, title: item.title, sub: item.sub})
+    if props.title
+      .field-wrapper__title= props.title
+    each item in items
+      +room-info-item({content: item.content, title: item.title, sub: item.sub})
 
 mixin room-info-item(props)
  .room-info__item
