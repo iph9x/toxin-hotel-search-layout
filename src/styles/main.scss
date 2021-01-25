@@ -32,6 +32,7 @@
 @import '@/pug/components/room-reservation/room-reservation.scss';
 @import '@/pug/components/login/login.scss';
 @import '@/pug/components/room-card/room-card.scss';
+@import '@/pug/components/room-rating-chart/room-rating-chart.scss';
 @import '@/pug/components/nav/nav.scss';
 @import 'search-room.scss';
 @import 'room-details.scss';
@@ -336,6 +337,22 @@ button {
     color: $darkshade75;
 
   }
+}
+
+.login-page, .registration-page {
+  background: url('../assets/img/login-bg.jpg') no-repeat center / cover;
+  justify-content: center;
+  .container {
+    max-width: 380px;
+  }
+}
+
+.registration-page {
+  padding: 20px 0;
+}
+
+.login-page {
+  padding: 172px 0;
 }
 
 @import '@/pug/components/header/header.scss';

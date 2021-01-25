@@ -14,6 +14,7 @@
     height: 48px;
     border-radius: 50%;
     border: 2px solid #fff;
+    @include boxshadow10;
   }
   &__like {
     justify-items: center;

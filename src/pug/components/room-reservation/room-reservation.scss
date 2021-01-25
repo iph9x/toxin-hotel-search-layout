@@ -5,6 +5,10 @@
   .room__header {
     margin-bottom: 22px;
   }
+  .room__number {
+    font-size: $h1-font-size;
+    margin-right: 8px;
+  }
   .card-title {
     display: flex;
     align-items: flex-end;

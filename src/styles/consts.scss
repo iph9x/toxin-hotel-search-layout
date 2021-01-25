@@ -26,6 +26,10 @@ $nav-height: 70px;
   box-shadow: 0px 10px 20px $darkshade5;
 }
 
+@mixin boxshadow10 {
+  box-shadow: 0px 10px 20px $darkshade10;
+}
+
 @mixin gradient25 {
   background: linear-gradient(180deg, rgb(188, 156, 255, 0.25), rgb(139, 164, 249, 0.25));
 }

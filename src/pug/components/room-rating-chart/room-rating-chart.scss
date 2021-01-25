@@ -1,0 +1,59 @@
+.room-rating-chart {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  column-gap: 40px;
+  &__chart {
+    width: 124px;
+    margin-left: -2px;
+  }
+  &__legend {
+    margin-top: 28px;
+  }
+  &__label {
+    position: relative;
+    @include montserrat;
+    color: $darkshade75;
+    font-size: $body-font-size;
+    line-height: 24px;
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: -15px;
+      transform: translateY(-50%);
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    &:nth-child(1)::before {
+      background: linear-gradient(#FFE39C, #FFBA9C);
+    }
+    &:nth-child(2)::before {
+      background: linear-gradient(#6FCF97, #66D2EA);
+    }
+    &:nth-child(3)::before {
+      background: linear-gradient(#BC9CFF, #8BA4F9);
+    }
+    &:nth-child(4)::before {
+      background: linear-gradient(#919191, #3D4975);
+    }
+  }
+  &__count {
+    font-size: $h1-font-size;
+    line-height: 29px;
+    &-box {
+      position: absolute;
+      top: 38px;
+      left: 29px;
+      @include flex-justify-c-align-c;
+      flex-direction: column;
+      color: $purple;
+      font-weight: 700;
+    }
+    &-text {
+      font-size: $h3-font-size;
+      text-transform: uppercase;
+    }
+  }
+}
