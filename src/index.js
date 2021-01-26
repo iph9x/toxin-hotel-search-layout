@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import './assets/js/jquery.inputmask.min.js';
+import './assets/js/slick.min.js';
 import './assets/js/datepicker.js';
 import './assets/js/chart.min.js';
 import './styles/main.scss';
@@ -11,6 +12,7 @@ import './pug/components/room-reservation/room-reservation.js';
 import './pug/components/header/header.js';
 import './pug/components/like-button/like-button.js';
 import './pug/components/room-rating-chart/room-rating-chart.js';
+import './pug/components/room-card/room-slider.js';
 
 let maskDate = document.getElementsByClassName('date-dropdown__input');
 for (let i = 0; i < maskDate.length; i++) {

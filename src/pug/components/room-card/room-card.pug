@@ -5,15 +5,18 @@ mixin room-card(props)
     .room-card__slider.card-slider
       .card-slider__image-box
         img.card-slider__image(src=props.src)
-      .card-slider__prev
+        img.card-slider__image(src=props.src)
+        img.card-slider__image(src=props.src)
+        img.card-slider__image(src=props.src)
+      button(type='button').card-slider__prev.slick-prev
         span.material-icons expand_more
-      .card-slider__next
+      button(type='button').card-slider__next.slick-next
         span.material-icons expand_more
-      .card-slider__nav
-        .card-slider__circle.card-slider__circle_active
-        .card-slider__circle
-        .card-slider__circle
-        .card-slider__circle
+      //- .card-slider__nav
+      //-   button(type='button').card-slider__circle.card-slider__circle_active
+      //-   button(type='button').card-slider__circle
+      //-   button(type='button').card-slider__circle
+      //-   button(type='button').card-slider__circle
     .room-card__info-box
       .room__header
         h2.card-title
