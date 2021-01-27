@@ -12,6 +12,14 @@
   h2 {
     margin-bottom: 20px;
   }
+  .room-info__item {
+    max-width: 280px;
+  }
+  &__info {
+    h2 {
+      margin-bottom: 21px;
+    }
+  }
   img {
     object-fit: cover;
     width: 100%;
@@ -20,23 +28,32 @@
   &__container {
     max-width: 1200px;
     padding: 70px 20px;
+    padding-bottom: 62px;
     column-gap: 70px;
     flex-wrap: wrap;
   }
   &__info-wrapper {
     display: flex;
     flex-wrap: wrap;
-    column-gap: 70px;
+    column-gap: 81px;
     max-width: 710px;
   }
   &__rules {
-    width: 292px;
+    width: 280px;
+    .bullet-list {
+      margin-left: -1px;
+      margin-bottom: 0;
+    }
     h2 {
       padding-left: 20px;
+      margin-bottom: 18px;
     }
   }
   &__cancel {
     max-width: 340px;
+    h2 {
+      margin-bottom: 18px;
+    }
     p {
       font-size: $body-font-size;
       line-height: 24px;
@@ -44,16 +61,25 @@
       padding: 0;
     }
   }
+  .review {
+    margin-bottom: 23px;
+    transform: translate(-1px, 1px);
+    &:last-child {
+      margin-bottom: 19px;
+    }
+  }
   &__reviews {
     &-title {
-      @include flex-justify-sb-align-c;
+      display: flex;
+      justify-content: space-between;
+      h2 {
+        margin-left: -1px;
+      }
     }
     &-count{
       color: $darkshade50;
       font-size: $body-font-size;
+      padding-top: 5px;
     }
-  }
-  .review {
-    margin-bottom: 22px;
-  }
+  }  
 }

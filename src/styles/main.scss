@@ -88,6 +88,9 @@ button {
 .main-container {
   width: 1200px;
   padding: 0 20px;
+  @media (max-width: 1200px) {
+    width: 100%;
+  }
 }
 
 .colors-and-type {

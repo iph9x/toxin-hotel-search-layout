@@ -9,6 +9,7 @@
   }
   &__legend {
     margin-top: 28px;
+    padding-left: 3px;
   }
   &__label {
     position: relative;
@@ -41,10 +42,10 @@
   }
   &__count {
     font-size: $h1-font-size;
-    line-height: 29px;
+    line-height: 30px;
     &-box {
       position: absolute;
-      top: 38px;
+      top: 37px;
       left: 29px;
       @include flex-justify-c-align-c;
       flex-direction: column;

@@ -2,12 +2,22 @@
   .field-wrapper-guests {
     margin-bottom: 21px;
   }  
-  .room__header {
-    margin-bottom: 22px;
-  }
-  .room__number {
-    font-size: $h1-font-size;
-    margin-right: 8px;
+  .room {
+    &__header {
+      margin-bottom: 20px;
+      > div {
+        margin-right: 0;
+        padding-bottom: 2px;
+      }
+    }
+    &__number {
+      font-size: $h1-font-size;
+      margin-right: 8px;
+      padding-top: 1px;
+    }
+    &__lux {
+      padding-bottom: 3px;
+    }
   }
   .card-title {
     display: flex;
@@ -61,7 +71,7 @@
       font-size: $h2-font-size;
       color: $darkshade;
       font-weight: 700;
-      margin-bottom: 20px;
+      margin-bottom: 21px;
       span {
         flex: 1;
         background: linear-gradient(90deg, $darkshade25 1px, transparent 1px) repeat-x;
@@ -73,7 +83,6 @@
       }
     }  
     &-price {
-      margin-right: -9px;
       @media (max-width: 340px) {
         margin-right: 0;
       }
