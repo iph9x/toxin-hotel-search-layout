@@ -33,6 +33,9 @@
     grid-template-columns: minmax(auto, 240px) 1fr;
     color: $darkshade75;
     font-size: $body-font-size;
+    @media (max-width: 380px) {
+      grid-template-columns: 2fr 1fr;
+    }
     &:first-child {
       margin-bottom: 16px;
     }
@@ -49,9 +52,13 @@
   &__service {
     max-width: 215px;
     &-box {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 20px;
       justify-content: space-between;
       width: 239px;
+      @media (max-width: 380px) {
+        width: auto;
+      }
     }
   }
   &__info {

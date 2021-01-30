@@ -1,3 +1,6 @@
 .types-box {
   width: 436px;
+  @media (max-width: 436px) {
+    width: 100%;
+  }
 }

@@ -4,6 +4,8 @@
   padding-bottom: 70px;
   margin-bottom: 1px;
   &__container {
+    display: flex;
+    justify-content: center;
     column-gap: 60px;
     @media (max-width: 630px) {
       flex-wrap: wrap;

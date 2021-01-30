@@ -37,7 +37,6 @@
 @import 'search-room.scss';
 @import 'room-details.scss';
 @import 'datepicker.css';
-// @import 'slick-theme.css';
 @import 'slick.css';
 
 *, *::before, *::after {
@@ -81,8 +80,15 @@ button {
 
 .container {
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
+  // display: flex;
+  // justify-content: space-between;
+  padding: 0 20px;
+  @media (max-width: 1440px) {
+    padding: 0 5vw;
+  }
+  @media (max-width: 340px) {
+    padding: 0 3vw;
+  }
 }
 
 .main-container {
@@ -139,9 +145,9 @@ button {
   width: 100%;
   margin-bottom: 20px;
   max-width: 320px;
-  @media (max-width: 340px) {
-    max-width: 95vw;
-  }
+  // @media (max-width: 340px) {
+  //   max-width: 95vw;
+  // }
   &-rooms {
     width: 266px;
   }
@@ -181,11 +187,11 @@ button {
 }
 
 .date-container {
-  width: 320px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  @media (max-width: 340px) {
-    max-width: 95vw;
+  @media (max-width: 380px) {
+    column-gap: 5px;
   }
 }
 
@@ -215,10 +221,9 @@ button {
       grid-template-columns: 1fr;
     }
   }
-  .logo {
-    margin-bottom: 66px;
-  }
   .column {
+    max-width: 320px;
+    width: 320px;
     &-row {
       grid-column: 1 / 4;
       @media (max-width: 1100px) {
@@ -264,6 +269,7 @@ button {
 .card {
   &-title {
     margin-bottom: 21px;
+    font-size: $h1-font-size;
   }
   &-wrapper {
     background: #fff;
@@ -274,39 +280,32 @@ button {
     padding: 29px;
     padding-top: 39px;
     margin-bottom: 40px;
-    @media (max-width: 365px) {
-      padding: 10px;
-      padding-top: 20px;
-      padding-bottom: 20px;
+    width: 380px;
+    @media (max-width: 380px) {
+      padding-left: 15px;
+      padding-right: 15px;
+      width: 90vw;
     }
     @media (max-width: 340px) {
-      padding: 5px;
-      padding-top: 20px;
-      padding-bottom: 20px;
+      padding-left: 15px;
+      padding-right: 15px;
+      width: 94vw;
     }
   }
-
 }
 
 .cards {
   background: rgb(244, 244, 246);
   .logo-container {
-    padding: 23px 0 72px 30px;
+    padding: 23px 0 2px 30px;
   }
   .container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     column-gap: 40px;
     margin: 0 auto;
-    padding: 0 140px;
     max-width: 1440px;
-    @media (max-width: 1440px) {
-      padding: 0 5vw;
-    }
-    @media (max-width: 340px) {
-      padding: 0;
-    }
   }
 }
 
@@ -317,8 +316,13 @@ button {
   .container {
     padding: 0;
   }
+  .logo-container {
+    padding-bottom: 61px;
+  }
   .header {
     margin-bottom: 40px;
+    position: relative;
+    width: auto;
   }
 }
 
@@ -328,16 +332,20 @@ button {
   background: url('../assets/img/landing.jpg') no-repeat center / cover;
   &-container {
     max-width: 1200px;
-    padding: 0 20px;
     display: flex;
     flex-direction: column;
-    padding-top: 110px;
+    padding-top: 70px;
     padding-bottom: 20px;
-    row-gap: 320px;
+    padding-right: 14px;
+    row-gap: 277px;
+    @media (max-width: 900px) {
+      row-gap: 20vw;
+    }
   }
   &__tagline {
     align-self: flex-end;
     font-size: $body-font-size;
+    text-align: right;
     line-height: 24px;
     color: $darkshade75;
 
@@ -347,8 +355,10 @@ button {
 .login-page, .registration-page {
   background: url('../assets/img/login-bg.jpg') no-repeat center / cover;
   justify-content: center;
+  flex-direction: column;
   .container {
-    max-width: 380px;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -358,6 +368,14 @@ button {
 
 .login-page {
   padding: 172px 0;
+  @media (max-width: 1439px) {
+    padding: calc((100vh - 431px) / 2) 0;
+  }
+}
+
+main {
+  margin-top: 70px;
+  width: 100vw;
 }
 
 @import '@/pug/components/header/header.scss';
