@@ -1,0 +1,140 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body{
+  @include montserrat;
+  color: $darkshade;
+  margin: 0;
+  background: rgb(244, 244, 246);
+}
+
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3 {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-size: $h1-font-size;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: $h2-font-size;
+  font-weight: 700;
+}
+
+button {
+  @include montserrat;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  @media (max-width: 1440px) {
+    padding-right: 5vw;
+    padding-left: 5vw;
+  }
+  @media (max-width: 340px) {
+    padding-right: 3vw;
+    padding-left: 3vw;
+  }
+}
+
+.main-container {
+  width: 1200px;
+  @media (max-width: 1200px) {
+    width: 100%;
+  }
+}
+
+.main-links {
+  @include flex-justify-c-align-c;
+  flex-direction: column;
+  row-gap: 20px;
+  padding: 30px 0;
+  a {
+    text-decoration: none;
+    color: $darkshade75;
+    &:active,
+    &:focus,
+    &:visited {
+      color: $darkshade75;
+    }
+  }
+}
+
+.uikit {
+  min-height: 100vh;
+  &-container {
+    max-width: 1440px;    
+    @media (max-width: 1440px) {
+      padding: 0 10vw;
+    }
+    @media (max-width: 950px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    @media (max-width: 350px) {
+      padding: 0 3vw;
+    }
+  }
+}
+
+.field-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+  max-width: 320px;
+  &-rooms {
+    width: 266px;
+  }
+  &__input {
+    @include field;
+    @media (max-width: 340px) {
+      max-width: 95vw;
+    }
+    &_active {
+      border-color: $darkshade50;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.05));
+    }
+  }
+  &__title {
+    @include field-title;
+  }
+  &__arrow {
+    @include material-icons;
+    bottom: none;
+    top: 20px;
+    color: $darkshade50;
+    -webkit-user-select: none;
+    z-index: 4;
+    &:hover {
+      cursor: pointer;
+    }
+    &:hover + .field-wrapper__input {
+      border: 1px solid $darkshade50;
+    }
+  }
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+main {
+  margin-top: 70px;
+  width: 100%;
+}

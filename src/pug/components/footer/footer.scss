@@ -1,6 +1,6 @@
 .footer {
   font-size: $body-font-size;
-  width: 100vw;
+  width: 100%;
   &__main-row {
     background: #fff;
     margin-bottom: 1px;
@@ -12,15 +12,6 @@
   &__sec-row {
     background: #fff;
     @include boxshadow;
-  }
-  .container {
-    max-width: 1160px;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    @media (max-width: 1160px) {
-      padding: 0 20px;
-    }
   }
   &__wrapper {
     display: grid;

@@ -1,37 +1,13 @@
 extends ../layouts/main
-include ../components/room-info/room-info
-include ../components/review/review
-include ../components/bullet-list/bullet-list
 
 block variables
   - var title = 'Room details'
-  - var roomItems = [{content: 'insert_emoticon', title: 'Комфорт', sub: 'Шумопоглощающие стены'}, {content: 'location_city', title: 'Удобство', sub: 'Окно в каждой из спален'}, {content: 'whatshot', title: 'Уют', sub: 'Номер оснащен камином'}]
+
 block content
   main.room-details
-    .room-details__gallery
-      img.room-details__main-img(src='assets/img/details-lg.jpg', alt='')
-      img.room-details__sec-img(src='assets/img/details-m.jpg', alt='')
-      img.room-details__sec-img(src='assets/img/details-m-down.jpg', alt='')
+    include ../components/gallery/gallery
     .container.room-details__container
-      .room-details__info-wrapper
-        .room-details__info
-          h2 Сведения о номере
-          +room-info({items: roomItems})
-        .room-details__rating
-          h2 Впечатления от номера
-          include ../components/room-rating-chart/room-rating-chart
-        .room-details__reviews
-          .room-details__reviews-title
-            h2 Отзывы посетителей номера
-            .room-details__reviews-count 2 отзыва
-          +review({src: 'assets/img/avatar.jpg', name: 'Мурад Сарафaнов', date: '5 дней назад', text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'})
-          +review({src: 'assets/img/ava2.png', name: 'Патрисия Стёклышкова', date: 'Неделю назад', text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент'})
-        .room-details__rules
-          h2 Правила
-          +bullet-list({})
-        .room-details__cancel
-          h2 Отмена
-          p Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+      include ../components/room-info-block/room-info-block
       .room-details__reservation
         include ../components/room-reservation/room-reservation
 

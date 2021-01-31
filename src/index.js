@@ -13,6 +13,7 @@ import './pug/components/header/header.js';
 import './pug/components/like-button/like-button.js';
 import './pug/components/room-rating-chart/room-rating-chart.js';
 import './pug/components/room-card/room-slider.js';
+import './pug/components/filter-date-dropdown/filter-date-dropdown.js';
 
 let maskDate = document.getElementsByClassName('date-dropdown__input');
 for (let i = 0; i < maskDate.length; i++) {

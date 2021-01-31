@@ -1,125 +1,20 @@
 .room-details {
   background: #fff;
   margin-bottom: 1px;
-  .container {
-    padding-top: 70px;
-    padding-bottom: 61px;
-  }
-  &__gallery {
-    display: grid;
-    grid-template-columns: 68fr 32fr;
-    grid-template-rows: 1fr 1fr;
-    max-height: 485px;
-    height: 485px;
-    overflow: hidden;
-    @media (max-width: 780px) {
-      height: 30vh;
-      margin-bottom: 40px;
-    }
-  }
-  &__main-img {
-    grid-area: 1 / 1 / 3 / 2;
-    max-height: 485px;
-  }
-  &__sec-img {
-    &:nth-child(2) {
-      max-height: 243px;
-    }
-    &:nth-child(3) {
-      max-height: 242px;
-    }
-  }
   h2 {
     margin-bottom: 20px;
     @media (max-width: 720px) {
       text-align: center;       
     }
-  }
-  .room-info__item {
-    max-width: 280px;
-  }
-  &__info {
-    h2 {
-      margin-bottom: 21px;      
-    }
-  }
-  img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-  }
+  }  
   &__container {
     display: flex;
     justify-content: center;
     max-width: 1200px;
-    padding: 70px 20px;
-    padding-bottom: 62px;
+    padding-top: 70px;
+    padding-bottom: 61px;
     column-gap: 70px;
     row-gap: 70px;
     flex-wrap: wrap;
   }
-  &__info-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 81px;
-    max-width: 710px;
-    @media (max-width: 720px) {
-      column-gap: 20px;
-      row-gap: 50px;
-      justify-content: center;
-    }
-  }
-  &__rules {
-    width: 280px;
-    .bullet-list {
-      margin-left: -1px;
-      margin-bottom: 0;
-    }
-    h2 {
-      padding-left: 20px;
-      margin-bottom: 18px;
-      @media (max-width: 720px) {
-        padding: 0;
-      }
-    }
-  }
-  &__cancel {
-    max-width: 340px;
-    h2 {
-      margin-bottom: 18px;
-    }
-    p {
-      font-size: $body-font-size;
-      line-height: 24px;
-      color: $darkshade75;
-      padding: 0;
-    }
-  }
-  .review {
-    margin-bottom: 23px;
-    transform: translate(-1px, 1px);
-    &:last-child {
-      margin-bottom: 19px;
-    }
-  }
-  &__reviews {
-    &-title {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 20px;
-      @media (max-width: 420px) {
-        flex-direction: column;
-        align-items: center;
-      }
-      h2 {
-        margin-left: -1px;
-        margin-bottom: 0;
-      }
-    }
-    &-count{
-      color: $darkshade50;
-      font-size: $body-font-size;
-      padding-top: 5px;
-    }
-  }  
 }

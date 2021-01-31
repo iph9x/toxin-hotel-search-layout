@@ -1,0 +1,10 @@
+.colors-and-type {
+  background: #fff;
+  padding-top: 2px;
+  &-container {
+    padding-left: 150px;
+    padding-right: 158px;
+    display: flex;
+    justify-content: space-between;
+  }
+}

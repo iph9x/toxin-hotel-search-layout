@@ -1,0 +1,26 @@
+.filter {
+  width: 266px;
+  @media (max-width: 630px) {
+    align-items: center;
+    margin: 0 auto;
+  }
+  .filter-date-dropdown.field-wrapper {
+    margin-bottom: 20px;
+  }
+  .field-wrapper-guests {
+    margin-bottom: 31px;
+  }
+  .range-slider {
+    margin-bottom: 30px;
+  }
+  .rich-checkbox-buttons {
+    margin-bottom: 29px;
+  }
+  .checkbox-buttons {
+    max-width: 240px;
+    margin-bottom: 19px;
+  }
+  .field-wrapper-rooms {
+    margin-bottom: 15px;
+  }
+}

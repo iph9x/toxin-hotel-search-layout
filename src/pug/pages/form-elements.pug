@@ -25,9 +25,10 @@ block variables
   - var checkboxArr = [{name: 'Можно курить', id: 'breakfast'}, {name: 'Можно с питомцами', id: 'pet'}, {name: 'Можно пригласить гостей (до 10 человек)', id: 'count'}]
   - var expandableCheckbox = [{name: 'Завтрак', id: 'smoke'}, {name: 'Письменный стол', id: 'table'}, {name: 'Стул для кормления', id: 'chair'}, {name: 'Кроватка', id: 'cot'}, {name: 'Телевизор', id: 'tv'}, {name: 'Шампунь', id: 'shampoo'}]
   - var roomItems = [{content: 'insert_emoticon', title: 'Комфорт', sub: 'Шумопоглощающие стены'}, {content: 'location_city', title: 'Удобство', sub: 'Окно в каждой из спален'}]
+
 block content
-  .form-elements__wrapper
-    .container
+  section.form-elements__wrapper
+    .container.uikit-container.form-elements-container
       .column.column-mr-126
         +text-field({ title: 'Text field', placeholderText: 'Email' })
         +dropdown({ title: 'Dropdown', placeholderText: 'Сколько гостей', id: 'guests' })
@@ -59,6 +60,6 @@ block content
         +bullet-list({title: 'Bullet list'})
       .column.column-mr-126
         +room-info({items: roomItems})
-      .column.column-span-2
-        +review({src: '/assets/img/avatar.jpg', name: 'Мурад Сарафaнов', date: '5 дней назад', text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'})
+      .column-span-2
+        +review({src: 'assets/img/avatar.jpg', name: 'Мурад Сарафaнов', date: '5 дней назад', text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'})
       

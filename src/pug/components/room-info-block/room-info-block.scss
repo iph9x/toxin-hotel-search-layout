@@ -1,0 +1,72 @@
+.room-info-block {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 81px;
+  max-width: 710px;
+  .room-info__item {
+    max-width: 280px;
+  }
+  &__info {
+    h2 {
+      margin-bottom: 21px;      
+    }
+  }
+  &__rules {
+    width: 280px;
+    .bullet-list {
+      margin-left: -1px;
+      margin-bottom: 0;
+    }
+    h2 {
+      padding-left: 20px;
+      margin-bottom: 18px;
+      @media (max-width: 720px) {
+        padding: 0;
+      }
+    }
+  }
+  &__cancel {
+    max-width: 340px;
+    h2 {
+      margin-bottom: 18px;
+    }
+    p {
+      font-size: $body-font-size;
+      line-height: 24px;
+      color: $darkshade75;
+      padding: 0;
+    }
+  }
+  .review {
+    margin-bottom: 23px;
+    transform: translate(-1px, 1px);
+    &:last-child {
+      margin-bottom: 19px;
+    }
+  }
+  &__reviews {
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      @media (max-width: 420px) {
+        flex-direction: column;
+        align-items: center;
+      }
+      h2 {
+        margin-left: -1px;
+        margin-bottom: 0;
+      }
+    }
+    &-count{
+      color: $darkshade50;
+      font-size: $body-font-size;
+      padding-top: 5px;
+    }
+  }  
+  @media (max-width: 720px) {
+    column-gap: 20px;
+    row-gap: 50px;
+    justify-content: center;
+  }
+}
