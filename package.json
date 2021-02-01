@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "jquery": "^3.5.1",
-    "material-icons": "^0.5.1"
+    "material-icons": "^0.5.2",
+    "moment": "^2.29.1"
   }
 }

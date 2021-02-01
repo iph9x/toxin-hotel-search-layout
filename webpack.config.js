@@ -72,11 +72,26 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|svg|gif)$/,
-        use: ['file-loader'],
+        use: {
+          options: {
+            publicPath: '.',
+            name: '[name]-[contenthash].[ext]',
+          },
+          loader: 'file-loader'
+        },
       },
       {
         test: /\.(ttf|woff|svg|eot|woff2|otf)$/,
-        use: ['file-loader'],
+        use: [
+          {
+            options: {
+              publicPath: '.',
+              name: '[name].[ext]',
+            },
+            loader: 'file-loader'
+          },
+        ]
+       
       }
     ]
   },
@@ -104,7 +119,16 @@ module.exports = {
             gitignore: true,
             ignore: ['.gitkeep']
           }
-        }
+        },
+        // {
+        //   from: `${path.resolve(__dirname, 'src/assets/fonts')}`,
+        //   to: `${path.resolve(__dirname, 'dist/assets/fonts')}`,
+        //   globOptions: {
+        //     dot: true,
+        //     gitignore: true,
+        //     ignore: ['.gitkeep']
+        //   }
+        // }
       ]
     })
   ],
