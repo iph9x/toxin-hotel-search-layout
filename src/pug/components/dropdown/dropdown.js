@@ -75,6 +75,15 @@ $('.dropdown-arrow').on('click', (e) => {
   menuParent.find('.field-wrapper__input').toggleClass('field-wrapper__input_active');
 });
 
+$('.dropdown__apply').on('click', (e) => {
+  let menu =  $(e.target).parent().parent();
+  let menuParent = menu.parent();
+
+  menu.toggle();
+  menuParent.toggleClass('field-wrapper_active');
+  menuParent.find('.field-wrapper__input').toggleClass('field-wrapper__input_active');
+});
+
 let checkButtonState = () => {
   $('.dropdown__circle-btn_reduce').each((index, el) => {
     let counter = $(el).next();

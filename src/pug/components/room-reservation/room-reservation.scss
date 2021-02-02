@@ -113,6 +113,11 @@
   border: 1px solid rgba(0, 0, 0, 0.25);
   @include boxshadow;
   @include montserrat;
+  @media (max-width: 380px) {
+    width: 287px;
+    padding-right: 3px;
+    padding-left: 3px;
+  }
   &--nav {
     border-bottom: 0;
     padding: 0;
