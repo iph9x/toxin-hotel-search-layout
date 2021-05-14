@@ -11,7 +11,7 @@ mixin header(props)
         include ../nav/nav
         if props.isAuth
           .header__profile-wrapper 
-            a.header__profile-link(href='/blank.html') Юлий Цезарь
+            a.header__profile-link(href="/blank.html") Юлий Цезарь
         else
           .header__auth-box
             +button({ text: 'Войти', class: 'button-border' })
