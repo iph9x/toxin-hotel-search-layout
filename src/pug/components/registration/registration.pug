@@ -4,17 +4,18 @@ include ../radio-buttons/radio-buttons
 include ../toggle/toggle
 include ../button/button
 
-.registration.card-wrapper
+form(action="").registration.card-wrapper
   h2.card-title Регистрация аккаунта
-  +text-field({ placeholderText: 'Имя' })
-  +text-field({ placeholderText: 'Фамилия' })
-  +radio-buttons({})
-  +masked-text-field({ title: 'Дата рождения', placeholderText: 'ДД.ММ.ГГГГ' })
-  +text-field({ title: 'Данные для входа в сервис', placeholderText: 'Email' })
-  +text-field({ placeholderText: 'Пароль' })
-  +toggle({ id: 'suggestions', text: 'Получать спецпредложения' })
-  +button({ text: 'Перейти к оплате', class: 'button-fill button-main' })
-  .registration__login-wrapper
-    span Уже есть аккаунт на Toxin
-    +button({ text: 'Войти', class: 'button-border' })
+  form(action="")
+    +text-field({ placeholderText: 'Имя' })
+    +text-field({ placeholderText: 'Фамилия' })
+    +radio-buttons({})
+    +masked-text-field({ title: 'Дата рождения', placeholderText: 'ДД.ММ.ГГГГ' })
+    +text-field({ title: 'Данные для входа в сервис', placeholderText: 'Email' })
+    +text-field({ placeholderText: 'Пароль' })
+    +toggle({ id: 'suggestions', text: 'Получать спецпредложения' })
+    +button({ text: 'Перейти к оплате', class: 'button-fill button-main' })
+    .registration__login-wrapper
+      span Уже есть аккаунт на Toxin
+      +button({ text: 'Войти', class: 'button-border' })
 

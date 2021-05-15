@@ -31,6 +31,9 @@
   &__rating {
     margin-top: 9px;
     @include flex-justify-sb-align-c;
+    .rate-button__star:hover {
+      cursor: default;
+    }
   }
   &__reviews-box {
     font-size: $body-font-size;

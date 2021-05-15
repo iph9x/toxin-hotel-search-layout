@@ -2,7 +2,7 @@ include ../dropdown/dropdown
 include ../date-dropdown/date-dropdown
 include ../button/button
 
-.room-selection.card-wrapper
+form(action="").room-selection.card-wrapper
   h2.card-title Найдём номера под ваши пожелания
   .date-container
     +date-dropdown({ title: 'Прибытие', id: 'date-in', main: true})
