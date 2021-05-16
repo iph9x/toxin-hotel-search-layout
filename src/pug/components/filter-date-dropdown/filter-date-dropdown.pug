@@ -3,10 +3,6 @@ mixin filter-date-dropdown(props)
     if props.title
       .field-wrapper__title= props.title
     .field-wrapper__arrow.dropdown-arrow expand_more
-    input(type="text" id="filter-date-dropdown" placeholder=props.placeholderText class="dropdown field-wrapper__input datepicker-here" data-range="true" value=`${props.dateIn} - ${props.dateOut}`)
-  
-
-      
-  //- script(src="/pug/components/dropdown/dropdown.js" type="module")
+    input(type="text" id="filter-date-dropdown" readonly placeholder=props.placeholderText class="dropdown field-wrapper__input datepicker-here" data-range="true" value=`${props.dateIn} - ${props.dateOut}`)
 
   

@@ -47,6 +47,12 @@ let createDropdownObj = () => {
       };
 
       createObj(itemsObj);
+
+      let { bedrooms, bed, bathrooms } = itemsObj;
+      let bedroomsVal = `${bedrooms} спальни`;
+      let bedVal = bed > 0 ? `, ${bed} кровати` : '';
+      let bathsVal = bathrooms > 0 ? `, ${bathrooms} ванных комнат` : '';
+      input.val(`${bedroomsVal}${bedVal}${bathsVal}`);
     }
   })
 }
@@ -108,7 +114,7 @@ $('.dropdown__circle-btn_reduce').on('click', (e) => {
 });
 
 $('.dropdown__circle-btn_increase').on('click', (e) => {
-  let target =  $(e.target);
+  let target = $(e.target);
   let counter = target.prev();
   let count = Number.parseInt(counter.text());
 

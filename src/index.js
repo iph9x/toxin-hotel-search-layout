@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import './assets/favicons/favicon';
 import './assets/js/jquery.inputmask.min.js';
 import './assets/js/slick.min.js';
 import './assets/js/datepicker.js';

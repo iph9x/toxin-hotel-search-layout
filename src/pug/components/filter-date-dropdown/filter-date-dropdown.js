@@ -5,10 +5,12 @@ let filterDrodown = $('#filter-date-dropdown').datepicker({
   multipleDatesSeparator: ' - '
 }).data('datepicker');
 
-$('.datepicker--apply').on('click', () => {
-  filterDrodown.hide()
-});
-
-$('.datepicker--clear').on('click', () => {
-  filterDrodown.clear()
-});
+if (!!filterDrodown) {
+  $('.datepicker--apply').on('click', () => {
+    filterDrodown.hide()
+  });
+  
+  $('.datepicker--clear').on('click', () => {
+    filterDrodown.clear()
+  });
+}

@@ -75,7 +75,7 @@ module.exports = {
         use: {
           options: {
             publicPath: '.',
-            name: '[name]-[contenthash].[ext]',
+            name: 'assets/img/[name]-[contenthash].[ext]',
           },
           loader: 'file-loader'
         },
@@ -86,7 +86,7 @@ module.exports = {
           {
             options: {
               publicPath: '.',
-              name: '[name].[ext]',
+              name: 'assets/fonts/[name].[ext]',
             },
             loader: 'file-loader'
           },
@@ -120,15 +120,6 @@ module.exports = {
             ignore: ['.gitkeep']
           }
         },
-        // {
-        //   from: `${path.resolve(__dirname, 'src/assets/fonts')}`,
-        //   to: `${path.resolve(__dirname, 'dist/assets/fonts')}`,
-        //   globOptions: {
-        //     dot: true,
-        //     gitignore: true,
-        //     ignore: ['.gitkeep']
-        //   }
-        // }
       ]
     })
   ],

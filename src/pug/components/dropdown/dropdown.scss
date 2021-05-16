@@ -5,6 +5,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
 .field-wrapper {
   .dropdown {
     padding-bottom: 2px;
+    padding-right: 40px;
     &::placeholder {
       color: $darkshade75;
     }
