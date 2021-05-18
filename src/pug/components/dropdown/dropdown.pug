@@ -3,7 +3,7 @@ mixin dropdown(props)
   div(class=wrapperClassName)
     if props.title
       .field-wrapper__title= props.title
-    .field-wrapper__arrow.dropdown-arrow expand_more
+    .field-wrapper__arrow.js-dropdown-arrow expand_more
     input(type="text" placeholder=props.placeholderText class="dropdown field-wrapper__input" readonly)
     if (props.id === 'rooms')
       .dropdown__menu(id = props.id)

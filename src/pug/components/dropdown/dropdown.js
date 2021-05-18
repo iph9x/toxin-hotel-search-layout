@@ -72,7 +72,7 @@ $('.dropdown__clear').on('click', e => {
 
 
 
-$('.dropdown-arrow').on('click', (e) => {
+$('.js-dropdown-arrow').on('click', (e) => {
   let menu =  $(e.target).next().next();
   let menuParent = menu.parent();
 

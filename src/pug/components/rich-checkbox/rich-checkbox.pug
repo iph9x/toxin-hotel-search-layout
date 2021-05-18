@@ -1,7 +1,7 @@
 mixin rich-checkbox(props)
-  .checkbox-buttons__item.rich-checkbox 
-    input(type="checkbox" placeholder=props.placeholderText class="checkbox-buttons__button rich-checkbox checkbox" id=props.id value=props.name name=props.id)
-    label(for=props.id)= props.name
+  .checkbox.rich-checkbox 
+    input(type="checkbox" placeholder=props.placeholderText class="checkbox__input rich-checkbox__input" id=props.id value=props.name name=props.id)
+    label(for=props.id class="checkbox__label")= props.name
     .rich-checkbox__sub
       | #{props.subUpper}
       br

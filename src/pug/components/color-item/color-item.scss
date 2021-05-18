@@ -5,13 +5,6 @@
   align-items: center;
   margin-bottom: 20px;
   font-size: $h2-font-size;
-  &__title {
-    font-weight: 700;
-    margin-bottom: 5px;
-  }
-  &__hex {
-    font-weight: 400;
-  }
   &__icon {
     width: 70px;
     height: 70px;
@@ -43,5 +36,12 @@
     &_green {
       background: $green;
     }
+  }
+  &__title {
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  &__hex {
+    font-weight: 400;
   }
 }
