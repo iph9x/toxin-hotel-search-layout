@@ -1,3 +1,5 @@
+include ../checkbox/checkbox
+
 mixin expandable-checkbox-list(props)
   -
     var radios = props.radios;
@@ -8,8 +10,5 @@ mixin expandable-checkbox-list(props)
       .field-wrapper__arrow.expandable-checkbox-list__arrow expand_more
     .checkbox-buttons__items
       each radio in radios
-       .checkbox-buttons__item
-          input(type="checkbox" placeholder=props.placeholderText class="checkbox-buttons__button" id=radio.id value=radio.name name=radio.id)
-          label(for=radio.id)= radio.name
-
+        +checkbox({ name: radio.name, id: radio.id, placeholder: props.placeholder })
   

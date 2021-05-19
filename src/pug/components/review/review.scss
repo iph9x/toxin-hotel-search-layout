@@ -16,12 +16,12 @@
     border: 2px solid #fff;
     @include boxshadow10;
   }
+  &__name {
+    font-weight: 700;
+  }
   &__like {
     justify-items: center;
     margin-left: 4px;
     margin-top: 2px;
-  }
-  &__name {
-    font-weight: 700;
   }
 }

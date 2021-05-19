@@ -2,7 +2,7 @@
   width: 236px;
   transform: translateX(30px);
   margin-bottom: 9px;
-  .checkbox__label {
+  &__label {
     color: $darkshade75;
     font-weight: 700;
     font-size: 14px;

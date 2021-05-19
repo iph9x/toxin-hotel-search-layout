@@ -23,23 +23,30 @@
     }
   }
   &__link {
-    height: 100%;
     display: flex;
     place-items: center;
-    transition: .2s;
+    height: 100%;
     padding: 0 10px;
+    text-decoration: none;
+    font-size: $body-font-size;
+    color: $darkshade50;
+    transition: .2s;
     &:hover {
       background: darken(#fff, 2%);
+    }
+    &_active {
+      font-weight: 700;
+      color: $darkshade75;
     }
   }
   &__item-submenu {
     position: relative;
     @include flex-justify-sb-align-c;
-    &:hover .nav__submenu {
-      display: flex;
-    }
     @media (max-width: 950px) {
       flex-direction: column;
+    }
+    &:hover .nav__submenu {
+      display: flex;
     }
     > .nav__link {
       &::after {
@@ -52,16 +59,6 @@
         line-height: 1;
         color: $darkshade50;
       }
-    }
-    
-  }
-  &__link {
-    font-size: $body-font-size;
-    color: $darkshade50;
-    text-decoration: none;
-    &_active {
-      font-weight: 700;
-      color: $darkshade75;
     }
   }
   &__submenu {

@@ -16,19 +16,19 @@
   .masked-text-field {
     margin-bottom: 10px;
   }
+  .toggle {
+    margin-top: -2px;
+  }
   .button-main {
     margin-top: 16px;
     margin-bottom: 30px;
   }
-  .toggle {
-    margin-top: -2px;
-  }
   &__login-wrapper {
     @include flex-justify-sb-align-c;
-    > span {
-      font-size: $body-font-size;
-      margin-left: 1px;
-      margin-top: -2px;
-    }
+  }
+  &__already-reg {
+    font-size: $body-font-size;
+    margin-left: 1px;
+    margin-top: -2px;
   }
 }

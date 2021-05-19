@@ -1,19 +1,19 @@
 .login {
   background: #fff;
   width: 100%;
-  .button-main {
-    margin-bottom: 30px;
-  }
   .field-wrapper {
     &:nth-of-type(1) {
       margin-bottom: 10px;
     }
   }
+  .button-main {
+    margin-bottom: 30px;
+  }
   &__registration-wrapper {
     @include flex-justify-sb-align-c;
-    > span {
-      font-size: $body-font-size;
-    }
+  }
+  &__no-account {
+    font-size: $body-font-size;
   }
 }
 

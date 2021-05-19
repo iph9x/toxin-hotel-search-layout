@@ -5,6 +5,10 @@
   max-height: 485px;
   height: 485px;
   overflow: hidden;
+  @media (max-width: 780px) {
+    height: 30vh;
+    margin-bottom: 40px;
+  }
   &__img {
     object-fit: cover;
     width: 100%;
@@ -21,9 +25,5 @@
     &:nth-child(3) {
       max-height: 242px;
     }
-  }
-  @media (max-width: 780px) {
-    height: 30vh;
-    margin-bottom: 40px;
   }
 }

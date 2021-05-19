@@ -9,26 +9,6 @@
       margin-bottom: 0;
     }
   }
-  &__box {
-    width: 266px !important;
-    position: relative;
-    height: 6px;
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      border-radius: 3px;
-      border: 1px solid $darkshade25;
-    }
-  }
-  &__wrapper {
-    position: relative;
-    height: 6px;
-    margin: 0 6px;    
-  }  
   &__range-box {
     color: $darkshade50;
     font-size: $h3-font-size;
@@ -43,6 +23,21 @@
     }
     &::after {
       content: '\20BD';
+    }
+  }
+  &__box {
+    width: 266px !important;
+    position: relative;
+    height: 6px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 3px;
+      border: 1px solid $darkshade25;
     }
   }
   &__input {
@@ -68,16 +63,11 @@
       } 
     }
   }
-  &__track {
-    position: absolute;
-    top: 0;
-    left: 25%;
-    right: 25%;
+  &__wrapper {
+    position: relative;
     height: 6px;
-    z-index: 1;
-    border-radius: 6px;
-    @include blue-green-gradient;
-  }
+    margin: 0 6px;    
+  }  
   &__circle {
     position: absolute;
     z-index: 2;
@@ -94,6 +84,16 @@
       right: 25%;
       transform: translate(6px, -3px)
     }
+  }
+  &__track {
+    position: absolute;
+    top: 0;
+    left: 25%;
+    right: 25%;
+    height: 6px;
+    z-index: 1;
+    border-radius: 6px;
+    @include blue-green-gradient;
   }
   &__note {
     font-size: $h3-font-size;

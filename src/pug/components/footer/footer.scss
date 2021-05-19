@@ -9,10 +9,6 @@
       display: none;
     }
   }
-  &__sec-row {
-    background: #fff;
-    @include boxshadow;
-  }
   &__wrapper {
     display: grid;
     grid-template-columns: 7fr 5fr 3fr 6fr 7fr;
@@ -37,6 +33,15 @@
       }
     }
   }
+  .logo__box {
+    margin-bottom: 10px;
+  }
+  &__text {
+    line-height: 24px;
+    color: $darkshade75;
+    margin-top: 7px;
+    margin-bottom: 22px;
+  }
   &__section {
     margin-top: 4px;
     margin-bottom: 11px;
@@ -50,15 +55,6 @@
       color: $darkshade;
     }
   }
-  .logo__box {
-    margin-bottom: 10px;
-  }
-  &__text {
-    line-height: 24px;
-    color: $darkshade75;
-    margin-top: 7px;
-    margin-bottom: 22px;
-  }
   &__item {
     color: $darkshade50;
     margin: 10px 0;
@@ -66,6 +62,10 @@
   }
   .subscription-text-field.field-wrapper {
     width: 100%;
+  }
+  &__sec-row {
+    background: #fff;
+    @include boxshadow;
   }
   &__copyright {
     font-size: $body-font-size;

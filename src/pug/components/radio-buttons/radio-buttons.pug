@@ -7,6 +7,4 @@ mixin radio-buttons(props)
       each radio in radios
        .radio-buttons__item
           input(type="radio" class="radio-buttons__button" id=radio.id value=radio.text name="sex")
-          label(for=radio.id)= radio.text
-
-  
+          label(for=radio.id class="radio-buttons__label")= radio.text
