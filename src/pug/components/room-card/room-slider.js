@@ -1,12 +1,10 @@
-$('.card-slider__image-box').each((key, item) => {
-  let sliderIdName =  'slider' + key;
+$('.room-card__image-box').each((key, item) => {
+  const sliderIdName =  'slider' + key;
   item.id = sliderIdName;
 
-  let nextAr = $(item).parent().find('.card-slider__next');
-  let prevAr = $(item).parent().find('.card-slider__prev');
-  let sliderId = '#' + sliderIdName;
-
-
+  const nextAr = $(item).parent().find('.room-card__next-slide');
+  const prevAr = $(item).parent().find('.room-card__prev-slide');
+  const sliderId = '#' + sliderIdName;
   
   $(sliderId).slick({
     dots: true,

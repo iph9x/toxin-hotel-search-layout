@@ -4,101 +4,15 @@
   border-radius: 4px;
   margin-bottom: 40px;
   @include boxshadow;
-  &__info-box {
-    padding: 19px 20px;
+  &__slider {
+    height: 152px;
+    position: relative;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    overflow: hidden;
   }
-  .field-wrapper {
-    margin-bottom: 0;
-  }
-  .card-title {
-    margin-bottom: 0;
-    display: flex;
-  }
-  .room__header {
-    margin-bottom: 0;
-    border-bottom: 1px solid $darkshade10;
-    padding-bottom: 10px;
-  }
-  .rate-button__item {
-    margin-top: 0;
-  }
-  .room__number {
-    font-size: $h2-font-size;
-  }
-  .room__lux {
-    font-size: $h3-font-size;
-  }
-  &__rating {
-    margin-top: 9px;
-    @include flex-justify-sb-align-c;
-    .rate-button__star:hover {
-      cursor: default;
-    }
-  }
-  &__reviews-box {
-    font-size: $body-font-size;
-    color: $darkshade50;
-    margin-top: 1px;
-  }
-  &__reviews-count {
-    font-weight: 700;
-    margin-right: 4px;
-  }
-}
-
-.room {
-  &__header {
-    @include flex-justify-sb-align-end;
-    margin-bottom: 20px;
-    > div {
-      display: flex;
-      align-items: flex-end;
-      padding-bottom: 1px;    
-      margin-right: -3px;
-    }
-  }
-  &__lux {
-    color: $purple;
-    font-size: $h3-font-size;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding-top: 8px;
-    display: inline-block;
-  }
-  &__number {
-    margin-right: 8px;
-    &::before {
-      content: '№';
-      margin-right: 4px;
-      font-size: $body-font-size;
-      font-weight: 700;
-    }
-  }
-  &__day-price {
-    margin-right: 4px;
-    font-size: $body-font-size;
-    font-weight: 700;
-    color: $darkshade50;
-    &::after {
-      content: '\20BD';
-    }
-  }
-  &__time {
-    color: $darkshade50;
-    font-size: $h3-font-size;
-    margin-bottom: 1px;
-    display: flex;
-  }
-}
-
-.card-slider {
-  height: 152px;
-  position: relative;
-  border-top-right-radius: 4px;
-  border-top-left-radius: 4px;
-  overflow: hidden;
-  &__prev,
-  &__next {
+  &__prev-slide,
+  &__next-slide {
     display: grid;
     place-items: center;
     opacity: 0;
@@ -122,28 +36,28 @@
       outline: none;
       border: none;
     }
-    span {
-      display: grid;
-      place-items: center;
-      width: 42px;
-      height: 42px;
-    }
   }
-  &__prev {
+  &__prev-slide {
     left: 0;
     border-top-left-radius: 4px;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
-    span {
+    .room-card__icon {
       transform: translateX(1px) rotate(90deg);
     }
   }
-  &__next {
+  &__next-slide {
     right: 0;
     border-top-right-radius: 4px;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
-    span {
+    .room-card__icon {
       transform: translateX(-1px) rotate(-90deg);
     }
+  }
+  &__icon {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
   }
   &__image {
     object-fit: cover;
@@ -223,5 +137,79 @@
   }
   .slick-active button::before {
     background: #fff;
+  }
+  &__info-box {
+    padding: 19px 20px;
+  }
+  .field-wrapper {
+    margin-bottom: 0;
+  }
+  &__title {
+    margin-bottom: 0;
+    display: flex;
+  }
+  &__header {
+    @include flex-justify-sb-align-end;
+    margin-bottom: 0;
+    border-bottom: 1px solid $darkshade10;
+    padding-bottom: 10px;    
+  }
+  &__price-box {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 1px;    
+    margin-right: -3px;
+  }
+  &__lux {
+    color: $purple;
+    font-size: $h3-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-top: 8px;
+    display: inline-block;
+  }
+  &__number {
+    font-size: $h2-font-size;
+    margin-right: 8px;
+    &::before {
+      content: '№';
+      margin-right: 4px;
+      font-size: $body-font-size;
+      font-weight: 700;
+    }
+  }
+  &__day-price {
+    margin-right: 4px;
+    font-size: $body-font-size;
+    font-weight: 700;
+    color: $darkshade50;
+    &::after {
+      content: '\20BD';
+    }
+  }
+  &__time {
+    color: $darkshade50;
+    font-size: $h3-font-size;
+    margin-bottom: 1px;
+    display: flex;
+  }  
+  .rate-button__item {
+    margin-top: 0;
+  }
+  &__rating {
+    margin-top: 9px;
+    @include flex-justify-sb-align-c;
+    .rate-button__star:hover {
+      cursor: default;
+    }
+  }
+  &__reviews-box {
+    font-size: $body-font-size;
+    color: $darkshade50;
+    margin-top: 1px;
+  }
+  &__reviews-count {
+    font-weight: 700;
+    margin-right: 4px;
   }
 }

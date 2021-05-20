@@ -14,13 +14,13 @@ mixin note(props)
     span.room-reservation__price= props.price
 
 form(action="").room-reservation.card-wrapper
-  .room__header
+  .room-card__header
     h2.card-title
-      span.room__number 888
-      span.room__lux люкс
-    div
-      span.room__day-price 9 990
-      span.room__time в сутки
+      span.room-card__number 888
+      span.room-card__lux люкс
+    div.room-card__price-box
+      span.room-card__day-price 9 990
+      span.room-card__time в сутки
   .date-container
     +date-dropdown({ title: 'Прибытие', id: 'date-in', main: true})
     +date-dropdown({ title: 'Выезд', id: 'date-out'})
@@ -31,7 +31,7 @@ form(action="").room-reservation.card-wrapper
     +note({ title: 'Сбор за дополнительные услуги', price: '300', info: 'Сбор за дополнительные услуги' })
   .room-reservation__total-wrapper
     .room-reservation__label Итого
-    span
+    .room-reservation__space
     .room-reservation__total-price 38 081
   +button({ text: 'Забронировать', class: 'button-fill button-main' })
 

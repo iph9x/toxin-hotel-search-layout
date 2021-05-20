@@ -1,6 +1,7 @@
 mixin bullet-list(props)
-  .field-wrapper.bullet-list
-    .field-wrapper__title= props.title
+  .field-wrapper.bullet-list(class=props.className)
+    if props.title
+      .field-wrapper__title= props.title
     ul.bullet-list__ul
       +bullet-item({ text: 'Нельзя с питомцами' })
       +bullet-item({ text: 'Без вечеринок и мероприятий' })

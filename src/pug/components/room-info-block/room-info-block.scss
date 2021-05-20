@@ -3,38 +3,47 @@
   flex-wrap: wrap;
   column-gap: 81px;
   max-width: 710px;
+  @media (max-width: 720px) {
+    column-gap: 20px;
+    row-gap: 50px;
+    justify-content: center;
+  }
+  &__title {
+    @media (max-width: 720px) {
+      text-align: center;       
+    }
+  }  
+  &__info {
+    &-title {
+      margin-bottom: 21px;
+    }
+  }
   .room-info__item {
     max-width: 280px;
   }
-  &__info {
-    h2 {
-      margin-bottom: 21px;      
+  &__rating {
+    &-title {
+      margin-bottom: 20px;
     }
   }
-  &__rules {
-    width: 280px;
-    .bullet-list {
-      margin-left: -1px;
+  &__reviews {
+    &-title {
+      &-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        @media (max-width: 420px) {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+      transform: translateX(-1px);
       margin-bottom: 0;
     }
-    h2 {
-      padding-left: 20px;
-      margin-bottom: 18px;
-      @media (max-width: 720px) {
-        padding: 0;
-      }
-    }
-  }
-  &__cancel {
-    max-width: 340px;
-    h2 {
-      margin-bottom: 18px;
-    }
-    p {
+    &-count {
+      color: $darkshade50;
       font-size: $body-font-size;
-      line-height: 24px;
-      color: $darkshade75;
-      padding: 0;
+      padding-top: 5px;
     }
   }
   .review {
@@ -44,29 +53,30 @@
       margin-bottom: 19px;
     }
   }
-  &__reviews {
+  &__rules {
+    width: 280px;
     &-title {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 20px;
-      @media (max-width: 420px) {
-        flex-direction: column;
-        align-items: center;
-      }
-      h2 {
-        margin-left: -1px;
-        margin-bottom: 0;
+      padding-left: 20px;
+      margin-bottom: 18px;
+      @media (max-width: 720px) {
+        padding: 0;
       }
     }
-    &-count{
-      color: $darkshade50;
+  }
+  &__bullet-list {
+    transform: translateX(-1px);
+    margin-bottom: 0;
+  }
+  &__cancel {
+    max-width: 340px;
+    &-title {
+      margin-bottom: 18px;
+    }
+    &-par {
       font-size: $body-font-size;
-      padding-top: 5px;
+      line-height: 24px;
+      color: $darkshade75;
+      padding: 0;
     }
-  }  
-  @media (max-width: 720px) {
-    column-gap: 20px;
-    row-gap: 50px;
-    justify-content: center;
   }
 }

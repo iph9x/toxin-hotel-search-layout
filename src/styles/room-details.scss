@@ -1,12 +1,6 @@
 .room-details {
   background: #fff;
   margin-bottom: 1px;
-  h2 {
-    margin-bottom: 20px;
-    @media (max-width: 720px) {
-      text-align: center;       
-    }
-  }  
   &__container {
     display: flex;
     justify-content: center;

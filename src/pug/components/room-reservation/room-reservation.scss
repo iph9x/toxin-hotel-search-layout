@@ -2,13 +2,11 @@
   .field-wrapper-guests {
     margin-bottom: 21px;
   }
-  .room {
+  .room-card {
     &__header {
       margin-bottom: 20px;
-      > div {
-        margin-right: 0;
-        padding-bottom: 2px;
-      }
+      padding-bottom: 0;
+      border: 0;
     }
     &__number {
       font-size: $h1-font-size;
@@ -17,6 +15,10 @@
     }
     &__lux {
       padding-bottom: 3px;
+    }
+    &__price-box {
+      margin-right: 0;
+      padding-bottom: 2px;
     }
   }
   .card-title {
@@ -43,12 +45,6 @@
       margin-bottom: 14px;
     }
   }
-  &__price {
-    justify-self: end;
-    &::after {
-      content: '\20BD'
-    }
-  }
   &__service {
     max-width: 215px;
     &-box {
@@ -72,6 +68,12 @@
     font-size: $h3-font-size;
     font-weight: 700 ;
   }
+  &__price {
+    justify-self: end;
+    &::after {
+      content: '\20BD'
+    }
+  }
   &__total {
     &-wrapper {
       display: flex;
@@ -79,15 +81,6 @@
       color: $darkshade;
       font-weight: 700;
       margin-bottom: 21px;
-      span {
-        flex: 1;
-        background: linear-gradient(90deg, $darkshade25 1px, transparent 1px) repeat-x;
-        height: 1px;
-        align-self: flex-end;
-        background-size: 2px;
-        margin: 0 5px;
-        margin-bottom: 4px;
-      }
     }  
     &-price {
       @media (max-width: 340px) {
@@ -100,6 +93,15 @@
   }
   &__label {
     padding-left: 1px;
+  }
+  &__space {
+    flex: 1;
+    background: linear-gradient(90deg, $darkshade25 1px, transparent 1px) repeat-x;
+    height: 1px;
+    align-self: flex-end;
+    background-size: 2px;
+    margin: 0 5px;
+    margin-bottom: 4px;
   }
 }
 
