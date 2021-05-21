@@ -5,9 +5,10 @@
   grid-template-columns: 37px 1fr;
   column-gap: 30px;
   margin-bottom: 52px;
-  &__title {
-    justify-self: end;
-    color: $darkshade25;
+  &:not(.type-item_body) {
+    .type-item__desc {
+      font-weight: 700;
+    }
   }
   &_h1 {
     font-size: $h1-font-size;
@@ -26,11 +27,6 @@
       text-transform: uppercase;
     }
   }
-  &:not(.type-item_body) {
-    .type-item__desc {
-      font-weight: 700;
-    }
-  }
   &_body {
     font-size: $body-font-size;
     line-height: 24px;
@@ -38,5 +34,9 @@
       max-width: 301px;
       color: $darkshade75;
     }
+  }
+  &__title {
+    justify-self: end;
+    color: $darkshade25;
   }
 }

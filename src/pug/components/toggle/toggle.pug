@@ -4,6 +4,4 @@ mixin toggle(props)
       .field-wrapper__title= props.title
     .toggle__item
       input(type="checkbox" class="toggle__button" id=props.id value=props.id name=props.id)
-      label(for=props.id)= props.text
-
-  
+      label(for=props.id class="toggle__label")= props.text

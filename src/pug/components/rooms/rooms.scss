@@ -2,9 +2,6 @@
 .rooms {
   flex: 1;
   min-width: 280px;
-  .room-card {
-    margin-bottom: 0;
-  }
   &__title {
     margin-bottom: 22px;
     @media (max-width: 630px) {
@@ -21,6 +18,9 @@
     @media (max-width: 630px) {
       justify-content: center;
     }
+  }
+  .room-card {
+    margin-bottom: 0;
   }
   .pagination {
     margin: 0 auto;

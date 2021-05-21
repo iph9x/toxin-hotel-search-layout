@@ -1,8 +1,4 @@
 .card {
-  &-title {
-    margin-bottom: 21px;
-    font-size: $h1-font-size;
-  }
   &-wrapper {
     background: #fff;
     border-radius: 4px;
@@ -23,6 +19,10 @@
       padding-right: 15px;
       width: 94vw;
     }
+  }
+  &-title {
+    margin-bottom: 21px;
+    font-size: $h1-font-size;
   }
 }
 

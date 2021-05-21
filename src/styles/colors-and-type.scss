@@ -1,13 +1,13 @@
 .colors-and-type {
   background: #fff;
   margin-bottom: 2px;
+  &-main {
+    margin-top: 0;
+  }
   &-container {
     padding-left: 150px;
     padding-right: 158px;
     display: flex;
     justify-content: space-between;
-  }
-  main {
-    margin-top: 0;
   }
 }

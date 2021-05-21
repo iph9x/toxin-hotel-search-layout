@@ -1,26 +1,25 @@
 import '../../../assets/js/jquery-3.5.1.min.js';
 import * as $ from 'jquery';
 
-let createDropdownObj = () => {
+const createDropdownObj = () => {
   $('.dropdown__menu').each((ind, el) => {
-    let input = $(el).parent().find('.field-wrapper__input');
-    let items = $(el).find('.dropdown__item');
-    let clearBtn = $(el).find('.dropdown__clear');
-    let id = el.id;
+    const input = $(el).parent().find('.field-wrapper__input');
+    const items = $(el).find('.dropdown__item');
+    const clearBtn = $(el).find('.dropdown__clear');
+    const id = el.id;
 
-    let createObj = (obj) => {
+    const createObj = (obj) => {
       items.each((i, item) => {
-        let counter = $(item).find('.dropdown__digit')
-        let key = counter.attr('id')
-  
-        let value = counter.text();
-    
+        const counter = $(item).find('.dropdown__digit');
+        const key = counter.attr('id');
+        const value = counter.text();
+
         obj[key] = Number.parseInt(value);
-      })
-    }    
+      });
+    }; 
 
     if (id === 'guests') {
-      let itemsObj = {
+      const itemsObj = {
         'adults': 0,
         'children': 0,
         'babies': 0
@@ -28,11 +27,11 @@ let createDropdownObj = () => {
 
       createObj(itemsObj);
 
-      let guests = itemsObj.adults + itemsObj.children;
+      const guests = itemsObj.adults + itemsObj.children;
       input.val(`${guests} гостей`);
 
-      let reducer = (acc, current) => acc + current;
-      let sum = Object.values(itemsObj).reduce(reducer, 0);
+      const reducer = (acc, current) => acc + current;
+      const sum = Object.values(itemsObj).reduce(reducer, 0);
       
       if (sum === 0) {
         clearBtn.addClass('dropdown__clear_disabled');
@@ -40,7 +39,7 @@ let createDropdownObj = () => {
         clearBtn.removeClass('dropdown__clear_disabled');
       }
     } else if (id === 'rooms') {
-      let itemsObj = {
+      const itemsObj = {
         'bedrooms': 0,
         'bed': 0,
         'bathrooms': 0
@@ -48,82 +47,89 @@ let createDropdownObj = () => {
 
       createObj(itemsObj);
 
-      let { bedrooms, bed, bathrooms } = itemsObj;
-      let bedroomsVal = `${bedrooms} спальни`;
-      let bedVal = bed > 0 ? `, ${bed} кровати` : '';
-      let bathsVal = bathrooms > 0 ? `, ${bathrooms} ванных комнат` : '';
+      const { bedrooms, bed, bathrooms } = itemsObj;
+      const bedroomsVal = `${bedrooms} спальни`;
+      const bedVal = bed > 0 ? `, ${bed} кровати` : '';
+      const bathsVal = bathrooms > 0 ? `, ${bathrooms} ванных комнат` : '';
+
       input.val(`${bedroomsVal}${bedVal}${bathsVal}`);
     }
   })
 }
 
-$('.dropdown__clear').on('click', e => {
-  let menuItems = $(e.target).parent().parent().find('.dropdown__item');
-  let input = $(e.target).parent().parent().parent().find('.field-wrapper__input');
+const clearHandler = (e) => {
+  const menuItems = $(e.target).parent().parent().find('.dropdown__item');
+  const input = $(e.target).parent().parent().parent().find('.field-wrapper__input');
 
   menuItems.each((i, el) => {
     $(el).find('.dropdown__circle-btn_reduce').addClass('dropdown__circle-btn_disabled');
     $(el).find('.dropdown__counter').find('.dropdown__digit').text('0');
   });
-  
+
   createDropdownObj();
   input.val('Сколько гостей');
-});
+};
 
-
-
-$('.js-dropdown-arrow').on('click', (e) => {
-  let menu =  $(e.target).next().next();
-  let menuParent = menu.parent();
+const arrowHandler = (e) => {
+  const menu =  $(e.target).next().next();
+  const menuParent = menu.parent();
 
   menu.toggle();
   menuParent.toggleClass('field-wrapper_active');
   menuParent.find('.field-wrapper__input').toggleClass('field-wrapper__input_active');
-});
+};
 
-$('.dropdown__apply').on('click', (e) => {
-  let menu =  $(e.target).parent().parent();
-  let menuParent = menu.parent();
+const applyHandler = (e) => {
+  const menu =  $(e.target).parent().parent();
+  const menuParent = menu.parent();
 
   menu.toggle();
   menuParent.toggleClass('field-wrapper_active');
   menuParent.find('.field-wrapper__input').toggleClass('field-wrapper__input_active');
-});
+};
 
-let checkButtonState = () => {
+const checkButtonState = () => {
   $('.dropdown__circle-btn_reduce').each((index, el) => {
-    let counter = $(el).next();
-    let count = Number.parseInt(counter.text())
+    const counter = $(el).next();
+    const count = Number.parseInt(counter.text());
 
-    count === 0
-      ? $(el).addClass('dropdown__circle-btn_disabled')
-      : $(el).removeClass('dropdown__circle-btn_disabled');
+    if (count === 0) {
+      $(el).addClass('dropdown__circle-btn_disabled');
+    } else {
+      $(el).removeClass('dropdown__circle-btn_disabled');
+    }
   });
-}
+};
 
-$('.dropdown__circle-btn_reduce').on('click', (e) => {
-  let target =  $(e.target);
-  let counter = target.next();
+const reduceHandler = (e) => {
+  const target =  $(e.target);
+  const counter = target.next();
   let count = Number.parseInt(counter.text());
-  
+
   count === 0 ? count = 0 : count--;  
   counter.text(count);
 
   checkButtonState();
-  createDropdownObj()
-});
+  createDropdownObj();
+};
 
-$('.dropdown__circle-btn_increase').on('click', (e) => {
-  let target = $(e.target);
-  let counter = target.prev();
+const increaseHandler = (e) => {
+  const target = $(e.target);
+  const counter = target.prev();
   let count = Number.parseInt(counter.text());
 
   count >= 9 ? count = 9 : count++;
   counter.text(count);
 
   checkButtonState();
-  createDropdownObj()
-});
+  createDropdownObj();
+};
+
+$('.dropdown__clear').on('click', (e) => clearHandler(e));
+$('.js-dropdown-arrow').on('click', (e) => arrowHandler(e));
+$('.dropdown__apply').on('click', (e) => applyHandler(e));
+$('.dropdown__circle-btn_reduce').on('click', (e) => reduceHandler(e));
+$('.dropdown__circle-btn_increase').on('click', (e) => increaseHandler(e));
 
 checkButtonState();
 

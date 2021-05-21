@@ -103,7 +103,26 @@ button {
     width: 266px;
   }
   &__input {
-    @include field;
+    width: 100%;
+    height: 44px;
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-bottom: 1px;
+    line-height: 24px;
+    border: 1px solid $darkshade25;
+    border-radius: 4px;
+    color: $darkshade75;
+    font-size: $body-font-size;
+    @include montserrat;
+    &:hover,
+    &:focus {
+      border: 1px solid $darkshade50;
+      box-shadow: none;
+      outline: none;
+    }
+    &::placeholder {
+      color: $darkshade25;
+    }
     @media (max-width: 340px) {
       max-width: 95vw;
     }
@@ -115,7 +134,10 @@ button {
     }
   }
   &__title {
-    @include field-title;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: $h3-font-size;
+    font-weight: 700;
   }
   &__arrow {
     @include material-icons;
