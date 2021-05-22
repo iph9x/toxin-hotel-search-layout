@@ -169,77 +169,102 @@
   }
   &--cell {
     border-radius: 50%;    
+    &-day.-other-month-,
+    &-year.-other-decade- {
+      color: $darkshade25;
+    }
+    &.-selected-,
+    &.-selected-.-focus- {
+      background: $purple;
+    }
+    &.-current- {
+      color: $purple;
+    }
+    &.-current-.-focus- {
+      color: #fff;
+    }
+    &.-selected-.-current- {
+      @include gradient25;
+    }
+    &-month,
+    &-year {
+      border-radius: 4px;
+      &.-current-.-focus-,
+      &.-current-,
+      &.-selected-.-current- {
+        color: $darkshade50;
+      }
+    }
     &-day {
       width: 40px;
       height: 40px;
       font-size: $h3-font-size;
       color: $darkshade50;
-    }
-    &-day.-other-month-,
-    &-year.-other-decade- {
-      color: $darkshade25;
+      &.-selected-.-other-month-.-focus- {
+        @include gradient25;
+      }
+      &.-range-from-,
+      &.-range-to-.-range-from-,
+      &.-range-to-,
+      &.-range-from-.-other-month-,
+      &.-range-to-.-range-from-.-other-month-,
+      &.-range-to-.-other-month- {
+        @include gradient25;
+        border-radius: 0;
+        border: none;
+        color: #fff;
+        &::before {
+          position: absolute;
+          content: '';
+          @include gradient;      
+          height: 100%;
+          width: 100%;
+          border-radius: 50%;
+          z-index: -1;
+        }
+      }
+      &.-range-from-,
+      &.-range-from-.-other-month- {
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+      }
+      &.-range-to-,
+      &.-range-to-.-other-month- {
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+      }
+      &.-range-to-.-focus-,
+      &.-range-from-.-focus- {
+        color: #fff;
+        @include gradient25;
+      }
+      &.-focus- {
+        @include gradient25;
+        color: $darkshade50;
+      }
+      &.-focus-.-selected- {
+        color: #fff;
+      }
+      &.-current- {
+        color: #fff;
+        @include blue-green-gradient;
+      }
+      &.-range-to-.-current-.-selected- {
+        @include gradient25;
+      }
+      &.-current-.-in-range- {
+        border-radius: 0;
+        color: $darkshade50;
+      }
+      &.-in-range-,
+      &.-in-range-.-other-month-,
+      &.-in-range-.-focus-,
+      &.-in-range-.-focus-.-other-month- {
+        @include gradient25;
+        color: $darkshade50;
+      }
     }
   }  
-  &--cell-day.-range-from-,
-  &--cell-day.-range-to-.-range-from-,
-  &--cell-day.-range-to-,
-  &--cell-day.-range-from-.-other-month-,
-  &--cell-day.-range-to-.-range-from-.-other-month-,
-  &--cell-day.-range-to-.-other-month- {
-    @include gradient25;
-    border-radius: 0;
-    border: none;
-    color: #fff;
-    &::before {
-      position: absolute;
-      content: '';
-      @include gradient;      
-      height: 100%;
-      width: 100%;
-      border-radius: 50%;
-      z-index: -1;
-    }
-  }
-  &--cell-day.-range-from-,
-  &--cell-day.-range-from-.-other-month- {
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
-  }
-  &--cell-day.-range-to-,
-  &--cell-day.-range-to-.-other-month- {
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
-  }
-  &--cell-day.-range-to-.-focus-,
-  &--cell-day.-range-from-.-focus- {
-    color: #fff;
-    @include gradient25;
-  }
-  &--cell-day.-focus- {
-    @include gradient25;
-    color: $darkshade50;
-  }
-  &--cell-day.-focus-.-selected- {
-    color: #fff;
-  }
-  &--cell-day.-current- {
-    color: #fff;
-    @include blue-green-gradient;
-  }
-  &--cell-day.-range-to-.-current-.-selected- {
-    @include gradient25;
-  }
-  &--cell-day.-current-.-in-range- {
-    border-radius: 0;
-    color: $darkshade50;
-  }
-  &--cell-day.-in-range-,
-  &--cell-day.-in-range-.-other-month-,
-  &--cell-day.-in-range-.-focus-,
-  &--cell-day.-in-range-.-focus-.-other-month- {
-    @include gradient25;
-    color: $darkshade50;
-  }
   &--footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
