@@ -2,7 +2,7 @@ import * as $ from 'jquery';
 
 const filterDrodown = $('#filter-date-dropdown').datepicker({
   dateFormat: "dd M",
-  multipleDatesSeparator: ' - '
+  multipleDatesSeparator: ' - ',
 }).data('datepicker');
 
 if (!!filterDrodown) {

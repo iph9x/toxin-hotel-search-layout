@@ -1,10 +1,10 @@
 if (document.getElementById('rating-chart')) {
-  let bar_ctx = document.getElementById('rating-chart').getContext('2d');
+  const bar_ctx = document.getElementById('rating-chart').getContext('2d');
 
-  let firstColor = bar_ctx.createLinearGradient(0, 0, 0, 120);
-  let secondColor = bar_ctx.createLinearGradient(0, 0, 0, 120);
-  let thirdColor = bar_ctx.createLinearGradient(0, 0, 0, 120);
-  let fourthColor = bar_ctx.createLinearGradient(0, 0, 0, 120);
+  const firstColor = bar_ctx.createLinearGradient(0, 0, 0, 120);
+  const secondColor = bar_ctx.createLinearGradient(0, 0, 0, 120);
+  const thirdColor = bar_ctx.createLinearGradient(0, 0, 0, 120);
+  const fourthColor = bar_ctx.createLinearGradient(0, 0, 0, 120);
   
   firstColor.addColorStop(0, '#909090');
   firstColor.addColorStop(1, '#3D4975');
@@ -27,10 +27,10 @@ if (document.getElementById('rating-chart')) {
           data: [25, 25, 50],
           borderWidth: 2,
           width: 4,
-          backgroundColor: [ secondColor, thirdColor, fourthColor],
-          hoverBackgroundColor: [ secondColor, thirdColor, fourthColor],
+          backgroundColor: [secondColor, thirdColor, fourthColor],
+          hoverBackgroundColor: [secondColor, thirdColor, fourthColor],
           hoverBorderWidth: 0,
-          hoverBorderColor: 'transparent'
+          hoverBorderColor: 'transparent',
         }]
       },
     options: {
@@ -39,11 +39,11 @@ if (document.getElementById('rating-chart')) {
         display: false,
       },
       tooltips: {
-        enabled: false
+        enabled: false,
       },
       hover: {
-        mode: null
+        mode: null,
       }
-    }
+    },
   });
 }

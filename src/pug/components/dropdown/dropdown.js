@@ -32,7 +32,7 @@ const createDropdownObj = () => {
 
       const reducer = (acc, current) => acc + current;
       const sum = Object.values(itemsObj).reduce(reducer, 0);
-      
+
       if (sum === 0) {
         clearBtn.addClass('dropdown__clear_disabled');
       } else {
@@ -54,8 +54,8 @@ const createDropdownObj = () => {
 
       input.val(`${bedroomsVal}${bedVal}${bathsVal}`);
     }
-  })
-}
+  });
+};
 
 const clearHandler = (e) => {
   const menuItems = $(e.target).parent().parent().find('.dropdown__item');
@@ -132,6 +132,3 @@ $('.dropdown__circle-btn_reduce').on('click', (e) => reduceHandler(e));
 $('.dropdown__circle-btn_increase').on('click', (e) => increaseHandler(e));
 
 checkButtonState();
-
-
-

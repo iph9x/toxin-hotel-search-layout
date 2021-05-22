@@ -1,11 +1,10 @@
 import * as $ from 'jquery';
 
-$('.like-button__input').on('click', (e) => {
-  let input = $(e.target);
-  let inputVal = Number.parseInt($(e.target).val());
-
-  let icon = $(e.target).next();
-  let parent = $(e.target).parent();
+const likeBtnHandler = (e) => {
+  const input = $(e.target);
+  const inputVal = Number.parseInt($(e.target).val());
+  const icon = $(e.target).next();
+  const parent = $(e.target).parent();
 
   parent.toggleClass('like-button__item_active');
 
@@ -16,4 +15,6 @@ $('.like-button__input').on('click', (e) => {
     icon.html('favorite_border');
     input.val(inputVal - 1);
   }
-});
+};
+
+$('.like-button__input').on('click', (e) => likeBtnHandler(e));

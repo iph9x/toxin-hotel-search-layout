@@ -7,14 +7,6 @@ const picker = $('#date-in').datepicker({
   }
 }).data('datepicker');
 
-$('.datepicker--apply').on('click', () => picker.hide());
-
-$('.datepicker--clear').on('click', () => picker.clear());
-
-$('#date-out').on('select', () => picker.show());
-
-$('#date-out').on('blur', (e) => dateOutBlurHandler(e));
-
 const dateOutBlurHandler = (e) => {
   const value = e.target.value.split('.');
   const dateIn = $('#date-in').val().split('.');
@@ -22,11 +14,17 @@ const dateOutBlurHandler = (e) => {
   const dateInIsNotEmpty = dateIn[0] !== '';
 
   if (valueIsNotEmpty && dateInIsNotEmpty) {
-    let dates = [
+    const dates = [
       new Date(dateIn[2], Number.parseInt(dateIn[1]) - 1, dateIn[0]),
       new Date(value[2], Number.parseInt(value[1]) - 1 , value[0]),
     ];
-  
+
     picker.selectDate(dates);
   }
-}
+};
+
+$('.datepicker--apply').on('click', () => picker.hide());
+$('.datepicker--clear').on('click', () => picker.clear());
+
+$('#date-out').on('select', () => picker.show());
+$('#date-out').on('blur', (e) => dateOutBlurHandler(e));

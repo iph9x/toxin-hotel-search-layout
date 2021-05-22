@@ -16,4 +16,4 @@ $('.room-card__image-box').each((key, item) => {
     prevArrow: prevAr,
     nextArrow: nextAr,
   });
-})
+});
