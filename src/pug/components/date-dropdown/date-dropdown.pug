@@ -4,9 +4,9 @@ mixin date-dropdown(props)
       .field-wrapper__title= props.title
     .field-wrapper__arrow.dropdown-arrow expand_more
     if props.main  
-      input(type="text", placeholder="ДД.ММ.ГГГГ", class=`field-wrapper__input date-dropdown__input datepicker-here`, id=props.id, data-range="true" data-multiple-dates-separator=".")
+      input(type="text", placeholder="ДД.ММ.ГГГГ", class=`field-wrapper__input date-dropdown__input datepicker-here js-date-in`, data-range="true" data-multiple-dates-separator=".")
     else
-      input(type="text", placeholder="ДД.ММ.ГГГГ" class=`field-wrapper__input date-dropdown__input` id=props.id)
+      input(type="text", placeholder="ДД.ММ.ГГГГ" class=`field-wrapper__input date-dropdown__input js-date-out`)
 
     
       

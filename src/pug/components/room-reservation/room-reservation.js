@@ -1,30 +1,38 @@
 import * as $ from 'jquery';
+import { initDatepickerButtons } from '../../../assets/js/utils';
 
-const picker = $('#date-in').datepicker({ 
-  onSelect: function (fd) {
-    $('#date-in').val(fd.slice(0, 10));
-    $('#date-out').val(fd.slice(11));
-  }
-}).data('datepicker');
+const dateInInput = $('.js-date-in');
 
-const dateOutBlurHandler = (e) => {
-  const value = e.target.value.split('.');
-  const dateIn = $('#date-in').val().split('.');
-  const valueIsNotEmpty = value[0] !== '';
-  const dateInIsNotEmpty = dateIn[0] !== '';
+dateInInput.each((ind) => {
+  const dateIn = $(dateInInput[ind]);
+  const dateContainer = dateIn.parent().parent();
+  const dateOut = dateContainer.find('.js-date-out');
 
-  if (valueIsNotEmpty && dateInIsNotEmpty) {
-    const dates = [
-      new Date(dateIn[2], Number.parseInt(dateIn[1]) - 1, dateIn[0]),
-      new Date(value[2], Number.parseInt(value[1]) - 1 , value[0]),
-    ];
+  const $datepicker = dateIn.datepicker({
+    navTitles: { days: 'MM yyyy' },
+    onSelect: function (fd) {
+      dateIn.val(fd.slice(0, 10));
+      dateOut.val(fd.slice(11));
+    },
+  }).data('datepicker');
+  initDatepickerButtons($datepicker);
 
-    picker.selectDate(dates);
-  }
-};
+  const dateOutBlurHandler = (e) => {
+    const value = e.target.value.split('.');
+    const dateInValue = dateIn.val().split('.');
+    const valueIsNotEmpty = value[0] !== '';
+    const dateInIsNotEmpty = dateIn[0] !== '';
+  
+    if (valueIsNotEmpty && dateInIsNotEmpty) {
+      const dates = [
+        new Date(dateInValue[2], Number.parseInt(dateInValue[1]) - 1, dateInValue[0]),
+        new Date(value[2], Number.parseInt(value[1]) - 1 , value[0]),
+      ];
+  
+      $datepicker.selectDate(dates);
+    }
+  };
 
-$('.datepicker--apply').on('click', () => picker.hide());
-$('.datepicker--clear').on('click', () => picker.clear());
-
-$('#date-out').on('select', () => picker.show());
-$('#date-out').on('blur', (e) => dateOutBlurHandler(e));
+  dateOut.on('select', () => $datepicker.show());
+  dateOut.on('blur', (e) => dateOutBlurHandler(e));
+});

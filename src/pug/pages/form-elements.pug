@@ -34,16 +34,16 @@ block content
         +dropdown({ title: 'Dropdown', placeholderText: 'Сколько гостей', id: 'guests' })
         +masked-text-field({ title: 'Masked Text field', placeholderText: 'ДД.ММ.ГГГГ' })
         .date-container
-          +date-dropdown({ title: 'Date Dropdown', id: 'date-in' })
-          +date-dropdown({ title: 'Date Dropdown', id: 'date-out' })
+          +date-dropdown({ title: 'Date Dropdown', main: true })
+          +date-dropdown({ title: 'Date Dropdown' })
         +filter-date-dropdown({ id: 'datepick', title: 'Filter Date Dropdown', dateIn: '19 авг', dateOut: '23 авг' })
         +subscription-text-field({ title: 'Subscription Text Field', placeholderText: 'Email' })
       .column.column-mr-72
         +checkbox-buttons( {title: 'Checkbox buttons', radios: checkboxArr } )
         +radio-buttons( {title: 'Radio buttons'} )
         +toggle({ id: 'suggestions', title: 'Toggle', text: 'Получать спецпредложения' })
-        +like-button({title: 'Like button'})
-        +rate-button({title: 'Rate button'})
+        +like-button({ title: 'Like button' })
+        +rate-button({ title: 'Rate button' })
       .column
         +range-slider({title: 'Range slider'})
         +buttons({title: 'Buttons'})

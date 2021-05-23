@@ -5,7 +5,7 @@ include ../button/button
 form(action="").room-selection.card-wrapper
   h2.card-title Найдём номера под ваши пожелания
   .date-container
-    +date-dropdown({ title: 'Прибытие', id: 'date-in', main: true})
-    +date-dropdown({ title: 'Выезд', id: 'date-out'})
+    +date-dropdown({ title: 'Прибытие', main: true})
+    +date-dropdown({ title: 'Выезд'})
   +dropdown({ title: 'Гости', placeholderText: 'Сколько гостей', id: 'guests' })
   +button({ text: 'Подобрать номер', class: 'button-fill button-main' })

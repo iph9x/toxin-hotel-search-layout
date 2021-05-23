@@ -22,8 +22,8 @@ form(action="").room-reservation.card-wrapper
       span.room-card__day-price 9 990
       span.room-card__time в сутки
   .date-container
-    +date-dropdown({ title: 'Прибытие', id: 'date-in', main: true})
-    +date-dropdown({ title: 'Выезд', id: 'date-out'})
+    +date-dropdown({ title: 'Прибытие', main: true})
+    +date-dropdown({ title: 'Выезд'})
   +dropdown({ title: 'Гости', placeholderText: 'Сколько гостей', id: 'guests' })
   .room-reservation__notes
     +note({ title: '9 990', subTitle: 'x 4 суток', price: '39 960' })

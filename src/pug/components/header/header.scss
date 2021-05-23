@@ -67,7 +67,7 @@
         transition: .2s;
       }
       &_active {
-        > div {
+        .header__menu-btn-straight {
           opacity: 0;
         }
         &::before {
