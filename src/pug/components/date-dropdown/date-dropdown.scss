@@ -2,6 +2,9 @@
   max-width: 150px;
   .date-dropdown__input {
     padding-bottom: 4px;
+    &:hover {
+      cursor: pointer;
+    }
     &::placeholder {
       color: $darkshade75;
     }

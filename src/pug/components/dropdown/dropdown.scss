@@ -12,7 +12,10 @@ $material-icons-font-path: '~material-icons/iconfont/';
   }
 }
 
-.dropdown {  
+.dropdown {
+  &:hover {
+    cursor: pointer;
+  }
   &__menu {
     display: none;
     position: absolute;

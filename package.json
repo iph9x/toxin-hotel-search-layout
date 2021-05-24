@@ -7,8 +7,7 @@
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "dev": "cross-env NODE_ENV=development webpack --mode development",
     "watch": "cross-env NODE_ENV=development webpack --mode development --watch",
-    "start": "cross-env NODE_ENV=development webpack serve --mode development",
-    "start2": "cross-env NODE_ENV=development webpack serve --hot --mode development"
+    "start": "cross-env NODE_ENV=development webpack serve --mode development"
   },
   "repository": {
     "type": "git",

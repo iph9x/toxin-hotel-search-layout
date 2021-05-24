@@ -7,7 +7,6 @@ const filterDrodown = $('.js-filter-date-dropdown').datepicker({
   multipleDatesSeparator: ' - ',
 }).data('datepicker');
 
-
 if (!!filterDrodown) {
   initDatepickerButtons(filterDrodown);
 }
