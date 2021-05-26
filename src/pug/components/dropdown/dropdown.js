@@ -2,14 +2,14 @@ import '../../../assets/js/jquery-3.5.1.min.js';
 import * as $ from 'jquery';
 
 const createDropdownObj = (menu) => {
-  const $input = menu.parent().find('.field-wrapper__input');
+  const $input = menu.parent().find('.js-dropdown');
   const itemsArr = menu.find('.dropdown__item');
-  const $clearBtn = menu.find('.dropdown__clear');
+  const $clearBtn = menu.find('.js-dropdown__clear');
   const id = menu.attr('data-menu-type');
 
   const createObj = (obj) => {
     itemsArr.each((i) => {
-      const $counter = $(itemsArr[i]).find('.dropdown__digit');
+      const $counter = $(itemsArr[i]).find('.js-dropdown__digit');
       const key = $counter.attr('data-menu-item-id');
       const value = $counter.text();
 
@@ -57,39 +57,55 @@ const createDropdownObj = (menu) => {
 };
 
 const clearHandler = (e) => {
-  const $menu = $(e.target).parents('.dropdown__menu');
+  const $menu = $(e.target).parents('.js-dropdown__menu');
   const $menuItems = $menu.find('.dropdown__item');
-  const $input = $menu.parent().find('.field-wrapper__input');
+  const $input = $menu.parent().find('.js-dropdown');
 
   $menuItems.each((i) => {
-    $($menuItems[i]).find('.dropdown__circle-btn_reduce').addClass('dropdown__circle-btn_disabled');
-    $($menuItems[i]).find('.dropdown__counter').find('.dropdown__digit').text('0');
+    $($menuItems[i]).find('.js-dropdown__circle-btn_reduce').addClass('dropdown__circle-btn_disabled');
+    $($menuItems[i]).find('.js-dropdown__counter').find('.js-dropdown__digit').text('0');
   });
 
   createDropdownObj($menu);
   $input.val('Сколько гостей');
 };
 
+const hideMenuHandler = () => {
+  const $menu = $('.js-dropdown__menu');
+  const $menuWrapper = $menu.parent();
+  const $dropdownInput = $menuWrapper.find('.js-dropdown');
+
+  $menu.hide();
+  $menuWrapper.removeClass('field-wrapper_active');
+  $dropdownInput.removeClass('field-wrapper__input_active')
+};
+
 const inputClickHandler = (e, isArrow = false) => {
   const $menu = isArrow ? $(e.target).next().next() : $(e.target).next();
   const $menuParent = $menu.parent();
+  const inputIsActive = $menuParent.hasClass('field-wrapper_active');
 
-  $menu.toggle();
-  $menuParent.toggleClass('field-wrapper_active');
-  if (isArrow) {
-    $(e.target).prev().toggleClass('field-wrapper__input_active')
-  } else {
-    $(e.target).toggleClass('field-wrapper__input_active')
+  hideMenuHandler();
+
+  if (!inputIsActive) {
+    $menu.show();
+    $menuParent.addClass('field-wrapper_active');
+  
+    if (isArrow) {
+      $(e.target).next().addClass('field-wrapper__input_active')
+    } else {
+      $(e.target).addClass('field-wrapper__input_active')
+    }
   }
 };
 
 const applyHandler = (e) => {
-  const $menu = $(e.target).parents('.dropdown__menu');
+  const $menu = $(e.target).parents('.js-dropdown__menu');
   const $menuParent = $menu.parent();
 
   $menu.toggle();
   $menuParent.toggleClass('field-wrapper_active');
-  $menuParent.find('.field-wrapper__input').toggleClass('field-wrapper__input_active');
+  $menuParent.find('.js-dropdown').toggleClass('field-wrapper__input_active');
 };
 
 const checkButtonState = () => {
@@ -112,6 +128,7 @@ const btnAdjustHandler = (e, isReduce) => {
   const $target =  $(e.target);
   let $counter;
   let count;
+
   if (isReduce) {
     $counter = $target.next();
     count = Number.parseInt($counter.text());
@@ -125,14 +142,17 @@ const btnAdjustHandler = (e, isReduce) => {
   $counter.text(count);
 
   checkButtonState();
-  createDropdownObj($target.parents('.dropdown__menu'));
+  createDropdownObj($target.parents('.js-dropdown__menu'));
 };
 
-$('.dropdown__clear').on('click', (e) => clearHandler(e));
+$('.js-dropdown__clear').on('click', (e) => clearHandler(e));
 $('.js-dropdown-arrow').on('click', (e) => inputClickHandler(e, true));
 $('.js-dropdown').on('click', (e) => inputClickHandler(e));
-$('.dropdown__apply').on('click', (e) => applyHandler(e));
-$('.dropdown__circle-btn_reduce').on('click', (e) => btnAdjustHandler(e, true));
-$('.dropdown__circle-btn_increase').on('click', (e) => btnAdjustHandler(e, false));
+$('.js-dropdown__apply').on('click', (e) => applyHandler(e));
+$('.js-dropdown__circle-btn_reduce').on('click', (e) => btnAdjustHandler(e, true));
+$('.js-dropdown__circle-btn_increase').on('click', (e) => btnAdjustHandler(e, false));
+$(document).on('click', hideMenuHandler);
+$('.js-date-dropdown__input').on('click', hideMenuHandler);
+$('.js-dropdown__menu').parents('.field-wrapper').on('click', (e) => e.stopPropagation());
 
 checkButtonState();

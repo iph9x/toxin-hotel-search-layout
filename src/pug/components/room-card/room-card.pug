@@ -3,14 +3,14 @@ include ../rate-button/rate-button
 mixin room-card(props)
   .room-card
     .room-card__slider
-      .room-card__image-box
+      .room-card__image-box.js-room-card__image-box
         img.room-card__image(src=props.src alt="")
         img.room-card__image(src=props.src alt="")
         img.room-card__image(src=props.src alt="")
         img.room-card__image(src=props.src alt="")
-      button(type="button").room-card__prev-slide.slick-prev
+      button(type="button").room-card__prev-slide.js-room-card__prev-slide.slick-prev
         span.room-card__icon.material-icons expand_more
-      button(type="button").room-card__next-slide.slick-next
+      button(type="button").room-card__next-slide.js-room-card__next-slide.slick-next
         span.room-card__icon.material-icons expand_more
     .room-card__info-box
       .room-card__header

@@ -17,4 +17,4 @@ const likeBtnHandler = (e) => {
   }
 };
 
-$('.like-button__input').on('click', (e) => likeBtnHandler(e));
+$('.js-like-button__input').on('click', (e) => likeBtnHandler(e));
