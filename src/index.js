@@ -16,10 +16,10 @@ import './pug/components/room-rating-chart/room-rating-chart.js';
 import './pug/components/room-card/room-slider.js';
 import './pug/components/filter-date-dropdown/filter-date-dropdown.js';
 
-let maskDate = document.getElementsByClassName('date-dropdown__input');
+const maskDate = $('.js-date-dropdown__input');
 for (let i = 0; i < maskDate.length; i++) {
   Inputmask({alias: "datetime", inputFormat: "dd.mm.yyyy", "placeholder": "ДД.ММ.ГГГГ"}).mask(maskDate[i]);
 }
 
-let mask = document.getElementsByClassName('masked-text-field');
+const mask = $('.js-masked-text-field');
 Inputmask({alias: "datetime", inputFormat: "dd.mm.yyyy", "placeholder": "ДД.ММ.ГГГГ"}).mask(mask);

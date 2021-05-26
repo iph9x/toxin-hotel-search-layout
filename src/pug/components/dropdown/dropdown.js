@@ -153,6 +153,7 @@ $('.js-dropdown__circle-btn_reduce').on('click', (e) => btnAdjustHandler(e, true
 $('.js-dropdown__circle-btn_increase').on('click', (e) => btnAdjustHandler(e, false));
 $(document).on('click', hideMenuHandler);
 $('.js-date-dropdown__input').on('click', hideMenuHandler);
+$('.js-masked-text-field').on('click', hideMenuHandler);
 $('.js-dropdown__menu').parents('.field-wrapper').on('click', (e) => e.stopPropagation());
 
 checkButtonState();
