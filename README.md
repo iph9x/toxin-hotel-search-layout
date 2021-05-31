@@ -1,7 +1,7 @@
 # Toxin Hotel room search
 
   Layout of site for searching and booking hotel rooms.
-  * [demo](https://iph9x.github.io/FSD-edu)
+  * [demo](https://iph9x.github.io/toxin-hotel-search-layout/)
 
 ***
 
