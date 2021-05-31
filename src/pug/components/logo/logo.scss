@@ -41,8 +41,8 @@
     align-items: flex-start;
     margin-top: 4px;
     min-height: 15px;
-    &:first-child {
-      margin-right: -1px;
+    &:last-child {
+      transform: translateX(-1px);
     }
   }
   &__text {

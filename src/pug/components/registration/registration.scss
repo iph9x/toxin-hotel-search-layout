@@ -7,7 +7,7 @@
   .field-wrapper {
     margin-bottom: 10px;
     &:nth-of-type(6) {
-      margin-bottom: 11px;
+      margin-bottom: 9px;
     }
   }
   .radio-buttons {
@@ -15,9 +15,6 @@
   }
   .masked-text-field {
     margin-bottom: 10px;
-  }
-  .toggle {
-    margin-top: -2px;
   }
   .button-main {
     margin-top: 16px;
@@ -29,6 +26,6 @@
   &__already-reg {
     font-size: $body-font-size;
     margin-left: 1px;
-    margin-top: -2px;
+    transform: translateY(-1px);
   }
 }

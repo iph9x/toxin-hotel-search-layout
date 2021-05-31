@@ -48,7 +48,7 @@
       }
     }
     &-expandable {
-      margin-top: -14px;
+      transform: translateY(-14px);
     }
     &-row {
       grid-column: 1 / 4;

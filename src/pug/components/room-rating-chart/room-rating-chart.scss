@@ -2,10 +2,10 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-  column-gap: 40px;
+  column-gap: 38px;
   &__chart {
     width: 124px;
-    margin-left: -2px;
+    transform: translateX(-2px);
   }
   &__legend {
     margin-top: 28px;

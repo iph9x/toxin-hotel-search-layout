@@ -102,7 +102,7 @@
     width: 21px;
     &_twitter {
       width: 24px;
-      margin-right: -2px;
+      transform: translateX(2px);
     }
   }
 }
