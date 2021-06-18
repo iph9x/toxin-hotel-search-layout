@@ -1,42 +1,73 @@
-const starsArr = Array.from(document.getElementsByClassName('js-rate-button__active-star'));
-let currentIndex = null;
-let currentRate = null;
+export default class RateButton {
+  constructor() {
+    this.$rateButton = $('.js-rate-button');
+    this.currentIndexes = [];
+    this.rateInputs = [];
+    this.rateButtonsArr = [];
+  }
 
-const setRate = (rate) => currentRate = 5 - rate;
+  init() {
+    this.setRateButtonElements();
 
-starsArr.forEach((item, index) => {
-  item.addEventListener('click', () => {
-    currentIndex = index;
+    this.rateButtonsArr.forEach((stars, btnInd) => {
+      stars.each((starInd) => {
+        const $star = $(stars[starInd]);
 
-    starsArr.forEach(star => star.innerHTML = 'star_border');
+        $star.on('click', () => this.handleStarClick(stars, starInd, btnInd));
+        $star.on('mouseover', () => this.handleStarMouseover(stars, starInd));
+        $star.on('mouseout', () => this.handleStarMouseout(stars, btnInd));
+      });
+    })
+  }
 
-    for (let i = index; i < starsArr.length; i++ ) {
-      starsArr[i].innerHTML = 'star';
+  handleStarClick(starsArr, starInd, btnInd) {
+    this.currentIndexes[btnInd] = starInd;
+    this.rateInputs[btnInd].val(this.getRate(starInd));
+
+    this.clearStars(starsArr);
+    this.fillStars(starInd, starsArr);
+  };
+
+  handleStarMouseover(stars, starInd) {
+    this.clearStars(stars);
+    this.fillStars(starInd, stars);
+  };
+
+  handleStarMouseout(stars, btnInd) {
+    if (this.currentIndexes[btnInd] === undefined) {
+      return this.clearStars(stars);
     }
 
-    setRate(currentIndex);
-  });
-
-  item.addEventListener('mouseover', () => {
-    starsArr.forEach(star => star.innerHTML = 'star_border');
-
-    for (let i = index; i < starsArr.length; i++ ) {
-      starsArr[i].innerHTML = 'star';
-    }
-  });
-  
-  item.addEventListener('mouseout', () => {
-    if (currentIndex === null) {
-      return starsArr.forEach( star => star.innerHTML = 'star_border');
-    }
-    if (currentIndex !== 0) {
-      for (let i = 0; i < currentIndex; i++ ) {
-        starsArr[i].innerHTML = 'star_border';
+    if (this.currentIndexes[btnInd] !== 0) {
+      for (let i = 0; i < this.currentIndexes[btnInd]; i += 1) {
+        $(stars[i]).html('star_border');
       }
     }
 
-    for (let i = currentIndex; i < starsArr.length; i++ ) {
-      starsArr[i].innerHTML = 'star';
+    this.fillStars(this.currentIndexes[btnInd], stars);
+  }
+
+  setRateButtonElements() {
+    this.$rateButton.each((i) => {
+      const $rateStars = $(this.$rateButton[i]).find('.js-rate-button__active-star');
+      const $rateInput = $(this.$rateButton[i]).find('.js-rate-button__input');
+      
+      this.rateButtonsArr.push($rateStars);
+      this.rateInputs.push($rateInput);
+    });
+  }
+
+  clearStars(starsArr) {
+    starsArr.each((starInd) => $(starsArr[starInd]).html('star_border'));
+  }
+
+  fillStars(startStarIndex, starsArr) {
+    for (let i = startStarIndex; i < starsArr.length; i += 1) {
+      $(starsArr[i]).html('star');
     }
-  });
-});
+  }
+
+  getRate(rate) {
+    return 5 - rate;
+  }
+}

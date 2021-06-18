@@ -1,48 +1,54 @@
-import * as $ from 'jquery';
+export default class RangeSlider {
+  constructor() {
+    this.$track = $('.range-slider__track');
+    this.$circleLeft = $('.range-slider__circle_left');
+    this.$circleRight = $('.range-slider__circle_right');
+    this.$rangeInputLeft = $('.range-slider__input_left');
+    this.$rangeInputRight = $('.range-slider__input_right');
+    this.$rangeLabelLeft = $('.range-slider__label_left');
+    this.$rangeLabelRight = $('.range-slider__label_right');
+  }
 
-const track = $('.range-slider__track');
-const circleLeft = $('.range-slider__circle_left');
-const circleRight = $('.range-slider__circle_right');
+  init() {
+    if (this.$track.length > 0) {
+      this.changeLeftBorder();
+      this.changeRightBorder();
+    }
 
-const rangeInputLeft = $('.range-slider__input');
-const rangeInputRight = $('.range-slider__input_right');
+    this.$rangeInputLeft.on('input change', (e) => this.changeLeftBorder(e));
+    this.$rangeInputRight.on('input change', (e) => this.changeRightBorder(e));
+  }
 
-const rangeLabelLeft = $('.range-slider__label_left');
-const rangeLabelRight = $('.range-slider__label_right');
+  changeLeftBorder(e) {
+    const $leftInput = e ? $(e.target) : this.$rangeInputLeft;
+    const currentInputValue = Number.parseInt($leftInput.val());
+    const rightInputValue = Number.parseInt(this.$rangeInputRight.val()) - 1;
+    const value = Math.min(currentInputValue, rightInputValue);
+    const percent = this.getValueInPrecent($leftInput, value);
 
-const changeLeftBorder = () => {
-  const min = Number.parseInt(rangeInputLeft.attr('min'));
-  const max = Number.parseInt(rangeInputLeft.attr('max'));
-  let value = rangeInputLeft.val();
+    this.$circleLeft.css('left', `${percent}%`);
+    this.$track.css('left', `${percent}%`);
+    this.$rangeLabelLeft.html(value);
+    $leftInput.val(value);
+  }
 
-  value = Math.min(Number.parseInt(value), Number.parseInt(rangeInputRight.val()) - 1);
-  const percent = ((value - min) / (max - min) ) * 100;
+  changeRightBorder(e) {
+    const $rightInput = e ? $(e.target) : this.$rangeInputRight;
+    const currentInputValue = Number.parseInt($rightInput.val());
+    const leftInputValue = Number.parseInt(this.$rangeInputLeft.val()) + 1;
+    const value = Math.max(currentInputValue, leftInputValue);
+    const percent = this.getValueInPrecent($rightInput, value);
+    
+    this.$circleRight.css('right', (100 - percent) + '%');
+    this.$track.css('right', (100 - percent) + '%');
+    this.$rangeLabelRight.html(value);
+    $rightInput.val(value);
+  }
 
-  circleLeft.css('left', percent + '%');
-  track.css('left', percent + '%' );
+  getValueInPrecent($input, value) {
+    const min = Number.parseInt($input.attr('min'));
+    const max = Number.parseInt($input.attr('max'));
 
-  rangeLabelLeft.html(value);
+    return ((value - min) / (max - min)) * 100;
+  }
 }
-
-const changeRightBorder = () => {
-  const min = Number.parseInt(rangeInputRight.attr('min'));
-  const max = Number.parseInt(rangeInputRight.attr('max'));
-  let value = rangeInputRight.val();
-
-  value = Math.max(Number.parseInt(value), Number.parseInt(rangeInputLeft.val()) + 1);
-
-  const percent = ((value - min) / (max - min) ) * 100;
-
-  circleRight.css('right', (100 - percent) + '%');
-  track.css('right', (100 - percent) + '%');
-
-  rangeLabelRight.html(value);
-};
-
-if (track.length > 0) {
-  changeLeftBorder();
-  changeRightBorder();
-}
-
-rangeInputLeft.on('input change', changeLeftBorder);
-rangeInputRight.on('input change', changeRightBorder);

@@ -4,7 +4,7 @@ mixin rate-button(props)
   - let startBorders = 0;
   - var bordersCount = 5 - starsCount;
 
-  .field-wrapper.rate-button
+  .field-wrapper.rate-button.js-rate-button
     if props.title
       .field-wrapper__title= props.title
     if props.static
@@ -14,6 +14,7 @@ mixin rate-button(props)
         while (startStars++ < starsCount)
           i.material-icons.rate-button__star star_
     else
-      .rate-button__item     
+      .rate-button__item
+        input.rate-button__input.js-rate-button__input
         while (startStars++ < 5)
           i.material-icons.rate-button__star.rate-button__active-star.js-rate-button__active-star star_border

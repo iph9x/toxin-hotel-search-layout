@@ -6,6 +6,9 @@
     justify-content: flex-end;
     margin-top: 16px;    
   } 
+  &__input {
+    display: none;
+  }
   &__star {
     @include gradient;
     background-clip: text;
