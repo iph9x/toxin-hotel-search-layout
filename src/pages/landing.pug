@@ -1,0 +1,13 @@
+extends ../main
+
+block variables
+  - var title = 'Landing Page'
+
+block content
+  main.landing
+    .container.landing-container
+      .landing__form
+        include ../components/room-selection/room-selection
+      .landing__tagline 
+        .landing__tag-text Лучшие номера для вашей работы,
+        .landing__tag-text отдыха и просто вдохновения

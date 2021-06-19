@@ -16,7 +16,7 @@ const PATHS = {
   dist: path.resolve(__dirname, 'dist')
 }
 
-const PAGES_DIR = `${PATHS.src}/pug/pages/`;
+const PAGES_DIR = `${PATHS.src}/pages/`;
 const PAGES = fs.readdirSync(PAGES_DIR).filter( fileName => fileName.endsWith('.pug') );
 
 console.log("is dev: ", isDev);

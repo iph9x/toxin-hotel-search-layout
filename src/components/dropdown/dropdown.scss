@@ -1,0 +1,115 @@
+$material-icons-font-path: '~material-icons/iconfont/';
+@import '~material-icons/iconfont/material-icons.scss';
+@import '@/assets/styles/consts.scss';
+
+.field-wrapper {
+  .dropdown__input {
+    padding-bottom: 2px;
+    padding-right: 40px;
+    &::placeholder {
+      color: $darkshade75;
+    }
+  }
+}
+
+.dropdown {
+  &:hover {
+    cursor: pointer;
+  }
+  &__menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    padding: 5px 6px 6px 14px;
+    border: 1px solid $darkshade50;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-top: none;
+    filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.05));
+    z-index: 5;
+    background: #fff;
+    transition: .2s;    
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:not(:last-child) {
+      margin-bottom: 7px;
+    }
+  }
+  &__name {
+    color: $darkshade;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: $h3-font-size;
+    line-height: 16px;    
+  }
+  &__counter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__circle-btn {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    color: $darkshade50;
+    border: 1px solid $darkshade25;
+    border-radius: 50%;
+    background: none;
+    font-size: $h2-font-size;
+    user-select: none;
+    &:hover {
+      cursor: pointer;
+    }
+    &:focus, &:active {
+      outline: none;
+    }
+    &_disabled {
+      opacity: 0.5;
+      &:hover {
+        cursor: auto;
+      }
+    }
+  }
+  &__digit {
+    width: 32px;
+    color: $darkshade;
+    font-weight: 700;
+    font-size: $h3-font-size;
+    text-align: center;
+    line-height: 16px;
+  }
+  &__buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 20px;
+    margin-bottom: 6px;
+    button {
+      padding: 0;
+      color: $purple;
+      text-transform: uppercase;
+      font-size: $h3-font-size;
+      font-weight: 700;
+      background: none;
+      border: none;
+      &:focus,
+      &:active {
+        outline: none;
+      }
+    }
+  }
+  &__clear {
+    justify-self: start;
+    &_disabled {
+      display: none;
+    }
+  }
+  &__apply {
+    justify-self: end;
+    grid-column: 2 / 3;
+  }
+}

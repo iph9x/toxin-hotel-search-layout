@@ -1,0 +1,5 @@
+mixin text-field(props)
+  .field-wrapper.text-field
+    if props.title
+      .field-wrapper__title= props.title
+    input(type="text", placeholder=props.placeholderText class="text-field__input field-wrapper__input")

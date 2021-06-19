@@ -1,0 +1,11 @@
+mixin room-info(props)
+  - var items = props.items
+
+  .room-info
+    if props.title
+      .field-wrapper__title= props.title
+    each item in items
+      .room-info__item
+        i.room-info__icon.material-icons= item.content
+        .room-info__title= item.title
+        .room-info__sub= item.sub

@@ -1,0 +1,11 @@
+extends ../uikit
+include ../components/header/header
+
+block variables
+  - var title = 'Headers & Footers'
+  - var parentClass = 'headers-footers'
+
+block content
+  +header({ isAuth: false })
+  +header({ isAuth: true })
+  include ../components/footer/footer

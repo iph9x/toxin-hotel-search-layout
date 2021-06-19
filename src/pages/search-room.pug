@@ -1,0 +1,10 @@
+extends ../main
+
+block variables
+  - var title = 'Search Room'
+
+block content
+  main.search-room
+    .container.main-container.search-room__container
+      include ../components/filter/filter
+      include ../components/rooms/rooms
