@@ -7,15 +7,15 @@ mixin range-slider(props)
     .range-slider__titles
       .field-wrapper__title= props.title
       .range-slider__range-box
-        span.range-slider__label.range-slider__label_left
+        span.range-slider__label.range-slider__label_left.js-range-slider__label_left
         i -
-        span.range-slider__label.range-slider__label_right
+        span.range-slider__label.range-slider__label_right.js-range-slider__label_right
     .range-slider__box
-      input.range-slider__input.range-slider__input_left(type="range" step=step min=minValue max=maxValue value="3000")
-      input.range-slider__input.range-slider__input_right(type="range" step=step min=minValue max=maxValue value="10000")
+      input.range-slider__input.range-slider__input_left.js-range-slider__input_left(type="range" step=step min=minValue max=maxValue value="3000")
+      input.range-slider__input.range-slider__input_right.js-range-slider__input_right(type="range" step=step min=minValue max=maxValue value="10000")
       .range-slider__wrapper
-        span.range-slider__circle.range-slider__circle_left
-        span.range-slider__circle.range-slider__circle_right
-        .range-slider__track
+        span.range-slider__circle.range-slider__circle_left.js-range-slider__circle_left
+        span.range-slider__circle.range-slider__circle_right.js-range-slider__circle_right
+        .range-slider__track.js-range-slider__track
     if props.note
       .range-slider__note Стоимость за сутки пребывания в номере

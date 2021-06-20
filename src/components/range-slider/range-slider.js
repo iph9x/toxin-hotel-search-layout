@@ -1,12 +1,12 @@
 export default class RangeSlider {
   constructor() {
-    this.$track = $('.range-slider__track');
-    this.$circleLeft = $('.range-slider__circle_left');
-    this.$circleRight = $('.range-slider__circle_right');
-    this.$rangeInputLeft = $('.range-slider__input_left');
-    this.$rangeInputRight = $('.range-slider__input_right');
-    this.$rangeLabelLeft = $('.range-slider__label_left');
-    this.$rangeLabelRight = $('.range-slider__label_right');
+    this.$track = $('.js-range-slider__track');
+    this.$circleLeft = $('.js-range-slider__circle_left');
+    this.$circleRight = $('.js-range-slider__circle_right');
+    this.$rangeInputLeft = $('.js-range-slider__input_left');
+    this.$rangeInputRight = $('.js-range-slider__input_right');
+    this.$rangeLabelLeft = $('.js-range-slider__label_left');
+    this.$rangeLabelRight = $('.js-range-slider__label_right');
   }
 
   init() {

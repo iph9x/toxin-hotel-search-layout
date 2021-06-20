@@ -72,7 +72,7 @@ export default class Dropdown {
 
   clearHandler(e) {
     const $menu = $(e.target).parents('.js-dropdown__menu');
-    const $menuItems = $menu.find('.dropdown__item');
+    const $menuItems = $menu.find('.js-dropdown__item');
     const $input = $menu.parent().find('.js-dropdown__input');
   
     $menuItems.each((i) => {
