@@ -1,3 +1,5 @@
+import Chart from 'chart.js';
+
 export default class RoomRatingChart {
   constructor(chartClass) {
     const chart = $(`.${chartClass}`).get(0);

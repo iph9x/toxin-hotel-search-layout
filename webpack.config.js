@@ -36,7 +36,6 @@ module.exports = {
     extensions: ['.js'],
     alias: {
       '@': PATHS.src,
-      'jqueryPath': path.resolve(__dirname, 'src/assets/js/jquery-3.5.1.min.js')
     }
   },  
   devServer: {
