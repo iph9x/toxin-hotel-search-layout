@@ -1,16 +1,15 @@
 mixin logo(props)
   -
-    var className = "logo"
-    className += props.isUI ? " logo__ui" : ""
+    var className = props.isUI ? " logo__ui" : ""
   if props.isUI
-    div(class = className)
+    .logo(class = className)
       .logo__circle
         .logo__curve
           include ./img/logo1.svg
         .logo__curve
           include ./img/logo2.svg
   else
-    a(class=className href="/blank.html")
+    a.logo(class=className href="/blank.html")
       .logo__circle-wrapper
         .logo__circle
           .logo__curve
