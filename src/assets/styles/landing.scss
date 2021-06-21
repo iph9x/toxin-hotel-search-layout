@@ -1,6 +1,7 @@
 .landing {
   background: url('../img/landing.jpg') no-repeat center / cover;
-  &-container {
+  &__container {
+    @include container;
     max-width: 1200px;
     display: flex;
     flex-direction: column;

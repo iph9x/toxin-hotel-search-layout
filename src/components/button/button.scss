@@ -28,17 +28,17 @@
     @include gradient;
     color: $purple;
     width: 99px;
-    span {
-      @include grid-center;
-      height: 100%;
-      border-radius: 22px;
-      border: 2px solid transparent;
-      background-clip: padding-box;
-      background: #fff;
-    }
     &:hover::after {
       opacity: 0.5;
     }
+  }
+  &-border &__text {
+    @include grid-center;
+    height: 100%;
+    border-radius: 22px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    background: #fff;
   }
   &-main {
     width: 100%;
@@ -47,7 +47,7 @@
     @include gradient;
     &::after {
       content: 'arrow_forward';
-      @include material-icons;    
+      @include material-icons-icon;    
     }
   }
   &-fill {

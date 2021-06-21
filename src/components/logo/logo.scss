@@ -9,17 +9,12 @@
     width: 48px;
     height: 48px;
     background: none;
-    .logo__curve {
-      margin-top: 3px;
-    }
-    .logo__circle {
-      background: transparent;
-    }
   }
-  &-container {
-    padding: 30px 0 65px 30px;
-    max-width: 1440px;
-    margin: 0 auto;
+  &__ui &__curve {
+    margin-top: 3px;
+  }
+  &__ui &__circle {
+    background: transparent;
   }
   &__circle-wrapper {
     width: 40px;

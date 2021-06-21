@@ -12,10 +12,6 @@ body {
   min-height: 100vh;
 }
 
-main {
-  flex: 1 0 auto;
-}
-
 ul, li {
   list-style: none;
   padding: 0;
@@ -44,29 +40,30 @@ button {
   }
 }
 
-.container {
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+main {
+  flex: 1 0 auto;
+  margin-top: 70px;
+  width: 100%;
+}
+
+.uikit-header {
+  max-width: 1440px;
   margin: 0 auto;
-  padding-right: 20px;
-  padding-left: 20px; 
-  @media (max-width: 340px) {
-    padding-right: 3vw;
-    padding-left: 3vw;
-  }
+  padding: 30px 0 65px 30px;
 }
 
-.main-container {
-  width: 1200px;
-  @media (max-width: 1200px) {
-    width: 100%;
+.home-page {
+  &__links {
+    @include flex-justify-c-align-c;
+    flex-direction: column;
+    row-gap: 20px;
+    padding: 30px 0;
   }
-}
-
-.main-links {
-  @include flex-justify-c-align-c;
-  flex-direction: column;
-  row-gap: 20px;
-  padding: 30px 0;
-  a {
+  &__link {
     text-decoration: none;
     color: $darkshade75;
     &:active,
@@ -75,90 +72,4 @@ button {
       color: $darkshade75;
     }
   }
-}
-
-.uikit {
-  min-height: 100vh;
-  &-container {
-    max-width: 1440px;    
-    @media (max-width: 1440px) {
-      padding: 0 10vw;
-    }
-    @media (max-width: 950px) {
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    @media (max-width: 350px) {
-      padding: 0 3vw;
-    }
-  }
-}
-
-.field-wrapper {
-  position: relative;
-  width: 100%;
-  margin-bottom: 20px;
-  max-width: 320px;
-  &-rooms {
-    width: 266px;
-  }
-  &__input {
-    width: 100%;
-    height: 44px;
-    padding-left: 14px;
-    padding-right: 14px;
-    padding-bottom: 1px;
-    line-height: 24px;
-    border: 1px solid $darkshade25;
-    border-radius: 4px;
-    color: $darkshade75;
-    font-size: $body-font-size;
-    @include montserrat;
-    &:hover,
-    &:focus {
-      border: 1px solid $darkshade50;
-      box-shadow: none;
-      outline: none;
-    }
-    &::placeholder {
-      color: $darkshade25;
-    }
-    @media (max-width: 340px) {
-      max-width: 95vw;
-    }
-    &_active {
-      border-color: $darkshade50;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-      filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.05));
-    }
-  }
-  &__title {
-    margin-bottom: 5px;
-    text-transform: uppercase;
-    font-size: $h3-font-size;
-    font-weight: 700;
-  }
-  &__arrow {
-    @include material-icons;
-    top: 20px;
-    color: $darkshade50;
-    -webkit-user-select: none;
-    z-index: 4;
-    &:hover {
-      cursor: pointer;
-    }
-    &:hover + .field-wrapper__input {
-      border: 1px solid $darkshade50;
-    }
-  }
-}
-
-.mb-40 {
-  margin-bottom: 40px;
-}
-
-main {
-  margin-top: 70px;
-  width: 100%;
 }

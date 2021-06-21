@@ -19,10 +19,7 @@
       justify-content: center;
     }
   }
-  .room-card {
-    margin-bottom: 0;
-  }
-  .pagination {
+  &__pagination {
     margin: 0 auto;
     transform: translate(-8px);
   }

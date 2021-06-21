@@ -3,9 +3,9 @@ mixin room-info(props)
 
   .room-info
     if props.title
-      .field-wrapper__title= props.title
+      .room-info__title= props.title
     each item in items
       .room-info__item
         i.room-info__icon.material-icons= item.content
-        .room-info__title= item.title
+        .room-info__name= item.title
         .room-info__sub= item.sub

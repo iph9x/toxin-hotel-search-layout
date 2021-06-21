@@ -1,6 +1,7 @@
 .pagination {
   width: 240px;
-  .field-wrapper__title {
+  &__title {
+    @include field-title;
     margin-top: 40px;
     margin-bottom: 16px;
   }

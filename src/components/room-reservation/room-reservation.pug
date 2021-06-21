@@ -2,18 +2,19 @@ include ../dropdown/dropdown
 include ../date-dropdown/date-dropdown
 include ../button/button
 
-form(action="").room-reservation.card-wrapper
-  .room-card__header
-    h2.card-title
-      span.room-card__number 888
-      span.room-card__lux люкс
-    div.room-card__price-box
-      span.room-card__day-price 9 990
-      span.room-card__time в сутки
-  .date-container
+form(action="").room-reservation
+  .room-reservation__header
+    h2.room-reservation__title
+      span.room-reservation__number 888
+      span.room-reservation__lux люкс
+    div.room-reservation__price-box
+      span.room-reservation__day-price 9 990
+      span.room-reservation__time в сутки
+  .room-reservation__date-dropdowns-wrapper
     +date-dropdown({ title: 'Прибытие', main: true})
     +date-dropdown({ title: 'Выезд'})
-  +dropdown({ title: 'Гости', placeholderText: 'Сколько гостей', id: 'guests' })
+  .room-reservation__dropdown-guests
+    +dropdown({ title: 'Гости', placeholderText: 'Сколько гостей', id: 'guests' })
   .room-reservation__notes
     .room-reservation__note
       .room-reservation__service-box

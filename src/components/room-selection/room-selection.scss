@@ -1,16 +1,14 @@
 .room-selection {
-  .card-title {
+  @include card-wrapper;
+  &__title {
+    @include card-title;
     margin-bottom: 22px;
   }
-  .field-wrapper-guests {
+  &__dropdown-guests {
     margin-bottom: 31px;
   }  
-  .date-dropdown {
+  &__date-dropdowns-wrapper {
+    @include date-dropdowns-wrapper;
     margin-bottom: 21px;
-  }
-  .button-main {
-    span {
-      padding-right: 2px;
-    }
   }
 }

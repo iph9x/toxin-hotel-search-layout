@@ -4,8 +4,8 @@ mixin checkbox-buttons(props)
   -
     var radios = props.radios;
 
-  .field-wrapper.checkbox-buttons
-    .field-wrapper__title= props.title
+  .checkbox-buttons
+    .checkbox-buttons__title= props.title
     .checkbox-buttons__items
       each radio in radios
         +checkbox({ name: radio.name, id: radio.id, placeholder: props.placeholder })

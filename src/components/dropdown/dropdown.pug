@@ -1,10 +1,10 @@
 mixin dropdown(props)
-  - var wrapperClassName = props.id === 'guests' ? 'dropdown field-wrapper field-wrapper-guests' : 'dropdown field-wrapper field-wrapper-rooms'
-  div(class=wrapperClassName)
+  - var wrapperClassName = props.id === 'guests' ? ' dropdown-guests' : 'dropdown-rooms'
+  .dropdown(class=wrapperClassName)
     if props.title
-      .field-wrapper__title= props.title
-    .field-wrapper__arrow.js-dropdown-arrow expand_more
-    input(type="text" placeholder=props.placeholderText class="dropdown__input js-dropdown__input field-wrapper__input" readonly)
+      .dropdown__title= props.title
+    .dropdown__arrow.js-dropdown__arrow expand_more
+    input(type="text" placeholder=props.placeholderText class="dropdown__input js-dropdown__input" readonly)
     if (props.id === 'rooms')
       .dropdown__menu.js-dropdown__menu(data-menu-type = props.id)
         .dropdown__item.js-dropdown__item
@@ -46,5 +46,5 @@ mixin dropdown(props)
             .dropdown__digit.js-dropdown__digit(data-menu-item-id="babies") 0
             button(type="button").dropdown__circle-btn.dropdown__circle-btn_increase.js-dropdown__circle-btn_increase +
         .dropdown__buttons
-          button(type="button").dropdown__clear.js-dropdown__clear.dropdown__clear_disabled Очистить
-          button(type="button").dropdown__apply.js-dropdown__apply Применить
+          button.dropdown__button(type="button").dropdown__clear.js-dropdown__clear.dropdown__clear_disabled Очистить
+          button.dropdown__button(type="button").dropdown__apply.js-dropdown__apply Применить

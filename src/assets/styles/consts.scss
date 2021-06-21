@@ -46,21 +46,6 @@ $nav-height: 70px;
   font-family: 'Montserrat', Arial, sans-serif;
 }
 
-@mixin material-icons {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 44px;
-  height: 44px;
-  font-family: 'Material Icons';
-  text-transform: none;
-  font-size: 24px;
-  font-weight: 400;
-  display: grid;
-  place-items: center;
-  line-height: 1;
-}
-
 @mixin flex-justify-sb-align-c {
   display: flex;
   justify-content: space-between;
@@ -95,6 +80,21 @@ $nav-height: 70px;
   place-items: center;
 }
 
+@mixin material-icons-icon {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  font-family: 'Material Icons';
+  text-transform: none;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1;
+}
+
 @mixin material-icons-text-only {
   font-family: 'Material Icons';
   text-transform: none;
@@ -103,4 +103,170 @@ $nav-height: 70px;
   display: grid;
   place-items: center;
   line-height: 1;
+}
+
+@mixin field-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+
+@mixin field-title {
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  font-size: $h3-font-size;
+  font-weight: 700;
+}
+
+@mixin field-arrow {
+  @include material-icons-icon;
+  top: 20px;
+  color: $darkshade50;
+  -webkit-user-select: none;
+  z-index: 4;
+  &:hover {
+    cursor: pointer;
+  }
+  &:hover + input {
+    border: 1px solid $darkshade50;
+  }
+}
+
+@mixin field-input {
+  width: 100%;
+  height: 44px;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-bottom: 1px;
+  line-height: 24px;
+  border: 1px solid $darkshade25;
+  border-radius: 4px;
+  color: $darkshade75;
+  font-size: $body-font-size;
+  @include montserrat;
+  @media (max-width: 340px) {
+    max-width: 95vw;
+  }
+  &:hover,
+  &:focus {
+    border: 1px solid $darkshade50;
+    box-shadow: none;
+    outline: none;
+  }
+  &::placeholder {
+    color: $darkshade25;
+  }  
+}
+
+@mixin field-input-activated {
+  border-color: $darkshade50;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.05));
+}
+
+@mixin card-wrapper {
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  max-width: 380px;
+  padding: 29px;
+  padding-top: 39px;
+  margin-bottom: 40px;
+  width: 380px;
+  @media (max-width: 380px) {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 90vw;
+  }
+  @media (max-width: 340px) {
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 94vw;
+  }
+}
+
+@mixin card-title {
+  margin-bottom: 21px;
+  font-size: $h1-font-size;
+}
+
+@mixin checkbox {
+  margin-bottom: 12px;
+  color: $darkshade50;
+}
+
+@mixin checkbox-input {
+  opacity: 0;
+  display: none;
+  z-index: -1;      
+  &:checked + label::before {
+    border: 1px solid $purple;
+  }
+  &:checked + label::after {
+    visibility: visible;
+  }
+}
+
+@mixin checkbox-label {
+  position: relative;
+  &:hover {
+    cursor: pointer;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    visibility: hidden;
+    top: 4px;
+    left: -24px;
+    width: 8px;
+    height: 6px;
+    @include gradient;
+    clip-path: polygon(0 0, 2px 0, 2px 4px, 8px 4px, 8px 6px, 0 6px);
+    transform: rotate(-45deg);
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -30px;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid $darkshade25;
+  }
+}
+
+@mixin date-dropdowns-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 380px) {
+    column-gap: 5px;
+  }
+}
+
+@mixin container {
+  margin: 0 auto;
+  padding-right: 20px;
+  padding-left: 20px; 
+  @media (max-width: 340px) {
+    padding-right: 3vw;
+    padding-left: 3vw;
+  }
+}
+
+@mixin ui-container {
+  max-width: 1440px;
+  @media (max-width: 1440px) {
+    padding: 0 10vw;
+  }
+  @media (max-width: 950px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  @media (max-width: 350px) {
+    padding: 0 3vw;
+  }
 }

@@ -2,7 +2,8 @@
   background: url('../img/login-bg.jpg') no-repeat center / cover;
   justify-content: center;
   flex-direction: column;
-  .container {
+  &__container {
+    @include container;
     display: flex;
     justify-content: center;
   }

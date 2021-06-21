@@ -1,5 +1,10 @@
-.field-wrapper.masked-text-field {
-  .field-wrapper__input {
+.masked-text-field {
+  @include field-wrapper;
+  &__title {
+    @include field-title;
+  }
+  &__input {
+    @include field-input;
     padding-bottom: 3px;
   }
 }

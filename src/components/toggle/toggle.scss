@@ -1,6 +1,8 @@
 .toggle {
+  @include field-wrapper;
   margin-bottom: 40px;
-  .field-wrapper__title {
+  &__title {
+    @include field-title;
     margin-bottom: 15px;
   }
   &__item {
@@ -10,13 +12,13 @@
     display: none;
     z-index: -1;    
     opacity: 0;
-    &:checked + label::before {
-      border: 1px solid $purple;
-    }
-    &:checked + label::after {
-      @include gradient; 
-      left: -26px;
-    }
+  }
+  &__button:checked + &__label::before {
+    border: 1px solid $purple;
+  }
+  &__button:checked + &__label::after {
+    @include gradient; 
+    left: -26px;
   }
   &__label {
     position: relative;

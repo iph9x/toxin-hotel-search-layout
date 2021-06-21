@@ -1,12 +1,14 @@
-.bullet {
-  &-list {
-    &__ul {
-      padding-left: 21px;
-      margin-top: 13px;
-      font-size: $body-font-size;
-    }
+.bullet-list {
+  @include field-wrapper;
+  &__title {
+    @include field-title;
   }
-  &-item {
+  &__ul {
+    padding-left: 21px;
+    margin-top: 13px;
+    font-size: $body-font-size;
+  }
+  &__item {
     position: relative;
     max-width: 240px;
     margin-bottom: 10px;

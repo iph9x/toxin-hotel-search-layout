@@ -2,18 +2,27 @@ extends ../main
 include ../components/button/button
 
 block variables
-  - var title = 'Toxin index'
+  - var title = 'Toxin home'
 
 block content
-  main
-    .container.main-links
-      a(href = './colors-and-type.html') colors&type
-      a(href = './form-elements.html') form elements
-      a(href = './cards.html') cards
-      a(href = './headers-footers.html') headers & footers
-      a(href = './landing.html') landing page
-      a(href = './search-room.html') search room
-      a(href = './room-details.html') room details
-      a(href = './login-page.html') log in
-      a(href = './registration-page.html') registration
+  main.home-page
+    ul.home-page__links
+      li.home-page__li
+        a.home-page__link(href = './colors-and-type.html') colors&type
+      li.home-page__li
+        a.home-page__link(href = './form-elements.html') form elements
+      li.home-page__li
+        a.home-page__link(href = './cards.html') cards
+      li.home-page__li
+        a.home-page__link(href = './headers-footers.html') headers & footers
+      li.home-page__li
+        a.home-page__link(href = './landing.html') landing page
+      li.home-page__li
+        a.home-page__link(href = './search-room.html') search room
+      li.home-page__li
+        a.home-page__link(href = './room-details.html') room details
+      li.home-page__li
+        a.home-page__link(href = './login-page.html') log in
+      li.home-page__li
+        a.home-page__link(href = './registration-page.html') registration
     

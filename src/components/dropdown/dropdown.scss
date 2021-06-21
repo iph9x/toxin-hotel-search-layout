@@ -1,20 +1,28 @@
 $material-icons-font-path: '~material-icons/iconfont/';
 @import '~material-icons/iconfont/material-icons.scss';
-@import '@/assets/styles/consts.scss';
 
-.field-wrapper {
-  .dropdown__input {
+.dropdown {
+  @include field-wrapper;
+  margin-bottom: 20px;
+  &:hover {
+    cursor: pointer;
+  }
+  &__title {
+    @include field-title;
+  }
+  &__arrow {
+    @include field-arrow;
+  }
+  &__input {
+    @include field-input;
     padding-bottom: 2px;
     padding-right: 40px;
     &::placeholder {
       color: $darkshade75;
     }
-  }
-}
-
-.dropdown {
-  &:hover {
-    cursor: pointer;
+    &_activated {
+      @include field-input-activated;
+    }
   }
   &__menu {
     display: none;
@@ -88,18 +96,18 @@ $material-icons-font-path: '~material-icons/iconfont/';
     grid-template-columns: 1fr 1fr;
     margin-top: 20px;
     margin-bottom: 6px;
-    button {
-      padding: 0;
-      color: $purple;
-      text-transform: uppercase;
-      font-size: $h3-font-size;
-      font-weight: 700;
-      background: none;
-      border: none;
-      &:focus,
-      &:active {
-        outline: none;
-      }
+  }
+  &__button {
+    padding: 0;
+    color: $purple;
+    text-transform: uppercase;
+    font-size: $h3-font-size;
+    font-weight: 700;
+    background: none;
+    border: none;
+    &:focus,
+    &:active {
+      outline: none;
     }
   }
   &__clear {

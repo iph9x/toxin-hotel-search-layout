@@ -9,10 +9,17 @@ include ../rich-checkbox-buttons/rich-checkbox-buttons
 - var expandableCheckbox = [{name: 'Завтрак', id: 'smoke'}, {name: 'Письменный стол', id: 'table'}, {name: 'Стул для кормления', id: 'chair'}, {name: 'Кроватка', id: 'cot'}, {name: 'Телевизор', id: 'tv'}, {name: 'Шампунь', id: 'shampoo'}]
 
 form.filter
-  +filter-date-dropdown({ id: 'datepick', title: 'Даты пребывания в отеле', dateIn: '19 авг', dateOut: '23 авг' })
-  +dropdown({ title: 'Гости', placeholderText: 'Сколько гостей', id: 'guests' })
-  +range-slider({title: 'Диапазон цены', note: true })
-  +checkbox-buttons( {title: 'Правила дома', radios: checkboxArr } )
-  +rich-checkbox-buttons({ title: 'Доступность' })
-  +dropdown({ title: 'Удобства номера', placeholderText: 'Сколько комнат', id: 'rooms' })
+  .filter__filter-date-dropdown
+    +filter-date-dropdown({ id: 'datepick', title: 'Даты пребывания в отеле', dateIn: '19 авг', dateOut: '23 авг' })
+  .filter__dropdown-guests
+    +dropdown({ title: 'Гости', placeholderText: 'Сколько гостей', id: 'guests' })
+  .filter__range-slider
+    +range-slider({title: 'Диапазон цены', note: true })
+  .filter__checkbox-buttons
+    +checkbox-buttons({title: 'Правила дома', radios: checkboxArr })
+  .filter__checkbox-buttons
+    +rich-checkbox-buttons({ title: 'Доступность' })
+  .filter__dropdown-rooms
+    +dropdown({ title: 'Удобства номера', placeholderText: 'Сколько комнат', id: 'rooms' })
+  .filter__expandable-checkbox-list
   +expandable-checkbox-list({ title: 'Дополнительные удобства', radios: expandableCheckbox })

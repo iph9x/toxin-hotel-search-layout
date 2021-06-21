@@ -1,12 +1,12 @@
 mixin date-dropdown(props)
-  .field-wrapper.date-dropdown
+  .date-dropdown
     if props.title
-      .field-wrapper__title= props.title
-    .field-wrapper__arrow.dropdown-arrow expand_more
+      .date-dropdown__title= props.title
+    .date-dropdown__arrow expand_more
     if props.main  
-      input(type="text", placeholder="ДД.ММ.ГГГГ", class=`field-wrapper__input date-dropdown__input js-date-dropdown__input datepicker-here js-date-in`, data-range="true" data-multiple-dates-separator=".")
+      input(type="text", placeholder="ДД.ММ.ГГГГ", class=`date-dropdown__input js-date-dropdown__input datepicker-here js-date-in`, data-range="true" data-multiple-dates-separator=".")
     else
-      input(type="text", placeholder="ДД.ММ.ГГГГ" class=`field-wrapper__input date-dropdown__input js-date-dropdown__input js-date-out`)
+      input(type="text", placeholder="ДД.ММ.ГГГГ" class=`date-dropdown__input js-date-dropdown__input js-date-out`)
 
     
       

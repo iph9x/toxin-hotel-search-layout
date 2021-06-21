@@ -1,6 +1,9 @@
 .room-info {
+  &__title {
+    @include field-title;
+  }
   &__item {
-    width: 291px;
+    width: 280px;
     display: grid;
     grid-template-columns: 48px auto;
     column-gap: 10px;
@@ -27,7 +30,7 @@
     -webkit-text-fill-color: transparent;
     font-size: 48px;
   }
-  &__title {
+  &__name {
     grid-area: 1 / 2 / 2 / 3;
     font-weight: 700;
   }

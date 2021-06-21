@@ -1,8 +1,7 @@
 .radio-buttons { 
-  &.field-wrapper {
-    margin-bottom: 33px;
-  }
-  .field-wrapper__title {
+  @include field-wrapper;
+  &__title {
+    @include field-title;
     margin-bottom: 15px;
   }
   &__items {
@@ -19,11 +18,11 @@
     opacity: 0;
     display: none;
     z-index: -1;      
-    &:checked + label::before {
-      border: 3px solid #ffffff;
-      box-shadow: 0 0 0 1px $purple;
-      @include gradient;
-    }
+  }
+  &__button:checked + &__label::before {
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 0 1px $purple;
+    @include gradient;
   }
   &__label {
     position: relative;

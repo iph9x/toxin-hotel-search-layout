@@ -7,13 +7,15 @@ block variables
 
 block content
   main.cards
-    .container.uikit-container.cards-container
-      .column
+    .cards__container
+      .cards__column
         include ../components/room-selection/room-selection
         include ../components/registration/registration
-      .column
+      .cards__column
         include ../components/room-reservation/room-reservation
         include ../components/login/login
-      .column
-        +room-card({ src: 'assets/img/lux1.png', number: 888, price: '9 990', reviews: 145, lux: true, rating: 5 })
-        +room-card({ src: 'assets/img/lux2.png', number: 840, price: '9 990', reviews: 65, rating: 4})
+      .cards__column
+        .cards__room-card
+          +room-card({ src: 'assets/img/lux1.png', number: 888, price: '9 990', reviews: 145, lux: true, rating: 5 })
+        .cards__room-card
+          +room-card({ src: 'assets/img/lux2.png', number: 840, price: '9 990', reviews: 65, rating: 4})

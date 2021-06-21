@@ -1,10 +1,14 @@
 .rate-button {
+  @include field-wrapper;
   position: relative;
+  &__title {
+    @include field-title;
+    margin-bottom: 16px;
+  }
   &__item {
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
-    margin-top: 16px;    
   } 
   &__input {
     display: none;
@@ -17,6 +21,13 @@
     width: 24px;
     &:hover {
       cursor: pointer;
+    }
+    &_type {
+      &_static {
+        &:hover {
+          cursor: default;
+        }
+      }
     }
   }
 }

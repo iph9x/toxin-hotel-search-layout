@@ -1,16 +1,17 @@
 .expandable-checkbox-list {
+  @include field-wrapper;
   font-size: $body-font-size;
   max-width: 266px;
-  .field-wrapper {
-    width: 266px;
-    margin-bottom: 29px;
-    &__title {
-      margin-bottom: 0;
-    }
-    &__arrow {
-      top: 0;
-      bottom: auto;
-    }
+  margin-bottom: 29px;
+  width: 266px;
+  &__title {
+    @include field-title;
+    margin-bottom: 0;
+  }
+  &__arrow {
+    @include field-arrow;
+    top: 0;
+    bottom: auto;
   }
   &__wrapper-title {
     display: flex;
@@ -22,16 +23,12 @@
     transform: rotate(180deg);
     transform-origin: 50% 50%;
   }
-  .checkbox-buttons__items {
+  &__items {
     display: none;
+    transform: translateX(30px);
   }
-  .checkbox {
+  &__checkbox {
     margin-bottom: 13px;
-    &__label {
-      &::before {
-        top: -2px;
-      }
-    }
   }
 }
 

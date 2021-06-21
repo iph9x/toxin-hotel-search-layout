@@ -1,11 +1,14 @@
 include ../text-field/text-field
 include ../button/button
 
-form(action="").login.card-wrapper
-  h2.card-title Войти
-  +text-field({ placeholderText: 'Email' })
-  +text-field({ placeholderText: 'Пароль' })
-  +button({ text: 'Войти', class: 'button-fill button-main' })
+form(action="").login
+  h2.login__title Войти
+  .login__email
+    +text-field({ placeholderText: 'Email' })
+  .login__password
+    +text-field({ placeholderText: 'Пароль' })
+  .login__button
+    +button({ text: 'Войти', class: 'button-fill button-main' })
   .login__registration-wrapper
     span.login__no-account Нет аккаунта на Toxin?
     +button({ text: 'Создать', class: 'button-border' })

@@ -1,10 +1,13 @@
 .colors-and-type {
   background: #fff;
   margin-bottom: 2px;
-  &-main {
+  flex: 1 0 auto;
+  &__main {
     margin-top: 0;
   }
-  &-container {
+  &__container {
+    @include container;
+    @include ui-container;
     padding-left: 150px;
     padding-right: 158px;
     display: flex;

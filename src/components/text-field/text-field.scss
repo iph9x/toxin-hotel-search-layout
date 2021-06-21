@@ -1,1 +1,9 @@
-
+.text-field {
+  @include field-wrapper;
+  &__title {
+    @include field-title;
+  }
+  &__input {
+    @include field-input;
+  }
+}

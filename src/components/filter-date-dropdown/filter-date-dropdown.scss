@@ -1,9 +1,17 @@
 .filter-date-dropdown {
-  &.field-wrapper {
-    margin-bottom: 41px;
-    width: 266px;
+  @include field-wrapper;
+  margin-bottom: 41px;
+  width: 266px;
+  &__title {
+    @include field-title;
   }
-  .dropdown:hover {
-    cursor: pointer;
+  &__arrow {
+    @include field-arrow;
+  }
+  &__input {
+    @include field-input;
+    &:hover {
+      cursor: pointer;
+    }
   }
 }

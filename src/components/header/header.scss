@@ -5,12 +5,17 @@
   z-index: 5;
   top: 0;
   width: 100%;
-  &-container {
+  &__container {
+    @include container;
     max-width: 1200px;
     height: 70px;
     padding-right: 20px;
     padding-left: 20px;
     @include flex-justify-sb-align-c;
+    width: 1200px;
+    @media (max-width: 1200px) {
+      width: 100%;
+    }
   }
   &__menu {
     @include flex-justify-sb-align-c;  
@@ -66,10 +71,10 @@
         transform: translateY(-50%);
         transition: .2s;
       }
+      &_active &-straight {
+        opacity: 0;
+      }
       &_active {
-        .header__menu-btn-straight {
-          opacity: 0;
-        }
         &::before {
           transform: rotate(45deg);
         }
@@ -108,15 +113,15 @@
       align-items: center;
       row-gap: 20px;
     }
-    .button {
-      height: 34px;
-      &:first-child {
-        width: 87px;
-        margin-right: 20px;
-        margin-left: 11px;
-        @media (max-width: 950px) { 
-          margin: 0;
-        }
+  }
+  &__login-button {
+    height: 34px;
+    &:first-child {
+      width: 87px;
+      margin-right: 20px;
+      margin-left: 11px;
+      @media (max-width: 950px) { 
+        margin: 0;
       }
     }
   }

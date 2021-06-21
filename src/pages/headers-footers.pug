@@ -6,6 +6,9 @@ block variables
   - var parentClass = 'headers-footers'
 
 block content
-  +header({ isAuth: false })
-  +header({ isAuth: true })
-  include ../components/footer/footer
+  .headers-footers
+    .headers-footers__header
+      +header({ isAuth: false })
+    .headers-footers__header
+      +header({ isAuth: true })
+    include ../components/footer/footer

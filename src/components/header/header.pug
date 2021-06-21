@@ -3,9 +3,9 @@ include ../button/button
 
 mixin header(props)
   header.header
-    .container.header-container
+    .header__container
       +logo({})
-      .header__menu-btn.js-header-btn
+      .header__menu-btn.js-header__menu-btn
         .header__menu-btn-straight
       .header__menu.js-menu
         include ../nav/nav
@@ -14,5 +14,6 @@ mixin header(props)
             a.header__profile-link(href="/blank.html") Юлий Цезарь
         else
           .header__auth-box
-            +button({ text: 'Войти', class: 'button-border' })
+            .header__login-button
+              +button({ text: 'Войти', class: 'button-border' })
             +button({ text: 'Зарегистрироваться', class: 'button-fill' })

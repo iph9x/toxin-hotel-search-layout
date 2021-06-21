@@ -4,23 +4,23 @@
     align-items: center;
     margin: 0 auto;
   }
-  .filter-date-dropdown.field-wrapper {
+  &__filter-date-dropdown {
     margin-bottom: 20px;
   }
-  .field-wrapper-guests {
+  &__dropdown-guests {
     margin-bottom: 31px;
   }
-  .range-slider {
+  &__range-slider {
     margin-bottom: 30px;
   }
-  .checkbox-buttons {
+  &__checkbox-buttons {
     max-width: 240px;
     margin-bottom: 19px;
   }
-  .rich-checkbox-buttons {
-    margin-bottom: 29px;
-  }
-  .field-wrapper-rooms {
+  &__dropdown-rooms {
     margin-bottom: 15px;
+  }
+  &__rich-checkbox-buttons {
+    margin-bottom: 29px;
   }
 }

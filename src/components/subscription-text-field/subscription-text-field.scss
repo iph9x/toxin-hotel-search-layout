@@ -1,13 +1,19 @@
 .subscription-text-field {
-  &.field-wrapper {
-    width: 266px;
+  @include field-wrapper;
+  width: 266px;
+  &__title {
+    @include field-title;
   }
-  .field-wrapper__arrow {
+  &__arrow {
+    @include field-arrow;
     @include gradient;
     top: auto;
     bottom: 0;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+  &__input {
+    @include field-input;
   }
 }

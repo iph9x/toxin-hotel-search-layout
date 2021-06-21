@@ -19,6 +19,10 @@ export default class RoomCard {
         prevArrow: prevAr,
         nextArrow: nextAr,
       });
+
+      $('.slick-dots').addClass('room-card__images-nav');
+      $('.slick-dots li').addClass('room-card__nav-dot');
+      $('.slick-dots li button').addClass('room-card__nav-button');
     })
   }
 }

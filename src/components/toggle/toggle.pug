@@ -1,7 +1,7 @@
 mixin toggle(props)
-  .field-wrapper.toggle
+  .toggle
     if (props.title)
-      .field-wrapper__title= props.title
+      .toggle__title= props.title
     .toggle__item
-      input(type="checkbox" class="toggle__button" id=props.id value=props.id name=props.id)
-      label(for=props.id class="toggle__label")= props.text
+      input.toggle__button(type="checkbox" id=props.id value=props.id name=props.id)
+      label.toggle__label(for=props.id)= props.text

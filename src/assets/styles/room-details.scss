@@ -2,6 +2,7 @@
   background: #fff;
   margin-bottom: 1px;
   &__container {
+    @include container;
     display: flex;
     justify-content: center;
     max-width: 1200px;

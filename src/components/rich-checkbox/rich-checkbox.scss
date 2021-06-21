@@ -1,8 +1,13 @@
 .rich-checkbox {
+  @include checkbox;
   width: 236px;
   transform: translateX(30px);
   margin-bottom: 9px;
+  &__input {
+    @include checkbox-input;
+  }
   &__label {
+    @include checkbox-label;
     color: $darkshade75;
     font-weight: 700;
     font-size: 14px;

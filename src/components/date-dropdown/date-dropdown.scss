@@ -1,6 +1,15 @@
-.field-wrapper.date-dropdown {
+.date-dropdown {
+  @include field-wrapper;
   max-width: 150px;
-  .date-dropdown__input {
+  margin-bottom: 20px;
+  &__title {
+    @include field-title;
+  }
+  &__arrow {
+    @include field-arrow;
+  }
+  &__input {
+    @include field-input;
     padding-bottom: 4px;
     &:hover {
       cursor: pointer;
@@ -10,4 +19,3 @@
     }
   }
 }
-

@@ -2,7 +2,6 @@
   width: 270px;
   background: #fff;
   border-radius: 4px;
-  margin-bottom: 40px;
   @include boxshadow;
   &__slider {
     height: 152px;
@@ -41,17 +40,17 @@
     left: 0;
     border-top-left-radius: 4px;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
-    .room-card__icon {
-      transform: translateX(1px) rotate(90deg);
-    }
+  }
+  &__prev-slide &__icon {    
+    transform: translateX(1px) rotate(90deg);
   }
   &__next-slide {
     right: 0;
     border-top-right-radius: 4px;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
-    .room-card__icon {
-      transform: translateX(-1px) rotate(-90deg);
-    }
+  }
+  &__next-slide &__icon {
+    transform: translateX(-1px) rotate(-90deg);
   }
   &__icon {
     display: grid;
@@ -85,64 +84,61 @@
       background: #fff;
     }
   }
-  .slick-dots {
+  &__images-nav {
     position: absolute;
     bottom: 15px;
     right: 13px;
     display: flex;
     z-index: 10;
     width: 41px;
-    li {
-      position: absolute;
-      bottom: 1px;
-      &:nth-child(4) {
-        right: 0;
-      }
-      &:nth-child(3) {
-        right: 11px;
-      }
-      &:nth-child(2) {
-        right: 23px;
-      }
-      &:nth-child(1) {
-        right: 34px;
-      }
+  }
+  &__nav-dot {
+    position: absolute;
+    bottom: 1px;
+    &:nth-child(4) {
+      right: 0;
     }
-    li button {
-      position: relative;
-      font-size: 0;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      box-sizing: padding-box;
-      border: none;
-      background: none;
-      &:focus,
-      &:active {
-        outline: none;
-      }
-      &::before {
-        content: '';
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        position: absolute;
-        width: 7px;
-        height: 7px;
-        border: 1px solid #fff;
-        border-radius: 50%;
-        box-sizing: padding-box;
-      }
+    &:nth-child(3) {
+      right: 11px;
+    }
+    &:nth-child(2) {
+      right: 23px;
+    }
+    &:nth-child(1) {
+      right: 34px;
+    }
+    &.slick-active button::before {
+      background: #fff;
     }
   }
-  .slick-active button::before {
-    background: #fff;
+  &__nav-button {
+    position: relative;
+    font-size: 0;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    box-sizing: padding-box;
+    border: none;
+    background: none;
+    &:focus,
+    &:active {
+      outline: none;
+    }
+    &::before {
+      content: '';
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      box-sizing: padding-box;
+    }
   }
   &__info-box {
     padding: 19px 20px;
-  }
-  .field-wrapper {
-    margin-bottom: 0;
   }
   &__title {
     margin-bottom: 0;
@@ -192,16 +188,10 @@
     font-size: $h3-font-size;
     margin-bottom: 1px;
     display: flex;
-  }  
-  .rate-button__item {
-    margin-top: 0;
   }
   &__rating {
     margin-top: 9px;
     @include flex-justify-sb-align-c;
-    .rate-button__star:hover {
-      cursor: default;
-    }
   }
   &__reviews-box {
     font-size: $body-font-size;

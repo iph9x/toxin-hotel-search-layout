@@ -1,13 +1,15 @@
 .range-slider {
+  @include field-wrapper;
   width: 266px !important;
+  &__title {
+    @include field-title;
+    margin-bottom: 0;
+  }
   &__titles {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 23px;
-    .field-wrapper__title {
-      margin-bottom: 0;
-    }
   }
   &__range-box {
     color: $darkshade50;

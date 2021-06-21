@@ -1,4 +1,4 @@
 mixin checkbox(props)
   .checkbox
-    input(type="checkbox" placeholder=props.placeholderText class="checkbox__input" id=props.id value=props.name name=props.id)
-    label(for=props.id class="checkbox__label")= props.name
+    input.checkbox__input(type="checkbox" placeholder=props.placeholderText id=props.id value=props.name name=props.id)
+    label.checkbox__label(for=props.id)= props.name

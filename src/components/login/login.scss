@@ -1,12 +1,18 @@
 .login {
+  @include card-wrapper;
   background: #fff;
+  padding-bottom: 30px;
   width: 100%;
-  .field-wrapper {
-    &:nth-of-type(1) {
-      margin-bottom: 10px;
-    }
+  &__title {
+    @include card-title;
   }
-  .button-main {
+  &__email {
+    margin-bottom: 10px;
+  }
+  &__password {
+    margin-bottom: 20px;
+  }
+  &__button {
     margin-bottom: 30px;
   }
   &__registration-wrapper {
@@ -15,8 +21,4 @@
   &__no-account {
     font-size: $body-font-size;
   }
-}
-
-.card-wrapper.login {
-  padding-bottom: 30px;
 }

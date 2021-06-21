@@ -1,5 +1,7 @@
 .rich-checkbox-buttons {
-  .field-wrapper__title {
+  @include field-wrapper;
+  &__title {
+    @include field-title;
     margin-bottom: 16px;
   }
 }

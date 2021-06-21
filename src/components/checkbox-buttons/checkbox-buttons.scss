@@ -1,10 +1,9 @@
 .checkbox-buttons {
-  max-width: 222px;
+  @include field-wrapper;
   font-size: $body-font-size;
-  &.field-wrapper {
-    margin-bottom: 29px;
-  }
-  .field-wrapper__title {
+  margin-bottom: 29px;
+  &__title {
+    @include field-title;
     margin-bottom: 18px;
   }
   &__items {

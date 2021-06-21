@@ -1,8 +1,8 @@
 mixin like-button(props)
   - var likesCount = 12;
-  .field-wrapper.like-button
+  .like-button
     if (props.title)
-      .field-wrapper__title= props.title
+      .like-button__title= props.title
     .like-button__item
       input(type="button" class="like-button__input js-like-button__input" value=likesCount)
       i.material-icons.like-button__icon favorite_border

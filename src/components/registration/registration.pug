@@ -4,18 +4,25 @@ include ../radio-buttons/radio-buttons
 include ../toggle/toggle
 include ../button/button
 
-form(action="").registration.card-wrapper
-  h2.card-title Регистрация аккаунта
-  form(action="")
+form(action="").registration
+  h2.registration__title Регистрация аккаунта
+  .registration__first-name
     +text-field({ placeholderText: 'Имя' })
+  .registration__last-name
     +text-field({ placeholderText: 'Фамилия' })
+  .registration__radio-buttons
     +radio-buttons({})
+  .registration__masked-text-field
     +masked-text-field({ title: 'Дата рождения', placeholderText: 'ДД.ММ.ГГГГ' })
+  .registration__email
     +text-field({ title: 'Данные для входа в сервис', placeholderText: 'Email' })
+  .registration__password
     +text-field({ placeholderText: 'Пароль' })
+  .registration__suggestions
     +toggle({ id: 'suggestions', text: 'Получать спецпредложения' })
+  .registration__button
     +button({ text: 'Зарегистрироваться', class: 'button-fill button-main' })
-    .registration__login-wrapper
-      span.registration__already-reg Уже есть аккаунт на Toxin
-      +button({ text: 'Войти', class: 'button-border' })
+  .registration__login-wrapper
+    span.registration__already-reg Уже есть аккаунт на Toxin
+    +button({ text: 'Войти', class: 'button-border' })
 

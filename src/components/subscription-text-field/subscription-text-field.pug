@@ -1,8 +1,6 @@
 mixin subscription-text-field(props)
-  .field-wrapper.subscription-text-field
+  .subscription-text-field
     if props.title
-      .field-wrapper__title= props.title
-    .field-wrapper__arrow arrow_forward
-    input(type="text" placeholder=props.placeholderText class="subscription-text-field__input field-wrapper__input")
-
-  
+      .subscription-text-field__title= props.title
+    .subscription-text-field__arrow arrow_forward
+    input(type="text" placeholder=props.placeholderText class="subscription-text-field__input")

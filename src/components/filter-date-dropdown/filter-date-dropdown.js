@@ -3,11 +3,12 @@ import { initDatepickerButtons } from '../../assets/js/utils';
 
 export default class FilterDateDropdown {
   constructor() {
-    this.$filterDateDropdown = $('.js-filter-date-dropdown');
+    this.$filterDateDropdownInput = $('.js-filter-date-dropdown__input');
+    this.$filterDateDropdownArrow = $('.js-filter-date-dropdown__arrow');
   }
   
   init() {
-    const filterDateDropdown = this.$filterDateDropdown.datepicker({
+    const filterDateDropdown = this.$filterDateDropdownInput.datepicker({
       navTitles: { days: 'MM yyyy' },
       dateFormat: "dd M",
       multipleDatesSeparator: ' - ',
@@ -15,6 +16,7 @@ export default class FilterDateDropdown {
     
     if (!!filterDateDropdown) {
       initDatepickerButtons(filterDateDropdown);
+      this.$filterDateDropdownArrow.on('click', () => filterDateDropdown.show());
     }
   }
 }

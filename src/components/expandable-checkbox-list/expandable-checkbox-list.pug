@@ -4,11 +4,12 @@ mixin expandable-checkbox-list(props)
   -
     var radios = props.radios;
 
-  .field-wrapper.expandable-checkbox-list.js-expandable-checkbox-list
+  .expandable-checkbox-list.js-expandable-checkbox-list
     .expandable-checkbox-list__wrapper-title
-      .field-wrapper__title= props.title
-      .field-wrapper__arrow.expandable-checkbox-list__arrow.js-expandable-checkbox-list__arrow expand_more
-    .checkbox-buttons__items.js-checkbox-buttons__items
+      .expandable-checkbox-list__title= props.title
+      .expandable-checkbox-list__arrow.expandable-checkbox-list__arrow.js-expandable-checkbox-list__arrow expand_more
+    .expandable-checkbox-list__items.js-expandable-checkbox-list__items
       each radio in radios
-        +checkbox({ name: radio.name, id: radio.id, placeholder: props.placeholder })
+        .expandable-checkbox-list__checkbox
+          +checkbox({ name: radio.name, id: radio.id, placeholder: props.placeholder })
   

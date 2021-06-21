@@ -11,7 +11,7 @@ include ../components/toggle/toggle
 include ../components/like-button/like-button
 include ../components/rate-button/rate-button
 include ../components/range-slider/range-slider
-include ../components/buttons/buttons
+include ../components/button/button
 include ../components/pagination/pagination
 include ../components/expandable-checkbox-list/expandable-checkbox-list
 include ../components/rich-checkbox-buttons/rich-checkbox-buttons
@@ -28,38 +28,47 @@ block variables
 
 block content
   section.form-elements__wrapper
-    .container.uikit-container.form-elements-container
-      .column.column-mr-126
-        +text-field({ title: 'Text field', placeholderText: 'Email' })
+    .uikit-container.form-elements__container
+      .form-elements__column.form-elements__column-mr-126
+        .form-elements__text-field
+          +text-field({ title: 'Text field', placeholderText: 'Email' })
         +dropdown({ title: 'Dropdown', placeholderText: 'Сколько гостей', id: 'guests' })
         +masked-text-field({ title: 'Masked Text field', placeholderText: 'ДД.ММ.ГГГГ' })
-        .date-container
+        .form-elements__date-dropdowns-wrapper
           +date-dropdown({ title: 'Date Dropdown', main: true })
           +date-dropdown({ title: 'Date Dropdown' })
         +filter-date-dropdown({ id: 'datepick', title: 'Filter Date Dropdown', dateIn: '19 авг', dateOut: '23 авг' })
         +subscription-text-field({ title: 'Subscription Text Field', placeholderText: 'Email' })
-      .column.column-mr-72
+      .form-elements__column.form-elements__column-mr-72
         +checkbox-buttons( {title: 'Checkbox buttons', radios: checkboxArr } )
-        +radio-buttons( {title: 'Radio buttons'} )
+        .form-elements__radio-buttons
+          +radio-buttons( {title: 'Radio buttons'} )
         +toggle({ id: 'suggestions', title: 'Toggle', text: 'Получать спецпредложения' })
         +like-button({ title: 'Like button' })
         +rate-button({ title: 'Rate button' })
-      .column
+      .form-elements__column
         +range-slider({title: 'Range slider'})
-        +buttons({title: 'Buttons'})
+        .form-elements__buttons
+          .form-elements__buttons-title Buttons
+          .form-elements__buttons-box
+            +button({ text: 'Click me', class: 'button-fill' })
+            +button({ text: 'Click me', class: 'button-border' })
+            +button({ text: 'Click me', class: 'button-string' })
+            +button({ text: 'Перейти к оплате', class: 'button-fill button-main' })
         +pagination({title: 'Pagination'})
-      .column.column-mr-126
+      .form-elements__column.form-elements__column-mr-126
         +dropdown({ title: 'Dropdown', placeholderText: '2 спальни, 2 кровати', id: 'rooms' })
-      .column.column-span-2
+      .form-elements__column.form-elements__column-span-2
         +dropdown({ title: 'Dropdown', placeholderText: 'Сколько гостей', id: 'guests' })
-      .column.column-expandable.column-mr-126
+      .form-elements__column.form-elements__column-expandable.column-mr-126
         +expandable-checkbox-list({ title: 'Expandable checkbox list', radios: expandableCheckbox })
-      .column.column-mr-72
+      .form-elements__column.form-elements__column-mr-72
         +rich-checkbox-buttons({ title: 'Rich checkbox buttons' })
-      .column
+      .form-elements__column
         +bullet-list({title: 'Bullet list'})
-      .column.column-mr-126
+      .form-elements__column.form-elements__column-mr-126
         +room-info({items: roomItems})
-      .column-span-2
-        +review({src: 'assets/img/avatar.jpg', name: 'Мурад Сарафaнов', date: '5 дней назад', text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'})
+      .form-elements__column-span-2
+        .form-elements__review
+          +review({src: 'assets/img/avatar.jpg', name: 'Мурад Сарафaнов', date: '5 дней назад', text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'})
       
