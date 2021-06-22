@@ -1,8 +1,8 @@
-mixin filter-date-dropdown(props)
+mixin filter-date-dropdown({ title, dateIn, dateOut })
   .filter-date-dropdown
-    if props.title
-      .filter-date-dropdown__title= props.title
+    if title
+      .filter-date-dropdown__title= title
     .filter-date-dropdown__arrow.js-filter-date-dropdown__arrow expand_more
-    input.filter-date-dropdown__input(type="text" readonly placeholder=props.placeholderText class="datepicker-here js-filter-date-dropdown__input" data-range="true" value=`${props.dateIn} - ${props.dateOut}`)
+    input.filter-date-dropdown__input(type="text" readonly placeholder=placeholderText class="datepicker-here js-filter-date-dropdown__input" data-range="true" value=`${dateIn} - ${dateOut}`)
 
   

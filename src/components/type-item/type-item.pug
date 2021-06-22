@@ -1,6 +1,6 @@
-mixin type-item(props)
-  - var className = 'type-item_' + props.classPrefix
+mixin type-item({ classPrefix, title, desc })
+  - const className = 'type-item_' + classPrefix
 
   .type-item(class=className)
-    .type-item__title= props.title
-    .type-item__desc= props.desc
+    .type-item__title= title
+    .type-item__desc= desc

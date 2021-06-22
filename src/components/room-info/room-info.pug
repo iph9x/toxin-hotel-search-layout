@@ -1,9 +1,7 @@
-mixin room-info(props)
-  - var items = props.items
-
+mixin room-info({ items, title })
   .room-info
-    if props.title
-      .room-info__title= props.title
+    if title
+      .room-info__title= title
     each item in items
       .room-info__item
         i.room-info__icon.material-icons= item.content

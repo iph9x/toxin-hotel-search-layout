@@ -1,7 +1,7 @@
-mixin logo(props)
-  -
-    var className = props.isUI ? " logo__ui" : ""
-  if props.isUI
+mixin logo({ isUI })
+  - const className = isUI ? " logo__ui" : ""
+
+  if isUI
     .logo(class = className)
       .logo__circle
         .logo__curve

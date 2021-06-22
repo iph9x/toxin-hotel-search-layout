@@ -1,7 +1,7 @@
-mixin toggle(props)
+mixin toggle({ title, id, text })
   .toggle
-    if (props.title)
-      .toggle__title= props.title
+    if (title)
+      .toggle__title= title
     .toggle__item
-      input.toggle__button(type="checkbox" id=props.id value=props.id name=props.id)
-      label.toggle__label(for=props.id)= props.text
+      input.toggle__button(type="checkbox" id=id value=id name=id)
+      label.toggle__label(for=id)= text

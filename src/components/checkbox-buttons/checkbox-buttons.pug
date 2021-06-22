@@ -1,12 +1,10 @@
 include ../checkbox/checkbox
 
-mixin checkbox-buttons(props)
-  - var radios = props.radios;
-
+mixin checkbox-buttons({ radios, title, placeholder })
   .checkbox-buttons
-    .checkbox-buttons__title= props.title
+    .checkbox-buttons__title= title
     .checkbox-buttons__items
       each radio in radios
-        +checkbox({ name: radio.name, id: radio.id, placeholder: props.placeholder })
+        +checkbox({ name: radio.name, id: radio.id, placeholder: placeholder })
 
   

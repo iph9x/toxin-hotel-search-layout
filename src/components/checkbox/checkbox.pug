@@ -1,4 +1,4 @@
-mixin checkbox(props)
+mixin checkbox({ placeholderText, id, name })
   .checkbox
-    input.checkbox__input(type="checkbox" placeholder=props.placeholderText id=props.id value=props.name name=props.id)
-    label.checkbox__label(for=props.id)= props.name
+    input.checkbox__input(type="checkbox" placeholder=placeholderText id=id value=name name=id)
+    label.checkbox__label(for=id)= name

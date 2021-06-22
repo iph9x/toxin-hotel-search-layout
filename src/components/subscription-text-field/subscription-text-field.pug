@@ -1,6 +1,6 @@
-mixin subscription-text-field(props)
+mixin subscription-text-field({ title, placeholderText })
   .subscription-text-field
-    if props.title
-      .subscription-text-field__title= props.title
+    if title
+      .subscription-text-field__title= title
     .subscription-text-field__arrow arrow_forward
-    input.subscription-text-field__input(type="text" placeholder=props.placeholderText)
+    input.subscription-text-field__input(type="text" placeholder=placeholderText)

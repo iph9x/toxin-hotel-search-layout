@@ -1,5 +1,5 @@
-mixin masked-text-field(props)
+mixin masked-text-field({ title, placeholderText })
   .masked-text-field
-    if (props.title)
-      .masked-text-field__title= props.title
-    input.masked-text-field__input.js-masked-text-field__input(type="text" placeholder=props.placeholderText)
+    if (title)
+      .masked-text-field__title= title
+    input.masked-text-field__input.js-masked-text-field__input(type="text" placeholder=placeholderText)

@@ -1,13 +1,14 @@
-mixin rate-button(props)
-  - var starsCount = props.count ? props.count : 0;
-  - let startStars = 0;
-  - let startBorders = 0;
-  - var bordersCount = 5 - starsCount;
+mixin rate-button({ count, title, static })
+  -
+    const starsCount = count ? count : 0;
+    const bordersCount = 5 - starsCount;
+    let startStars = 0;
+    let startBorders = 0;
 
   .rate-button.js-rate-button
-    if props.title
-      .rate-button__title= props.title
-    if props.static
+    if title
+      .rate-button__title= title
+    if static
       .rate-button__item
         while (startBorders++ < bordersCount)
           i.material-icons.rate-button__star.rate-button__star_type_static star_border

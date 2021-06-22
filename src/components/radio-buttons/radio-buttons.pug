@@ -1,8 +1,9 @@
-mixin radio-buttons(props)
-  - var radios = [{ id: 'men', text: 'Мужчина' }, { id: 'women', text: 'Женщина' }]
+mixin radio-buttons({ title })
+  - const radios = [{ id: 'men', text: 'Мужчина' }, { id: 'women', text: 'Женщина' }]
+
   .radio-buttons
-    if props.title
-      .radio-buttons__title= props.title
+    if title
+      .radio-buttons__title= title
     .radio-buttons__items
       each radio in radios
        .radio-buttons__item

@@ -1,7 +1,7 @@
-mixin color-item(props)
-  - var colorClassName = "color-item__icon color-item__icon_" + props.iconClassName
+mixin color-item({ iconClassName, title, hex })
+  - var colorClassName = "color-item__icon_" + iconClassName
   .color-item
-    div(class=colorClassName)
+    .color-item__icon(class=colorClassName)
     .color-item__text-box
-      .color-item__title= props.title
-      .color-item__hex= props.hex
+      .color-item__title= title
+      .color-item__hex= hex

@@ -1,7 +1,7 @@
 include ../logo/logo
 include ../button/button
 
-mixin header(props)
+mixin header({ isAuth })
   header.header
     .header__container
       +logo({})
@@ -9,11 +9,11 @@ mixin header(props)
         .header__menu-btn-straight
       .header__menu.js-header__menu
         include ../nav/nav
-        if props.isAuth
+        if isAuth
           .header__profile-wrapper 
             a.header__profile-link(href="/blank.html") Юлий Цезарь
         else
           .header__auth-box
             .header__login-button
-              +button({ text: 'Войти', class: 'button-border' })
-            +button({ text: 'Зарегистрироваться', class: 'button-fill' })
+              +button({ text: 'Войти', className: 'button-border' })
+            +button({ text: 'Зарегистрироваться', className: 'button-fill' })

@@ -1,7 +1,7 @@
-mixin bullet-list(props)
-  .bullet-list(class=props.className)
-    if props.title
-      .bullet-list__title= props.title
+mixin bullet-list({ className, title })
+  .bullet-list(class=className)
+    if title
+      .bullet-list__title= title
     ul.bullet-list__ul
       li.bullet-list__item Нельзя с питомцами
       li.bullet-list__item Без вечеринок и мероприятий

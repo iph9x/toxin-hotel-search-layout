@@ -1,13 +1,13 @@
 include ../rate-button/rate-button
 
-mixin room-card(props)
+mixin room-card({ src, number, lux, price, rating, reviews })
   .room-card
     .room-card__slider
       .room-card__image-box.js-room-card__image-box
-        img.room-card__image(src=props.src alt="")
-        img.room-card__image(src=props.src alt="")
-        img.room-card__image(src=props.src alt="")
-        img.room-card__image(src=props.src alt="")
+        img.room-card__image(src=src alt="")
+        img.room-card__image(src=src alt="")
+        img.room-card__image(src=src alt="")
+        img.room-card__image(src=src alt="")
       button(type="button").room-card__prev-slide.js-room-card__prev-slide.slick-prev
         span.room-card__icon.material-icons expand_more
       button(type="button").room-card__next-slide.js-room-card__next-slide.slick-next
@@ -15,15 +15,15 @@ mixin room-card(props)
     .room-card__info-box
       .room-card__header
         h2.room-card__title
-          span.room-card__number= props.number
-          if props.lux
+          span.room-card__number= number
+          if lux
             span.room-card__lux люкс
         div.room-card__price-box
-          span.room-card__day-price= props.price
+          span.room-card__day-price= price
           span.room-card__time в сутки
       .room-card__rating
-        +rate-button({ count: props.rating, static: true })
+        +rate-button({ count: rating, static: true })
         .room-card__reviews-box
-          span.room-card__reviews-count= props.reviews
+          span.room-card__reviews-count= reviews
           span.room-card__text Отзывов
     

@@ -1,7 +1,7 @@
-mixin pagination(props)
+mixin pagination({ title })
   .pagination
-    if (props.title)
-      .pagination__title= props.title
+    if (title)
+      .pagination__title= title
     ul.pagination__slider
       li.pagination__li
         a(href="/blank.html").pagination__page.pagination__page_active 1
