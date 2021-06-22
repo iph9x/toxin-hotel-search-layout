@@ -1,7 +1,7 @@
 export default class Header {
   constructor() {
     this.$headerButton = $('.js-header__menu-btn');
-    this.$menu = $('.js-menu');
+    this.$menu = $('.js-header__menu');
   }
 
   init() {

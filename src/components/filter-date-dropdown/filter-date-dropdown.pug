@@ -1,8 +1,8 @@
 mixin filter-date-dropdown(props)
-  .filter-date-dropdown.mb-40
+  .filter-date-dropdown
     if props.title
       .filter-date-dropdown__title= props.title
-    .filter-date-dropdown__arrow.js-filter-date-dropdown__arrow  expand_more
-    input(type="text" readonly placeholder=props.placeholderText class="filter-date-dropdown__input datepicker-here js-filter-date-dropdown__input" data-range="true" value=`${props.dateIn} - ${props.dateOut}`)
+    .filter-date-dropdown__arrow.js-filter-date-dropdown__arrow expand_more
+    input.filter-date-dropdown__input(type="text" readonly placeholder=props.placeholderText class="datepicker-here js-filter-date-dropdown__input" data-range="true" value=`${props.dateIn} - ${props.dateOut}`)
 
   

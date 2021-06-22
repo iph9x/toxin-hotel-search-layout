@@ -1,5 +1,6 @@
 mixin type-item(props)
-  - var className = 'type-item type-item_' + props.classPrefix
-  div(class = className)
+  - var className = 'type-item_' + props.classPrefix
+
+  .type-item(class=className)
     .type-item__title= props.title
     .type-item__desc= props.desc

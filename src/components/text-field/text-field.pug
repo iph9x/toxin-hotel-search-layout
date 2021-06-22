@@ -2,4 +2,4 @@ mixin text-field(props)
   .text-field
     if props.title
       .text-field__title= props.title
-    input(type="text", placeholder=props.placeholderText class="text-field__input")
+    input.text-field__input(type="text", placeholder=props.placeholderText)

@@ -4,9 +4,9 @@ mixin dropdown(props)
     if props.title
       .dropdown__title= props.title
     .dropdown__arrow.js-dropdown__arrow expand_more
-    input(type="text" placeholder=props.placeholderText class="dropdown__input js-dropdown__input" readonly)
+    input.dropdown__input.js-dropdown__input(type="text" placeholder=props.placeholderText readonly)
     if (props.id === 'rooms')
-      .dropdown__menu.js-dropdown__menu(data-menu-type = props.id)
+      .dropdown__menu.js-dropdown__menu(data-menu-type=props.id)
         .dropdown__item.js-dropdown__item
           .dropdown__name Спальни
           .dropdown__counter.js-dropdown__counter
@@ -26,7 +26,7 @@ mixin dropdown(props)
             .dropdown__digit.js-dropdown__digit(data-menu-item-id="bathrooms") 2
             button(type="button").dropdown__circle-btn.dropdown__circle-btn_increase.js-dropdown__circle-btn_increase +
     if (props.id === 'guests')
-      .dropdown__menu.js-dropdown__menu(data-menu-type = props.id)
+      .dropdown__menu.js-dropdown__menu(data-menu-type=props.id)
         .dropdown__item.js-dropdown__item
           .dropdown__name Взрослые
           .dropdown__counter.js-dropdown__counter

@@ -3,10 +3,7 @@ mixin date-dropdown(props)
     if props.title
       .date-dropdown__title= props.title
     .date-dropdown__arrow expand_more
-    if props.main  
-      input(type="text", placeholder="ДД.ММ.ГГГГ", class=`date-dropdown__input js-date-dropdown__input datepicker-here js-date-in`, data-range="true" data-multiple-dates-separator=".")
+    if props.main
+      input.date-dropdown__input(type="text", placeholder="ДД.ММ.ГГГГ", class=`js-date-dropdown__input datepicker-here js-date-in`, data-range="true" data-multiple-dates-separator=".")
     else
-      input(type="text", placeholder="ДД.ММ.ГГГГ" class=`date-dropdown__input js-date-dropdown__input js-date-out`)
-
-    
-      
+      input.date-dropdown__input(type="text", placeholder="ДД.ММ.ГГГГ" class=`js-date-dropdown__input js-date-out`)

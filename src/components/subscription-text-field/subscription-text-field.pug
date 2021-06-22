@@ -3,4 +3,4 @@ mixin subscription-text-field(props)
     if props.title
       .subscription-text-field__title= props.title
     .subscription-text-field__arrow arrow_forward
-    input(type="text" placeholder=props.placeholderText class="subscription-text-field__input")
+    input.subscription-text-field__input(type="text" placeholder=props.placeholderText)

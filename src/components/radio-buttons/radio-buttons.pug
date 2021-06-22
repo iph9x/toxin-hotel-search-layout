@@ -1,10 +1,10 @@
 mixin radio-buttons(props)
-  - var radios = [{id: 'men', text: 'Мужчина'}, {id: 'women', text: 'Женщина'}]
+  - var radios = [{ id: 'men', text: 'Мужчина' }, { id: 'women', text: 'Женщина' }]
   .radio-buttons
     if props.title
       .radio-buttons__title= props.title
     .radio-buttons__items
       each radio in radios
        .radio-buttons__item
-          input(type="radio" class="radio-buttons__button" id=radio.id value=radio.text name="sex")
-          label(for=radio.id class="radio-buttons__label")= radio.text
+          input.radio-buttons__button(type="radio" id=radio.id value=radio.text name="sex")
+          label.radio-buttons__label(for=radio.id)= radio.text

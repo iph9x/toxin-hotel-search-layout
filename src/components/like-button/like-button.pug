@@ -4,7 +4,7 @@ mixin like-button(props)
     if (props.title)
       .like-button__title= props.title
     .like-button__item
-      input(type="button" class="like-button__input js-like-button__input" value=likesCount)
+      input.like-button__input.js-like-button__input(type="button" value=likesCount)
       i.material-icons.like-button__icon favorite_border
 
   
