@@ -1,5 +1,5 @@
 mixin radio-buttons({ title })
-  - const radios = [{ id: 'men', text: 'Мужчина' }, { id: 'women', text: 'Женщина' }]
+  - const radios = [{ id: 'men', labelText: 'Мужчина' }, { id: 'women', labelText: 'Женщина' }]
 
   .radio-buttons
     if title
@@ -7,5 +7,5 @@ mixin radio-buttons({ title })
     .radio-buttons__items
       each radio in radios
        .radio-buttons__item
-          input.radio-buttons__button(type="radio" id=radio.id value=radio.text name="sex")
-          label.radio-buttons__label(for=radio.id)= radio.text
+          input.radio-buttons__button(type="radio" id=radio.id value=radio.labelText name="sex")
+          label.radio-buttons__label(for=radio.id)= radio.labelText

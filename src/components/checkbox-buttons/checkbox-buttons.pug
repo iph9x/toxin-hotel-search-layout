@@ -1,10 +1,10 @@
 include ../checkbox/checkbox
 
-mixin checkbox-buttons({ radios, title, placeholder })
+mixin checkbox-buttons({ checkboxItems, title })
   .checkbox-buttons
     .checkbox-buttons__title= title
     .checkbox-buttons__items
-      each radio in radios
-        +checkbox({ name: radio.name, id: radio.id, placeholder: placeholder })
+      each checkbox in checkboxItems
+        +checkbox({ labelText: checkbox.labelText, id: checkbox.id })
 
   

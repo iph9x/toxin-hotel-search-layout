@@ -4,6 +4,6 @@ mixin room-info({ items, title })
       .room-info__title= title
     each item in items
       .room-info__item
-        i.room-info__icon.material-icons= item.content
+        i.room-info__icon.material-icons= item.iconName
         .room-info__name= item.title
         .room-info__sub= item.sub

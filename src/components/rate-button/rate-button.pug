@@ -1,4 +1,4 @@
-mixin rate-button({ count, title, static })
+mixin rate-button({ count, title, inactive })
   -
     const starsCount = count ? count : 0;
     const bordersCount = 5 - starsCount;
@@ -8,12 +8,12 @@ mixin rate-button({ count, title, static })
   .rate-button.js-rate-button
     if title
       .rate-button__title= title
-    if static
+    if inactive
       .rate-button__item
         while (startBorders++ < bordersCount)
-          i.material-icons.rate-button__star.rate-button__star_type_static star_border
+          i.material-icons.rate-button__star.rate-button__star_type_inactive star_border
         while (startStars++ < starsCount)
-          i.material-icons.rate-button__star.rate-button__star_type_static star_
+          i.material-icons.rate-button__star.rate-button__star_type_inactive star_
     else
       .rate-button__item
         input.rate-button__input.js-rate-button__input

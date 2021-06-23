@@ -23,44 +23,46 @@ block variables
   -
     const title = 'Form Elements'
     const parentClass = 'form-elements'
-    const checkboxArr = [
-      { name: 'Можно курить', id: 'breakfast' },
-      { name: 'Можно с питомцами', id: 'pet' },
-      { name: 'Можно пригласить гостей (до 10 человек)', id: 'count' }
+    const checkboxItems = [
+      { labelText: 'Можно курить', id: 'breakfast' },
+      { labelText: 'Можно с питомцами', id: 'pet' },
+      { labelText: 'Можно пригласить гостей (до 10 человек)', id: 'count' }
     ]
-    const expandableCheckbox = [
-      { name: 'Завтрак', id: 'smoke' },
-      { name: 'Письменный стол', id: 'table' },
-      { name: 'Стул для кормления', id: 'chair' },
-      { name: 'Кроватка', id: 'cot' },
-      { name: 'Телевизор', id: 'tv' },
-      { name: 'Шампунь', id: 'shampoo' }
+    const expandableCheckboxItems = [
+      { labelText: 'Завтрак', id: 'smoke' },
+      { labelText: 'Письменный стол', id: 'table' },
+      { labelText: 'Стул для кормления', id: 'chair' },
+      { labelText: 'Кроватка', id: 'cot' },
+      { labelText: 'Телевизор', id: 'tv' },
+      { labelText: 'Шампунь', id: 'shampoo' }
     ]
     const roomItems = [
-      { content: 'insert_emoticon', title: 'Комфорт', sub: 'Шумопоглощающие стены' },
-      { content: 'location_city', title: 'Удобство', sub: 'Окно в каждой из спален' }
+      { iconName: 'insert_emoticon', title: 'Комфорт', sub: 'Шумопоглощающие стены' },
+      { iconName: 'location_city', title: 'Удобство', sub: 'Окно в каждой из спален' }
     ]
 
 block content
-  section.form-elements__wrapper
+  main.form-elements__wrapper
     .form-elements__container
-      .form-elements__column.form-elements__column-mr-126
-        .form-elements__text-field
-          +text-field({ title: 'Text field', placeholderText: 'Email' })
-        +dropdown({ title: 'Dropdown', placeholderText: 'Сколько гостей', id: 'guests' })
-        +masked-text-field({ title: 'Masked Text field', placeholderText: 'ДД.ММ.ГГГГ' })
-        .form-elements__date-dropdowns-wrapper
-          +date-dropdown({ title: 'Date Dropdown', main: true })
-          +date-dropdown({ title: 'Date Dropdown' })
-        +filter-date-dropdown({ id: 'datepick', title: 'Filter Date Dropdown', dateIn: '19 авг', dateOut: '23 авг' })
-        +subscription-text-field({ title: 'Subscription Text Field', placeholderText: 'Email' })
-      .form-elements__column.form-elements__column-mr-72
-        +checkbox-buttons({ title: 'Checkbox buttons', radios: checkboxArr } )
-        .form-elements__radio-buttons
-          +radio-buttons({ title: 'Radio buttons'} )
-        +toggle({ id: 'suggestions', title: 'Toggle', text: 'Получать спецпредложения' })
-        +like-button({ title: 'Like button' })
-        +rate-button({ title: 'Rate button' })
+      .form-elements__text-inputs
+        .form-elements__column
+          .form-elements__text-field
+            +text-field({ title: 'Text field', placeholderText: 'Email' })
+          +dropdown({ title: 'Dropdown', placeholderText: 'Сколько гостей', id: 'guests' })
+          +masked-text-field({ title: 'Masked Text field', placeholderText: 'ДД.ММ.ГГГГ' })
+          .form-elements__date-dropdowns-wrapper
+            +date-dropdown({ title: 'Date Dropdown', isDateIn: true })
+            +date-dropdown({ title: 'Date Dropdown' })
+          +filter-date-dropdown({ title: 'Filter Date Dropdown' })
+          +subscription-text-field({ title: 'Subscription Text Field', placeholderText: 'Email' })
+      .form-elements__interactive-inputs
+        .form-elements__column
+          +checkbox-buttons({ title: 'Checkbox buttons', checkboxItems: checkboxItems } )
+          .form-elements__radio-buttons
+            +radio-buttons({ title: 'Radio buttons'} )
+          +toggle({ id: 'suggestions', title: 'Toggle', labelText: 'Получать спецпредложения' })
+          +like-button({ title: 'Like button' })
+          +rate-button({ title: 'Rate button' })
       .form-elements__column
         +range-slider({ title: 'Range slider'})
         .form-elements__buttons
@@ -71,19 +73,28 @@ block content
             +button({ text: 'Click me', className: 'button-string' })
             +button({ text: 'Перейти к оплате', className: 'button-fill button-main' })
         +pagination({ title: 'Pagination' })
-      .form-elements__column.form-elements__column-mr-126
-        +dropdown({ title: 'Dropdown', placeholderText: '2 спальни, 2 кровати', id: 'rooms' })
-      .form-elements__column.form-elements__column-span-2
-        +dropdown({ title: 'Dropdown', placeholderText: 'Сколько гостей', id: 'guests' })
-      .form-elements__column.form-elements__column-expandable.column-mr-126
-        +expandable-checkbox-list({ title: 'Expandable checkbox list', radios: expandableCheckbox })
-      .form-elements__column.form-elements__column-mr-72
-        +rich-checkbox-buttons({ title: 'Rich checkbox buttons' })
+      .form-elements__rooms-dropdown
+        .form-elements__column
+          +dropdown({ title: 'Dropdown', placeholderText: '2 спальни, 2 кровати', id: 'rooms' })
+      .form-elements__guests-dropdown
+        .form-elements__column
+          +dropdown({ title: 'Dropdown', placeholderText: 'Сколько гостей', id: 'guests' })
+      .form-elements__expandable-checkbox-list
+        .form-elements__column
+          +expandable-checkbox-list({ title: 'Expandable checkbox list', checkboxItems: expandableCheckboxItems })
+      .form-elements__rich-checkbox-buttons
+        .form-elements__column
+          +rich-checkbox-buttons({ title: 'Rich checkbox buttons' })
       .form-elements__column
         +bullet-list({ title: 'Bullet list'})
-      .form-elements__column.form-elements__column-mr-126
-        +room-info({ items: roomItems })
-      .form-elements__column-span-2
-        .form-elements__review
-          +review({ src: 'assets/img/avatar.jpg', name: 'Мурад Сарафaнов', date: '5 дней назад', text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.' })
+      .form-elements__room-info
+        .form-elements__column
+          +room-info({ items: roomItems })
+      .form-elements__review
+        +review({
+          imgSrc: 'assets/img/avatar.jpg',
+          username: 'Мурад Сарафaнов',
+          date: '5 дней назад',
+          message: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+        })
       

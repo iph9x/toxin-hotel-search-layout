@@ -1,7 +1,7 @@
-mixin toggle({ title, id, text })
+mixin toggle({ title, id, labelText })
   .toggle
     if (title)
       .toggle__title= title
     .toggle__item
       input.toggle__button(type="checkbox" id=id value=id name=id)
-      label.toggle__label(for=id)= text
+      label.toggle__label(for=id)= labelText

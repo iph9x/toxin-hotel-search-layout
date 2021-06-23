@@ -1,4 +1,4 @@
-export function initDatepickerButtons(root) {
+function initDatepickerButtons(root) {
   const $datepickerPopup = root.$content.parent();
   $datepickerPopup.find('.datepicker--pointer').remove();
   const buttonsTemplate = `<div class="datepicker--footer">
@@ -12,3 +12,5 @@ export function initDatepickerButtons(root) {
   datepickerApplyBtn.on('click', () => root.hide());
   datepickerClearBtn.on('click', () => root.clear());
 }
+
+export { initDatepickerButtons }

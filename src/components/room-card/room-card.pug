@@ -22,7 +22,7 @@ mixin room-card({ src, number, lux, price, rating, reviews })
           span.room-card__day-price= price
           span.room-card__time в сутки
       .room-card__rating
-        +rate-button({ count: rating, static: true })
+        +rate-button({ count: rating, inactive: true })
         .room-card__reviews-box
           span.room-card__reviews-count= reviews
           span.room-card__text Отзывов

@@ -6,21 +6,32 @@ include ../expandable-checkbox-list/expandable-checkbox-list
 include ../rich-checkbox-buttons/rich-checkbox-buttons
 
 -
-  const checkboxArr = [{name: 'Можно курить', id: 'breakfast'}, {name: 'Можно с питомцами', id: 'pet'}, {name: 'Можно пригласить гостей (до 10 человек)', id: 'count'}]
-  const expandableCheckbox = [{name: 'Завтрак', id: 'smoke'}, {name: 'Письменный стол', id: 'table'}, {name: 'Стул для кормления', id: 'chair'}, {name: 'Кроватка', id: 'cot'}, {name: 'Телевизор', id: 'tv'}, {name: 'Шампунь', id: 'shampoo'}]
+  const checkboxItems = [
+    { labelText: 'Можно курить', id: 'breakfast' },
+    { labelText: 'Можно с питомцами', id: 'pet' },
+    { labelText: 'Можно пригласить гостей (до 10 человек)', id: 'invite' }
+  ]
+  const expandableCheckboxItems = [
+    { labelText: 'Завтрак', id: 'smoke' },
+    { labelText: 'Письменный стол', id: 'table' },
+    { labelText: 'Стул для кормления', id: 'chair' },
+    { labelText: 'Кроватка', id: 'cot' },
+    { labelText: 'Телевизор', id: 'tv' },
+    { labelText: 'Шампунь', id: 'shampoo' }
+  ]
 
 form.filter
   .filter__filter-date-dropdown
-    +filter-date-dropdown({ id: 'datepick', title: 'Даты пребывания в отеле', dateIn: '19 авг', dateOut: '23 авг' })
+    +filter-date-dropdown({ title: 'Даты пребывания в отеле' })
   .filter__dropdown-guests
     +dropdown({ title: 'Гости', placeholderText: 'Сколько гостей', id: 'guests' })
   .filter__range-slider
-    +range-slider({title: 'Диапазон цены', note: true })
+    +range-slider({ title: 'Диапазон цены', note: true })
   .filter__checkbox-buttons
-    +checkbox-buttons({title: 'Правила дома', radios: checkboxArr })
+    +checkbox-buttons({ title: 'Правила дома', checkboxItems: checkboxItems })
   .filter__checkbox-buttons
     +rich-checkbox-buttons({ title: 'Доступность' })
   .filter__dropdown-rooms
     +dropdown({ title: 'Удобства номера', placeholderText: 'Сколько комнат', id: 'rooms' })
   .filter__expandable-checkbox-list
-  +expandable-checkbox-list({ title: 'Дополнительные удобства', radios: expandableCheckbox })
+    +expandable-checkbox-list({ title: 'Дополнительные удобства', checkboxItems: expandableCheckboxItems })

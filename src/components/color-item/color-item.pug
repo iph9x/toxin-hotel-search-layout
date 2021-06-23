@@ -1,7 +1,7 @@
-mixin color-item({ iconClassName, title, hex })
+mixin color-item({ iconClassName, title, hexCode })
   - var colorClassName = "color-item__icon_" + iconClassName
   .color-item
     .color-item__icon(class=colorClassName)
     .color-item__text-box
       .color-item__title= title
-      .color-item__hex= hex
+      .color-item__hex-code= hexCode

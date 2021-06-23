@@ -5,7 +5,7 @@ include ../button/button
 form(action="").room-selection
   h2.room-selection__title Найдём номера под ваши пожелания
   .room-selection__date-dropdowns-wrapper
-    +date-dropdown({ title: 'Прибытие', main: true})
+    +date-dropdown({ title: 'Прибытие', isDateIn: true})
     +date-dropdown({ title: 'Выезд'})
   .room-selection__dropdown-guests
     +dropdown({ title: 'Гости', placeholderText: 'Сколько гостей', id: 'guests' })

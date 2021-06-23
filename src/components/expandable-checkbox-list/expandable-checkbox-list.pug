@@ -1,12 +1,12 @@
 include ../checkbox/checkbox
 
-mixin expandable-checkbox-list({ radios, title, placeholder })
+mixin expandable-checkbox-list({ checkboxItems, title })
   .expandable-checkbox-list.js-expandable-checkbox-list
     .expandable-checkbox-list__wrapper-title
       .expandable-checkbox-list__title= title
       .expandable-checkbox-list__arrow.expandable-checkbox-list__arrow.js-expandable-checkbox-list__arrow expand_more
     .expandable-checkbox-list__items.js-expandable-checkbox-list__items
-      each radio in radios
+      each checkbox in checkboxItems
         .expandable-checkbox-list__checkbox
-          +checkbox({ name: radio.name, id: radio.id, placeholder: placeholder })
+          +checkbox({ labelText: checkbox.labelText, id: checkbox.id })
   

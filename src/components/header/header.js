@@ -9,7 +9,7 @@ export default class Header {
   }
 
   handleHeaderBtnClick(e) {
-    $('.js-menu').toggleClass('header__menu_visible');
+    $('.js-header__menu').toggleClass('header__menu_visible');
     $(e.target).toggleClass('header__menu-btn_active');
   }
 }

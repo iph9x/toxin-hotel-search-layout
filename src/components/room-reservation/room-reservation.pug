@@ -11,7 +11,7 @@ form(action="").room-reservation
       span.room-reservation__day-price 9 990
       span.room-reservation__time в сутки
   .room-reservation__date-dropdowns-wrapper
-    +date-dropdown({ title: 'Прибытие', main: true})
+    +date-dropdown({ title: 'Прибытие', isDateIn: true})
     +date-dropdown({ title: 'Выезд'})
   .room-reservation__dropdown-guests
     +dropdown({ title: 'Гости', placeholderText: 'Сколько гостей', id: 'guests' })
@@ -32,7 +32,7 @@ form(action="").room-reservation
       span.room-reservation__price 300
   .room-reservation__total-wrapper
     .room-reservation__label Итого
-    .room-reservation__space
+    .room-reservation__space-dots
     .room-reservation__total-price 38 081
   +button({ text: 'Забронировать', className: 'button-fill button-main' })
 
