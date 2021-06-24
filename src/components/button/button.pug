@@ -1,3 +1,7 @@
-mixin button({ className, text })
-  button.button(type="button" class=className)
+mixin button({ type, style, text })
+  -
+    const typeClass = type ? `button_type_${type}` : ''
+    const styleClass = style ? `button_style_${style}` : ''
+
+  button.button(type="button" class=`${typeClass} ${styleClass}`)
     span.button__text= text

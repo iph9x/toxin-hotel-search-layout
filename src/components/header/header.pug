@@ -6,7 +6,7 @@ mixin header({ isAuth })
     .header__container
       +logo({})
       .header__menu-btn.js-header__menu-btn
-        .header__menu-btn-straight
+        .header__menu-btn-line
       .header__menu.js-header__menu
         include ../nav/nav
         if isAuth
@@ -15,5 +15,5 @@ mixin header({ isAuth })
         else
           .header__auth-box
             .header__login-button
-              +button({ text: 'Войти', className: 'button-border' })
-            +button({ text: 'Зарегистрироваться', className: 'button-fill' })
+              +button({ text: 'Войти', style: 'border' })
+            +button({ text: 'Зарегистрироваться', style: 'fill' })

@@ -17,11 +17,13 @@
   }
   &__label {
     position: relative;
-    &_left {
-      margin-right: 4px;
-    }
-    &_right {
-      margin-left: 5px;
+    &_side {
+      &_left {
+        margin-right: 4px;
+      }
+      &_right {
+        margin-left: 5px;
+      }
     }
     &::after {
       content: '\20BD';
@@ -78,13 +80,15 @@
     box-shadow: 0 0 0 2px #fff;
     @include blue-green-gradient;
     border-radius: 50%;
-    &_left {
-      left: 25%;
-      transform: translate(-6px, -3px)
-    }
-    &_right {
-      right: 25%;
-      transform: translate(6px, -3px)
+    &_side {
+      &_left {
+        left: 25%;
+        transform: translate(-6px, -3px)
+      }
+      &_right {
+        right: 25%;
+        transform: translate(6px, -3px)
+      }
     }
   }
   &__track {

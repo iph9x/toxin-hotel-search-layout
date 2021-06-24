@@ -8,8 +8,8 @@ form(action="").login
   .login__password
     +text-field({ placeholderText: 'Пароль' })
   .login__submit-button
-    +button({ text: 'Войти', className: 'button-fill button-main' })
+    +button({ text: 'Войти', style: 'fill', type: 'submit' })
   .login__registration-wrapper
     span.login__no-account Нет аккаунта на Toxin?
-    +button({ text: 'Создать', className: 'button-border' })
+    +button({ text: 'Создать', style: 'border' })
 

@@ -3,33 +3,35 @@
   grid-template-columns: 37px 1fr;
   column-gap: 30px;
   margin-bottom: 52px;
-  &:not(.type-item_body) &_desc {
+  &:not(.type-item_body) &__desc {
     font-weight: 700;
   }
-  &_h1 {
-    font-size: $h1-font-size;
-    line-height: 29px;
-  }
-  &_h2 {
-    font-size: $h2-font-size;
-    line-height: 24px;
-    margin-bottom: 51px;
-  }
-  &_h3 {
-    font-size: $h3-font-size;
-    line-height: 14px;
-    margin-bottom: 47px; 
-  }
-  &_h3 &__desc {
-    text-transform: uppercase;
-  }
-  &_body {
-    font-size: $body-font-size;
-    line-height: 24px;
-  }
-  &_body &__desc {
-    max-width: 301px;
-    color: $darkshade75;
+  &_type {
+    &_h1 {
+      font-size: $h1-font-size;
+      line-height: 29px;
+    }
+    &_h2 {
+      font-size: $h2-font-size;
+      line-height: 24px;
+      margin-bottom: 51px;
+    }
+    &_h3 {
+      font-size: $h3-font-size;
+      line-height: 14px;
+      margin-bottom: 47px; 
+    }
+    &_h3 &__desc {
+      text-transform: uppercase;
+    }
+    &_body {
+      font-size: $body-font-size;
+      line-height: 24px;
+    }
+    &_body .type-item__desc {
+      max-width: 301px;
+      color: $darkshade75;
+    }
   }
   &__title {
     justify-self: end;

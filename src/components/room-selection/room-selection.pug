@@ -7,6 +7,6 @@ form(action="").room-selection
   .room-selection__date-dropdowns-wrapper
     +date-dropdown({ title: 'Прибытие', isDateIn: true})
     +date-dropdown({ title: 'Выезд'})
-  .room-selection__dropdown-guests
+  .room-selection__dropdown
     +dropdown({ title: 'Гости', placeholderText: 'Сколько гостей', id: 'guests' })
-  +button({ text: 'Подобрать номер', className: 'button-fill button-main' })
+  +button({ text: 'Подобрать номер', style: 'fill', type: 'submit' })

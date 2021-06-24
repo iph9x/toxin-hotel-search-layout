@@ -8,8 +8,8 @@ export default class Dropdown {
     $('.js-dropdown__arrow').on('click', (e) => this.inputClickHandler(e, true));
     $('.js-dropdown__input').on('click', (e) => this.inputClickHandler(e));
     $('.js-dropdown__apply').on('click', (e) => this.applyHandler(e));
-    $('.js-dropdown__circle-btn_reduce').on('click', (e) => this.btnAdjustHandler(e, true));
-    $('.js-dropdown__circle-btn_increase').on('click', (e) => this.btnAdjustHandler(e, false));
+    $('.js-dropdown__circle-btn_action_reduce').on('click', (e) => this.btnAdjustHandler(e, true));
+    $('.js-dropdown__circle-btn_action_increase').on('click', (e) => this.btnAdjustHandler(e, false));
     $(document).on('click', this.hideMenuHandler);
     $('.js-date-dropdown__input').on('click', this.hideMenuHandler);
     $('.js-masked-text-field').on('click', this.hideMenuHandler);
@@ -76,7 +76,7 @@ export default class Dropdown {
     const $input = $menu.parent().find('.js-dropdown__input');
   
     $menuItems.each((i) => {
-      $($menuItems[i]).find('.js-dropdown__circle-btn_reduce').addClass('dropdown__circle-btn_disabled');
+      $($menuItems[i]).find('.js-dropdown__circle-btn_action_reduce').addClass('dropdown__circle-btn_disabled');
       $($menuItems[i]).find('.js-dropdown__counter').find('.js-dropdown__digit').text('0');
     });
   
@@ -90,25 +90,25 @@ export default class Dropdown {
     const $dropdownInput = $menuWrapper.find('.js-dropdown__input');
   
     $menu.hide();
-    $menuWrapper.removeClass('dropdown_activated');
-    $dropdownInput.removeClass('dropdown__input_activated')
+    $menuWrapper.removeClass('dropdown_active');
+    $dropdownInput.removeClass('dropdown__input_active')
   }
 
   inputClickHandler(e, isArrow = false) {
     const $menu = isArrow ? $(e.target).next().next() : $(e.target).next();
     const $menuParent = $menu.parent();
-    const inputIsActive = $menuParent.hasClass('dropdown_activated');
+    const inputIsActive = $menuParent.hasClass('dropdown_active');
   
     this.hideMenuHandler();
   
     if (!inputIsActive) {
       $menu.show();
-      $menuParent.addClass('dropdown_activated');
+      $menuParent.addClass('dropdown_active');
     
       if (isArrow) {
-        $(e.target).next().addClass('dropdown__input_activated');
+        $(e.target).next().addClass('dropdown__input_active');
       } else {
-        $(e.target).addClass('dropdown__input_activated');
+        $(e.target).addClass('dropdown__input_active');
       }
     }
   }
@@ -118,12 +118,12 @@ export default class Dropdown {
     const $menuParent = $menu.parent();
   
     $menu.toggle();
-    $menuParent.toggleClass('dropdown_activated');
-    $menuParent.find('.js-dropdown__input').toggleClass('dropdown__input_activated');
+    $menuParent.toggleClass('dropdown_active');
+    $menuParent.find('.js-dropdown__input').toggleClass('dropdown__input_active');
   }
 
   checkButtonState() {
-    const $btnReduce = $('.dropdown__circle-btn_reduce');
+    const $btnReduce = $('.js-dropdown__circle-btn_action_reduce');
   
     $btnReduce.each((i) => {
       const $btn = $($btnReduce[i]);

@@ -18,7 +18,7 @@ export default class ExpandableCheckboxList {
     const listWrapper = arrow.parents('.js-expandable-checkbox-list');
     const checkboxItems = listWrapper.find('.js-expandable-checkbox-list__items')
 
-    arrow.toggleClass('expandable-checkbox-list__arrow_rotate');
+    arrow.toggleClass('expandable-checkbox-list__arrow_rotated');
     checkboxItems.toggle();
   }
 }

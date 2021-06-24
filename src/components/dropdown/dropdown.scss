@@ -20,7 +20,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
     &::placeholder {
       color: $darkshade75;
     }
-    &_activated {
+    &_active {
       @include field-input-activated;
     }
   }

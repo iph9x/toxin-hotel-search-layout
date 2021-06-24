@@ -1,5 +1,3 @@
-@import '@/assets/styles/consts.scss';
-
 .color-item {
   display: flex;
   align-items: center;
@@ -13,28 +11,30 @@
     @media (max-width: 390px) {
       margin-right: 4vw;
     }
-    &_darkshade {
-      &-100 {
-        background: $darkshade;
+    &_color {
+      &_darkshade {
+        &-100 {
+          background: $darkshade;
+        }
+        &-75 {
+          background: $darkshade75;
+        }
+        &-50 {
+          background: $darkshade50;
+        }
+        &-25 {
+          background: $darkshade25;
+        }
+        &-5 {
+          background: $darkshade5;
+        }
       }
-      &-75 {
-        background: $darkshade75;
+      &_purple {
+        background: $purple;
       }
-      &-50 {
-        background: $darkshade50;
+      &_green {
+        background: $green;
       }
-      &-25 {
-        background: $darkshade25;
-      }
-      &-5 {
-        background: $darkshade5;
-      }
-    }
-    &_purple {
-      background: $purple;
-    }
-    &_green {
-      background: $green;
     }
   }
   &__title {

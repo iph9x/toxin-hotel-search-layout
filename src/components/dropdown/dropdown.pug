@@ -1,5 +1,5 @@
 mixin dropdown({ id, title, placeholderText })
-  - const wrapperClassName = id === 'guests' ? ' dropdown-guests' : 'dropdown-rooms'
+  - const wrapperClassName = id === 'guests' ? 'dropdown_type_guests' : 'dropdown_type_rooms'
 
   .dropdown(class=wrapperClassName)
     if title
@@ -11,41 +11,41 @@ mixin dropdown({ id, title, placeholderText })
         .dropdown__item.js-dropdown__item
           .dropdown__name Спальни
           .dropdown__counter.js-dropdown__counter
-            button(type="button").dropdown__circle-btn.dropdown__circle-btn_reduce.js-dropdown__circle-btn_reduce -
+            button(type="button").dropdown__circle-btn.dropdown__circle-btn_action_reduce.js-dropdown__circle-btn_action_reduce -
             .dropdown__digit.js-dropdown__digit(data-menu-item-id="bedrooms") 2
-            button(type="button").dropdown__circle-btn.dropdown__circle-btn_increase.js-dropdown__circle-btn_increase +
+            button(type="button").dropdown__circle-btn.dropdown__circle-btn_action_increase.js-dropdown__circle-btn_action_increase +
         .dropdown__item.js-dropdown__item
           .dropdown__name Кровати
           .dropdown__counter.js-dropdown__counter
-            button(type="button").dropdown__circle-btn.dropdown__circle-btn_reduce.js-dropdown__circle-btn_reduce -
+            button(type="button").dropdown__circle-btn.dropdown__circle-btn_action_reduce.js-dropdown__circle-btn_action_reduce -
             .dropdown__digit.js-dropdown__digit(data-menu-item-id="bed") 2
-            button(type="button").dropdown__circle-btn.dropdown__circle-btn_increase.js-dropdown__circle-btn_increase +
+            button(type="button").dropdown__circle-btn.dropdown__circle-btn_action_increase.js-dropdown__circle-btn_action_increase +
         .dropdown__item.js-dropdown__item
           .dropdown__name Ванные комнаты
           .dropdown__counter.js-dropdown__counter
-            button(type="button").dropdown__circle-btn.dropdown__circle-btn_reduce.js-dropdown__circle-btn_reduce -
+            button(type="button").dropdown__circle-btn.dropdown__circle-btn_action_reduce.js-dropdown__circle-btn_action_reduce -
             .dropdown__digit.js-dropdown__digit(data-menu-item-id="bathrooms") 2
-            button(type="button").dropdown__circle-btn.dropdown__circle-btn_increase.js-dropdown__circle-btn_increase +
+            button(type="button").dropdown__circle-btn.dropdown__circle-btn_action_increase.js-dropdown__circle-btn_action_increase +
     if (id === 'guests')
       .dropdown__menu.js-dropdown__menu(data-menu-type=id)
         .dropdown__item.js-dropdown__item
           .dropdown__name Взрослые
           .dropdown__counter.js-dropdown__counter
-            button(type="button").dropdown__circle-btn.dropdown__circle-btn_reduce.js-dropdown__circle-btn_reduce -
+            button(type="button").dropdown__circle-btn.dropdown__circle-btn_action_reduce.js-dropdown__circle-btn_action_reduce -
             .dropdown__digit.js-dropdown__digit(data-menu-item-id="adults") 0
-            button(type="button").dropdown__circle-btn.dropdown__circle-btn_increase.js-dropdown__circle-btn_increase +
+            button(type="button").dropdown__circle-btn.dropdown__circle-btn_action_increase.js-dropdown__circle-btn_action_increase +
         .dropdown__item.js-dropdown__item
           .dropdown__name Дети
           .dropdown__counter.js-dropdown__counter
-            button(type="button").dropdown__circle-btn.dropdown__circle-btn_reduce.js-dropdown__circle-btn_reduce -
+            button(type="button").dropdown__circle-btn.dropdown__circle-btn_action_reduce.js-dropdown__circle-btn_action_reduce -
             .dropdown__digit.js-dropdown__digit(data-menu-item-id="children") 0
-            button(type="button").dropdown__circle-btn.dropdown__circle-btn_increase.js-dropdown__circle-btn_increase +
+            button(type="button").dropdown__circle-btn.dropdown__circle-btn_action_increase.js-dropdown__circle-btn_action_increase +
         .dropdown__item.js-dropdown__item
           .dropdown__name Младенцы
           .dropdown__counter.js-dropdown__counter
-            button(type="button").dropdown__circle-btn.dropdown__circle-btn_reduce.js-dropdown__circle-btn_reduce -
+            button(type="button").dropdown__circle-btn.dropdown__circle-btn_action_reduce.js-dropdown__circle-btn_action_reduce -
             .dropdown__digit.js-dropdown__digit(data-menu-item-id="babies") 0
-            button(type="button").dropdown__circle-btn.dropdown__circle-btn_increase.js-dropdown__circle-btn_increase +
+            button(type="button").dropdown__circle-btn.dropdown__circle-btn_action_increase.js-dropdown__circle-btn_action_increase +
         .dropdown__buttons
           button.dropdown__button(type="button").dropdown__clear.js-dropdown__clear.dropdown__clear_disabled Очистить
           button.dropdown__button(type="button").dropdown__apply.js-dropdown__apply Применить

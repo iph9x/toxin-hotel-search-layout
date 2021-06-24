@@ -68,10 +68,10 @@ block content
         .form-elements__buttons
           .form-elements__buttons-title Buttons
           .form-elements__buttons-box
-            +button({ text: 'Click me', className: 'button-fill' })
-            +button({ text: 'Click me', className: 'button-border' })
-            +button({ text: 'Click me', className: 'button-string' })
-            +button({ text: 'Перейти к оплате', className: 'button-fill button-main' })
+            +button({ text: 'Click me', style: 'fill' })
+            +button({ text: 'Click me', style: 'border' })
+            +button({ text: 'Click me', style: 'string' })
+            +button({ text: 'Перейти к оплате', style: 'fill', type: 'submit' })
         +pagination({ title: 'Pagination' })
       .form-elements__rooms-dropdown
         .form-elements__column

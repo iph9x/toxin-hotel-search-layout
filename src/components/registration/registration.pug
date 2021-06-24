@@ -21,8 +21,8 @@ form(action="").registration
   .registration__suggestions
     +toggle({ id: 'suggestions', labelText: 'Получать спецпредложения' })
   .registration__submit-button
-    +button({ text: 'Зарегистрироваться', className: 'button-fill button-main' })
+    +button({ text: 'Зарегистрироваться', style: 'fill', type:'submit' })
   .registration__login-wrapper
     span.registration__already-reg Уже есть аккаунт на Toxin
-    +button({ text: 'Войти', className: 'button-border' })
+    +button({ text: 'Войти', style: 'border' })
 

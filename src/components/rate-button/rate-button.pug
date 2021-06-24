@@ -11,11 +11,11 @@ mixin rate-button({ count, title, inactive })
     if inactive
       .rate-button__item
         while (startBorders++ < bordersCount)
-          i.material-icons.rate-button__star.rate-button__star_type_inactive star_border
+          i.material-icons.rate-button__star.rate-button__star_inactive star_border
         while (startStars++ < starsCount)
-          i.material-icons.rate-button__star.rate-button__star_type_inactive star_
+          i.material-icons.rate-button__star.rate-button__star_inactive star_
     else
       .rate-button__item
         input.rate-button__input.js-rate-button__input
         while (startStars++ < 5)
-          i.material-icons.rate-button__star.rate-button__active-star.js-rate-button__active-star star_border
+          i.material-icons.rate-button__star.rate-button__star_active.js-rate-button__star_active star_border

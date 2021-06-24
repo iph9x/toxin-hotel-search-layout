@@ -22,11 +22,9 @@
     &:hover {
       cursor: pointer;
     }
-    &_type {
-      &_inactive {
-        &:hover {
-          cursor: default;
-        }
+    &_inactive {
+      &:hover {
+        cursor: default;
       }
     }
   }

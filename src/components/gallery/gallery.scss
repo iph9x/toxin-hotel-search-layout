@@ -13,17 +13,19 @@
     object-fit: cover;
     width: 100%;
     height: 100%;
-  }
-  &__main-img {
-    grid-area: 1 / 1 / 3 / 2;
-    max-height: 485px;
-  }
-  &__sec-img {
-    &:nth-child(2) {
-      max-height: 243px;
-    }
-    &:nth-child(3) {
-      max-height: 242px;
+    &_size {
+      &_large {
+        grid-area: 1 / 1 / 3 / 2;
+        max-height: 485px;
+      }
+      &_medium {
+        &:nth-child(2) {
+          max-height: 243px;
+        }
+        &:nth-child(3) {
+          max-height: 242px;
+        }
+      }
     }
   }
 }

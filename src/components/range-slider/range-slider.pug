@@ -8,15 +8,15 @@ mixin range-slider({ title, note })
     .range-slider__titles
       .range-slider__title= title
       .range-slider__range-box
-        span.range-slider__label.range-slider__label_left.js-range-slider__label_left
+        span.range-slider__label.range-slider__label_side_left.js-range-slider__label_side_left
         i -
-        span.range-slider__label.range-slider__label_right.js-range-slider__label_right
+        span.range-slider__label.range-slider__label_side_right.js-range-slider__label_side_right
     .range-slider__box
-      input.range-slider__input.range-slider__input_left.js-range-slider__input_left(type="range" step=step min=minValue max=maxValue value="3000")
-      input.range-slider__input.range-slider__input_right.js-range-slider__input_right(type="range" step=step min=minValue max=maxValue value="10000")
+      input.range-slider__input.range-slider__input_side_left.js-range-slider__input_side_left(type="range" step=step min=minValue max=maxValue value="3000")
+      input.range-slider__input.range-slider__input_side_right.js-range-slider__input_side_right(type="range" step=step min=minValue max=maxValue value="10000")
       .range-slider__wrapper
-        span.range-slider__circle.range-slider__circle_left.js-range-slider__circle_left
-        span.range-slider__circle.range-slider__circle_right.js-range-slider__circle_right
+        span.range-slider__circle.range-slider__circle_side_left.js-range-slider__circle_side_left
+        span.range-slider__circle.range-slider__circle_side_right.js-range-slider__circle_side_right
         .range-slider__track.js-range-slider__track
     if note
       .range-slider__note Стоимость за сутки пребывания в номере

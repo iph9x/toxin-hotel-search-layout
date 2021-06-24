@@ -61,7 +61,7 @@
       @media (max-width: 950px) {
         display: block;        
       }
-      &-straight {
+      &-line {
         position: absolute;
         top: 50%;
         width: 20px;
@@ -71,7 +71,7 @@
         transform: translateY(-50%);
         transition: .2s;
       }
-      &_active &-straight {
+      &_active &-line {
         opacity: 0;
       }
       &_active {

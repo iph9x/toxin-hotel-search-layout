@@ -4,6 +4,15 @@ mixin date-dropdown({ title, isDateIn })
       .date-dropdown__title= title
     .date-dropdown__arrow expand_more
     if isDateIn
-      input.date-dropdown__input(type="text", placeholder="ДД.ММ.ГГГГ", class=`js-date-dropdown__input datepicker-here js-date-in`, data-range="true" data-multiple-dates-separator=".")
+      input.date-dropdown__input(
+        type="text"
+        placeholder="ДД.ММ.ГГГГ"
+        class="js-date-dropdown__input datepicker-here js-date-in"
+        data-range="true" data-multiple-dates-separator="."
+      )
     else
-      input.date-dropdown__input(type="text", placeholder="ДД.ММ.ГГГГ" class=`js-date-dropdown__input js-date-out`)
+      input.date-dropdown__input(
+        type="text"
+        placeholder="ДД.ММ.ГГГГ"
+        class="js-date-dropdown__input js-date-out"
+      )

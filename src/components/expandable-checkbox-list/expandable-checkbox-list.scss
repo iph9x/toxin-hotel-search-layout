@@ -12,16 +12,16 @@
     @include field-arrow;
     top: 0;
     bottom: auto;
+    &_rotated {
+      transform: rotate(180deg);
+      transform-origin: 50% 50%;
+    }
   }
   &__wrapper-title {
     display: flex;
     align-items: center;
     height: 44px;
     margin-bottom: 5px;
-  }
-  &__arrow_rotate {
-    transform: rotate(180deg);
-    transform-origin: 50% 50%;
   }
   &__items {
     display: none;

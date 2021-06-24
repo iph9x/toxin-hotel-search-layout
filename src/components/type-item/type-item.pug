@@ -1,6 +1,4 @@
-mixin type-item({ classPostfix, title, desc })
-  - const className = 'type-item_' + classPostfix
-
-  .type-item(class=className)
+mixin type-item({ type, title, desc })
+  .type-item(class=`type-item_type_${type}`)
     .type-item__title= title
     .type-item__desc= desc

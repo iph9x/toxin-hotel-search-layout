@@ -49,7 +49,7 @@ export default class RateButton {
 
   setRateButtonElements() {
     this.$rateButton.each((i) => {
-      const $rateStars = $(this.$rateButton[i]).find('.js-rate-button__active-star');
+      const $rateStars = $(this.$rateButton[i]).find('.js-rate-button__star_active');
       const $rateInput = $(this.$rateButton[i]).find('.js-rate-button__input');
       
       this.rateButtonsArr.push($rateStars);
