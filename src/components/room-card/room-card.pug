@@ -1,19 +1,23 @@
 include ../rate-button/rate-button
 
 mixin room-card({ src, number, lux, price, rating, reviews })
-  .room-card
+  article.room-card
     .room-card__slider
       .room-card__image-box.js-room-card__image-box
-        img.room-card__image(src=src alt="")
-        img.room-card__image(src=src alt="")
-        img.room-card__image(src=src alt="")
-        img.room-card__image(src=src alt="")
+        figure.room-card__figure
+          img.room-card__image(src=src alt="")
+        figure.room-card__figure
+          img.room-card__image(src=src alt="")
+        figure.room-card__figure
+          img.room-card__image(src=src alt="")
+        figure.room-card__figure
+          img.room-card__image(src=src alt="")
       button(type="button").room-card__prev-slide.js-room-card__prev-slide.slick-prev
         span.room-card__icon.material-icons expand_more
       button(type="button").room-card__next-slide.js-room-card__next-slide.slick-next
         span.room-card__icon.material-icons expand_more
     .room-card__info-box
-      .room-card__header
+      header.room-card__header
         h2.room-card__title
           span.room-card__number= number
           if lux

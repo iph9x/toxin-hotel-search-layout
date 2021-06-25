@@ -4,7 +4,7 @@
   padding-bottom: 30px;
   width: 100%;
   &__title {
-    @include card-title;
+    margin-bottom: 21px;
   }
   &__email {
     margin-bottom: 10px;

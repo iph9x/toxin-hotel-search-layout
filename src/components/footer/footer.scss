@@ -56,15 +56,12 @@
     font-weight: 700;
     text-transform: uppercase;
     color: $darkshade;
-    text-decoration: none;
-    &:active,
-    &:focus {
-      color: $darkshade;
-    }
   }
-  &__item {
-    color: $darkshade50;
+  &__item:not(:first-child) {
     margin: 10px 0;
+  }
+  &__link {
+    color: $darkshade50;
     text-decoration: none;
   }
   &__subscription-text-field {

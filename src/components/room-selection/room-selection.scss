@@ -1,7 +1,6 @@
 .room-selection {
   @include card-wrapper;
   &__title {
-    @include card-title;
     margin-bottom: 22px;
   }
   &__dropdown {

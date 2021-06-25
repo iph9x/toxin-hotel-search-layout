@@ -3,4 +3,38 @@
   @media (max-width: 436px) {
     width: 100%;
   }
+  &__item {
+    display: grid;
+    grid-template-columns: 37px 1fr;
+    column-gap: 30px;
+    margin-bottom: 52px;
+    &_type {
+      &_h1 {
+        font-size: $h1-font-size;
+        line-height: 29px;
+      }
+      &_h2 {
+        font-size: $h2-font-size;
+        line-height: 24px;
+        margin-bottom: 51px;
+      }
+      &_h3 {
+        font-size: $h3-font-size;
+        line-height: 14px;
+        margin-bottom: 47px; 
+      }
+      &_body {
+        font-size: $body-font-size;
+        line-height: 24px;
+      }
+      &_body .types-box__desc {
+        max-width: 301px;
+      }
+    }
+  }
+  &__type-title {
+    justify-self: end;
+    color: $darkshade25;
+    text-transform: capitalize;
+  }
 }

@@ -1,7 +1,6 @@
 .room-reservation {
   @include card-wrapper;
   &__title {
-    @include card-title;
     display: flex;
     align-items: flex-end;
     margin-bottom: 0;

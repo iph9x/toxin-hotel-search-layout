@@ -1,6 +1,7 @@
 include ../room-info/room-info
 include ../review/review
 include ../bullet-list/bullet-list
+include ../room-rating-chart/room-rating-chart
 
 -
   const roomItems = [
@@ -9,13 +10,12 @@ include ../bullet-list/bullet-list
     { iconName: 'whatshot', title: 'Уют', sub: 'Номер оснащен камином' }
   ]
 
-.room-info-block
+section.room-info-block
   .room-info-block__info
     h2.room-info-block__info-title Сведения о номере
     +room-info({ items: roomItems })
   .room-info-block__rating
-    h2.room-info-block__rating-title Впечатления от номера
-    include ../room-rating-chart/room-rating-chart
+    +room-rating-chart({ title: 'Впечатления от номера' })
   .room-info-block__reviews
     .room-info-block__reviews-title-row
       h2.room-info-block__reviews-title Отзывы посетителей номера

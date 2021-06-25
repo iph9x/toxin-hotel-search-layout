@@ -116,6 +116,7 @@ $nav-height: 70px;
   text-transform: uppercase;
   font-size: $h3-font-size;
   font-weight: 700;
+  color: $darkshade;
 }
 
 @mixin field-arrow {
@@ -185,11 +186,6 @@ $nav-height: 70px;
     padding-right: 15px;
     width: 94vw;
   }
-}
-
-@mixin card-title {
-  margin-bottom: 21px;
-  font-size: $h1-font-size;
 }
 
 @mixin checkbox {

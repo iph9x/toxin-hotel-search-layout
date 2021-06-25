@@ -3,7 +3,7 @@ include ../date-dropdown/date-dropdown
 include ../button/button
 
 form(action="").room-selection
-  h2.room-selection__title Найдём номера под ваши пожелания
+  h1.room-selection__title Найдём номера под ваши пожелания
   .room-selection__date-dropdowns-wrapper
     +date-dropdown({ title: 'Прибытие', isDateIn: true})
     +date-dropdown({ title: 'Выезд'})
