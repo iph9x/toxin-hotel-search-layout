@@ -1,5 +1,8 @@
 .headers-footers {
   background: rgb(244, 244, 246);
+  &__main {
+    margin-top: 62px;
+  }
   .header {
     margin-bottom: 40px;
     position: relative;

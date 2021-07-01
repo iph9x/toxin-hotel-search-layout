@@ -1,16 +1,20 @@
 .colors-and-type {
   background: #fff;
-  margin-bottom: 2px;
   flex: 1 0 auto;
   &__main {
-    margin-top: 0;
+    margin-top: 67px;
   }
   &__container {
     @include container;
     @include ui-container;
-    padding-left: 150px;
-    padding-right: 158px;
     display: flex;
     justify-content: space-between;
+    @media (min-width: 1439px) and (max-width: 1441px) {
+      justify-content: flex-start;
+      column-gap: 415px;
+      margin: 0;
+      margin-left: 150px;
+      padding: 0;
+    }
   }
 }

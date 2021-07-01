@@ -7,9 +7,13 @@
     justify-content: center;
     max-width: 1200px;
     padding-top: 70px;
-    padding-bottom: 61px;
+    padding-bottom: 62px;
     column-gap: 70px;
     row-gap: 70px;
     flex-wrap: wrap;
+    @media (min-width: 1439px) and (max-width: 1441px) {
+      margin: 0;
+      margin-left: 120px;
+    }
   }
 }

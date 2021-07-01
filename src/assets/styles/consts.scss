@@ -117,6 +117,7 @@ $nav-height: 70px;
   font-size: $h3-font-size;
   font-weight: 700;
   color: $darkshade;
+  line-height: 15px;
 }
 
 @mixin field-arrow {
@@ -125,11 +126,16 @@ $nav-height: 70px;
   color: $darkshade50;
   -webkit-user-select: none;
   z-index: 4;
+  transition: transform .1s;
   &:hover {
     cursor: pointer;
   }
   &:hover + input {
     border: 1px solid $darkshade50;
+  }
+  &_rotated {
+    transform: rotate(180deg);
+    transform-origin: 50% 50%;
   }
 }
 
@@ -225,7 +231,7 @@ $nav-height: 70px;
   &::before {
     content: '';
     position: absolute;
-    top: -2px;
+    top: -1px;
     left: -30px;
     width: 20px;
     height: 20px;
@@ -255,14 +261,11 @@ $nav-height: 70px;
 
 @mixin ui-container {
   max-width: 1440px;
-  @media (max-width: 1440px) {
+  @media (max-width: 1400px) {
     padding: 0 10vw;
   }
   @media (max-width: 950px) {
     flex-wrap: wrap;
     justify-content: center;
-  }
-  @media (max-width: 350px) {
-    padding: 0 3vw;
   }
 }

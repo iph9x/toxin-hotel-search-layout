@@ -1,8 +1,5 @@
-mixin range-slider({ title, note })
-  -
-    const minValue = 0
-    const maxValue = 15000
-    const step = maxValue / 15
+mixin range-slider({ title, note, minValue, maxValue })
+  - const step = maxValue / 15
   
   .range-slider
     .range-slider__titles

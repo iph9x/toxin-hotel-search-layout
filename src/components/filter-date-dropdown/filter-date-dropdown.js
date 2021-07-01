@@ -1,4 +1,3 @@
-import * as $ from 'jquery';
 import { initDatepickerButtons } from '../../assets/js/utils';
 
 export default class FilterDateDropdown {
@@ -12,6 +11,7 @@ export default class FilterDateDropdown {
       navTitles: { days: 'MM yyyy' },
       dateFormat: "dd M",
       multipleDatesSeparator: ' - ',
+      onSelect: (formattedDate) => this.$filterDateDropdownInput.val(formattedDate.toLowerCase()),
     }).data('datepicker');
     
     if (!!filterDateDropdown) {

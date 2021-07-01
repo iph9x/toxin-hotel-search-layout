@@ -1,7 +1,9 @@
 .cards {
   background: rgb(244, 244, 246);
+  &__main {
+    margin-top: 72px;
+  }
   &__container {
-    @include container;
     @include ui-container;
     display: flex;
     flex-wrap: wrap;
@@ -9,6 +11,22 @@
     column-gap: 40px;
     margin: 0 auto;
     max-width: 1440px;
+    padding-left: 14px;
+    @media (min-width: 1439px) and (max-width: 1441px) {
+      justify-content: flex-start;
+      margin: 0;
+      padding: 0;
+      margin-left: 140px;
+    }
+  }
+  &__column {
+    &:nth-child(2) {
+      margin-top: 2px;
+    }
+    &:last-child {
+      width: 320px;
+      margin-top: 409px;
+    }
   }
   &__room-card {
     margin-bottom: 40px;

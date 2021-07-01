@@ -19,7 +19,7 @@
     position: relative;
     &_side {
       &_left {
-        margin-right: 4px;
+        margin-right: 2px;
       }
       &_right {
         margin-left: 5px;
@@ -54,6 +54,18 @@
     opacity: 0;
     margin: 0;
     padding: 0;
+    &:hover {
+      cursor: pointer;
+    }
+    &::-moz-range-thumb {
+      pointer-events: all;
+      width: 12px;
+      height: 12px;
+      z-index: 4;
+      border-radius: 0;
+      border: 0 none;
+      -webkit-appearance: none;
+    }
     &::-webkit-slider-thumb {
       pointer-events: all;
       width: 12px;
@@ -62,9 +74,6 @@
       border-radius: 0;
       border: 0 none;
       -webkit-appearance: none;
-      &:hover {
-        cursor: pointer
-      } 
     }
   }
   &__wrapper {
@@ -105,5 +114,6 @@
     font-size: $h3-font-size;
     color: $darkshade50;
     margin-top: 13px;
+    line-height: 14px;
   }
 }

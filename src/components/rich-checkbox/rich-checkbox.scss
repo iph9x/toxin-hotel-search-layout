@@ -2,7 +2,7 @@
   @include checkbox;
   width: 236px;
   transform: translateX(30px);
-  margin-bottom: 9px;
+  margin-bottom: 10px;
   &__input {
     @include checkbox-input;
   }

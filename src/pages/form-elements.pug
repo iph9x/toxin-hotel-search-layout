@@ -48,40 +48,60 @@ block content
         .form-elements__column
           .form-elements__text-field
             +text-field({ title: 'Text field', placeholderText: 'Email' })
-          +dropdown({ title: 'Dropdown', placeholderText: 'Сколько гостей', id: 'guests' })
-          +masked-text-field({ title: 'Masked Text field', placeholderText: 'ДД.ММ.ГГГГ' })
+          .form-elements__text-field
+            +text-field({ title: 'Text field', textValue: 'This is pretty awesome' })
+          .form-elements__dropdown
+            +dropdown({ title: 'Dropdown', placeholderText: 'Сколько гостей', id: 'guests' })
+          .form-elements__masked-text-field
+            +masked-text-field({ title: 'Masked Text field', placeholderText: 'ДД.ММ.ГГГГ' })
           .form-elements__date-dropdowns-wrapper
             +date-dropdown({ title: 'Date Dropdown', isDateIn: true })
             +date-dropdown({ title: 'Date Dropdown' })
-          +filter-date-dropdown({ title: 'Filter Date Dropdown' })
-          +subscription-text-field({ title: 'Subscription Text Field', placeholderText: 'Email' })
+          .form-elements__filter-date-dropdown
+            +filter-date-dropdown({ title: 'Filter Date Dropdown' })
+          .form-elements__subscription-text-field
+            +subscription-text-field({ title: 'Subscription Text Field', placeholderText: 'Email' })
       .form-elements__interactive-inputs
         .form-elements__column
-          +checkbox-buttons({ title: 'Checkbox buttons', checkboxItems: checkboxItems } )
+          .form-elements__checkbox-buttons
+            +checkbox-buttons({ title: 'Checkbox buttons', checkboxItems: checkboxItems } )
           .form-elements__radio-buttons
             +radio-buttons({ title: 'Radio buttons'} )
-          +toggle({ id: 'suggestions', title: 'Toggle', labelText: 'Получать спецпредложения' })
-          +like-button({ title: 'Like button' })
+          .form-elements__toggles
+            +toggle({ id: 'suggestions', title: 'Toggle', labelText: 'Получать спецпредложения' })
+            +toggle({ id: 'suggestions', labelText: 'Получать спецпредложения' })
+          .form-elements__like-buttons
+            +like-button({ title: 'Like button', likesCount: 2 })
           +rate-button({ title: 'Rate button' })
-      .form-elements__column
-        +range-slider({ title: 'Range slider'})
-        .form-elements__buttons
-          .form-elements__buttons-title Buttons
-          .form-elements__buttons-box
-            +button({ text: 'Click me', style: 'fill' })
-            +button({ text: 'Click me', style: 'border' })
-            +button({ text: 'Click me', style: 'string' })
-            +button({ text: 'Перейти к оплате', style: 'fill', type: 'submit' })
-        +pagination({ title: 'Pagination' })
-      .form-elements__rooms-dropdown
+      .form-elements__button-inputs
         .form-elements__column
-          +dropdown({ title: 'Dropdown', placeholderText: '2 спальни, 2 кровати', id: 'rooms' })
+          +range-slider({ title: 'Range slider', minValue: 0, maxValue: 15000 })
+          .form-elements__buttons
+            .form-elements__buttons-title Buttons
+            .form-elements__buttons-box
+              .form-elements__fill-button
+                +button({ text: 'Click me', style: 'fill' })
+              .form-elements__border-button
+                +button({ text: 'Click me', style: 'border' })
+              .form-elements__string-button
+                +button({ text: 'Click me', style: 'string' })
+              .form-elements__submit-button
+                +button({ text: 'Перейти к оплате', style: 'fill', type: 'submit' })
+          .form-elements__pagination
+            +pagination({ title: 'Pagination' })
+      .form-elements__column
+        .form-elements__rooms-dropdown
+          +dropdown({ title: 'Dropdown', placeholderText: '2 спальни, 2 кровати...', id: 'rooms' })
+        .form-elements__rooms-dropdown
+          +dropdown({ title: 'Dropdown', placeholderText: '2 спальни, 2 кровати...', id: 'rooms', attached: true })
       .form-elements__guests-dropdown
         .form-elements__column
-          +dropdown({ title: 'Dropdown', placeholderText: 'Сколько гостей', id: 'guests' })
-      .form-elements__expandable-checkbox-list
-        .form-elements__column
+          +dropdown({ title: 'Dropdown', placeholderText: 'Сколько гостей', id: 'guests', attached: true })
+      .form-elements__column
+        .form-elements__expandable-checkbox-list
           +expandable-checkbox-list({ title: 'Expandable checkbox list', checkboxItems: expandableCheckboxItems })
+        .form-elements__expandable-checkbox-list
+          +expandable-checkbox-list({ title: 'Expandable checkbox list', checkboxItems: expandableCheckboxItems, attached: true })
       .form-elements__rich-checkbox-buttons
         .form-elements__column
           +rich-checkbox-buttons({ title: 'Rich checkbox buttons' })

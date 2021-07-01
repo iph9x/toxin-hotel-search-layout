@@ -8,7 +8,7 @@
   &__slider {
     display: flex;
     flex-wrap: nowrap;
-    margin-bottom: 11px;
+    margin-bottom: 7px;
   }
   &__page {
     display: grid;
@@ -36,5 +36,6 @@
     color: $darkshade75;
     font-size: $body-font-size;
     margin-left: 6px;
+    line-height: 24px;
   }
 }

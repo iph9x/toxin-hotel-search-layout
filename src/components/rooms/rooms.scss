@@ -20,7 +20,9 @@
     }
   }
   &__pagination {
+    display: flex;
+    justify-content: center;
     margin: 0 auto;
-    transform: translate(-8px);
+    transform: translate(-7px);
   }
 }

@@ -1,19 +1,24 @@
 .search-room {
   background: #fff;
   padding-top: 30px;
-  padding-bottom: 70px;
-  margin-bottom: 1px;
+  padding-bottom: 72px;
+  border-bottom: 1px solid #c7c7cf;
   &__container {
     @include container;
     display: flex;
     justify-content: center;
     column-gap: 60px;
     width: 1200px;
+    @media (min-width: 1439px) and (max-width: 1441px) {
+      margin: 0;
+      margin-left: 120px;
+    }
     @media (max-width: 1200px) {
       width: 100%;
     }
     @media (max-width: 630px) {
       flex-wrap: wrap;
     }
+    
   }
 }

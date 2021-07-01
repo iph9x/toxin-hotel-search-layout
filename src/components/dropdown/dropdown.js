@@ -5,15 +5,14 @@ export default class Dropdown {
 
   init() {
     $('.js-dropdown__clear').on('click', (e) => this.clearHandler(e));
-    $('.js-dropdown__arrow').on('click', (e) => this.inputClickHandler(e, true));
-    $('.js-dropdown__input').on('click', (e) => this.inputClickHandler(e));
+    $('.js-dropdown').on('click', (e) => this.inputClickHandler(e));
     $('.js-dropdown__apply').on('click', (e) => this.applyHandler(e));
     $('.js-dropdown__circle-btn_action_reduce').on('click', (e) => this.btnAdjustHandler(e, true));
     $('.js-dropdown__circle-btn_action_increase').on('click', (e) => this.btnAdjustHandler(e, false));
     $(document).on('click', this.hideMenuHandler);
     $('.js-date-dropdown__input').on('click', this.hideMenuHandler);
     $('.js-masked-text-field').on('click', this.hideMenuHandler);
-    $('.js-dropdown__menu').parents('.dropdown').on('click', (e) => e.stopPropagation());
+    $('.js-dropdown__menu').parents('.js-dropdown').on('click', (e) => e.stopPropagation());
   }
 
   createDropdownObj(menu) {
@@ -86,39 +85,47 @@ export default class Dropdown {
 
   hideMenuHandler() {
     const $menu = $('.js-dropdown__menu');
-    const $menuWrapper = $menu.parent();
-    const $dropdownInput = $menuWrapper.find('.js-dropdown__input');
-  
-    $menu.hide();
-    $menuWrapper.removeClass('dropdown_active');
-    $dropdownInput.removeClass('dropdown__input_active')
+
+    $menu.each((i) => {
+      const $itemMenu = $($menu[i]);
+      const $menuWrapper = $itemMenu.parent();
+      const $dropdownInput = $menuWrapper.find('.js-dropdown__input');
+      const attached = $itemMenu.attr('data-menu-attached');
+
+      if (attached !== 'attached') {
+        $itemMenu.hide();
+        $menuWrapper.removeClass('dropdown_active');
+        $dropdownInput.removeClass('dropdown__input_active');
+      }
+    })
   }
 
-  inputClickHandler(e, isArrow = false) {
-    const $menu = isArrow ? $(e.target).next().next() : $(e.target).next();
-    const $menuParent = $menu.parent();
-    const inputIsActive = $menuParent.hasClass('dropdown_active');
-  
-    this.hideMenuHandler();
-  
+  inputClickHandler(e) {
+    const $dropdown = $(e.currentTarget);
+    const $menu = $dropdown.find('.js-dropdown__menu');
+    const $dropdownInput = $dropdown.find('.js-dropdown__input');
+    const inputIsActive = $dropdown.hasClass('dropdown_active');
+    const targetParentIsMenu = $(e.target).parents('.js-dropdown__menu')?.attr('class');
+    const targetIsMenu = $(e.target).attr('class').includes('dropdown__menu');
+
+    if (!targetIsMenu && !targetParentIsMenu) {
+      this.hideMenuHandler();
+    }
+
     if (!inputIsActive) {
-      $menu.show();
-      $menuParent.addClass('dropdown_active');
-    
-      if (isArrow) {
-        $(e.target).next().addClass('dropdown__input_active');
-      } else {
-        $(e.target).addClass('dropdown__input_active');
-      }
+      $menu.toggle();
+      $dropdown.toggleClass('dropdown_active');
+      $dropdownInput.toggleClass('dropdown__input_active');
     }
   }
 
   applyHandler(e) {
+    e.stopPropagation(e);
     const $menu = $(e.target).parents('.js-dropdown__menu');
     const $menuParent = $menu.parent();
   
-    $menu.toggle();
-    $menuParent.toggleClass('dropdown_active');
+    $menu.hide();
+    $menuParent.removeClass('dropdown_active');
     $menuParent.find('.js-dropdown__input').toggleClass('dropdown__input_active');
   }
 

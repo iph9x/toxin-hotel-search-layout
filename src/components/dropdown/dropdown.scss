@@ -3,7 +3,6 @@ $material-icons-font-path: '~material-icons/iconfont/';
 
 .dropdown {
   @include field-wrapper;
-  margin-bottom: 20px;
   &:hover {
     cursor: pointer;
   }

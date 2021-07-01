@@ -26,10 +26,10 @@ form.filter
   .filter__dropdown-guests
     +dropdown({ title: 'Гости', placeholderText: 'Сколько гостей', id: 'guests' })
   .filter__range-slider
-    +range-slider({ title: 'Диапазон цены', note: true })
+    +range-slider({ title: 'Диапазон цены', note: true, minValue: 0, maxValue: 15000 })
   .filter__checkbox-buttons
     +checkbox-buttons({ title: 'Правила дома', checkboxItems: checkboxItems })
-  .filter__checkbox-buttons
+  .filter__rich-checkbox-buttons
     +rich-checkbox-buttons({ title: 'Доступность' })
   .filter__dropdown-rooms
     +dropdown({ title: 'Удобства номера', placeholderText: 'Сколько комнат', id: 'rooms' })

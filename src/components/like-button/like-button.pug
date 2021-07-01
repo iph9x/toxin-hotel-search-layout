@@ -1,6 +1,4 @@
-mixin like-button({ title })
-  - const likesCount = 12;
-
+mixin like-button({ title, likesCount=12 })
   .like-button
     if (title)
       .like-button__title= title

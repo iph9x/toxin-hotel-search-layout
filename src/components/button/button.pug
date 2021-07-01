@@ -1,7 +1,8 @@
-mixin button({ type, style, text })
+mixin button({ type, style, text, isHeader })
   -
     const typeClass = type ? `button_type_${type}` : ''
     const styleClass = style ? `button_style_${style}` : ''
+    const isHeaderClass = isHeader ? `button_${isHeader}` : ''
 
-  button.button(type="button" class=`${typeClass} ${styleClass}`)
+  button.button(type="button" class=`${typeClass} ${styleClass} ${isHeaderClass}`)
     span.button__text= text

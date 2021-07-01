@@ -1,13 +1,14 @@
-mixin dropdown({ id, title, placeholderText })
-  - const wrapperClassName = id === 'guests' ? 'dropdown_type_guests' : 'dropdown_type_rooms'
-
-  .dropdown(class=wrapperClassName)
+mixin dropdown({ id, title, placeholderText, attached })
+  -
+    const wrapperClassName = id === 'guests' ? 'dropdown_type_guests' : 'dropdown_type_rooms'
+    const menuIsAttached = attached ? 'attached' : 'none';
+  .dropdown.js-dropdown(class=wrapperClassName)
     if title
       .dropdown__title= title
     .dropdown__arrow.js-dropdown__arrow expand_more
     input.dropdown__input.js-dropdown__input(type="text" placeholder=placeholderText readonly)
     if (id === 'rooms')
-      .dropdown__menu.js-dropdown__menu(data-menu-type=id)
+      .dropdown__menu.js-dropdown__menu(data-menu-type=id data-menu-attached=menuIsAttached)
         .dropdown__item.js-dropdown__item
           .dropdown__name Спальни
           .dropdown__counter.js-dropdown__counter
@@ -27,7 +28,7 @@ mixin dropdown({ id, title, placeholderText })
             .dropdown__digit.js-dropdown__digit(data-menu-item-id="bathrooms") 2
             button(type="button").dropdown__circle-btn.dropdown__circle-btn_action_increase.js-dropdown__circle-btn_action_increase +
     if (id === 'guests')
-      .dropdown__menu.js-dropdown__menu(data-menu-type=id)
+      .dropdown__menu.js-dropdown__menu(data-menu-type=id data-menu-attached=menuIsAttached)
         .dropdown__item.js-dropdown__item
           .dropdown__name Взрослые
           .dropdown__counter.js-dropdown__counter

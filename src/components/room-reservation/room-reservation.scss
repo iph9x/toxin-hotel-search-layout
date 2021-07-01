@@ -1,42 +1,23 @@
 .room-reservation {
   @include card-wrapper;
-  &__title {
-    display: flex;
-    align-items: flex-end;
-    margin-bottom: 0;
-  }
-  &__dropdown-guests {
-    margin-bottom: 21px;
-  }
   &__header {
     @include flex-justify-sb-align-end;
     margin-bottom: 0;
     border-bottom: 1px solid $darkshade10;
     padding-bottom: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 17px;
     padding-bottom: 0;
     border: 0;
   }
-  &__price-box {
+  &__title {
     display: flex;
     align-items: flex-end;
-    transform: translateX(3px);
-    margin-right: 0;
-    padding-bottom: 2px;
-  }
-  &__lux {
-    color: $purple;
-    font-size: $h3-font-size;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding-top: 8px;
-    display: inline-block;
-    padding-bottom: 3px;
-  }
+    margin-bottom: 0;
+  } 
   &__number {
+    margin-right: 9px;
     font-size: $h1-font-size;
-    margin-right: 8px;
-    padding-top: 1px;
+    line-height: 29px;
     &::before {
       content: '№';
       margin-right: 4px;
@@ -44,8 +25,22 @@
       font-weight: 700;
     }
   }
+  &__lux {
+    margin-bottom: 4px;
+    font-size: $h3-font-size;
+    font-weight: 700;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: $purple;
+  }
+  &__price-box {
+    display: flex;
+    align-items: flex-end;
+    line-height: 18px;
+  }
   &__day-price {
     margin-right: 4px;
+    margin-bottom: 5px;
     font-size: $body-font-size;
     font-weight: 700;
     color: $darkshade50;
@@ -56,11 +51,14 @@
   &__time {
     color: $darkshade50;
     font-size: $h3-font-size;
-    margin-bottom: 1px;
+    margin-bottom: 3px;
     display: flex;
   }
   &__date-dropdowns-wrapper {
     @include date-dropdowns-wrapper;
+    margin-bottom: 20px;
+  }
+  &__dropdown-guests {
     margin-bottom: 21px;
   }
   &__notes {
@@ -84,16 +82,16 @@
   }
   &__service {
     max-width: 215px;
-    &-box {
-      display: grid;
-      grid-template-columns: 1fr 20px;
-      justify-content: space-between;
-      width: 239px;
-      @media (max-width: 380px) {
-        width: auto;
-      }
-    }
   }
+  &__service-box {
+    display: grid;
+    grid-template-columns: 1fr 20px;
+    justify-content: space-between;
+    width: 239px;
+    @media (max-width: 380px) {
+      width: auto;
+    }
+  }  
   &__info {
     display: inline-grid;
     place-items: center;
@@ -110,23 +108,14 @@
     &::after {
       content: '\20BD'
     }
-  }
-  &__total {
-    &-wrapper {
-      display: flex;
-      font-size: $h2-font-size;
-      color: $darkshade;
-      font-weight: 700;
-      margin-bottom: 21px;
-    }  
-    &-price {
-      @media (max-width: 340px) {
-        margin-right: 0;
-      }
-      &::after {
-        content: '\20BD'
-      }
-    }  
+  } 
+  &__total-wrapper {
+    display: flex;
+    font-size: $h2-font-size;
+    color: $darkshade;
+    font-weight: 700;
+    margin-bottom: 21px;
+    line-height: 23px;
   }
   &__label {
     padding-left: 1px;
@@ -140,198 +129,12 @@
     margin: 0 5px;
     margin-bottom: 4px;
   }
-}
-
-.datepicker {
-  width: 320px;
-  padding: 20px;
-  padding-top: 15px;
-  box-sizing: border-box;
-  background: #fff;
-  border-radius: 4px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  @include boxshadow;
-  @include montserrat;
-  @media (max-width: 380px) {
-    width: 287px;
-    padding-right: 3px;
-    padding-left: 3px;
-  }
-  &--nav {
-    border-bottom: 0;
-    padding: 0;
-    &-action {
-      width: 24px;
-      &:hover {
-        background: none;
-        border-radius: 0;
-      }
+  &__total-price {
+    @media (max-width: 340px) {
+      margin-right: 0;
     }
-    &-title {
-      font-size: $h2-font-size;
-      font-weight: 700;
-      color: $darkshade;
-      &:hover {
-        background: none;
-        border-radius: 0;
-      }
+    &::after {
+      content: '\20BD'
     }
-  }
-  &__title {
-    font-size: $h2-font-size;
-    font-weight: 700;
-    color: $darkshade;
-  }
-  &--content {
-    padding: 0;
-  }
-  &__arrow {
-    @include material-icons-text-only;
-    color: $purple;
-  }
-  &--days-names {
-    margin: 0;
-    margin-top: 26px;
-  }
-  &--day-name {
-    color: $purple;
-    font-weight: 700;
-    font-size: $h3-font-size;
-    width: 40px;
-    height: 40px;
-    text-transform: none;
-  }
-  &--cells {
-    &-days {
-      display: grid;
-      grid-template-columns: repeat(7, 1fr);
-    }
-  }
-  &--cell {
-    border-radius: 50%;    
-    &-day.-other-month-,
-    &-year.-other-decade- {
-      color: $darkshade25;
-    }
-    &.-selected-,
-    &.-selected-.-focus- {
-      background: $purple;
-    }
-    &.-current- {
-      color: $purple;
-    }
-    &.-current-.-focus- {
-      color: #fff;
-    }
-    &.-selected-.-current- {
-      @include gradient25;
-    }
-    &-month,
-    &-year {
-      border-radius: 4px;
-      &.-current-.-focus-,
-      &.-current-,
-      &.-selected-.-current- {
-        color: $darkshade50;
-      }
-    }
-    &-day {
-      width: 40px;
-      height: 40px;
-      font-size: $h3-font-size;
-      color: $darkshade50;
-      &.-selected-.-other-month-.-focus- {
-        @include gradient25;
-      }
-      &.-range-from-,
-      &.-range-to-.-range-from-,
-      &.-range-to-,
-      &.-range-from-.-other-month-,
-      &.-range-to-.-range-from-.-other-month-,
-      &.-range-to-.-other-month- {
-        @include gradient25;
-        border-radius: 0;
-        border: none;
-        color: #fff;
-        &::before {
-          position: absolute;
-          content: '';
-          @include gradient;      
-          height: 100%;
-          width: 100%;
-          border-radius: 50%;
-          z-index: -1;
-        }
-      }
-      &.-range-from-,
-      &.-range-from-.-other-month- {
-        border-top-left-radius: 50%;
-        border-bottom-left-radius: 50%;
-      }
-      &.-range-to-,
-      &.-range-to-.-other-month- {
-        border-top-right-radius: 50%;
-        border-bottom-right-radius: 50%;
-      }
-      &.-range-to-.-focus-,
-      &.-range-from-.-focus- {
-        color: #fff;
-        @include gradient25;
-      }
-      &.-focus- {
-        @include gradient25;
-        color: $darkshade50;
-      }
-      &.-focus-.-selected- {
-        color: #fff;
-      }
-      &.-current- {
-        color: #fff;
-        @include blue-green-gradient;
-      }
-      &.-range-to-.-current-.-selected- {
-        @include gradient25;
-      }
-      &.-current-.-in-range- {
-        border-radius: 0;
-        color: $darkshade50;
-      }
-      &.-in-range-,
-      &.-in-range-.-other-month-,
-      &.-in-range-.-focus-,
-      &.-in-range-.-focus-.-other-month- {
-        @include gradient25;
-        color: $darkshade50;
-      }
-    }
-  }  
-  &--footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-top: 20px;
-    margin-bottom: 6px;
-    button {
-      padding: 0;
-      color: $purple;
-      text-transform: uppercase;
-      font-size: $h3-font-size;
-      font-weight: 700;
-      background: none;
-      border: none;
-      &:focus,
-      &:active {
-        outline: none;
-      }
-    }
-  }
-  &--clear {
-    justify-self: start;
-    &_disabled {
-      display: none;
-    }
-  }
-  &--apply {
-    justify-self: end;
-    grid-column: 2 / 3;
-  }
+  }   
 }

@@ -1,6 +1,5 @@
 .masked-text-field {
   @include field-wrapper;
-  margin-bottom: 40px;
   &__title {
     @include field-title;
   }

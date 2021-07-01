@@ -32,6 +32,7 @@ h1, h2, h3 {
 h1 {
   font-size: $h1-font-size;
   font-weight: 700;
+  line-height: 29px;
 }
 
 h2 {
@@ -63,9 +64,10 @@ main {
 }
 
 .uikit-header {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 30px 0 65px 30px;
+  width: 100%;
+  max-width: 1920px;
+  padding-top: 30px;
+  padding-left: 30px;
 }
 
 .home-page {
@@ -83,5 +85,213 @@ main {
     &:visited {
       color: $darkshade75;
     }
+  }
+}
+
+.datepicker {
+  width: 320px;
+  padding: 20px;
+  padding-top: 15px;
+  padding-bottom: 19px;
+  box-sizing: border-box;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  @include boxshadow;
+  @include montserrat;
+  @media (max-width: 380px) {
+    width: 287px;
+    padding-right: 3px;
+    padding-left: 3px;
+  }
+  &--nav {
+    border-bottom: 0;
+    padding: 0;
+    &-action {
+      width: 24px;
+      &:hover {
+        background: none;
+        border-radius: 0;
+      }
+      &:first-child,
+      &:last-child {
+        &::before {
+          font-size: 24px;
+          @include material-icons-text-only;
+          color: $purple;
+        }
+      }
+      &:first-child {
+        &::before {
+          content: 'arrow_back';
+        }
+      }
+      &:last-child {
+        &::before {
+          content: 'arrow_forward';
+        }
+      }
+    }
+    &-title {
+      font-size: $h2-font-size;
+      font-weight: 700;
+      color: $darkshade;
+      &:hover {
+        background: none;
+        border-radius: 0;
+      }
+    }
+  }
+  &__title {
+    font-size: $h2-font-size;
+    font-weight: 700;
+    color: $darkshade;
+  }
+  &--content {
+    padding: 0;
+  }
+  &--days-names {
+    margin: 0;
+    margin-top: 26px;
+  }
+  &--day-name {
+    color: $purple;
+    font-weight: 700;
+    font-size: $h3-font-size;
+    width: 40px;
+    height: 40px;
+    text-transform: none;
+  }
+  &--cells {
+    &-days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+    }
+  }
+  &--cell {
+    border-radius: 50%;    
+    &-day.-other-month-,
+    &-year.-other-decade- {
+      color: $darkshade25;
+    }
+    &.-selected-,
+    &.-selected-.-focus- {
+      background: $purple;
+    }
+    &.-current- {
+      color: $purple;
+    }
+    &.-current-.-focus- {
+      color: #fff;
+    }
+    &.-selected-.-current- {
+      @include gradient25;
+    }
+    &-month,
+    &-year {
+      border-radius: 4px;
+      &.-current-.-focus-,
+      &.-current-,
+      &.-selected-.-current- {
+        color: $darkshade50;
+      }
+    }
+    &-day {
+      width: 40px;
+      height: 40px;
+      font-size: $h3-font-size;
+      color: $darkshade50;
+      &.-selected-.-other-month-.-focus- {
+        @include gradient25;
+      }
+      &.-range-from-,
+      &.-range-to-.-range-from-,
+      &.-range-to-,
+      &.-range-from-.-other-month-,
+      &.-range-to-.-range-from-.-other-month-,
+      &.-range-to-.-other-month- {
+        @include gradient25;
+        border-radius: 0;
+        border: none;
+        color: #fff;
+        &::before {
+          position: absolute;
+          content: '';
+          @include gradient;      
+          height: 100%;
+          width: 100%;
+          border-radius: 50%;
+          z-index: -1;
+        }
+      }
+      &.-range-from-,
+      &.-range-from-.-other-month- {
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+      }
+      &.-range-to-,
+      &.-range-to-.-other-month- {
+        border-top-right-radius: 50%;
+        border-bottom-right-radius: 50%;
+      }
+      &.-range-to-.-focus-,
+      &.-range-from-.-focus- {
+        color: #fff;
+        @include gradient25;
+      }
+      &.-focus- {
+        @include gradient25;
+        color: $darkshade50;
+      }
+      &.-focus-.-selected- {
+        color: #fff;
+      }
+      &.-current- {
+        color: #fff;
+        @include blue-green-gradient;
+      }
+      &.-range-to-.-current-.-selected- {
+        @include gradient25;
+      }
+      &.-current-.-in-range- {
+        border-radius: 0;
+        color: $darkshade50;
+      }
+      &.-in-range-,
+      &.-in-range-.-other-month-,
+      &.-in-range-.-focus-,
+      &.-in-range-.-focus-.-other-month- {
+        @include gradient25;
+        color: $darkshade50;
+      }
+    }
+  }  
+  &--footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 20px;
+    button {
+      padding: 0;
+      color: $purple;
+      text-transform: uppercase;
+      font-size: $h3-font-size;
+      font-weight: 700;
+      background: none;
+      border: none;
+      &:focus,
+      &:active {
+        outline: none;
+      }
+    }
+  }
+  &--clear {
+    justify-self: start;
+    &_disabled {
+      display: none;
+    }
+  }
+  &--apply {
+    justify-self: end;
+    grid-column: 2 / 3;
   }
 }

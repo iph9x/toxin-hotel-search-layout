@@ -1,6 +1,5 @@
 .subscription-text-field {
   @include field-wrapper;
-  width: 266px;
   &__title {
     @include field-title;
   }

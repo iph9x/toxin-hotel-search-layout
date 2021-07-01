@@ -2,7 +2,6 @@
   @include field-wrapper;
   font-size: $body-font-size;
   max-width: 266px;
-  margin-bottom: 29px;
   width: 266px;
   &__title {
     @include field-title;
@@ -12,6 +11,7 @@
     @include field-arrow;
     top: 0;
     bottom: auto;
+    transition: transform .1s;
     &_rotated {
       transform: rotate(180deg);
       transform-origin: 50% 50%;
@@ -22,13 +22,16 @@
     align-items: center;
     height: 44px;
     margin-bottom: 5px;
+    &:hover {
+      cursor: pointer;
+    }
   }
   &__items {
     display: none;
     transform: translateX(30px);
   }
   &__checkbox {
-    margin-bottom: 13px;
+    margin-bottom: 12px;
   }
 }
 

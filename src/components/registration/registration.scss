@@ -1,26 +1,31 @@
 .registration {
   @include card-wrapper;
-  background: #fff;
   width: 100%;
+  margin-bottom: 0;
+  background: #fff;
   &__title {
     margin-bottom: 21px;
   }
-  &__last-name {
-    margin-bottom: 9px;
-  }
-  &__first-name,
-  &__email,
-  &__suggestions {
+  &__first-name {
     margin-bottom: 10px;
   }
-  &__password {
-    margin-bottom: 9px;
+  &__last-name {
+    margin-bottom: 10px;
   }
   &__radio-buttons {
     margin-bottom: 16px;
   }
   &__masked-text-field {
+    margin-bottom: 20px;
+  }
+  &__email {
     margin-bottom: 10px;
+  }
+  &__password {
+    margin-bottom: 10px;
+  }
+  &__suggestions {
+    margin-bottom: 26px;
   }
   &__submit-button {
     margin-top: 16px;

@@ -15,5 +15,5 @@ mixin header({ isAuth })
         else
           .header__auth-box
             .header__login-button
-              +button({ text: 'Войти', style: 'border' })
-            +button({ text: 'Зарегистрироваться', style: 'fill' })
+              +button({ text: 'Войти', style: 'border', isHeader: 'is-header-login-button' })
+            +button({ text: 'Зарегистрироваться', style: 'fill', isHeader: 'is-header-reg-button' })

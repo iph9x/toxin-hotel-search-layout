@@ -1,14 +1,20 @@
 .landing {
   background: url('../img/landing.jpg') no-repeat center / cover;
+  @media (min-width: 1439px) and (max-width: 1441px) {
+    background: url('../img/landing.jpg') no-repeat left bottom / 100vw;
+  }
   &__container {
     @include container;
     max-width: 1200px;
     display: flex;
     flex-direction: column;
     padding-top: 70px;
-    padding-bottom: 21px;
-    padding-right: 14px;
     row-gap: 277px;
+    @media (min-width: 1439px) and (max-width: 1441px) {
+      margin: 0;
+      margin-left: 140px;
+      padding-left: 0;
+    }
     @media (max-width: 900px) {
       row-gap: 20vw;
     }
@@ -19,5 +25,7 @@
     text-align: right;
     line-height: 24px;
     color: $darkshade75;
+    margin-bottom: 21px;
+    margin-right: 14px;
   }
 }

@@ -1,7 +1,6 @@
 .checkbox-buttons {
   @include field-wrapper;
   font-size: $body-font-size;
-  margin-bottom: 29px;
   &__title {
     @include field-title;
     margin-bottom: 18px;

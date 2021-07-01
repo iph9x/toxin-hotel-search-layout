@@ -40,9 +40,10 @@
         background-clip: padding-box;
         background: #fff;
       }
-    }
+    }    
     &_fill {
       @include gradient;
+      letter-spacing: -0.021em;
       &:hover {
         opacity: 0.5;
       }
@@ -60,6 +61,7 @@
   }
   &_type {
     &_submit {
+      letter-spacing: 0em;
       width: 100%;
       position: relative;
       padding-bottom: 1px;
@@ -68,5 +70,14 @@
         @include material-icons-icon;    
       }
     }
+  }
+  &_is-header-login-button {
+    height: 34px;
+    width: 87px;
+  }
+  &_is-header-reg-button {
+    height: 34px;
+    width: 196px;
+    letter-spacing: -0.002em;
   }
 }

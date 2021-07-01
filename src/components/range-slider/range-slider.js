@@ -23,26 +23,30 @@ export default class RangeSlider {
     const $leftInput = e ? $(e.target) : this.$rangeInputLeft;
     const currentInputValue = Number.parseInt($leftInput.val());
     const rightInputValue = Number.parseInt(this.$rangeInputRight.val()) - 1;
-    const value = Math.min(currentInputValue, rightInputValue);
+    let value = Math.min(currentInputValue, rightInputValue);
     const percent = this.getValueInPrecent($leftInput, value);
 
     this.$circleLeft.css('left', `${percent}%`);
     this.$track.css('left', `${percent}%`);
-    this.$rangeLabelLeft.html(value);
     $leftInput.val(value);
+    value = value.toString();
+    const formatedValue = value.length > 3 ? `${value.slice(0, value.length - 3)} ${value.slice(-3)}` : value;
+    this.$rangeLabelLeft.html(formatedValue);
   }
 
   changeRightBorder(e) {
     const $rightInput = e ? $(e.target) : this.$rangeInputRight;
     const currentInputValue = Number.parseInt($rightInput.val());
     const leftInputValue = Number.parseInt(this.$rangeInputLeft.val()) + 1;
-    const value = Math.max(currentInputValue, leftInputValue);
+    let value = Math.max(currentInputValue, leftInputValue);
     const percent = this.getValueInPrecent($rightInput, value);
     
     this.$circleRight.css('right', (100 - percent) + '%');
     this.$track.css('right', (100 - percent) + '%');
-    this.$rangeLabelRight.html(value);
     $rightInput.val(value);
+    value = value.toString();
+    const formatedValue = value.length > 3 ? `${value.slice(0, value.length - 3)} ${value.slice(-3)}` : value;
+    this.$rangeLabelRight.html(formatedValue);
   }
 
   getValueInPrecent($input, value) {

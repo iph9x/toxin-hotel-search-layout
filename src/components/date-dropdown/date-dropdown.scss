@@ -1,9 +1,9 @@
 .date-dropdown {
   @include field-wrapper;
   max-width: 150px;
-  margin-bottom: 20px;
   &__title {
     @include field-title;
+    margin-bottom: 6px;
   }
   &__arrow {
     @include field-arrow;
