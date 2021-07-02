@@ -16,6 +16,9 @@ $material-icons-font-path: '~material-icons/iconfont/';
     @include field-input;
     padding-bottom: 2px;
     padding-right: 40px;
+    &:hover {
+      cursor: pointer;
+    }
     &::placeholder {
       color: $darkshade75;
     }

@@ -36,6 +36,14 @@ block variables
       { labelText: 'Телевизор', id: 'tv' },
       { labelText: 'Шампунь', id: 'shampoo' }
     ]
+    const expandableCheckboxItems2 = [
+      { labelText: 'Завтрак', id: 'smoke2' },
+      { labelText: 'Письменный стол', id: 'table2' },
+      { labelText: 'Стул для кормления', id: 'chair2' },
+      { labelText: 'Кроватка', id: 'cot2' },
+      { labelText: 'Телевизор', id: 'tv2' },
+      { labelText: 'Шампунь', id: 'shampoo2' }
+    ]
     const roomItems = [
       { iconName: 'insert_emoticon', title: 'Комфорт', sub: 'Шумопоглощающие стены' },
       { iconName: 'location_city', title: 'Удобство', sub: 'Окно в каждой из спален' }
@@ -69,7 +77,7 @@ block content
             +radio-buttons({ title: 'Radio buttons'} )
           .form-elements__toggles
             +toggle({ id: 'suggestions', title: 'Toggle', labelText: 'Получать спецпредложения' })
-            +toggle({ id: 'suggestions', labelText: 'Получать спецпредложения' })
+            +toggle({ id: 'suggestions2', labelText: 'Получать спецпредложения' })
           .form-elements__like-buttons
             +like-button({ title: 'Like button', likesCount: 2 })
           +rate-button({ title: 'Rate button' })
@@ -101,7 +109,7 @@ block content
         .form-elements__expandable-checkbox-list
           +expandable-checkbox-list({ title: 'Expandable checkbox list', checkboxItems: expandableCheckboxItems })
         .form-elements__expandable-checkbox-list
-          +expandable-checkbox-list({ title: 'Expandable checkbox list', checkboxItems: expandableCheckboxItems, attached: true })
+          +expandable-checkbox-list({ title: 'Expandable checkbox list', checkboxItems: expandableCheckboxItems2, attached: true })
       .form-elements__rich-checkbox-buttons
         .form-elements__column
           +rich-checkbox-buttons({ title: 'Rich checkbox buttons' })

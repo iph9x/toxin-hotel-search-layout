@@ -2,7 +2,7 @@ mixin date-dropdown({ title, isDateIn })
   .date-dropdown
     if title
       .date-dropdown__title= title
-    .date-dropdown__arrow expand_more
+    .date-dropdown__arrow.js-date-dropdown__arrow expand_more
     if isDateIn
       input.date-dropdown__input(
         type="text"

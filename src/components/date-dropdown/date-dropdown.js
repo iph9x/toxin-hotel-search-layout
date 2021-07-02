@@ -37,6 +37,9 @@ export default class DateDropdown {
         }
       };
 
+      const $arrow = $dateContainer.find('.js-date-dropdown__arrow');
+
+      $arrow.on('click', () => $datepicker.show());
       $dateOut.on('click', () => $datepicker.show());
       $dateOut.on('blur', (e) => dateOutBlurHandler(e));
     });
