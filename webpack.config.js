@@ -21,7 +21,6 @@ const PAGES = fs.readdirSync(PAGES_DIR).filter( fileName => fileName.endsWith('.
 
 console.log("is dev: ", isDev);
 
-
 module.exports = {
   context: PATHS.src,
   mode: 'development',
@@ -74,7 +73,7 @@ module.exports = {
         use: {
           options: {
             publicPath: '.',
-            name: 'assets/img/[name]-[contenthash].[ext]',
+            name: 'assets/img/[name].[ext]',
           },
           loader: 'file-loader'
         },
@@ -108,19 +107,6 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery'
     }),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: `${path.resolve(__dirname, 'src/assets/img')}`,
-          to: `${path.resolve(__dirname, 'dist/assets/img')}`,
-          globOptions: {
-            dot: true,
-            gitignore: true,
-            ignore: ['.gitkeep']
-          }
-        },
-      ]
-    })
   ],
   optimization: {
     splitChunks: {
