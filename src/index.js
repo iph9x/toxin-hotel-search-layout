@@ -11,3 +11,4 @@ function importAll(r) {
 }
 
 importAll(require.context('./', true, /\.js$/));
+importAll(require.context('./', true, /\.(png|jpe?g)$/));
