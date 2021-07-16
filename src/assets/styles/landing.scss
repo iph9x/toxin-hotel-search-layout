@@ -1,7 +1,7 @@
 .landing {
-  background: url('../img/landing.jpg') no-repeat center / cover;
+  background: url('../../pages/img/landing.jpg') no-repeat center / cover;
   @media (min-width: 1439px) and (max-width: 1441px) {
-    background: url('../img/landing.jpg') no-repeat left bottom / 100vw;
+    background: url('../../pages/img/landing.jpg') no-repeat left bottom / 100vw;
   }
   &__container {
     @include container;
