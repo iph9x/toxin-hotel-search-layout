@@ -15,9 +15,9 @@ form(action="").registration
   .registration__masked-text-field
     +masked-text-field({ title: 'Дата рождения', placeholderText: 'ДД.ММ.ГГГГ' })
   .registration__email
-    +text-field({ title: 'Данные для входа в сервис', placeholderText: 'Email' })
+    +text-field({ title: 'Данные для входа в сервис', placeholderText: 'Email', inputType: 'email' })
   .registration__password
-    +text-field({ placeholderText: 'Пароль' })
+    +text-field({ placeholderText: 'Пароль', inputType: 'password' })
   .registration__suggestions
     +toggle({ id: 'suggestions', labelText: 'Получать спецпредложения' })
   .registration__submit-button

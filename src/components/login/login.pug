@@ -4,9 +4,9 @@ include ../button/button
 form(action="").login
   h1.login__title Войти
   .login__email
-    +text-field({ placeholderText: 'Email' })
+    +text-field({ placeholderText: 'Email', inputType: 'email' })
   .login__password
-    +text-field({ placeholderText: 'Пароль' })
+    +text-field({ placeholderText: 'Пароль', inputType: 'password' })
   .login__submit-button
     +button({ text: 'Войти', style: 'fill', type: 'submit' })
   .login__registration-wrapper
