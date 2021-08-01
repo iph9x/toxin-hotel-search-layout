@@ -40,8 +40,8 @@ export default class Dropdown {
   
       createObj(itemsObj);
   
-      const guests = itemsObj.adults + itemsObj.children;
-      $input.val(`${guests} гостей`);
+      const guests = Object.values(itemsObj).reduce((count, cur) => count + cur, 0);
+      $input.val(this.determineCase(guests, ['гость', 'гостя', 'гостей']));
   
       const reducer = (acc, current) => acc + current;
       const sum = Object.values(itemsObj).reduce(reducer, 0);
@@ -53,20 +53,31 @@ export default class Dropdown {
       }
     } else if (id === 'rooms') {
       const itemsObj = {
-        'bedrooms': 0,
-        'bed': 0,
-        'bathrooms': 0
+        'bedrooms': 1,
+        'bed': 1,
+        'bathrooms': 1
       };
   
       createObj(itemsObj);
   
       const { bedrooms, bed, bathrooms } = itemsObj;
-      const bedroomsVal = `${bedrooms} спальни`;
-      const bedVal = bed > 0 ? `, ${bed} кровати` : '';
-      const bathsVal = bathrooms > 0 ? `, ${bathrooms} ванных комнат` : '';
+      const bedroomsVal = this.determineCase(bedrooms, ['спальня', 'спальни', 'спален']);
+      const bedVal = this.determineCase(bed, ['кровать', 'кровати', 'кроватей']);
+      const bathsVal = this.determineCase(bathrooms, ['ванная комната', 'ванные комнаты', 'ванных комнат']);
   
-      $input.val(`${bedroomsVal}${bedVal}${bathsVal}`);
+      $input.val(`${bedroomsVal} ${bedVal} ${bathsVal}`);
     }
+  }
+
+  determineCase(count, titles) {
+    const cases = [2, 0, 1, 1, 1, 2];  
+    const title = titles[
+      count % 100 > 4 && count % 100 < 20
+        ? 2
+        : cases[(count % 10 < 5) ? count % 10 : 5]
+    ];
+
+    return `${count} ${title}`;
   }
 
   clearHandler(e) {
