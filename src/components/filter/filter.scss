@@ -1,5 +1,6 @@
 .filter {
-  width: 266px;
+  max-width: 266px;
+  width: 100%;
   @media (max-width: 630px) {
     align-items: center;
     margin: 0 auto;

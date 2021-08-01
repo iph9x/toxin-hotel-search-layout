@@ -1,6 +1,6 @@
 .range-slider {
   @include field-wrapper;
-  width: 266px !important;
+  max-width: 266px;
   &__title {
     @include field-title;
     margin-bottom: 0;
@@ -30,7 +30,6 @@
     }
   }
   &__box {
-    width: 266px !important;
     position: relative;
     height: 6px;
     &::before {

@@ -1,6 +1,6 @@
 .rich-checkbox {
   @include checkbox;
-  width: 236px;
+  max-width: 236px;
   transform: translateX(30px);
   margin-bottom: 10px;
   &__input {

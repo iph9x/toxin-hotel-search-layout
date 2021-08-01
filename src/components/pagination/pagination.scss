@@ -1,5 +1,5 @@
 .pagination {
-  width: 240px;
+  max-width: 240px;
   &__title {
     @include field-title;
     margin-top: 40px;

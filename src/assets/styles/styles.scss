@@ -89,7 +89,7 @@ main {
 }
 
 .datepicker {
-  width: 320px;
+  max-width: 320px;
   padding: 20px;
   padding-top: 15px;
   padding-bottom: 19px;
@@ -100,7 +100,7 @@ main {
   @include boxshadow;
   @include montserrat;
   @media (max-width: 380px) {
-    width: 287px;
+    max-width: 287px;
     padding-right: 3px;
     padding-left: 3px;
   }

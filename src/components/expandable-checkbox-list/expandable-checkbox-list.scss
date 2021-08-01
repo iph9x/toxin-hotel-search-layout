@@ -1,8 +1,6 @@
 .expandable-checkbox-list {
   @include field-wrapper;
   font-size: $body-font-size;
-  max-width: 266px;
-  width: 266px;
   &__title {
     @include field-title;
     margin-bottom: 0;

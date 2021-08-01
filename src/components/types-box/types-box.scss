@@ -1,8 +1,6 @@
 .types-box {
-  width: 436px;
-  @media (max-width: 436px) {
-    width: 100%;
-  }
+  max-width: 436px;
+  width: 100%;
   &__item {
     display: grid;
     grid-template-columns: 37px 1fr;

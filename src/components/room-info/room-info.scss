@@ -3,7 +3,7 @@
     @include field-title;
   }
   &__item {
-    width: 280px;
+    width: 100%;
     display: grid;
     grid-template-columns: 48px auto;
     column-gap: 10px;

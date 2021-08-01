@@ -87,7 +87,7 @@
     display: grid;
     grid-template-columns: 1fr 20px;
     justify-content: space-between;
-    width: 239px;
+    max-width: 239px;
     @media (max-width: 380px) {
       width: auto;
     }

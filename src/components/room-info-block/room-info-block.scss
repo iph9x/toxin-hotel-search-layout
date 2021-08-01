@@ -16,6 +16,8 @@
     }
   }
   &__info {
+    max-width: 280px;
+    width: 100%;
     &-title {
       margin-bottom: 21px;
       line-height: 23px;
@@ -53,7 +55,8 @@
     }
   }
   &__rules {
-    width: 280px;
+    max-width: 280px;
+    width: 100%;
     &-title {
       padding-left: 20px;
       margin-bottom: 18px;

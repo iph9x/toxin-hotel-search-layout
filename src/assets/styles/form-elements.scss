@@ -5,7 +5,7 @@
   }
   &__container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: minmax(auto, 446px) minmax(auto, 392px) 1fr;
     grid-auto-rows: auto;
     row-gap: 70px;
     max-width: 1175px;
@@ -28,7 +28,6 @@
     }
   }
   &__text-inputs {
-    width: 446px;
     margin-bottom: 30px;
   }
   &__text-inputs
@@ -63,16 +62,13 @@
     margin-bottom: 41px;
   }
   &__subscription-text-field {
-    width: 266px;
+    max-width: 266px;
   }
   &__interactive-inputs,
   &__rich-checkbox-buttons {
     @media (max-width: 1439px) {
       margin-right: 0;
     }
-  }
-  &__interactive-inputs {
-    width: 392px;
   }
   &__rooms-dropdown {
     max-width: 266px;
@@ -138,6 +134,8 @@
     }
   }
   &__expandable-checkbox-list {
+    max-width: 266px;
+    width: 100%;
     transform: translateY(-14px);
     &:first-child {
       margin-bottom: 19px;

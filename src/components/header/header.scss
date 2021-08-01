@@ -12,10 +12,8 @@
     padding-right: 13px;
     padding-left: 27px;
     @include flex-justify-sb-align-c;
-    width: 1200px;
-    @media (max-width: 1200px) {
-      width: 100%;
-    }
+    max-width: 1200px;
+    width: 100%;
     @media (min-width: 1439px) and (max-width: 1441px) {
       margin: 0;
       padding: 0 20px;
