@@ -4,9 +4,9 @@ export default class Dropdown {
   }
 
   init() {
-    $('.js-dropdown__clear').on('click', (e) => this.clearHandler(e));
+    $('.js-dropdown__button_action_clear').on('click', (e) => this.clearHandler(e));
     $('.js-dropdown').on('click', (e) => this.inputClickHandler(e));
-    $('.js-dropdown__apply').on('click', (e) => this.applyHandler(e));
+    $('.js-dropdown__button_action_apply').on('click', (e) => this.applyHandler(e));
     $('.js-dropdown__circle-btn_action_reduce').on('click', (e) => this.btnAdjustHandler(e, true));
     $('.js-dropdown__circle-btn_action_increase').on('click', (e) => this.btnAdjustHandler(e, false));
     $(document).on('click', this.hideMenuHandler);
@@ -18,7 +18,7 @@ export default class Dropdown {
   createDropdownObj(menu) {
     const $input = menu.parent().find('.js-dropdown__input');
     const itemsArr = menu.find('.js-dropdown__item');
-    const $clearBtn = menu.find('.js-dropdown__clear');
+    const $clearBtn = menu.find('.js-dropdown__button_action_clear');
     const id = menu.attr('data-menu-type');
   
     const createObj = (obj) => {
@@ -47,9 +47,9 @@ export default class Dropdown {
       const sum = Object.values(itemsObj).reduce(reducer, 0);
   
       if (sum === 0) {
-        $clearBtn.addClass('dropdown__clear_disabled');
+        $clearBtn.addClass('dropdown__button_disabled');
       } else {
-        $clearBtn.removeClass('dropdown__clear_disabled');
+        $clearBtn.removeClass('dropdown__button_disabled');
       }
     } else if (id === 'rooms') {
       const itemsObj = {

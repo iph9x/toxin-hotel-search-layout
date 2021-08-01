@@ -13,14 +13,7 @@ export default class LikeButton {
     $parent.toggleClass('like-button__item_active');
 
     const inputVal = Number.parseInt($input.val());
-    const $icon = $input.next();
 
-    if ($parent.hasClass('like-button__item_active')) {
-      $icon.html('favorite');
-      $input.val(inputVal + 1);
-    } else {
-      $icon.html('favorite_border');
-      $input.val(inputVal - 1);
-    }
+    $input.val($parent.hasClass('like-button__item_active') ? inputVal + 1 : inputVal - 1);
   }
 }

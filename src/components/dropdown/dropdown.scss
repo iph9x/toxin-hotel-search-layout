@@ -111,15 +111,17 @@ $material-icons-font-path: '~material-icons/iconfont/';
     &:active {
       outline: none;
     }
-  }
-  &__clear {
-    justify-self: start;
+    &_action {
+      &_clear {
+        justify-self: start;
+      }
+      &_apply {
+        justify-self: end;
+        grid-column: 2 / 3;
+      }
+    }
     &_disabled {
       display: none;
     }
-  }
-  &__apply {
-    justify-self: end;
-    grid-column: 2 / 3;
   }
 }

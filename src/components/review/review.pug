@@ -1,12 +1,12 @@
 include ../like-button/like-button
 
-mixin review({ imgSrc, username, date, message })
+mixin review({ imgSrc, username, date, message, likesCount = 2 })
   article.review
     img.review__icon(src=imgSrc)
     .review__user
       .review__name= username
       .review__date= date
     .review__like 
-      +like-button({title: ''})
+      +like-button({ title: '', likesCount: likesCount })
     p.review__message= message
       
