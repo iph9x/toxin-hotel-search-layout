@@ -1,52 +1,26 @@
 mixin dropdown({ id, title, placeholderText, attached })
   -
-    const wrapperClassName = id === 'guests' ? 'dropdown_type_guests' : 'dropdown_type_rooms'
-    const menuIsAttached = attached ? 'attached' : 'none';
+    const wrapperClassName = `dropdown_type_${id}`
+    const menuIsAttached = attached ? 'attached' : 'none'
+    const counters = id === 'rooms'
+      ? [{ name: 'Спальни', id: 'bedrooms', startValue: 2 }, { name: 'Кровати', id: 'bed', startValue: 2 }, { name: 'Ванные комнаты', id: 'bathrooms', startValue: 2 }]
+      : [{ name: 'Взрослые', id: 'adults', startValue: 0 }, { name: 'Дети', id: 'children', startValue: 0 }, { name: 'Младенцы', id: 'babies', startValue: 0 }]
+    const bedRooms = 'bedrooms'
+
   .dropdown.js-dropdown(class=wrapperClassName)
     if title
       .dropdown__title= title
     .dropdown__arrow.js-dropdown__arrow expand_more
-    input.dropdown__input.js-dropdown__input(type="text" placeholder=placeholderText readonly)
-    if (id === 'rooms')
-      .dropdown__menu.js-dropdown__menu(data-menu-type=id data-menu-attached=menuIsAttached)
+    input.dropdown__input.js-dropdown__input(type="text" placeholder=placeholderText readonly)      
+    .dropdown__menu.js-dropdown__menu(data-menu-type=id data-menu-attached=menuIsAttached)
+      each counter in counters
         .dropdown__item.js-dropdown__item
-          .dropdown__name Спальни
+          .dropdown__name= counter.name
           .dropdown__counter.js-dropdown__counter
             button(type="button").dropdown__circle-btn.dropdown__circle-btn_action_reduce.js-dropdown__circle-btn_action_reduce -
-            .dropdown__digit.js-dropdown__digit(data-menu-item-id="bedrooms") 2
+            .dropdown__digit.js-dropdown__digit(data-menu-item-id=counter.id)= counter.startValue
             button(type="button").dropdown__circle-btn.dropdown__circle-btn_action_increase.js-dropdown__circle-btn_action_increase +
-        .dropdown__item.js-dropdown__item
-          .dropdown__name Кровати
-          .dropdown__counter.js-dropdown__counter
-            button(type="button").dropdown__circle-btn.dropdown__circle-btn_action_reduce.js-dropdown__circle-btn_action_reduce -
-            .dropdown__digit.js-dropdown__digit(data-menu-item-id="bed") 2
-            button(type="button").dropdown__circle-btn.dropdown__circle-btn_action_increase.js-dropdown__circle-btn_action_increase +
-        .dropdown__item.js-dropdown__item
-          .dropdown__name Ванные комнаты
-          .dropdown__counter.js-dropdown__counter
-            button(type="button").dropdown__circle-btn.dropdown__circle-btn_action_reduce.js-dropdown__circle-btn_action_reduce -
-            .dropdown__digit.js-dropdown__digit(data-menu-item-id="bathrooms") 2
-            button(type="button").dropdown__circle-btn.dropdown__circle-btn_action_increase.js-dropdown__circle-btn_action_increase +
-    if (id === 'guests')
-      .dropdown__menu.js-dropdown__menu(data-menu-type=id data-menu-attached=menuIsAttached)
-        .dropdown__item.js-dropdown__item
-          .dropdown__name Взрослые
-          .dropdown__counter.js-dropdown__counter
-            button(type="button").dropdown__circle-btn.dropdown__circle-btn_action_reduce.js-dropdown__circle-btn_action_reduce -
-            .dropdown__digit.js-dropdown__digit(data-menu-item-id="adults") 0
-            button(type="button").dropdown__circle-btn.dropdown__circle-btn_action_increase.js-dropdown__circle-btn_action_increase +
-        .dropdown__item.js-dropdown__item
-          .dropdown__name Дети
-          .dropdown__counter.js-dropdown__counter
-            button(type="button").dropdown__circle-btn.dropdown__circle-btn_action_reduce.js-dropdown__circle-btn_action_reduce -
-            .dropdown__digit.js-dropdown__digit(data-menu-item-id="children") 0
-            button(type="button").dropdown__circle-btn.dropdown__circle-btn_action_increase.js-dropdown__circle-btn_action_increase +
-        .dropdown__item.js-dropdown__item
-          .dropdown__name Младенцы
-          .dropdown__counter.js-dropdown__counter
-            button(type="button").dropdown__circle-btn.dropdown__circle-btn_action_reduce.js-dropdown__circle-btn_action_reduce -
-            .dropdown__digit.js-dropdown__digit(data-menu-item-id="babies") 0
-            button(type="button").dropdown__circle-btn.dropdown__circle-btn_action_increase.js-dropdown__circle-btn_action_increase +
+      if (id === 'guests')
         .dropdown__buttons
           button.dropdown__button(type="button").dropdown__button_action_clear.js-dropdown__button_action_clear.dropdown__button_disabled Очистить
           button.dropdown__button(type="button").dropdown__button_action_apply.js-dropdown__button_action_apply Применить

@@ -1,6 +1,13 @@
 include ../logo/logo
 include ../subscription-text-field/subscription-text-field
 
+-
+  const sections = [
+    { sectionName: 'Навигация', items: ['О нас', 'Новости', 'Служба поддержки', 'Услуги'] },
+    { sectionName: 'О нас', items: ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'] },
+    { sectionName: 'Служба поддержки', items: ['Соглашения', 'Сообщества', 'Связь с нами'] },
+  ]
+
 footer.footer
   .footer__main-row
     .footer__container
@@ -11,39 +18,15 @@ footer.footer
           p.footer__text 
             | Бронирование номеров в лучшем отеле 2019
             | года по версии ассоциации «Отельные взгляды»
-        ul.footer__column
-          li.footer__item
-            .footer__section Навигация
-          li.footer__item
-            a.footer__link(href="/blank.html") О нас
-          li.footer__item
-            a.footer__link(href="/blank.html") Новости
-          li.footer__item
-            a.footer__link(href="/blank.html") Служба поддержки
-          li.footer__item
-            a.footer__link(href="/blank.html") Услуги
-        ul.footer__column
-          li.footer__item
-            .footer__section О нас
-          li.footer__item
-            a.footer__link(href="/blank.html") О сервисе
-          li.footer__item
-            a.footer__link(href="/blank.html") Наша команда
-          li.footer__item
-            a.footer__link(href="/blank.html") Вакансии
-          li.footer__item
-            a.footer__link(href="/blank.html") Инвесторы
-        ul.footer__column
-          li.footer__item
-            .footer__section Служба поддержки
-          li.footer__item
-            a.footer__link(href="/blank.html") Соглашения
-          li.footer__item
-            a.footer__link(href="/blank.html") Сообщества
-          li.footer__item
-            a.footer__link(href="/blank.html") Связь с нами
+        each section in sections
+           ul.footer__column
+            li.footer__item
+              .footer__section-name= section.sectionName
+            each linkText in section.items
+              li.footer__item
+                a.footer__link(href="/blank.html")= linkText
         .footer__column
-          .footer__section Подписка
+          .footer__section-name Подписка
           p.footer__text Получайте специальные предложения и новости сервиса
           .footer__subscription-text-field
             +subscription-text-field({ placeholderText: 'Email' })
