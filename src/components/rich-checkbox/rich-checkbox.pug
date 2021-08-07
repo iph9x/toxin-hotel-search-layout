@@ -1,7 +1,7 @@
-mixin rich-checkbox({ id, labelText, subUpper, subLower })
-  .rich-checkbox 
-    input.rich-checkbox__input(type="checkbox" id=id value=labelText name=id)
-    label.rich-checkbox__label(for=id)= labelText
+mixin rich-checkbox({ name, labelText, subUpper, subLower })
+  label.rich-checkbox 
+    input.rich-checkbox__input(type="checkbox" value=labelText name=name)
+    span.rich-checkbox__text= labelText
     .rich-checkbox__description
       .rich-checkbox__sub-upper= subUpper
       .rich-checkbox__sub-lower= subLower

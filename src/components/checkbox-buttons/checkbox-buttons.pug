@@ -5,6 +5,6 @@ mixin checkbox-buttons({ checkboxItems, title })
     .checkbox-buttons__title= title
     .checkbox-buttons__items
       each checkbox in checkboxItems
-        +checkbox({ labelText: checkbox.labelText, id: checkbox.id })
+        +checkbox({ labelText: checkbox.labelText, name: checkbox.name })
 
   

@@ -3,5 +3,5 @@ include ../rich-checkbox/rich-checkbox
 mixin rich-checkbox-buttons({ title })
   .rich-checkbox-buttons
     .rich-checkbox-buttons__title= title
-    +rich-checkbox({ labelText: 'Широкий коридор', id: 'corridor', subUpper: 'Ширина коридоров в номере', subLower: 'не менее 91 см.' })
-    +rich-checkbox({ labelText: 'Помощник для инвалидов', id: 'helper', subUpper: 'На 1 этаже вас встретит специалист', subLower: 'и проводит до номера.' })
+    +rich-checkbox({ labelText: 'Широкий коридор', name: 'corridor', subUpper: 'Ширина коридоров в номере', subLower: 'не менее 91 см.' })
+    +rich-checkbox({ labelText: 'Помощник для инвалидов', name: 'helper', subUpper: 'На 1 этаже вас встретит специалист', subLower: 'и проводит до номера.' })

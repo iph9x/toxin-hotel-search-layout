@@ -197,16 +197,17 @@ $nav-height: 70px;
 @mixin checkbox {
   margin-bottom: 12px;
   color: $darkshade50;
+  position: relative;
 }
 
 @mixin checkbox-input {
+  position: absolute;
   opacity: 0;
-  display: none;
-  z-index: -1;      
-  &:checked + label::before {
+  z-index: -1;
+  &:checked + span::before {
     border: 1px solid $purple;
   }
-  &:checked + label::after {
+  &:checked + span::after {
     visibility: visible;
   }
 }

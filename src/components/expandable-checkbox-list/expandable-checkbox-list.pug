@@ -10,5 +10,4 @@ mixin expandable-checkbox-list({ checkboxItems, title, attached })
     .expandable-checkbox-list__items.js-expandable-checkbox-list__items
       each checkbox in checkboxItems
         .expandable-checkbox-list__checkbox
-          +checkbox({ labelText: checkbox.labelText, id: checkbox.id })
-  
+          +checkbox({ labelText: checkbox.labelText, name: checkbox.name })
