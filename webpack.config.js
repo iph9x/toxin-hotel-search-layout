@@ -89,7 +89,6 @@ module.exports = {
             loader: 'file-loader'
           },
         ]
-       
       }
     ]
   },
@@ -106,6 +105,11 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
+    }),
+    new CopyWebpackPlugin ({
+      patterns: [
+        { from: 'assets/favicons/site.webmanifest', to: `${PATHS.dist}/assets/favicons/site.webmanifest` },
+      ],
     }),
   ],
   optimization: {
