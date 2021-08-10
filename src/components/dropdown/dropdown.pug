@@ -1,7 +1,6 @@
-mixin dropdown({ id, title, placeholderText, attached })
+mixin dropdown({ id, title, placeholderText })
   -
     const wrapperClassName = `dropdown_type_${id}`
-    const menuIsAttached = attached ? 'attached' : 'none'
     const counters = id === 'rooms'
       ? [{ name: 'Спальни', id: 'bedrooms', startValue: 2 }, { name: 'Кровати', id: 'bed', startValue: 2 }, { name: 'Ванные комнаты', id: 'bathrooms', startValue: 2 }]
       : [{ name: 'Взрослые', id: 'adults', startValue: 0 }, { name: 'Дети', id: 'children', startValue: 0 }, { name: 'Младенцы', id: 'babies', startValue: 0 }]
@@ -12,7 +11,7 @@ mixin dropdown({ id, title, placeholderText, attached })
       .dropdown__title= title
     .dropdown__arrow.js-dropdown__arrow expand_more
     input.dropdown__input.js-dropdown__input(type="text" placeholder=placeholderText readonly)      
-    .dropdown__menu.js-dropdown__menu(data-menu-type=id data-menu-attached=menuIsAttached)
+    .dropdown__menu.js-dropdown__menu(data-menu-type=id)
       each counter in counters
         .dropdown__item.js-dropdown__item
           .dropdown__name= counter.name

@@ -1,9 +1,7 @@
 include ../checkbox/checkbox
 
-mixin expandable-checkbox-list({ checkboxItems, title, attached })
-  - const listIsAttached = attached ? 'attached' : 'none';
-
-  .expandable-checkbox-list.js-expandable-checkbox-list(data-list-attached=listIsAttached)
+mixin expandable-checkbox-list({ checkboxItems, title })
+  .expandable-checkbox-list.js-expandable-checkbox-list
     .expandable-checkbox-list__wrapper-title.js-expandable-checkbox-list__wrapper-title
       .expandable-checkbox-list__title= title
       .expandable-checkbox-list__arrow.js-expandable-checkbox-list__arrow expand_more

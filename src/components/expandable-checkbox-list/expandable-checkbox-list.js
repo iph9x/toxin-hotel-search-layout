@@ -25,14 +25,11 @@ export default class ExpandableCheckboxList {
       // const $checkboxItems = this.$list.find('.js-expandable-checkbox-list__items')
       this.$list.each((i) => {
         const $list = $(this.$list[i]);
-        const listIsAttached = $list.attr('data-list-attached') === 'attached';
         const $listArrow = $list.find('.js-expandable-checkbox-list__arrow');
         const $listItems = $list.find('.js-expandable-checkbox-list__items');
 
-        if (!listIsAttached) {
-          $listItems.hide();
-          $listArrow.removeClass('expandable-checkbox-list__arrow_rotated');
-        }
+        $listItems.hide();
+        $listArrow.removeClass('expandable-checkbox-list__arrow_rotated');
       });
     }
   }

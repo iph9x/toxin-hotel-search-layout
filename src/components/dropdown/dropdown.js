@@ -101,14 +101,11 @@ export default class Dropdown {
       const $itemMenu = $($menu[i]);
       const $menuWrapper = $itemMenu.parent();
       const $dropdownInput = $menuWrapper.find('.js-dropdown__input');
-      const attached = $itemMenu.attr('data-menu-attached');
 
-      if (attached !== 'attached') {
-        $itemMenu.hide();
-        $menuWrapper.removeClass('dropdown_active');
-        $dropdownInput.removeClass('dropdown__input_active');
-      }
-    })
+      $itemMenu.hide();
+      $menuWrapper.removeClass('dropdown_active');
+      $dropdownInput.removeClass('dropdown__input_active');
+    });
   }
 
   inputClickHandler(e) {
