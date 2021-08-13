@@ -47,6 +47,7 @@ export default class Dropdown {
       const sum = Object.values(itemsObj).reduce(reducer, 0);
   
       if (sum === 0) {
+        $input.val('Сколько гостей');
         $clearBtn.addClass('dropdown__button_disabled');
       } else {
         $clearBtn.removeClass('dropdown__button_disabled');
@@ -146,8 +147,10 @@ export default class Dropdown {
       const count = Number.parseInt($counter.text());
   
       if (count === 0) {
+        $btn.attr('disabled', true);
         $btn.addClass('dropdown__circle-btn_disabled');
       } else {
+        $btn.attr('disabled', false);
         $btn.removeClass('dropdown__circle-btn_disabled');
       }
     });
@@ -161,14 +164,15 @@ export default class Dropdown {
     if (isReduce) {
       $counter = $target.next();
       count = Number.parseInt($counter.text());
-      count = count === 0 ? 0 : count - 1;  
+      count = count < 1 ? 0 : count - 1;
       $counter.text(count);
     } else {
       $counter = $target.prev();
       count = Number.parseInt($counter.text());
       count = count >= 9 ? 9 : count + 1;
+      $counter.text(count);
     }
-    $counter.text(count);
+
   
     this.checkButtonState();
     this.createDropdownObj($target.parents('.js-dropdown__menu'));
