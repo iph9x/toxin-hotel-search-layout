@@ -1,8 +1,7 @@
-mixin bullet-list({ className, title })
-  .bullet-list(class=className)
+mixin bullet-list({ title, list })
+  .bullet-list
     if title
       .bullet-list__title= title
     ul.bullet-list__ul
-      li.bullet-list__item Нельзя с питомцами
-      li.bullet-list__item Без вечеринок и мероприятий
-      li.bullet-list__item Время прибытия — после 13:00, а выезд до 12:00
+      each rule in list
+        li.bullet-list__item= rule

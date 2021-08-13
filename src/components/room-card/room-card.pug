@@ -1,17 +1,14 @@
 include ../rate-button/rate-button
 
 mixin room-card({ src, number, lux, price, rating, reviews })
+  - const imagesSrc = [src, src, src, src];
+
   article.room-card
     .room-card__slider
       .room-card__image-box.js-room-card__image-box
-        figure.room-card__figure
-          img.room-card__image(src=src alt="")
-        figure.room-card__figure
-          img.room-card__image(src=src alt="")
-        figure.room-card__figure
-          img.room-card__image(src=src alt="")
-        figure.room-card__figure
-          img.room-card__image(src=src alt="")
+        each imageSrc in imagesSrc 
+          figure.room-card__figure
+            img.room-card__image(src=imageSrc alt="")
       button(type="button").room-card__prev-slide.js-room-card__prev-slide.slick-prev
         span.room-card__icon.material-icons expand_more
       button(type="button").room-card__next-slide.js-room-card__next-slide.slick-next

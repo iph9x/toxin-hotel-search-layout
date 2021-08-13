@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Dark Shade 100%",
+    "hexCode": "#1F2041",
+    "iconClassName": "darkshade-100"
+  },
+  {
+    "title": "Dark Shade 75%",
+    "hexCode": "#1F2041",
+    "iconClassName": "darkshade-75"
+  },
+  {
+    "title": "Dark Shade 50%",
+    "hexCode": "#1F2041",
+    "iconClassName": "darkshade-50"
+  },
+  {
+    "title": "Dark Shade 25%",
+    "hexCode": "#1F2041",
+    "iconClassName": "darkshade-25"
+  },
+  {
+    "title": "Dark Shade 5%",
+    "hexCode": "#1F2041",
+    "iconClassName": "darkshade-5"
+  },
+  {
+    "title": "Purple",
+    "hexCode": "#BC9CFF",
+    "iconClassName": "purple"
+  },
+  {
+    "title": "Green",
+    "hexCode": "#6FCF97",
+    "iconClassName": "green"
+  }
+]

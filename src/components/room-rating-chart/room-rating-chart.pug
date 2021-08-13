@@ -1,13 +1,13 @@
 mixin room-rating-chart({ title })
+  - const ratingCaptions = ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован']
+
   figure.room-rating-chart
     figcaption.room-rating-chart__title= title
     .room-rating-chart__chart
       canvas.room-rating-chart__canvas.js-room-rating-chart__canvas(width="120" height="120")
     .room-rating-chart__legend
-      .room-rating-chart__label Великолепно
-      .room-rating-chart__label Хорошо
-      .room-rating-chart__label Удовлетворительно
-      .room-rating-chart__label Разочарован
+      each rate in ratingCaptions
+        .room-rating-chart__label= rate
     .room-rating-chart__count-box
       .room-rating-chart__count 260
       .room-rating-chart__count-text голосов
