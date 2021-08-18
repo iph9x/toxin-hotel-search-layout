@@ -19,6 +19,8 @@ export default class DateDropdown {
         },
       }).data('datepicker');
 
+      $datepicker.$datepicker.width($dateContainer.width());
+
       initDatepickerButtons($datepicker);
 
       const dateOutBlurHandler = (e) => {

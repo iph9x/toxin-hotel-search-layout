@@ -39,9 +39,17 @@ export default class Dropdown {
       };
   
       createObj(itemsObj);
-  
-      const guests = Object.values(itemsObj).reduce((count, cur) => count + cur, 0);
-      $input.val(this.determineCase(guests, ['гость', 'гостя', 'гостей']));
+
+      const guestsCount = itemsObj.adults + itemsObj.children;
+      const babiesCount = itemsObj.babies;
+      const guests = this.determineCase(guestsCount, ['гость', 'гостя', 'гостей']);
+      const babies = this.determineCase(babiesCount, ['младенец', 'младенца', 'младенцев']);
+      const totalGuests = [];
+
+      if (guestsCount > 0) totalGuests.push(guests);
+      if (babiesCount > 0) totalGuests.push(babies);
+
+      $input.val(totalGuests.join(', '));
   
       const reducer = (acc, current) => acc + current;
       const sum = Object.values(itemsObj).reduce(reducer, 0);
@@ -66,7 +74,7 @@ export default class Dropdown {
       const bedVal = this.determineCase(bed, ['кровать', 'кровати', 'кроватей']);
       const bathsVal = this.determineCase(bathrooms, ['ванная комната', 'ванные комнаты', 'ванных комнат']);
   
-      $input.val(`${bedroomsVal} ${bedVal} ${bathsVal}`);
+      $input.val(`${bedroomsVal}, ${bedVal}, ${bathsVal}`);
     }
   }
 

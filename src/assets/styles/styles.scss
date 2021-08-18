@@ -89,10 +89,10 @@ main {
 }
 
 .datepicker {
-  width: 320px;
-  padding: 20px;
+  max-width: 320px;
+  width: 100%;
+  padding: 19px;
   padding-top: 15px;
-  padding-bottom: 19px;
   box-sizing: border-box;
   background: #fff;
   border-radius: 4px;
@@ -158,7 +158,7 @@ main {
     color: $purple;
     font-weight: 700;
     font-size: $h3-font-size;
-    width: 40px;
+    width: 100%;
     height: 40px;
     text-transform: none;
   }
@@ -197,8 +197,9 @@ main {
       }
     }
     &-day {
-      width: 40px;
-      height: 40px;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1;
       font-size: $h3-font-size;
       color: $darkshade50;
       &.-selected-.-other-month-.-focus- {

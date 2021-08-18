@@ -13,8 +13,16 @@ export default class FilterDateDropdown {
       multipleDatesSeparator: ' - ',
       onSelect: (formattedDate) => this.$filterDateDropdownInput.val(formattedDate.toLowerCase()),
     }).data('datepicker');
-    
+
     if (!!filterDateDropdown) {
+      const filterDateDropdownContainerWidth = this.$filterDateDropdownInput.parent().width();
+
+      if (filterDateDropdownContainerWidth < 300) {
+        filterDateDropdown.$datepicker.css('padding', '5px');
+        filterDateDropdown.$datepicker.width(filterDateDropdownContainerWidth - 12);
+      }
+
+
       initDatepickerButtons(filterDateDropdown);
       this.$filterDateDropdownArrow.on('click', () => filterDateDropdown.show());
     }
