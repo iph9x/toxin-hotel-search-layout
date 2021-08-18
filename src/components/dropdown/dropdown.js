@@ -7,8 +7,8 @@ export default class Dropdown {
     $('.js-dropdown__button_action_clear').on('click', (e) => this.clearHandler(e));
     $('.js-dropdown').on('click', (e) => this.inputClickHandler(e));
     $('.js-dropdown__button_action_apply').on('click', (e) => this.applyHandler(e));
-    $('.js-dropdown__circle-btn_action_reduce').on('click', (e) => this.btnAdjustHandler(e, true));
-    $('.js-dropdown__circle-btn_action_increase').on('click', (e) => this.btnAdjustHandler(e, false));
+    $('.js-dropdown__circle-button_action_reduce').on('click', (e) => this.btnAdjustHandler(e, true));
+    $('.js-dropdown__circle-button_action_increase').on('click', (e) => this.btnAdjustHandler(e, false));
     $(document).on('click', this.hideMenuHandler);
     $('.js-date-dropdown__input').on('click', this.hideMenuHandler);
     $('.js-masked-text-field').on('click', this.hideMenuHandler);
@@ -95,7 +95,7 @@ export default class Dropdown {
     const $input = $menu.parent().find('.js-dropdown__input');
   
     $menuItems.each((i) => {
-      $($menuItems[i]).find('.js-dropdown__circle-btn_action_reduce').addClass('dropdown__circle-btn_disabled');
+      $($menuItems[i]).find('.js-dropdown__circle-button_action_reduce').addClass('dropdown__circle-button_disabled');
       $($menuItems[i]).find('.js-dropdown__counter').find('.js-dropdown__digit').text('0');
     });
   
@@ -147,7 +147,7 @@ export default class Dropdown {
   }
 
   checkButtonState() {
-    const $btnReduce = $('.js-dropdown__circle-btn_action_reduce');
+    const $btnReduce = $('.js-dropdown__circle-button_action_reduce');
   
     $btnReduce.each((i) => {
       const $btn = $($btnReduce[i]);
@@ -156,10 +156,10 @@ export default class Dropdown {
   
       if (count === 0) {
         $btn.attr('disabled', true);
-        $btn.addClass('dropdown__circle-btn_disabled');
+        $btn.addClass('dropdown__circle-button_disabled');
       } else {
         $btn.attr('disabled', false);
-        $btn.removeClass('dropdown__circle-btn_disabled');
+        $btn.removeClass('dropdown__circle-button_disabled');
       }
     });
   }

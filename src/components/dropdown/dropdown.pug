@@ -16,9 +16,9 @@ mixin dropdown({ id, title, placeholderText })
         .dropdown__item.js-dropdown__item
           .dropdown__name= counter.name
           .dropdown__counter.js-dropdown__counter
-            button(type="button").dropdown__circle-btn.dropdown__circle-btn_action_reduce.js-dropdown__circle-btn_action_reduce -
+            button(type="button").dropdown__circle-button.dropdown__circle-button_action_reduce.js-dropdown__circle-button_action_reduce -
             .dropdown__digit.js-dropdown__digit(data-menu-item-id=counter.id)= counter.startValue
-            button(type="button").dropdown__circle-btn.dropdown__circle-btn_action_increase.js-dropdown__circle-btn_action_increase +
+            button(type="button").dropdown__circle-button.dropdown__circle-button_action_increase.js-dropdown__circle-button_action_increase +
       if (id === 'guests')
         .dropdown__buttons
           button.dropdown__button(type="button").dropdown__button_action_clear.js-dropdown__button_action_clear.dropdown__button_disabled Очистить

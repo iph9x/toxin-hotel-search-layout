@@ -3,16 +3,16 @@ mixin pagination({ title })
     if (title)
       .pagination__title= title
     ul.pagination__slider
-      li.pagination__li
+      li.pagination__page-wrapper
         a(href="/blank.html").pagination__page.pagination__page_active 1
-      li.pagination__li
+      li.pagination__page-wrapper
         a(href="/blank.html").pagination__page 2
-      li.pagination__li
+      li.pagination__page-wrapper
         a(href="/blank.html").pagination__page 3
-      li.pagination__li
+      li.pagination__page-wrapper
         a(href="/blank.html").pagination__page ...
-      li.pagination__li
+      li.pagination__page-wrapper
         a(href="/blank.html").pagination__page 15
-      li.pagination__li
+      li.pagination__page-wrapper
         a(href="/blank.html").pagination__page.pagination__arrow.pagination__arrow_right arrow_forward
     .pagination__label 1 - 15 из 100+ вариантов аренды

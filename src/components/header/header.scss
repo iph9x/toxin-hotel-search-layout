@@ -36,7 +36,7 @@
       height: calc(100vh - #{$nav-height});
       @include boxshadow;
     }
-    &-btn {
+    &-button {
       position: relative;
       display: none;      
       width: 20px;

@@ -5,8 +5,8 @@ mixin header({ isAuth })
   header.header
     .header__container
       +logo({})
-      .header__menu-btn.js-header__menu-btn
-        .header__menu-btn-line
+      .header__menu-button.js-header__menu-button
+        .header__menu-button-line
       .header__menu.js-header__menu
         include ../nav/nav
         if isAuth

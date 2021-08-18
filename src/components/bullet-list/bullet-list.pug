@@ -2,6 +2,6 @@ mixin bullet-list({ title, list })
   .bullet-list
     if title
       .bullet-list__title= title
-    ul.bullet-list__ul
+    ul.bullet-list__wrapper
       each rule in list
         li.bullet-list__item= rule

@@ -3,7 +3,7 @@
   &__title {
     @include field-title;
   }
-  &__ul {
+  &__wrapper {
     padding-left: 21px;
     margin-top: 13px;
     font-size: $body-font-size;

@@ -3,7 +3,7 @@
   @media (max-width: 950px) {
     flex: 0;
   }
-  &__ul {
+  &__link-items {
     @include flex-justify-end-align-c;
     height: $nav-height;
     @media (max-width: 950px) {
