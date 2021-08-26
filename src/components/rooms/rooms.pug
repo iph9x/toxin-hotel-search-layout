@@ -1,12 +1,13 @@
 include ../room-card/room-card
 include ../pagination/pagination
 
-section.rooms
-  - const roomsArr = require('../components/rooms/assets/rooms.json')
+mixin rooms()
+  section.rooms
+    - const roomsArr = require('../components/rooms/assets/rooms.json')
 
-  h1.rooms__title Номера, которые мы для вас подобрали
-  .rooms__list
-    each room in roomsArr
-      +room-card(room)
-  .rooms__pagination
-    +pagination({})
+    h1.rooms__title Номера, которые мы для вас подобрали
+    .rooms__list
+      each room in roomsArr
+        +room-card(room)
+    .rooms__pagination
+      +pagination({})

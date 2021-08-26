@@ -1,15 +1,16 @@
 include ../text-field/text-field
 include ../button/button
 
-form(action="").login
-  h1.login__title Войти
-  .login__email
-    +text-field({ placeholderText: 'Email', inputType: 'email' })
-  .login__password
-    +text-field({ placeholderText: 'Пароль', inputType: 'password' })
-  .login__submit-button
-    +button({ text: 'Войти', style: 'fill', type: 'submit' })
-  .login__registration-wrapper
-    span.login__no-account Нет аккаунта на Toxin?
-    +button({ text: 'Создать', style: 'border' })
+mixin login()
+  form(action="").login
+    h1.login__title Войти
+    .login__email
+      +text-field({ placeholderText: 'Email', inputType: 'email' })
+    .login__password
+      +text-field({ placeholderText: 'Пароль', inputType: 'password' })
+    .login__submit-button
+      +button({ text: 'Войти', style: 'fill', type: 'submit' })
+    .login__registration-wrapper
+      span.login__no-account Нет аккаунта на Toxin?
+      +button({ text: 'Создать', style: 'border' })
 

@@ -5,33 +5,34 @@ include ../range-slider/range-slider
 include ../expandable-checkbox-list/expandable-checkbox-list
 include ../rich-checkbox-buttons/rich-checkbox-buttons
 
--
-  const checkboxItems = [
-    { labelText: 'Можно курить', name: 'breakfast' },
-    { labelText: 'Можно с питомцами', name: 'pet' },
-    { labelText: 'Можно пригласить гостей (до 10 человек)', name: 'invite' }
-  ]
-  const expandableCheckboxItems = [
-    { labelText: 'Завтрак', name: 'smoke' },
-    { labelText: 'Письменный стол', name: 'table' },
-    { labelText: 'Стул для кормления', name: 'chair' },
-    { labelText: 'Кроватка', name: 'cot' },
-    { labelText: 'Телевизор', name: 'tv' },
-    { labelText: 'Шампунь', name: 'shampoo' }
-  ]
+mixin filter()
+  -
+    const checkboxItems = [
+      { labelText: 'Можно курить', name: 'breakfast' },
+      { labelText: 'Можно с питомцами', name: 'pet' },
+      { labelText: 'Можно пригласить гостей (до 10 человек)', name: 'invite' }
+    ]
+    const expandableCheckboxItems = [
+      { labelText: 'Завтрак', name: 'smoke' },
+      { labelText: 'Письменный стол', name: 'table' },
+      { labelText: 'Стул для кормления', name: 'chair' },
+      { labelText: 'Кроватка', name: 'cot' },
+      { labelText: 'Телевизор', name: 'tv' },
+      { labelText: 'Шампунь', name: 'shampoo' }
+    ]
 
-form.filter
-  .filter__filter-date-dropdown
-    +filter-date-dropdown({ title: 'Даты пребывания в отеле' })
-  .filter__dropdown-guests
-    +dropdown({ title: 'Гости', placeholderText: 'Сколько гостей', id: 'guests' })
-  .filter__range-slider
-    +range-slider({ title: 'Диапазон цены', note: true, minValue: 0, maxValue: 15000 })
-  .filter__checkbox-buttons
-    +checkbox-buttons({ title: 'Правила дома', checkboxItems: checkboxItems })
-  .filter__rich-checkbox-buttons
-    +rich-checkbox-buttons({ title: 'Доступность' })
-  .filter__dropdown-rooms
-    +dropdown({ title: 'Удобства номера', placeholderText: 'Сколько комнат', id: 'rooms' })
-  .filter__expandable-checkbox-list
-    +expandable-checkbox-list({ title: 'Дополнительные удобства', checkboxItems: expandableCheckboxItems })
+  form.filter
+    .filter__filter-date-dropdown
+      +filter-date-dropdown({ title: 'Даты пребывания в отеле' })
+    .filter__dropdown-guests
+      +dropdown({ title: 'Гости', placeholderText: 'Сколько гостей', id: 'guests' })
+    .filter__range-slider
+      +range-slider({ title: 'Диапазон цены', note: true, minValue: 0, maxValue: 15000 })
+    .filter__checkbox-buttons
+      +checkbox-buttons({ title: 'Правила дома', checkboxItems: checkboxItems })
+    .filter__rich-checkbox-buttons
+      +rich-checkbox-buttons({ title: 'Доступность' })
+    .filter__dropdown-rooms
+      +dropdown({ title: 'Удобства номера', placeholderText: 'Сколько комнат', id: 'rooms' })
+    .filter__expandable-checkbox-list
+      +expandable-checkbox-list({ title: 'Дополнительные удобства', checkboxItems: expandableCheckboxItems })

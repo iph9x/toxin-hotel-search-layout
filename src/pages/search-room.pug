@@ -1,4 +1,6 @@
 extends ../main
+include ../components/filter/filter
+include ../components/rooms/rooms
 
 block variables
   -
@@ -7,5 +9,5 @@ block variables
 block content
   main.search-room
     .search-room__container
-      include ../components/filter/filter
-      include ../components/rooms/rooms
+      +filter()
+      +rooms()

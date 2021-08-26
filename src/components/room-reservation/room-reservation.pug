@@ -2,38 +2,39 @@ include ../dropdown/dropdown
 include ../date-dropdown/date-dropdown
 include ../button/button
 
-form(action="").room-reservation
-  header.room-reservation__header
-    h1.room-reservation__title
-      span.room-reservation__number 888
-      span.room-reservation__lux люкс
-    div.room-reservation__price-box
-      span.room-reservation__day-price 9 990
-      span.room-reservation__time в сутки
-  .room-reservation__date-dropdowns-wrapper
-    +date-dropdown({ title: 'Прибытие', isDateIn: true})
-    +date-dropdown({ title: 'Выезд'})
-  .room-reservation__dropdown-guests
-    +dropdown({ title: 'Гости', placeholderText: 'Сколько гостей', id: 'guests' })
-  .room-reservation__notes
-    .room-reservation__note
-      .room-reservation__service-box
-        .room-reservation__service 9 990&#8381; x 4 суток
-      span.room-reservation__price 39 960
-    .room-reservation__note
-      .room-reservation__service-box
-        .room-reservation__service Сбор за услуги: скидка 2 179&#8381; 
-        span.room-reservation__info i
-      span.room-reservation__price 0
-    .room-reservation__note
-      .room-reservation__service-box
-        .room-reservation__service Сбор за дополнительные услуги
-        span.room-reservation__info i
-      span.room-reservation__price 300
-  .room-reservation__total-wrapper
-    .room-reservation__label Итого
-    .room-reservation__space-dots
-    .room-reservation__total-price 38 081
-  +button({ text: 'Забронировать', style: 'fill', type: 'submit' })
+mixin room-reservation()
+  form(action="").room-reservation
+    header.room-reservation__header
+      h1.room-reservation__title
+        span.room-reservation__number 888
+        span.room-reservation__lux люкс
+      div.room-reservation__price-box
+        span.room-reservation__day-price 9 990
+        span.room-reservation__time в сутки
+    .room-reservation__date-dropdowns-wrapper
+      +date-dropdown({ title: 'Прибытие', isDateIn: true})
+      +date-dropdown({ title: 'Выезд'})
+    .room-reservation__dropdown-guests
+      +dropdown({ title: 'Гости', placeholderText: 'Сколько гостей', id: 'guests' })
+    .room-reservation__notes
+      .room-reservation__note
+        .room-reservation__service-box
+          .room-reservation__service 9 990&#8381; x 4 суток
+        span.room-reservation__price 39 960
+      .room-reservation__note
+        .room-reservation__service-box
+          .room-reservation__service Сбор за услуги: скидка 2 179&#8381; 
+          span.room-reservation__info i
+        span.room-reservation__price 0
+      .room-reservation__note
+        .room-reservation__service-box
+          .room-reservation__service Сбор за дополнительные услуги
+          span.room-reservation__info i
+        span.room-reservation__price 300
+    .room-reservation__total-wrapper
+      .room-reservation__label Итого
+      .room-reservation__space-dots
+      .room-reservation__total-price 38 081
+    +button({ text: 'Забронировать', style: 'fill', type: 'submit' })
 
 

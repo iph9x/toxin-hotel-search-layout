@@ -3,43 +3,44 @@ include ../review/review
 include ../bullet-list/bullet-list
 include ../room-rating-chart/room-rating-chart
 
--
-  const roomItems = [
-    { iconName: 'insert_emoticon', title: 'Комфорт', sub: 'Шумопоглощающие стены' },
-    { iconName: 'location_city', title: 'Удобство', sub: 'Окно в каждой из спален' },
-    { iconName: 'whatshot', title: 'Уют', sub: 'Номер оснащен камином' }
-  ]
+mixin room-info-block()
+  -
+    const roomItems = [
+      { iconName: 'insert_emoticon', title: 'Комфорт', sub: 'Шумопоглощающие стены' },
+      { iconName: 'location_city', title: 'Удобство', sub: 'Окно в каждой из спален' },
+      { iconName: 'whatshot', title: 'Уют', sub: 'Номер оснащен камином' }
+    ]
 
-section.room-info-block
-  .room-info-block__info
-    h2.room-info-block__info-title Сведения о номере
-    +room-info({ items: roomItems })
-  .room-info-block__rating
-    +room-rating-chart({ title: 'Впечатления от номера' })
-  .room-info-block__reviews
-    .room-info-block__reviews-title-row
-      h2.room-info-block__reviews-title Отзывы посетителей номера
-      .room-info-block__reviews-count 2 отзыва
-    .room-info-block__review-wrapper
-      +review({
-        imgSrc: 'assets/img/avatar.jpg',
-        username: 'Мурад Сарафaнов',
-        date: '5 дней назад',
-        message: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
-        likesCount: 11,
-      })
-    .room-info-block__review-wrapper
-      +review({ 
-        imgSrc: 'assets/img/avatar2.png',
-        username: 'Патрисия Стёклышкова',
-        date: 'Неделю назад',
-        message: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент',
-        likesCount: 2,
-      })
-  .room-info-block__rules
-    h2.room-info-block__rules-title Правила
-    .room-info-block__bullet-list
-      +bullet-list({ list: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'] })
-  .room-info-block__cancel
-    h2.room-info-block__cancel-title Отмена
-    p.room-info-block__cancel-par Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+  section.room-info-block
+    .room-info-block__info
+      h2.room-info-block__info-title Сведения о номере
+      +room-info({ items: roomItems })
+    .room-info-block__rating
+      +room-rating-chart({ title: 'Впечатления от номера' })
+    .room-info-block__reviews
+      .room-info-block__reviews-title-row
+        h2.room-info-block__reviews-title Отзывы посетителей номера
+        .room-info-block__reviews-count 2 отзыва
+      .room-info-block__review-wrapper
+        +review({
+          imgSrc: 'assets/img/avatar.jpg',
+          username: 'Мурад Сарафaнов',
+          date: '5 дней назад',
+          message: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+          likesCount: 11,
+        })
+      .room-info-block__review-wrapper
+        +review({ 
+          imgSrc: 'assets/img/avatar2.png',
+          username: 'Патрисия Стёклышкова',
+          date: 'Неделю назад',
+          message: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент',
+          likesCount: 2,
+        })
+    .room-info-block__rules
+      h2.room-info-block__rules-title Правила
+      .room-info-block__bullet-list
+        +bullet-list({ list: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'] })
+    .room-info-block__cancel
+      h2.room-info-block__cancel-title Отмена
+      p.room-info-block__cancel-par Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.

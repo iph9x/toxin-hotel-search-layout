@@ -1,16 +1,18 @@
 extends ../main
+include ../components/room-reservation/room-reservation
+include ../components/room-info-block/room-info-block
+include ../components/gallery/gallery
 
 block variables
   - const title = 'Room details'
 
 block content
   main.room-details
-    include ../components/gallery/gallery
+    +gallery()
     .room-details__container
-      include ../components/room-info-block/room-info-block
+      +room-info-block()
       .room-details__reservation
-        include ../components/room-reservation/room-reservation
-
+        +room-reservation()
 
 
     

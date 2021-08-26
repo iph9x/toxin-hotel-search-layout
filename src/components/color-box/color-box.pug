@@ -1,7 +1,8 @@
 include ../color-item/color-item
 
-- const colors = require('../components/color-box/assets/color-box.json')
+mixin color-box()
+  - const colors = require('../components/color-box/assets/color-box.json')
 
-.colors-box
-  each color in colors
-    +color-item(color)
+  .colors-box
+    each color in colors
+      +color-item(color)

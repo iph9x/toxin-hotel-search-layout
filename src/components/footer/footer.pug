@@ -1,45 +1,46 @@
 include ../logo/logo
 include ../subscription-text-field/subscription-text-field
 
--
-  const sections = [
-    { sectionName: 'Навигация', items: ['О нас', 'Новости', 'Служба поддержки', 'Услуги'] },
-    { sectionName: 'О нас', items: ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'] },
-    { sectionName: 'Служба поддержки', items: ['Соглашения', 'Сообщества', 'Связь с нами'] },
-  ]
+mixin footer()
+  -
+    const sections = [
+      { sectionName: 'Навигация', items: ['О нас', 'Новости', 'Служба поддержки', 'Услуги'] },
+      { sectionName: 'О нас', items: ['О сервисе', 'Наша команда', 'Вакансии', 'Инвесторы'] },
+      { sectionName: 'Служба поддержки', items: ['Соглашения', 'Сообщества', 'Связь с нами'] },
+    ]
 
-footer.footer
-  .footer__main-row
-    .footer__container
-      .footer__wrapper
-        .footer__column
-          .footer__logo
-            +logo({})
-          p.footer__text 
-            | Бронирование номеров в лучшем отеле 2019
-            | года по версии ассоциации «Отельные взгляды»
-        each section in sections
-           ul.footer__column
-            li.footer__item
-              .footer__section-name= section.sectionName
-            each linkText in section.items
+  footer.footer
+    .footer__main-row
+      .footer__container
+        .footer__wrapper
+          .footer__column
+            .footer__logo
+              +logo({})
+            p.footer__text 
+              | Бронирование номеров в лучшем отеле 2019
+              | года по версии ассоциации «Отельные взгляды»
+          each section in sections
+            ul.footer__column
               li.footer__item
-                a.footer__link(href="/blank.html")= linkText
-        .footer__column
-          .footer__section-name Подписка
-          p.footer__text Получайте специальные предложения и новости сервиса
-          .footer__subscription-text-field
-            +subscription-text-field({ placeholderText: 'Email' })
-  .footer__sec-row
-    .footer__container
-      .footer__copyright-wrapper
-        .footer__copyright-logo
-          +logo({})
-        p.footer__copyright Copyright © 2018 Toxin отель. Все права защищены.
-        .footer__socials
-          a.footer__social.footer__social_twitter(href="https://twitter.com" rel="noopener noreferrer" target="_blank")
-            include ./img/twitter.svg
-          a.footer__social(href="https://www.instagram.com" rel="noopener noreferrer" target="_blank")
-            include ./img/facebook.svg
-          a.footer__social(href="https://www.facebook.com" rel="noopener noreferrer" target="_blank")
-            include ./img/instagram.svg
+                .footer__section-name= section.sectionName
+              each linkText in section.items
+                li.footer__item
+                  a.footer__link(href="/blank.html")= linkText
+          .footer__column
+            .footer__section-name Подписка
+            p.footer__text Получайте специальные предложения и новости сервиса
+            .footer__subscription-text-field
+              +subscription-text-field({ placeholderText: 'Email' })
+    .footer__sec-row
+      .footer__container
+        .footer__copyright-wrapper
+          .footer__copyright-logo
+            +logo({})
+          p.footer__copyright Copyright © 2018 Toxin отель. Все права защищены.
+          .footer__socials
+            a.footer__social.footer__social_twitter(href="https://twitter.com" rel="noopener noreferrer" target="_blank")
+              img(src="components/footer/img/twitter.svg", alt="")
+            a.footer__social(href="https://www.instagram.com" rel="noopener noreferrer" target="_blank")
+              img(src="components/footer/img/facebook.svg", alt="")
+            a.footer__social(href="https://www.facebook.com" rel="noopener noreferrer" target="_blank")
+              img(src="components/footer/img/instagram.svg", alt="")

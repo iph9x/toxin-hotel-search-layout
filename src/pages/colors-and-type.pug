@@ -1,4 +1,6 @@
 extends ../uikit
+include ../components/color-box/color-box
+include ../components/types-box/types-box
 
 block variables
   -
@@ -8,5 +10,5 @@ block variables
 block content
   main.colors-and-type__main
     .colors-and-type__container
-      include ../components/color-box/color-box
-      include ../components/types-box/types-box
+      +color-box()
+      +types-box()

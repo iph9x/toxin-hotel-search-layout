@@ -1,4 +1,5 @@
 extends ../main
+include ../components/login/login
 
 block variables
   - const title = 'Log In'
@@ -6,4 +7,4 @@ block variables
 block content
   main.login-page
     .login-page__container
-      include ../components/login/login
+      +login()

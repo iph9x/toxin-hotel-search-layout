@@ -1,4 +1,5 @@
 extends ../main
+include ../components/room-selection/room-selection
 
 block variables
   -
@@ -8,7 +9,7 @@ block content
   main.landing
     .landing__container
       .landing__form
-        include ../components/room-selection/room-selection
+        +room-selection()
       .landing__tagline 
         .landing__tag-text Лучшие номера для вашей работы,
         .landing__tag-text отдыха и просто вдохновения

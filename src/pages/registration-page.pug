@@ -1,4 +1,5 @@
 extends ../main
+include ../components/registration/registration
 
 block variables
   - const title = 'Registration'
@@ -6,4 +7,4 @@ block variables
 block content
   main.registration-page
     .registration-page__container
-      include ../components/registration/registration
+      +registration()

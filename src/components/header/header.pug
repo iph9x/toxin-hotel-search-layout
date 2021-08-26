@@ -1,5 +1,6 @@
 include ../logo/logo
 include ../button/button
+include ../nav/nav
 
 mixin header({ isAuth })
   header.header
@@ -8,7 +9,7 @@ mixin header({ isAuth })
       .header__menu-button.js-header__menu-button
         .header__menu-button-line
       .header__menu.js-header__menu
-        include ../nav/nav
+        +nav()
         if isAuth
           .header__profile-wrapper 
             a.header__profile-link(href="/blank.html") Юлий Цезарь

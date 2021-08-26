@@ -1,5 +1,6 @@
 extends ../uikit
 include ../components/header/header
+include ../components/footer/footer
 
 block variables
   -
@@ -12,4 +13,4 @@ block content
       +header({ isAuth: false })
     .headers-footers__header
       +header({ isAuth: true })
-    include ../components/footer/footer
+    +footer()
