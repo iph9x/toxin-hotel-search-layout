@@ -1,8 +1,10 @@
-import './assets/styles/main.scss';
+
 
 import 'air-datepicker';
 import 'inputmask';
 import 'slick-carousel';
+
+import './style.scss';
 
 const cache = {};
 

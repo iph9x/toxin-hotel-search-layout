@@ -1,0 +1,17 @@
+.registration-page {
+  justify-content: center;
+  flex-direction: column;
+  background: url('./pages/img/auth.jpg') no-repeat left -70px /100vw;
+  padding: 19px 0;
+  padding-bottom: 18px;
+  margin-bottom: 1px;
+  &__container {
+    @include container;
+    display: flex;
+    justify-content: center;
+    @media (min-width: 1440px) and (max-width: 1441px) {
+      justify-content: flex-start;
+      padding-left: 533px;
+    }
+  }
+}

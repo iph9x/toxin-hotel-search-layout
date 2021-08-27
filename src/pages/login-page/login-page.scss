@@ -1,0 +1,21 @@
+.login-page {
+  justify-content: center;
+  flex-direction: column;
+  background: url('./pages/img/auth.jpg') no-repeat center / 100vw;
+  padding: 172px 0 132px 0;
+  @media (min-width: 1440px) and (max-width: 1441px) {
+    background: url('./pages/img/auth.jpg') no-repeat left 100% / 100vw;
+  }
+  @media (max-width: 1439px) {
+    padding: calc((100vh - 431px) / 2) 0;
+  }
+  &__container {
+    @include container;
+    display: flex;
+    justify-content: center;
+    @media (min-width: 1440px) and (max-width: 1441px) {
+      justify-content: flex-start;
+      padding-left: 530px;
+    }
+  }
+}
