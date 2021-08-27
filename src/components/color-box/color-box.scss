@@ -1,4 +1,6 @@
 .colors-box {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
   max-width: 281px;
-  margin-bottom: 50px;
 }

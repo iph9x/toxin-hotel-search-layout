@@ -19,6 +19,9 @@
       row-gap: 20vw;
     }
   }
+  &__form {
+    padding-bottom: 40px;
+  }
   &__tagline {
     align-self: flex-end;
     font-size: $body-font-size;

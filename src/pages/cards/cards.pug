@@ -14,10 +14,12 @@ block content
   main.cards__main
     .cards__container
       .cards__column
-        +room-selection()
+        .cards__room-selection
+          +room-selection()
         +registration()
       .cards__column
-        +room-reservation()
+        .cards__room-reservation
+          +room-reservation()
         +login()
       .cards__column
         .cards__room-card
