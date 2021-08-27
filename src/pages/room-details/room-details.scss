@@ -1,6 +1,7 @@
 .room-details {
   background: #fff;
   margin-bottom: 1px;
+  overflow-x: hidden;
   &__container {
     @include container;
     display: flex;

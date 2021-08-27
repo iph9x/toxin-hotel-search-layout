@@ -5,16 +5,16 @@ mixin logo({ isUI })
     .logo(class = className)
       .logo__circle
         .logo__curve
-          img(src="components/logo/img/logo1.svg", alt="")
+          include ./img/logo1.svg
         .logo__curve
-          img(src="components/logo/img/logo2.svg", alt="")
+          include ./img/logo2.svg
   else
     a.logo(class=className href="/blank.html")
       .logo__circle-wrapper
         .logo__circle
           .logo__curve
-            img(src="components/logo/img/curve-logo1.svg", alt="")
+            include ./img/curve-logo1.svg
           .logo__curve
-            img(src="components/logo/img/curve-logo2.svg", alt="")
+            include ./img/curve-logo2.svg
       .logo__text
-        img(src="components/logo/img/logo-text.svg", alt="")
+        include ./img/logo-text.svg
