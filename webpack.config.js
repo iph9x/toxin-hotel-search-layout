@@ -5,6 +5,7 @@ const webpack = require('webpack');
 const path = require('path');
 const fs = require('fs');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const globImporter = require('node-sass-glob-importer');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = !isDev;
@@ -17,7 +18,9 @@ const PATHS = {
 }
 
 const PAGES_DIR = `${PATHS.src}/pages/`;
-const PAGES = fs.readdirSync(PAGES_DIR).filter( fileName => fileName.endsWith('.pug') );
+const PAGES = fs.readdirSync(PAGES_DIR)
+  .filter((fileName) => !fileName.endsWith('.pug') && fileName !== 'img')
+  .map((fileName) => fs.readdirSync(`${PAGES_DIR}/${fileName}/`).filter((fileName) => fileName.endsWith('.pug')));
 
 console.log("is dev: ", isDev);
 
@@ -59,8 +62,14 @@ module.exports = {
             loader: isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
             options: isProd ? { publicPath: '../dist'} : {}
           },
-          { loader: "css-loader" },
-          { loader: "sass-loader" }
+          { loader: 'css-loader' },
+          {
+            loader: 'sass-loader',
+            options: {
+              data: '@import "styles/variables/variables.scss";',
+              importer: globImporter(),
+            },
+          }
         ]
       },
       {
@@ -94,9 +103,13 @@ module.exports = {
   },
   plugins: [
     ...PAGES.map(page => new HtmlWebpackPlugin({
-      template: `${PAGES_DIR}/${page}`,
-      filename: `./${page.replace(/\.pug/, '.html')}`
+      template: `${PAGES_DIR}${page.toString().split('.')[0]}/${page}`,
+      filename: `./${page.toString().replace(/\.pug/, '.html')}`
     })),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}index.pug`,
+      filename: './index.html'
+    }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: filename('css')
